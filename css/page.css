@@ -1,0 +1,75 @@
+body,
+.badges {
+    margin-top: 50px;
+}
+
+body,
+.title,
+.badges {
+    margin-bottom: 50px;
+}
+
+.app-icon img {
+    width: 75px;
+    height: auto;
+    aspect-ratio: 1 / 1;
+    border-radius: 22%;
+    border-width: 1px;
+    border-style: solid;
+}
+
+.screenshots-group img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 4632 / 2896;
+    margin-bottom: 25px;
+}
+
+li {
+    margin-bottom: 1em;
+}
+
+.badges {
+    display: flex; /* Используем flexbox для горизонтального размещения элементов */
+    align-items: center; /* Вертикальное выравнивание по центру (опционально) */
+    justify-content: center;
+    gap: 50px;
+}
+
+.badges img {
+    height: 50px;
+}
+
+.footer-links {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
+
+.divider {
+    border: 0.5px;
+    border-style: solid;
+}
+
+@media (orientation: landscape) {
+    body {
+        /* margin-inline: 25%; */
+        max-width: 720px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+@media (orientation: portrait) {
+    body {
+        margin-inline: 20px;
+    }
+    
+    .app-icon img {
+        display: none;
+    }
+    
+    .badges {
+        flex-direction: column;
+    }
+}
