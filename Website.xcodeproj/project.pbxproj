@@ -31,7 +31,6 @@
 		52FE98892CC684530079A39E /* typography.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = typography.css; sourceTree = "<group>"; };
 		52FE988B2CC684530079A39E /* google-admob-app-privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "google-admob-app-privacy.html"; sourceTree = "<group>"; };
 		52FE988C2CC684530079A39E /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
-		52FE988D2CC684530079A39E /* apps.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = apps.html; sourceTree = "<group>"; };
 		52FE988F2CC684530079A39E /* app.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = app.html; sourceTree = "<group>"; };
 		52FE98902CC684530079A39E /* privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		52FE98942CC684530079A39E /* sitemap.xml */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = sitemap.xml; sourceTree = "<group>"; };
@@ -110,20 +109,12 @@
 		52FE988A2CC684530079A39E /* css */ = {
 			isa = PBXGroup;
 			children = (
-				52FE98862CC684530079A39E /* colors.css */,
 				52FE98872CC684530079A39E /* main.css */,
 				52FE98882CC684530079A39E /* page.css */,
+				52FE98862CC684530079A39E /* colors.css */,
 				52FE98892CC684530079A39E /* typography.css */,
 			);
 			path = css;
-			sourceTree = "<group>";
-		};
-		52FE988E2CC684530079A39E /* apps-list */ = {
-			isa = PBXGroup;
-			children = (
-				52FE988D2CC684530079A39E /* apps.html */,
-			);
-			path = "apps-list";
 			sourceTree = "<group>";
 		};
 		52FE98912CC684530079A39E /* cipheroji */ = {
@@ -138,7 +129,6 @@
 		52FE98922CC684530079A39E /* apps */ = {
 			isa = PBXGroup;
 			children = (
-				52FE988E2CC684530079A39E /* apps-list */,
 				52FE98912CC684530079A39E /* cipheroji */,
 			);
 			path = apps;
