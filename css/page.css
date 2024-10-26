@@ -10,8 +10,6 @@ body,
 }
 
 .app-icon img {
-    width: 75px;
-    height: auto;
     aspect-ratio: 1 / 1;
     border-radius: 22%;
     border-width: 1px;
@@ -30,13 +28,15 @@ li {
 }
 
 .badges {
-    display: flex; /* Используем flexbox для горизонтального размещения элементов */
+    display: flex;
     align-items: center; /* Вертикальное выравнивание по центру (опционально) */
     justify-content: center;
     gap: 50px;
 }
 
+.app-icon img,
 .badges img {
+    width: auto;
     height: 50px;
 }
 
