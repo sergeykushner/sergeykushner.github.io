@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="AppDescription" />
+    <meta name="apple-mobile-web-app-title" content="AppName">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-itunes-app" content="app-id=0000000000, app-argument=myURL" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="https://sergeykushner.github.io/app/app.html" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="AppName" />
+    <meta property="og:title" content="AppName" />
+    <meta property="og:description" content="AppDescription" />
+    <meta property="og:image" content="https://sergeykushner.github.io/cipheroji/share.jpg" />
+    <meta property="og:image:alt" content="App Icon" />
+    <meta property="og:image:width" content="1920" />
+    <meta property="og:image:height" content="1080" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="app" />
+    <meta name="twitter:app:name:iphone" content="AppName" />
+    <meta name="twitter:app:id:iphone" content="0000000000" />
+    <meta name="twitter:app:url:iphone" content="https://itunes.apple.com/us/app/id6590630312" />
+    
+    <title>AppName</title>
+
+    <link rel="canonical" href="https://sergeykushner.github.io/app/app.html">
+    <link rel="stylesheet" href="../css/main.css?v=1.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag() {
+          dataLayer.push(arguments);
+      }
+      gtag('js', new Date());
+      gtag('config', 'G-EEM4PWGR89');
+    </script>
+  </head>
+
+  <body>
+    <div class="title">
+        <picture class="app-icon">
+          <source srcset="app-icon-dark.png" alt="App Icon - Dark Mode" media="(prefers-color-scheme: dark)" />
+          <img src="app-icon.png" alt="App Icon" />
+        </picture>
+        
+      <h1>Title</h1>
+      <h3>Subtitle</h3>
+    </div>
+    <picture class="screenshots-group">
+      <source srcset="screenshots-group-dark.png" alt="Screenshots - Dark Mode" media="(prefers-color-scheme: dark)" />
+      <img src="screenshots-group.png" alt="Screenshots" />
+    </picture>
+    <div class="app-description">
+        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+        
+        <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+    </div>
+    <div class="badges">
+      <a href="https://itunes.apple.com/us/app/id0000000000" title="Download on the App Store" target="_blank">
+        <picture>
+          <source srcset="../assets/badges/download-on-the-app-store-badge-white.svg" alt="Download on the App Store Badge" media="(prefers-color-scheme: dark)" />
+          <img src="../assets/badges/download-on-the-app-store-badge-black.svg" alt="Download on the App Store Badge" />
+        </picture>
+    </div>
+    <footer class="footer-links">
+      <a href="privacy.html" title="Privacy Policy">Privacy Policy</a>
+      <div class="divider"></div>
+      <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" title="Terms of Use (EULA)" target="_blank">Terms of Use</a>
+      <div class="divider"></div>
+      <a href="mailto:mail@example.com" title="Email">Email</a>
+    </footer>
+  </body>
+</html>
