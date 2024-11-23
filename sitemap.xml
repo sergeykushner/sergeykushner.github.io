@@ -17,42 +17,14 @@
     </url>
     
     <url>
-        <loc>https://sergeykushner.github.io/qst/app.html</loc>
+        <loc>https://sergeykushner.github.io/app/app.html</loc>
         <lastmod>2024-01-01T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
     
     <url>
-        <loc>https://sergeykushner.github.io/qst/privacy.html</loc>
-        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://sergeykushner.github.io/brownoise/app.html</loc>
-        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://sergeykushner.github.io/brownoise/privacy.html</loc>
-        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.9</priority>
-    </url>
-    
-    <url>
-        <loc>https://sergeykushner.github.io/cipheroji/app.html</loc>
-        <lastmod>2024-01-01T00:00:00+00:00</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>1.0</priority>
-    </url>
-    
-    <url>
-        <loc>https://sergeykushner.github.io/cipheroji/privacy.html</loc>
+        <loc>https://sergeykushner.github.io/app/privacy.html</loc>
         <lastmod>2024-01-01T00:00:00+00:00</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
