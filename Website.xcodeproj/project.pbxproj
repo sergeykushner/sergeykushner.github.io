@@ -19,7 +19,7 @@
 		52FE98712CC684530079A39E /* download-on-the-app-store-badge-white.svg */ = {isa = PBXFileReference; lastKnownFileType = text; path = "download-on-the-app-store-badge-white.svg"; sourceTree = "<group>"; };
 		52FE98862CC684530079A39E /* colors.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = colors.css; sourceTree = "<group>"; };
 		52FE98872CC684530079A39E /* main.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = main.css; sourceTree = "<group>"; };
-		52FE98882CC684530079A39E /* page.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = page.css; sourceTree = "<group>"; };
+		52FE98882CC684530079A39E /* ui.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = ui.css; sourceTree = "<group>"; };
 		52FE98892CC684530079A39E /* typography.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = typography.css; sourceTree = "<group>"; };
 		52FE988B2CC684530079A39E /* google-admob-app-privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = "google-admob-app-privacy.html"; sourceTree = "<group>"; };
 		52FE988C2CC684530079A39E /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -75,7 +75,7 @@
 			isa = PBXGroup;
 			children = (
 				52FE98872CC684530079A39E /* main.css */,
-				52FE98882CC684530079A39E /* page.css */,
+				52FE98882CC684530079A39E /* ui.css */,
 				52FE98862CC684530079A39E /* colors.css */,
 				52FE98892CC684530079A39E /* typography.css */,
 			);
