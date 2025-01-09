@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXFileReference section */
-		52D07D502D2F847000227184 /* app.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = app.html; sourceTree = "<group>"; };
+		52D07D502D2F847000227184 /* apps.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = apps.html; sourceTree = "<group>"; };
 		52D07D512D2F847000227184 /* app-icon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon.png"; sourceTree = "<group>"; };
 		52D07D522D2F847000227184 /* app-icon-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-dark.png"; sourceTree = "<group>"; };
 		52D07D532D2F847000227184 /* privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
@@ -46,7 +46,7 @@
 		52D07D572D2F847000227184 /* timecapsule */ = {
 			isa = PBXGroup;
 			children = (
-				52D07D502D2F847000227184 /* app.html */,
+				52D07D502D2F847000227184 /* apps.html */,
 				52D07D512D2F847000227184 /* app-icon.png */,
 				52D07D522D2F847000227184 /* app-icon-dark.png */,
 				52D07D532D2F847000227184 /* privacy.html */,
