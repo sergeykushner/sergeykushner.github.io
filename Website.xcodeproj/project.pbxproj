@@ -12,7 +12,7 @@
 		52D07D522D2F847000227184 /* app-icon-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "app-icon-dark.png"; sourceTree = "<group>"; };
 		52D07D532D2F847000227184 /* privacy.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = privacy.html; sourceTree = "<group>"; };
 		52D07D542D2F847000227184 /* hero-device-group.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero-device-group.png"; sourceTree = "<group>"; };
-		52D07D552D2F847000227184 /* screenshots-group-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "screenshots-group-dark.png"; sourceTree = "<group>"; };
+		52D07D552D2F847000227184 /* hero-device-group-dark.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "hero-device-group-dark.png"; sourceTree = "<group>"; };
 		52D07D562D2F847000227184 /* share.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = share.jpg; sourceTree = "<group>"; };
 		52E0DFC42D38AA1800DDC9F9 /* layout.css */ = {isa = PBXFileReference; lastKnownFileType = text.css; path = layout.css; sourceTree = "<group>"; };
 		52E9AD5B2CF1FBA600AA863E /* index.html */ = {isa = PBXFileReference; lastKnownFileType = text.html; path = index.html; sourceTree = "<group>"; };
@@ -51,7 +51,7 @@
 				52D07D512D2F847000227184 /* app-icon.png */,
 				52D07D522D2F847000227184 /* app-icon-dark.png */,
 				52D07D542D2F847000227184 /* hero-device-group.png */,
-				52D07D552D2F847000227184 /* screenshots-group-dark.png */,
+				52D07D552D2F847000227184 /* hero-device-group-dark.png */,
 				52D07D562D2F847000227184 /* share.jpg */,
 			);
 			path = timecapsule;
