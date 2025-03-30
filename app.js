@@ -24,7 +24,7 @@ function updateMetaTags(app) {
     document.getElementById('meta-og-url').setAttribute('content', appUrl);
     
     // Установка мета-тега для App Store с аргументом
-    document.querySelector('meta[name="apple-itunes-app"]').setAttribute("content", `app-id=${app.appStoreId}, app-argument=myURL`);
+    document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=myURL`);
     
     const shareImageUrl = `https://sergeykushner.github.io/assets/apps/${app.id}/share.jpg`;
     document.getElementById('meta-og-image').setAttribute('content', shareImageUrl);
