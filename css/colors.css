@@ -1,3 +1,7 @@
+:root {
+    --text-color: rgb(0 0 0);
+}
+
 body {
     background-color: rgb(255 255 255);
 }
@@ -28,7 +32,11 @@ a {
     color: rgb(0 0 0 / 15%);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {   
+    :root {
+        --text-color: rgb(255 255 255);
+    }
+    
     body {
         background-color: rgb(0 0 0);
     }
@@ -53,6 +61,7 @@ a {
         color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
     }
     
+    .apps-app-icon,
     .app-icon img,
     .divider {
         color: rgb(255 255 255 / 25%);
