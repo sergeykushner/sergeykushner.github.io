@@ -31,8 +31,19 @@ function updateMetaTags(app) {
 }
 
 function updateUI(app) {
-    const iconPath = `assets/apps/${app.id}/app-icon.png`;
+    // Проверяем, использует ли пользователь темный режим
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    // Загрузка иконки приложения с учетом темного режима
+    const iconPath = `assets/apps/${app.id}/app-icon${prefersDarkMode ? '-dark' : ''}.png`;
     document.getElementById("app-icon").src = iconPath;
+    
+    // Добавляем обработчик ошибки для иконки, чтобы использовать светлую версию, если темная не найдена
+    document.getElementById("app-icon").onerror = function() {
+        this.src = `assets/apps/${app.id}/app-icon.png`;
+        this.onerror = null; // Предотвращаем бесконечный цикл
+    };
+    
     document.getElementById("app-title").textContent = app.title;
     document.getElementById("app-subtitle").textContent = app.subtitle;
 
@@ -40,8 +51,19 @@ function updateUI(app) {
     .map(p => p ? (p.startsWith('- ') ? `<li>${p.substring(2)}</li>` : `<p>${p}</p>`) : '<br>')
     .join('');
 
-
     document.getElementById("app-store-link").href = `https://itunes.apple.com/us/app/id${app.appStoreId}`;
+    
+    // Выбираем бейдж App Store в зависимости от темного режима
+    const appStoreBadgePath = prefersDarkMode 
+        ? "../../assets/badges/download-on-the-app-store-badge-white.svg" 
+        : "../../assets/badges/download-on-the-app-store-badge-black.svg";
+    document.querySelector("#app-store-link img").src = appStoreBadgePath;
+    
+    // Добавляем обработчик ошибки для бейджа, чтобы использовать светлую версию, если темная не найдена
+    document.querySelector("#app-store-link img").onerror = function() {
+        this.src = "../../assets/badges/download-on-the-app-store-badge-black.svg";
+        this.onerror = null; // Предотвращаем бесконечный цикл
+    };
     
     // Контейнер для Product Hunt бейджа
     const phContainer = document.getElementById("product-hunt-container");
@@ -54,9 +76,15 @@ function updateUI(app) {
         phContainer.style.display = "none";
     }
     
-    // Используем стандартное имя файла для скриншота, как и для иконки
-    const screenshotPath = `assets/apps/${app.id}/hero-device-group.png`;
+    // Загрузка скриншота с учетом темного режима
+    const screenshotPath = `assets/apps/${app.id}/hero-device-group${prefersDarkMode ? '-dark' : ''}.png`;
     document.getElementById("screenshot").src = screenshotPath;
+    
+    // Добавляем обработчик ошибки для скриншота, чтобы использовать светлую версию, если темная не найдена
+    document.getElementById("screenshot").onerror = function() {
+        this.src = `assets/apps/${app.id}/hero-device-group.png`;
+        this.onerror = null; // Предотвращаем бесконечный цикл
+    };
     
     // Устанавливаем email в футере
     document.getElementById("email-link").href = `mailto:${app.email}`;
