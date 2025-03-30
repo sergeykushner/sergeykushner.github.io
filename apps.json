@@ -1,7 +1,25 @@
 [
     {
+        "id": "quit-smoking",
+        "appDisplayName": "QST",
+        "title": "QST - Quit Smoking Tracker",
+        "subtitle": "Smoke-Free Life Monitoring",
+        "metaDescription": "",
+        "fullDescription": [
+            "QST is your comprehensive guide to quitting smoking, with easy-to-track progress, motivational milestones, and financial insights that highlight the benefits of your journey to quit smoking. Track how long you've been smoke-free, see how much you've saved, and monitor your health improvements over time.",
+            "Progress Tracking: Track your days smoke-free, see immediate benefits, and stay motivated with key health milestones.",
+            "Money Saved Calculator: Watch your savings grow by seeing how much you've saved since quitting smoking based on your smoking habits.",
+            "Personalized Health Timeline: See your body's recovery stages with a detailed timeline that covers improvements in health, energy, and overall well-being.",
+            "QST is more than just a tracker; it's your partner in leading a healthier, smoke-free life. Quit smoking, save money, and rediscover your best self with QST!"
+        ],
+        "appStoreId": "6738115679",
+        "email": "template-support@example.com",
+        "privacyUpdatedDate": "January 1, 0000"
+    },
+    {
         "id": "time-capsule",
-        "title": "Time Capsule",
+        "appDisplayName": "Capsula",
+        "title": "Capsula - Digital Time Capsule",
         "subtitle": "Digital Time Capsule App",
         "metaDescription": "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
         "fullDescription": [
@@ -18,41 +36,7 @@
         ],
         "appStoreId": "6740265085",
         "productHunt": "<a href=\"https://www.producthunt.com/posts/capsula-digital-time-capsule?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-capsula-digital-time-capsule\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=775257&theme=light&t=1736666904592\" alt=\"Capsula - Digital Time Capsule - Save and lock text and images | Product Hunt\" /></a>",
-        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
         "email": "hares.picky-9o@icloud.com",
         "privacyUpdatedDate": "January 10, 2025"
-    },
-    {
-        "id": "template-1",
-        "title": "Template App",
-        "subtitle": "Template App Description",
-        "metaDescription": "This is a template app for demonstration purposes.",
-        "fullDescription": "This is a template app for demonstration purposes. It includes all the features and functionality you would expect from a full-featured app. This is an extended description that provides more details about the app's functionality and benefits.",
-        "appStoreId": "1234567890",
-        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
-        "email": "template-support@example.com",
-        "privacyUpdatedDate": "January 1, 2025"
-    },
-    {
-        "id": "template-2",
-        "title": "Template App",
-        "subtitle": "Template App Description",
-        "metaDescription": "This is a template app for demonstration purposes.",
-        "fullDescription": "This is a template app for demonstration purposes. It includes all the features and functionality you would expect from a full-featured app. This is an extended description that provides more details about the app's functionality and benefits.",
-        "appStoreId": "1234567890",
-        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
-        "email": "template-support@example.com",
-        "privacyUpdatedDate": "January 1, 2025"
-    },
-    {
-        "id": "template-3",
-        "title": "Template App",
-        "subtitle": "Template App Description",
-        "metaDescription": "This is a template app for demonstration purposes.",
-        "fullDescription": "This is a template app for demonstration purposes. It includes all the features and functionality you would expect from a full-featured app. This is an extended description that provides more details about the app's functionality and benefits.",
-        "appStoreId": "1234567890",
-        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
-        "email": "template-support@example.com",
-        "privacyUpdatedDate": "January 1, 2025"
     }
 ]

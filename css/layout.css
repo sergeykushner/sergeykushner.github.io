@@ -62,19 +62,16 @@ li {
     border-style: solid;
 }
 
-#app-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
-    grid-gap: 20px;
-    justify-items: center;
-    margin-top: 30px;
-    margin-bottom: 50px;
+.app-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
 }
 
 .app-item {
     display: flex;
     flex-direction: column;
-    align-items: center;
+    align-items: center; /* Центрирование по горизонтали */
     text-align: center;
     text-decoration: none;
 }

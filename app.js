@@ -51,7 +51,9 @@ function updateUI(app) {
         phContainer.style.display = "none";
     }
     
-    document.getElementById("screenshot").src = app.screenshot;
+    // Используем стандартное имя файла для скриншота, как и для иконки
+    const screenshotPath = `assets/apps/${app.id}/hero-device-group.png`;
+    document.getElementById("screenshot").src = screenshotPath;
     
     // Устанавливаем email в футере
     document.getElementById("email-link").href = `mailto:${app.email}`;
