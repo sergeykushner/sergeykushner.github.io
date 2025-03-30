@@ -9,6 +9,12 @@ body,
     margin-bottom: 50px;
 }
 
+.apps-app-icon {
+    width: 100px;
+    height: 100px;
+}
+
+.apps-app-icon,
 .app-icon img {
     aspect-ratio: 1 / 1;
     border-radius: 22%;
@@ -19,8 +25,7 @@ body,
 .hero-device-group img {
     width: 100%;
     height: auto;
-    aspect-ratio: 4632 / 2896;
-    margin-bottom: 25px;
+    margin-bottom: 15px;
 }
 
 li {

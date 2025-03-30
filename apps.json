@@ -1,0 +1,58 @@
+[
+    {
+        "id": "time-capsule",
+        "title": "Time Capsule",
+        "subtitle": "Digital Time Capsule App",
+        "metaDescription": "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
+        "fullDescription": [
+            "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
+            "Key Features:",
+            "- Create and customize digital capsules with text and images.",
+            "- Set a future opening date for your capsules.",
+            "- Secure storage with end-to-end encryption.",
+            "- Sync your capsules across all your devices with iCloud.",
+            "- User-friendly interface.",
+            "The app features seamless iCloud synchronization, allowing users to access their capsules across multiple devices signed in with the same Apple Account. Whether you want to preserve a special moment, send a message to your future self, or create a time capsule for loved ones, Time Capsule makes it easy and enjoyable.",
+            "With a strong emphasis on privacy and security, all user data is stored locally on the device and in iCloud using encryption, ensuring that your content remains private and secure.",
+            "Get Capsula today and start preserving your memories for the future!"
+        ],
+        "appStoreId": "6740265085",
+        "productHunt": "<a href=\"https://www.producthunt.com/posts/capsula-digital-time-capsule?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-capsula-digital-time-capsule\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=775257&theme=light&t=1736666904592\" alt=\"Capsula - Digital Time Capsule - Save and lock text and images | Product Hunt\" /></a>",
+        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
+        "email": "hares.picky-9o@icloud.com",
+        "privacyUpdatedDate": "January 10, 2025"
+    },
+    {
+        "id": "template-1",
+        "title": "Template App",
+        "subtitle": "Template App Description",
+        "metaDescription": "This is a template app for demonstration purposes.",
+        "fullDescription": "This is a template app for demonstration purposes. It includes all the features and functionality you would expect from a full-featured app. This is an extended description that provides more details about the app's functionality and benefits.",
+        "appStoreId": "1234567890",
+        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
+        "email": "template-support@example.com",
+        "privacyUpdatedDate": "January 1, 2025"
+    },
+    {
+        "id": "template-2",
+        "title": "Template App",
+        "subtitle": "Template App Description",
+        "metaDescription": "This is a template app for demonstration purposes.",
+        "fullDescription": "This is a template app for demonstration purposes. It includes all the features and functionality you would expect from a full-featured app. This is an extended description that provides more details about the app's functionality and benefits.",
+        "appStoreId": "1234567890",
+        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
+        "email": "template-support@example.com",
+        "privacyUpdatedDate": "January 1, 2025"
+    },
+    {
+        "id": "template-3",
+        "title": "Template App",
+        "subtitle": "Template App Description",
+        "metaDescription": "This is a template app for demonstration purposes.",
+        "fullDescription": "This is a template app for demonstration purposes. It includes all the features and functionality you would expect from a full-featured app. This is an extended description that provides more details about the app's functionality and benefits.",
+        "appStoreId": "1234567890",
+        "screenshot": "assets/apps/time-capsule/hero-device-group.png",
+        "email": "template-support@example.com",
+        "privacyUpdatedDate": "January 1, 2025"
+    }
+]
