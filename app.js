@@ -22,7 +22,10 @@ function updateMetaTags(app) {
     document.querySelector('meta[property="og:description"]').setAttribute("content", app.metaDescription);
     const appUrl = `https://sergeykushner.github.io/app.html?id=${app.id}`;
     document.getElementById('meta-og-url').setAttribute('content', appUrl);
-    document.querySelector('meta[name="apple-itunes-app"]').setAttribute("content", `app-id=${app.appStoreId}`);
+    
+    // Установка мета-тега для App Store с аргументом
+    document.querySelector('meta[name="apple-itunes-app"]').setAttribute("content", `app-id=${app.appStoreId}, app-argument=myURL`);
+    
     const shareImageUrl = `https://sergeykushner.github.io/assets/apps/${app.id}/share.jpg`;
     document.getElementById('meta-og-image').setAttribute('content', shareImageUrl);
 }
