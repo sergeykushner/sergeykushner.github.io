@@ -34,6 +34,10 @@ a {
     text-align: start;
 }
 
+.apps-app-title {
+    margin-top: 5px;
+}
+
 @media (orientation: landscape) {
     p {
         line-height: 1.5;

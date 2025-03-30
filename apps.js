@@ -5,10 +5,12 @@ async function loadApps() {
 
     apps.forEach(app => {
         const appDiv = document.createElement("div");
+        appDiv.className = "app-item";
 
         appDiv.innerHTML = `
-            <a href="app.html?id=${app.id}">
+            <a href="app.html?id=${app.id}" class="apps-app-link">
                 <img data-src="assets/apps/${app.id}/app-icon.png" class="lazyload apps-app-icon" alt="${app.title}">
+                <p class="apps-app-title">${app.title}</p>
             </a>
         `;
         container.appendChild(appDiv);

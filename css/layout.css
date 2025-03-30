@@ -62,6 +62,23 @@ li {
     border-style: solid;
 }
 
+#app-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    grid-gap: 20px;
+    justify-items: center;
+    margin-top: 30px;
+    margin-bottom: 50px;
+}
+
+.app-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    text-decoration: none;
+}
+
 @media (orientation: landscape) {
     body {
         margin-inline: 25%;
@@ -74,6 +91,11 @@ li {
 @media (orientation: portrait) {
     body {
         margin-inline: 20px;
+    }
+    
+    #app-container {
+        grid-template-columns: repeat(auto-fill, minmax(100px, 1fr));
+        grid-gap: 15px;
     }
     
     .app-icon img {
