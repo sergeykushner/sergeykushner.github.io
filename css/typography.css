@@ -36,6 +36,12 @@ a {
 
 .apps-app-title {
     margin-top: 5px;
+    color: var(--text-color);
+}
+
+.apps-app-link {
+    color: inherit;
+    text-decoration: none;
 }
 
 @media (orientation: landscape) {
