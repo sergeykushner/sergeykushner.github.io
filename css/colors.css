@@ -66,4 +66,9 @@ a {
     .divider {
         color: rgb(255 255 255 / 25%);
     }
+
+    .apps-app-icon,
+    .app-icon img {
+    background: linear-gradient(to bottom, #313131, #151515);
+}
 }
