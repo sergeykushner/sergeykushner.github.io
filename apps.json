@@ -9,7 +9,63 @@
             ""
         ],
         "appStoreId": "1509733548",
-        "screenshots": [1, 3, 4],
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "avoid-collision",
+        "appDisplayName": "Dodge Zone",
+        "title": "Dodge Zone",
+        "subtitle": "Last the longest! Be a Leader!",
+        "metaDescription": "",
+        "fullDescription": [
+            "Get ready for an exhilarating adventure in Dodge Zone! Your goal is to avoid collisions with obstacles and survive as long as possible. Only the fastest and most agile players will achieve the highest scores! The game gets progressively harder the longer you play, testing your reflexes and strategic thinking. Compete with players worldwide and climb to the top of the leaderboard."
+        ],
+        "appStoreId": "6532621925",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "cipheroji",
+        "appDisplayName": "Cipheroji",
+        "title": "Cipheroji - Encryption & Emoji",
+        "subtitle": "Encrypting text to emoji",
+        "metaDescription": "",
+        "fullDescription": [
+            "Cipheroji is a unique and fun way to encrypt your text. Transform your text into a series of emojis, providing an extra layer of encryption to keep your communications private and secure with the most reliable AES-256 encryption.",
+            "Emoji Encryption - Convert your text into a series of emojis, making them readable only to those with the corresponding decryption key.",
+            "AES-256 Encryption - Utilizes the industry-leading AES-256 encryption standard, ensuring the highest level of security for your texts.",
+            "Easy Decryption - Quickly decode emoji texts back into text with the correct key.",
+            "User-Friendly Interface - Simple and intuitive design for seamless encryption and decryption.",
+            "Secure - Combines advanced cryptographic techniques with the fun of emojis to provide robust security.",
+            "Why Choose Cipheroji? - Cipheroji offers a novel approach to text security. By leveraging the universal language of emojis, it provides a fun and engaging way to keep your conversations private. With the power of AES-256 encryption, you can be confident that your texts are protected by the most reliable encryption available.",
+            "Privacy and Security - Your privacy is our top priority. All encryption and decryption processes are performed locally on your device, ensuring that your texts remain secure and private."
+        ],
+        "appStoreId": "6590630312",
+        "screenshots": [1, 2, 3],
+        "productHunt": "<a href=\"https://www.producthunt.com/posts/cipheroji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-cipheroji\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=486550&theme=light&t=1743406173961\" alt=\"Cipheroji - Encrypting text to emoji | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>",
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "brown-noise",
+        "appDisplayName": "Brownoise",
+        "title": "Brownoise - True Brown Noise",
+        "subtitle": "Relax, Focus, Sleep, Health",
+        "metaDescription": "",
+        "fullDescription": [
+            "Immerse yourself in the soothing sounds of Brown Noise with our innovative Brownoise app. Designed to help you relax, concentrate, and sleep more soundly, this app offers a simple yet powerful audio experience.",
+            "Customizable Brown Noise Generation: Adjust the intensity, frequency, and gain to create the perfect sound environment tailored to your needs. Use the intuitive sliders to fine-tune the noise for relaxation or focus.",
+            "Timer Functionality: Set a timer for your brown noise session. Whether you want a quick power nap or a full night's sleep, our app allows you to enjoy uninterrupted sound for as long as you need.",
+            "User-Friendly Interface: The sleek design and straightforward navigation make it easy to adjust settings, view the timer, and access helpful information about each feature.",
+            "Brown Noise is known for its deep, soothing sound profile, which can help mask background noise, improve sleep quality, enhance concentration, and create a calming atmosphere. Whether you're studying, meditating, or trying to sleep, our app provides the auditory support you need to achieve your goals.",
+            "Transform your auditory environment and enhance your daily life with the calming sounds of brown noise. Download now and experience a new level of relaxation, focus, and sleep."
+        ],
+        "appStoreId": "6737122066",
+        "screenshots": [1, 2, 3],
+        "productHunt": "<a href=\"https://www.producthunt.com/posts/brownoise?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-brownoise\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=539066&theme=light&t=1743405853525\" alt=\"Brownoise - Relax, Focus, Sleep, Health | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>",
         "email": "",
         "privacyUpdatedDate": ""
     },
@@ -28,8 +84,8 @@
         ],
         "appStoreId": "6738115679",
         "screenshots": [1, 2, 4],
-        "email": "template-support@example.com",
-        "privacyUpdatedDate": "January 1, 0000"
+        "email": "",
+        "privacyUpdatedDate": ""
     },
     {
         "id": "time-capsule",
