@@ -17,7 +17,7 @@ async function loadApps() {
             <a href="app.html?id=${app.id}" class="apps-app-link">
                 <img data-src="${iconPath}" class="lazyload apps-app-icon" alt="${app.title}" 
                      onerror="this.onerror=null; this.src='assets/apps/${app.id}/app-icon.png';">
-                <p class="apps-app-title">${app.appDisplayName}</p>
+                <p class="apps-app-title">${app.displayName}</p>
             </a>
         `;
         container.appendChild(appDiv);

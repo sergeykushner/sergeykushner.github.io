@@ -1,7 +1,7 @@
 [
     {
         "id": "template",
-        "appDisplayName": "",
+        "displayName": "",
         "title": "",
         "subtitle": "",
         "metaDescription": "",
@@ -15,7 +15,7 @@
     },
     {
         "id": "tetra-blocks-tower",
-        "appDisplayName": "TetraBlocks",
+        "displayName": "TetraBlocks",
         "title": "TetraBlocks Tower",
         "subtitle": "",
         "metaDescription": "",
@@ -29,7 +29,7 @@
     },
     {
         "id": "care-symbols",
-        "appDisplayName": "Clothtag",
+        "displayName": "Clothtag",
         "title": "Clothtag",
         "subtitle": "Wardrobe Companion",
         "metaDescription": "",
@@ -54,7 +54,7 @@
     },
     {
         "id": "ai-writer",
-        "appDisplayName": "AIWL",
+        "displayName": "AIWL",
         "title": "AI Writer - Easy Text Creation",
         "subtitle": "Creating stories, poems, songs",
         "metaDescription": "",
@@ -76,7 +76,7 @@
     },
     {
         "id": "assets",
-        "appDisplayName": "Assets",
+        "displayName": "Assets",
         "title": "Assets - Money, Goals, Stuff",
         "subtitle": "Organize Everything",
         "metaDescription": "",
@@ -90,7 +90,7 @@
     },
     {
         "id": "birthdays",
-        "appDisplayName": "Birthdays",
+        "displayName": "Birthdays",
         "title": "Birthdays - All Time Intervals",
         "subtitle": "More Birthdays!",
         "metaDescription": "",
@@ -108,7 +108,7 @@
     },
     {
         "id": "avoid-collision",
-        "appDisplayName": "Dodge Zone",
+        "displayName": "Dodge Zone",
         "title": "Dodge Zone",
         "subtitle": "Last the longest! Be a Leader!",
         "metaDescription": "",
@@ -122,7 +122,7 @@
     },
     {
         "id": "cipheroji",
-        "appDisplayName": "Cipheroji",
+        "displayName": "Cipheroji",
         "title": "Cipheroji - Encryption & Emoji",
         "subtitle": "Encrypting text to emoji",
         "metaDescription": "",
@@ -144,7 +144,7 @@
     },
     {
         "id": "brown-noise",
-        "appDisplayName": "Brownoise",
+        "displayName": "Brownoise",
         "title": "Brownoise - True Brown Noise",
         "subtitle": "Relax, Focus, Sleep, Health",
         "metaDescription": "",
@@ -164,7 +164,7 @@
     },
     {
         "id": "quit-smoking",
-        "appDisplayName": "QST",
+        "displayName": "QST",
         "title": "QST - Quit Smoking Tracker",
         "subtitle": "Smoke-Free Life Monitoring",
         "metaDescription": "",
@@ -182,7 +182,7 @@
     },
     {
         "id": "time-capsule",
-        "appDisplayName": "Capsula",
+        "displayName": "Capsula",
         "title": "Capsula - Digital Time Capsule",
         "subtitle": "Add and lock text and images",
         "metaDescription": "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
