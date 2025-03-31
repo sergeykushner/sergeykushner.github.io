@@ -1,5 +1,19 @@
 [
     {
+        "id": "template",
+        "appDisplayName": "",
+        "title": "",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "screenshots": [1, 1, 1],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
         "id": "tetra-blocks-tower",
         "appDisplayName": "TetraBlocks",
         "title": "TetraBlocks Tower",
@@ -9,6 +23,85 @@
             ""
         ],
         "appStoreId": "1509733548",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "care-symbols",
+        "appDisplayName": "Clothtag",
+        "title": "Clothtag",
+        "subtitle": "Wardrobe Companion",
+        "metaDescription": "",
+        "fullDescription": [
+            "Discover the ultimate clothing care companion with Clothtag – your all-in-one guide to understanding and preserving your favorite garments. Seamlessly organize your wardrobe, decipher care symbols, and stay on top of clothing maintenance effortlessly.",
+            "Wardrobe Organization Made Easy",
+            "Tired of the hassle of keeping track of your clothing items? Clothtag lets you catalog your wardrobe with ease. From chic dresses to cozy sweaters, neatly organize your clothing collection and always find what you're looking for.",
+            "Decode Care Symbols with Confidence",
+            "Unsure how to properly care for your clothes? Clothtag demystifies care labels and symbols. Whether it's washing, ironing, bleaching, or professional cleaning, our app provides clear explanations so you can keep your clothes looking their best.",
+            "Effortless Searching",
+            "Need to find that special outfit for the day? Our search features make it a breeze to locate your attire. No more digging through your closet – everything is just a tap away.",
+            "Snap and Store Clothes Images",
+            "Never forget what's in your wardrobe. Capture images of your clothes and easily associate them with clothing details. This handy feature helps you plan outfits, shop wisely, and create a visual closet.",
+            "Personalize Your Experience",
+            "With Clothtag, tailor your clothing care preferences. Select your favorite care labels, view detailed care information, and stay organized in a way that suits your unique style and clothing care routine.",
+            "Whether you're a fashion enthusiast or just want to make sure your clothes stand the test of time, Clothtag is your trusted companion for clothing care. Download now and make garment care effortless and enjoyable!"
+        ],
+        "appStoreId": "6461417294",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "ai-writer",
+        "appDisplayName": "AIWL",
+        "title": "AI Writer - Easy Text Creation",
+        "subtitle": "Creating stories, poems, songs",
+        "metaDescription": "",
+        "fullDescription": [
+            "Unleash your creativity with AI Writer, the ultimate tool for generating and saving captivating text compositions! Whether you're crafting poems, composing songs, or creating immersive stories, AI Writer serves as your creative companion, providing an array of features to ignite your imagination.",
+            "Features:",
+            "Diverse Text Generation: AI Writer generates various text styles, including poems, songs, stories, and more, catering to every creative whim.",
+            "Visual Representation: Experience visually appealing representations of your creations with distinct color schemes and designs tailored to each text type.",
+            "Save and Organize: Effortlessly save your favorite texts and organize them for easy access in a user-friendly interface.",
+            "Detailed View: Dive into the details! Explore each composition's specifics—type, style, content, and more—in a comprehensive and engaging display.",
+            "Share Your Creations: Share your masterpieces with friends, family, or your audience with ease using the built-in sharing functionality.",
+            "Seamless Integration: Built with SwiftUI and Core Data, AI Writer ensures a seamless experience, combining elegant design with robust performance.",
+            "Unlock your writing potential and transform your ideas into beautifully crafted compositions. Explore the world of words with AI Writer — where creativity knows no bounds!"
+        ],
+        "appStoreId": "6470300071",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "assets",
+        "appDisplayName": "Assets",
+        "title": "Assets - Money, Goals, Stuff",
+        "subtitle": "Organize Everything",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "6476966560",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "birthdays",
+        "appDisplayName": "Birthdays",
+        "title": "Birthdays - All Time Intervals",
+        "subtitle": "More Birthdays!",
+        "metaDescription": "",
+        "fullDescription": [
+            "Stay organized and never miss a beat with Birthdays, your go-to app for tracking time intervals since important dates! Whether it's birthdays, anniversaries, or special occasions, Birthdays helps you keep track of time passed with ease. Never lose track of time again! Download Birthdays now and start tracking time intervals in style!",
+            "Precise Time Tracking: Effortlessly monitor the number of months, weeks, days, hours, minutes, and seconds since any important event.",
+            "Dynamic Updates: Watch as time intervals update in real-time, providing you with accurate and up-to-date information at a glance.",
+            "Sleek and Intuitive Design: Enjoy a sleek and intuitive interface designed for quick and easy navigation. Access all features with just a few taps.",
+            "Privacy and Security: Rest assured that your data is safe and secure. Birthdays prioritizes user privacy and data protection."
+        ],
+        "appStoreId": "6478440784",
         "screenshots": [1, 2, 3],
         "email": "",
         "privacyUpdatedDate": ""
