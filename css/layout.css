@@ -28,6 +28,10 @@ body,
     margin-bottom: 15px;
 }
 
+.screenshots-gallery {
+    display: flex;
+}
+
 li {
     margin-bottom: 1em;
 }
@@ -83,6 +87,10 @@ li {
         /* margin-left: auto; */
         /* margin-right: auto; */
     }
+
+    .screenshots-gallery {
+        gap: 50px;
+    }
 }
 
 @media (orientation: portrait) {
@@ -101,5 +109,9 @@ li {
     
     .badges {
         flex-direction: column;
+    }
+
+    .screenshots-gallery {
+        gap: 20px;
     }
 }

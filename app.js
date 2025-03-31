@@ -76,15 +76,47 @@ function updateUI(app) {
         phContainer.style.display = "none";
     }
     
-    // Загрузка скриншота с учетом темного режима
-    const screenshotPath = `assets/apps/${app.id}/hero-device-group${prefersDarkMode ? '-dark' : ''}.png`;
-    document.getElementById("screenshot").src = screenshotPath;
+    // Загрузка галереи скриншотов
+    const screenshotsContainer = document.getElementById("screenshots-container");
+    screenshotsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением скриншотов
     
-    // Добавляем обработчик ошибки для скриншота, чтобы использовать светлую версию, если темная не найдена
-    document.getElementById("screenshot").onerror = function() {
-        this.src = `assets/apps/${app.id}/hero-device-group.png`;
-        this.onerror = null; // Предотвращаем бесконечный цикл
-    };
+    // Определяем, какие скриншоты нужно отображать
+    // Если в JSON определен массив screenshots, используем его,
+    // иначе используем стандартные номера (1, 2, 3)
+    let screenshotsToShow = app.screenshots || [1, 2, 3];
+    
+    // Определяем максимальное количество скриншотов для отображения (3 для десктопа, 2 для мобильного)
+    const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+    const maxScreenshots = isPortrait ? 2 : 3;
+    
+    // Ограничиваем количество скриншотов в зависимости от устройства
+    screenshotsToShow = screenshotsToShow.slice(0, maxScreenshots);
+    
+    // Загружаем указанные скриншоты
+    screenshotsToShow.forEach(screenNumber => {
+        const screenshotDiv = document.createElement("div");
+        screenshotDiv.className = "screenshot-item";
+        
+        // Путь к скриншоту с учетом темного режима
+        const screenshotPath = `assets/apps/${app.id}/app-screen-${screenNumber}${prefersDarkMode ? '-dark' : ''}.png`;
+        
+        const img = document.createElement("img");
+        img.src = screenshotPath;
+        img.alt = `Screenshot ${screenNumber} of the app`;
+        
+        // Обработчик ошибки для использования светлой версии, если темная не найдена
+        img.onerror = function() {
+            this.src = `assets/apps/${app.id}/app-screen-${screenNumber}.png`;
+            
+            // Если и светлая версия не найдена, удаляем элемент
+            this.onerror = function() {
+                screenshotDiv.remove();
+            };
+        };
+        
+        screenshotDiv.appendChild(img);
+        screenshotsContainer.appendChild(screenshotDiv);
+    });
     
     // Устанавливаем email в футере
     document.getElementById("email-link").href = `mailto:${app.email}`;
