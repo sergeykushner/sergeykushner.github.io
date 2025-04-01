@@ -1,19 +1,5 @@
 [
     {
-        "id": "template",
-        "displayName": "",
-        "title": "",
-        "subtitle": "",
-        "metaDescription": "",
-        "fullDescription": [
-            ""
-        ],
-        "appStoreId": "",
-        "screenshots": [1, 1, 1],
-        "email": "",
-        "privacyUpdatedDate": ""
-    },
-    {
         "id": "tetra-blocks-tower",
         "displayName": "TetraBlocks",
         "title": "TetraBlocks Tower",
@@ -24,6 +10,199 @@
         ],
         "appStoreId": "1509733548",
         "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "template",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "releaseDate": "",
+        "screenshots": [1, 1, 1],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "gitHub": "",
+        "flippa": ""
+    },
+    {
+        "id": "nft-creator",
+        "displayName": "NFTX",
+        "title": "NFTX - NFT Collection Creator",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1633797900",
+        "releaseDate": "2022-07-10",
+        "screenshots": [1, 2, 4],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "gitHub": "https://github.com/sergeykushner/NFTCreator",
+        "flippa": "https://flippa.com/11248496-nftx-nft-collection-creator"
+    },
+    {
+        "id": "open-sea-wallet-portfolio",
+        "displayName": "OSW",
+        "title": "OSW - OpenSea Wallet Portfolio",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1635511901",
+        "releaseDate": "2022-07-20",
+        "screenshots": [1],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "gitHub": "https://github.com/sergeykushner/OpenSea",
+        "flippa": "https://flippa.com/11257124-opensea-wallet-portfolio-osw"
+    },
+    {
+        "id": "4-layers",
+        "displayName": "4Levels Up",
+        "title": "4Levels Up",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1574095272",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "fasting",
+        "displayName": "IFX",
+        "title": "IFX - Intermittent Fasting",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "6444643252",
+        "screenshots": [2, 3, 4],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "movie-watchlist",
+        "displayName": "MWLX",
+        "title": "MWLX - Movie Watchlist",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1658692845",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "cyber-roulette",
+        "displayName": "Cyber Roulette",
+        "title": "Cyber Roulette Casino",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1581817561",
+        "screenshots": [1],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "cyber-blackjack",
+        "displayName": "Cyber Blackjack",
+        "title": "Cyber Blackjack",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1582157506",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "lucky-diamonds",
+        "displayName": "Lucky Diamonds",
+        "title": "Lucky Diamonds",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1582774225",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "next-show",
+        "displayName": "NextShow",
+        "title": "NextShow - Your TV Shows",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1610528984",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "fuel-tracker",
+        "displayName": "FUELX",
+        "title": "FUELX - Fuel Fill Tracker",
+        "subtitle": "Convenient refueling history",
+        "metaDescription": "",
+        "fullDescription": [
+            "Download now FREE and start tracking your fuel consumption in seconds!",
+            "Best Tracker of Your Fuel Refill and tracking needs",
+            "Track your vehicle mileage and your fuel costs. Get Statistics. Easy to Use."
+        ],
+        "appStoreId": "6446119609",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "expense-tracker",
+        "displayName": "ExpenseHub",
+        "title": "ExpenseHub",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1610305735",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": ""
+    },
+    {
+        "id": "calories-tracker",
+        "displayName": "CALORIEX",
+        "title": "CALORIEX - Calories Tracker",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1668551383",
+        "screenshots": [1, 4, 5],
         "email": "",
         "privacyUpdatedDate": ""
     },
