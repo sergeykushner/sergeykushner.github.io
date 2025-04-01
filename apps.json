@@ -150,11 +150,11 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-05-14",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
+        "saleDate": "2020-07-20",
+        "salePrice": "500",
+        "gitHub": "https://github.com/sergeykushner/TetraBlocksTower",
         "flippa": [
-            ""
+            "https://flippa.com/10619784-tetrablocks-tower"
         ]
     },
     {
