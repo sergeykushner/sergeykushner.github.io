@@ -11,7 +11,14 @@
         "appStoreId": "1509733548",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "template",
@@ -23,14 +30,16 @@
             ""
         ],
         "appStoreId": "",
-        "releaseDate": "",
-        "saleDate": "",
-        "salePrice": "",
         "screenshots": [1, 1, 1],
         "email": "",
         "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
         "gitHub": "",
-        "flippa": ""
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "nft-creator",
@@ -42,14 +51,16 @@
             ""
         ],
         "appStoreId": "1633797900",
-        "releaseDate": "2022-07-10",
-        "saleDate": "",
-        "salePrice": "",
         "screenshots": [1, 2, 4],
         "email": "",
         "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-10",
+        "saleDate": "",
+        "salePrice": "",
         "gitHub": "https://github.com/sergeykushner/NFTCreator",
-        "flippa": "https://flippa.com/11248496-nftx-nft-collection-creator"
+        "flippa": [
+            "https://flippa.com/11248496-nftx-nft-collection-creator"
+        ]
     },
     {
         "id": "open-sea-wallet-portfolio",
@@ -61,12 +72,16 @@
             ""
         ],
         "appStoreId": "1635511901",
-        "releaseDate": "2022-07-20",
         "screenshots": [1],
         "email": "",
         "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-20",
+        "saleDate": "",
+        "salePrice": "",
         "gitHub": "https://github.com/sergeykushner/OpenSea",
-        "flippa": "https://flippa.com/11257124-opensea-wallet-portfolio-osw"
+        "flippa": [
+            "https://flippa.com/11257124-opensea-wallet-portfolio-osw"
+        ]
     },
     {
         "id": "4-layers",
@@ -80,7 +95,14 @@
         "appStoreId": "1574095272",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "fasting",
@@ -94,7 +116,14 @@
         "appStoreId": "6444643252",
         "screenshots": [2, 3, 4],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "movie-watchlist",
@@ -108,7 +137,14 @@
         "appStoreId": "1658692845",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "cyber-roulette",
@@ -122,7 +158,14 @@
         "appStoreId": "1581817561",
         "screenshots": [1],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "cyber-blackjack",
@@ -136,7 +179,14 @@
         "appStoreId": "1582157506",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "lucky-diamonds",
@@ -150,7 +200,14 @@
         "appStoreId": "1582774225",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "next-show",
@@ -164,7 +221,14 @@
         "appStoreId": "1610528984",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "fuel-tracker",
@@ -180,7 +244,14 @@
         "appStoreId": "6446119609",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "expense-tracker",
@@ -194,7 +265,14 @@
         "appStoreId": "1610305735",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "calories-tracker",
@@ -208,7 +286,14 @@
         "appStoreId": "1668551383",
         "screenshots": [1, 4, 5],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "care-symbols",
@@ -233,7 +318,14 @@
         "appStoreId": "6461417294",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "ai-writer",
@@ -255,7 +347,14 @@
         "appStoreId": "6470300071",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "assets",
@@ -269,7 +368,14 @@
         "appStoreId": "6476966560",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "birthdays",
@@ -287,7 +393,14 @@
         "appStoreId": "6478440784",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "avoid-collision",
@@ -301,7 +414,14 @@
         "appStoreId": "6532621925",
         "screenshots": [1, 2, 3],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "cipheroji",
@@ -323,7 +443,14 @@
         "screenshots": [1, 2, 3],
         "productHunt": "<a href=\"https://www.producthunt.com/posts/cipheroji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-cipheroji\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=486550&theme=light&t=1743406173961\" alt=\"Cipheroji - Encrypting text to emoji | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>",
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "brown-noise",
@@ -343,7 +470,14 @@
         "screenshots": [1, 2, 3],
         "productHunt": "<a href=\"https://www.producthunt.com/posts/brownoise?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-brownoise\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=539066&theme=light&t=1743405853525\" alt=\"Brownoise - Relax, Focus, Sleep, Health | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>",
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "quit-smoking",
@@ -361,7 +495,14 @@
         "appStoreId": "6738115679",
         "screenshots": [1, 2, 4],
         "email": "",
-        "privacyUpdatedDate": ""
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
     },
     {
         "id": "time-capsule",
@@ -382,9 +523,16 @@
             "Get Capsula today and start preserving your memories for the future!"
         ],
         "appStoreId": "6740265085",
+        "releaseDate": "2025-01-25",
+        "saleDate": "2025-02-25",
+        "salePrice": "1100",
         "screenshots": [1, 2, 3],
         "productHunt": "<a href=\"https://www.producthunt.com/posts/capsula-digital-time-capsule?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-capsula-digital-time-capsule\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=775257&theme=light&t=1736666904592\" alt=\"Capsula - Digital Time Capsule - Save and lock text and images | Product Hunt\" /></a>",
         "email": "hares.picky-9o@icloud.com",
-        "privacyUpdatedDate": "January 10, 2025"
+        "privacyUpdatedDate": "January 10, 2025",
+        "gitHub": "https://github.com/sergeykushner/TimeCapsule",
+        "flippa": [
+            "https://flippa.com/11879597-capsula-digital-time-capsule"
+        ]
     }
 ]
