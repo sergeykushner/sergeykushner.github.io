@@ -158,6 +158,30 @@
         ]
     },
     {
+        "id": "post-creator",
+        "displayName": "Postflix",
+        "title": "Postflix",
+        "subtitle": "Creating posts and stories",
+        "metaDescription": "",
+        "fullDescription": [
+            "Functions:",
+            "- Add different layers (frames, effects) to your photos.",
+            "- Create photo collages.",
+            "- Saving posts from Instagram."
+        ],
+        "appStoreId": "1534001538",
+        "screenshots": [4, 5, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-10-03",
+        "saleDate": "2020-11-12",
+        "salePrice": "250",
+        "gitHub": "https://github.com/sergeykushner/Postflix",
+        "flippa": [
+            "https://flippa.com/10707747-postflix"
+        ]
+    },
+    {
         "id": "fit-hub",
         "displayName": "FitHub",
         "title": "FitHub - Fitness Workout Guide",
