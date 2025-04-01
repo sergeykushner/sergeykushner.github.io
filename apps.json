@@ -181,6 +181,31 @@
         ]
     },
     {
+        "id": "crypto-bull",
+        "displayName": "CryptoBull",
+        "title": "CryptoBull - Cryptocurrencies",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Multifunctional application for managing your cryptocurrencies and mining.",
+            "- Cryptocurrencies.",
+            "- Portfolio.",
+            "- Mining and Pool tools.",
+            "- News."
+        ],
+        "appStoreId": "1546906399",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2021-01-13",
+        "saleDate": "2021-03-20",
+        "salePrice": "1250",
+        "gitHub": "https://github.com/sergeykushner/CryptoBull",
+        "flippa": [
+            "https://flippa.com/10803578-cryptobull-cryptocurrencies"
+        ]
+    },
+    {
         "id": "cross-route-tracker",
         "displayName": "Cross Route Tracker",
         "title": "Cross Route Tracker",
