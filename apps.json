@@ -42,48 +42,6 @@
         ]
     },
     {
-        "id": "nft-creator",
-        "displayName": "NFTX",
-        "title": "NFTX - NFT Collection Creator",
-        "subtitle": "",
-        "metaDescription": "",
-        "fullDescription": [
-            "Create your own NFT Collections from your images or create your own CryptoPunks."
-        ],
-        "appStoreId": "1633797900",
-        "screenshots": [1, 2, 4],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-10",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "https://github.com/sergeykushner/NFTCreator",
-        "flippa": [
-            "https://flippa.com/11248496-nftx-nft-collection-creator"
-        ]
-    },
-    {
-        "id": "open-sea-wallet-portfolio",
-        "displayName": "OSW",
-        "title": "OSW - OpenSea Wallet Portfolio",
-        "subtitle": "",
-        "metaDescription": "",
-        "fullDescription": [
-            "Add any wallets connected to the OpenSea and view the portfolio balance and NFTs in this portfolio."
-        ],
-        "appStoreId": "1635511901",
-        "screenshots": [1],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-20",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "https://github.com/sergeykushner/OpenSea",
-        "flippa": [
-            "https://flippa.com/11257124-opensea-wallet-portfolio-osw"
-        ]
-    },
-    {
         "id": "4-layers",
         "displayName": "4Levels Up",
         "title": "4Levels Up",
@@ -102,75 +60,12 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-06-28",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
+        "saleDate": "2021-08-05",
+        "salePrice": "150",
+        "gitHub": "https://github.com/sergeykushner/4LayersGame",
         "flippa": [
-            ""
-        ]
-    },
-    {
-        "id": "fasting",
-        "displayName": "IFX",
-        "title": "IFX - Intermittent Fasting",
-        "subtitle": "",
-        "metaDescription": "",
-        "fullDescription": [
-            ""
-        ],
-        "appStoreId": "6444643252",
-        "screenshots": [2, 3, 4],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2022-11-29",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
-        "flippa": [
-            ""
-        ]
-    },
-    {
-        "id": "movie-watchlist",
-        "displayName": "MWLX",
-        "title": "MWLX - Movie Watchlist",
-        "subtitle": "",
-        "metaDescription": "",
-        "fullDescription": [
-            "Find out about Popular Movies, Now Playing Movies, Best and Top Rated Movies, Upcoming Movies.",
-            "Add movies to your wishlist or to your personal watch library."
-        ],
-        "appStoreId": "1658692845",
-        "screenshots": [1, 2, 3],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2022-12-08",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
-        "flippa": [
-            ""
-        ]
-    },
-    {
-        "id": "cyber-roulette",
-        "displayName": "Cyber Roulette",
-        "title": "Cyber Roulette Casino",
-        "subtitle": "Cyberpunk Style",
-        "metaDescription": "",
-        "fullDescription": [
-            "Play unusual roulette with a completely new design in Cyberpunk style! Good luck!"
-        ],
-        "appStoreId": "1581817561",
-        "screenshots": [1],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2021-08-28",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
-        "flippa": [
-            ""
+            "https://flippa.com/10891398-4levels-up",
+            "https://flippa.com/10901374-4levels-up"
         ]
     },
     {
@@ -189,9 +84,9 @@
         "releaseDate": "2021-08-21",
         "saleDate": "",
         "salePrice": "",
-        "gitHub": "",
+        "gitHub": "https://github.com/sergeykushner/CyberBlackJack",
         "flippa": [
-            ""
+            "https://flippa.com/10934221-cyber-blackjack"
         ]
     },
     {
@@ -208,53 +103,32 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-25",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
+        "saleDate": "2022-04-30",
+        "salePrice": "115",
+        "gitHub": "https://github.com/sergeykushner/LuckyDiamonds",
         "flippa": [
-            ""
+            "https://flippa.com/11178688-lucky-diamonds"
         ]
     },
     {
-        "id": "next-show",
-        "displayName": "NextShow",
-        "title": "NextShow - Your TV Shows",
-        "subtitle": "Track Your Favorite TV Shows",
+        "id": "cyber-roulette",
+        "displayName": "Cyber Roulette",
+        "title": "Cyber Roulette Casino",
+        "subtitle": "Cyberpunk Style",
         "metaDescription": "",
         "fullDescription": [
-            "Are you tired of constantly checking multiple streaming services to see if there's a new episode of your favorite TV show? Our app makes it easy to stay up-to-date on all your favorite shows. With NextShow, you can select the shows you want to follow, and we'll notify you as soon as a new episode becomes available on any streaming service. No more missed episodes or wasted time checking different apps. Download NextShow now and never miss an episode again."
+            "Play unusual roulette with a completely new design in Cyberpunk style! Good luck!"
         ],
-        "appStoreId": "1610528984",
-        "screenshots": [1, 2, 3],
+        "appStoreId": "1581817561",
+        "screenshots": [1],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-02-17",
+        "releaseDate": "2021-08-28",
         "saleDate": "",
         "salePrice": "",
-        "gitHub": "",
+        "gitHub": "https://github.com/sergeykushner/CyberRoulette",
         "flippa": [
-            ""
-        ]
-    },
-    {
-        "id": "fuel-tracker",
-        "displayName": "FUELX",
-        "title": "FUELX - Fuel Fill Tracker",
-        "subtitle": "Convenient refueling history",
-        "metaDescription": "",
-        "fullDescription": [
-            "Track your vehicle mileage and your fuel costs. Get Statistics. Easy to Use."
-        ],
-        "appStoreId": "6446119609",
-        "screenshots": [1, 2, 3],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2023-03-08",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
-        "flippa": [
-            ""
+            "https://flippa.com/10924073-cyber-roulette-casino"
         ]
     },
     {
@@ -271,11 +145,247 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-02-16",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
+        "saleDate": "2022-04-29",
+        "salePrice": "260",
+        "gitHub": "https://github.com/sergeykushner/ExpenseTracker",
         "flippa": [
+            "https://flippa.com/11184278-expensehub"
+        ]
+    },
+    {
+        "id": "next-show",
+        "displayName": "NextShow",
+        "title": "NextShow - Your TV Shows",
+        "subtitle": "Track Your Favorite TV Shows",
+        "metaDescription": "",
+        "fullDescription": [
+            "Are you tired of constantly checking multiple streaming services to see if there's a new episode of your favorite TV show? Our app makes it easy to stay up-to-date on all your favorite shows. With NextShow, you can select the shows you want to follow, and we'll notify you as soon as a new episode becomes available on any streaming service. No more missed episodes or wasted time checking different apps. Download NextShow now and never miss an episode again."
+        ],
+        "appStoreId": "1610528984",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-02-17",
+        "saleDate": "2022-03-05",
+        "salePrice": "500",
+        "gitHub": "https://github.com/sergeykushner/NextShow",
+        "flippa": [
+            "https://flippa.com/11128926-nextshow-your-tv-shows"
+        ]
+    },
+    {
+        "id": "period-tracker",
+        "displayName": "AVE",
+        "title": "AVE - Private Period Tracker",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "A tracker in which you can record your periods and get data on the days of ovulation, fertility, chance of getting pregnant."
+        ],
+        "appStoreId": "1632582167",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-03",
+        "saleDate": "2022-07-26",
+        "salePrice": "500",
+        "gitHub": "https://github.com/sergeykushner/PeriodTracker",
+        "flippa": [
+            "https://flippa.com/11243838-ave-private-period-tracker"
+        ]
+    },
+    {
+        "id": "word-game",
+        "displayName": "WOORDS",
+        "title": "WOORDS - Words Game",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
             ""
+        ],
+        "appStoreId": "1632805268",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-05",
+        "saleDate": "2022-11-11",
+        "salePrice": "750",
+        "gitHub": "https://github.com/sergeykushner/WordGame",
+        "flippa": [
+            "https://flippa.com/11246430-woords-words-game",
+            "https://flippa.com/11279329-woords-words-game",
+            "https://flippa.com/11310881-woords-words-game"
+        ]
+    },
+    {
+        "id": "nft-creator",
+        "displayName": "NFTX",
+        "title": "NFTX - NFT Collection Creator",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Create your own NFT Collections from your images or create your own CryptoPunks."
+        ],
+        "appStoreId": "1633797900",
+        "screenshots": [1, 2, 4],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-10",
+        "saleDate": "2022-08-21",
+        "salePrice": "1250",
+        "gitHub": "https://github.com/sergeykushner/NFTCreator",
+        "flippa": [
+            "https://flippa.com/11248496-nftx-nft-collection-creator"
+        ]
+    },
+    {
+        "id": "charger-animations",
+        "displayName": "CHARGEX",
+        "title": "CHARGEX - Charging Animation",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1633977789",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-12",
+        "saleDate": "2022-09-03",
+        "salePrice": "800",
+        "gitHub": "https://github.com/sergeykushner/Charger",
+        "flippa": [
+            "https://flippa.com/11248506-chargex-charging-animation"
+        ]
+    },
+    {
+        "id": "open-sea-wallet-portfolio",
+        "displayName": "OSW",
+        "title": "OSW - OpenSea Wallet Portfolio",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Add any wallets connected to the OpenSea and view the portfolio balance and NFTs in this portfolio."
+        ],
+        "appStoreId": "1635511901",
+        "screenshots": [1],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-20",
+        "saleDate": "2022-08-12",
+        "salePrice": "1600",
+        "gitHub": "https://github.com/sergeykushner/OpenSea",
+        "flippa": [
+            "https://flippa.com/11257124-opensea-wallet-portfolio-osw"
+        ]
+    },
+    {
+        "id": "habit-tracker",
+        "displayName": "DFLOW",
+        "title": "DFLOW - Habit Tracker",
+        "subtitle": "Daily routines and statistics",
+        "metaDescription": "",
+        "fullDescription": [
+            "DFLOW is a habit tracking app that will help you develop good habits and reach your goals. Reminders when needed, statistics, habit analysis with charts, so you can easily achieve your goals."
+        ],
+        "appStoreId": "6443881739",
+        "screenshots": [2, 3, 4],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-10-20",
+        "saleDate": "2022-11-18",
+        "salePrice": "1000",
+        "gitHub": "https://github.com/sergeykushner/HabitTracker",
+        "flippa": [
+            "https://flippa.com/11314040-dflow-habit-tracker"
+        ]
+    },
+    {
+        "id": "pdf-resume-creator",
+        "displayName": "PDFRC",
+        "title": "PDFRC - PDF Resume Creator",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1636852538",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-07-28",
+        "saleDate": "2022-11-01",
+        "salePrice": "1000",
+        "gitHub": "https://github.com/sergeykushner/PDFResumeCreator",
+        "flippa": [
+            "https://flippa.com/11257445-pdf-resume-creator-pdfrc",
+            "https://flippa.com/11278292-pdf-resume-creator-pdfrc",
+            "https://flippa.com/11312707-pdf-resume-creator-pdfrc"
+        ]
+    },
+    {
+        "id": "fasting",
+        "displayName": "IFX",
+        "title": "IFX - Intermittent Fasting",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "6444643252",
+        "screenshots": [2, 3, 4],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-11-29",
+        "saleDate": "2023-01-17",
+        "salePrice": "1000",
+        "gitHub": "https://github.com/sergeykushner/Fasting",
+        "flippa": [
+            "https://flippa.com/11344167-ifx-intermittent-fasting"
+        ]
+    },
+    {
+        "id": "movie-watchlist",
+        "displayName": "MWLX",
+        "title": "MWLX - Movie Watchlist",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Find out about Popular Movies, Now Playing Movies, Best and Top Rated Movies, Upcoming Movies.",
+            "Add movies to your wishlist or to your personal watch library."
+        ],
+        "appStoreId": "1658692845",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-12-08",
+        "saleDate": "2023-03-28",
+        "salePrice": "765",
+        "gitHub": "https://github.com/sergeykushner/MovieWatchlist",
+        "flippa": [
+            "https://flippa.com/11413360-mwlx-movie-watchlist"
+        ]
+    },
+    {
+        "id": "fuel-tracker",
+        "displayName": "FUELX",
+        "title": "FUELX - Fuel Fill Tracker",
+        "subtitle": "Convenient refueling history",
+        "metaDescription": "",
+        "fullDescription": [
+            "Track your vehicle mileage and your fuel costs. Get Statistics. Easy to Use."
+        ],
+        "appStoreId": "6446119609",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2023-03-08",
+        "saleDate": "2023-03-12",
+        "salePrice": "850",
+        "gitHub": "https://github.com/sergeykushner/FuelTracker",
+        "flippa": [
+            "https://flippa.com/11427928-fuelx-fuel-fill-tracker"
         ]
     },
     {
