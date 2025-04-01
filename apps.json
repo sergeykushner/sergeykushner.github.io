@@ -181,6 +181,50 @@
         ]
     },
     {
+        "id": "run-sunta",
+        "displayName": "Run Santa",
+        "title": "Run Santa Run! - XMAS Game",
+        "subtitle": "",
+        "promoText": "Merry Christmas and a Happy New Year to everyone!",
+        "metaDescription": "",
+        "fullDescription": [
+            "Collect as many gifts as possible with Santa constantly accelerating in a hurry!"
+        ],
+        "appStoreId": "1545825875",
+        "screenshots": [1],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-12-22",
+        "saleDate": "2021-01-07",
+        "salePrice": "125",
+        "gitHub": "https://github.com/sergeykushner/RunX",
+        "flippa": [
+            "https://flippa.com/10747445-run-santa-run-xmas-game"
+        ]
+    },
+    {
+        "id": "party-star",
+        "displayName": "Party Star",
+        "title": "Party Star - XMAS Party Game",
+        "subtitle": "Let's Play!",
+        "promoText": "Merry Christmas and a Happy New Year to everyone!",
+        "metaDescription": "",
+        "fullDescription": [
+            "In this game, you will have access to various categories in which you and your friends will have to complete tasks, answer questions and do some other actions."
+        ],
+        "appStoreId": "1544718858",
+        "screenshots": [0],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-12-22",
+        "saleDate": "2021-01-07",
+        "salePrice": "125",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
+    },
+    {
         "id": "crypto-bull",
         "displayName": "CryptoBull",
         "title": "CryptoBull - Cryptocurrencies",
