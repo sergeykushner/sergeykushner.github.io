@@ -158,6 +158,28 @@
         ]
     },
     {
+        "id": "dice-poker",
+        "displayName": "Yatzy",
+        "title": "Yatzy - Dice Poker Game",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "You play Yatzy with five dices. The game consists of thirteen turns. The goal is to score as many points as possible in all the required categories altogether. All categories in the list must be filled.",
+            "The game has a Leaderboard - you can compare your score with other players."
+        ],
+        "appStoreId": "1521476932",
+        "screenshots": [1, 2, 4],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-07-04",
+        "saleDate": "2020-09-09",
+        "salePrice": "210",
+        "gitHub": "https://github.com/sergeykushner/DicePoker",
+        "flippa": [
+            "https://flippa.com/10656537-yatzy-dice-poker-game"
+        ]
+    },
+    {
         "id": "post-creator",
         "displayName": "Postflix",
         "title": "Postflix",
