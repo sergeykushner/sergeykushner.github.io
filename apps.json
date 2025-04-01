@@ -250,6 +250,31 @@
         ]
     },
     {
+        "id": "margin-trading-calculator",
+        "displayName": "Margin Trading",
+        "title": "Margin Trading and Forex Pip",
+        "subtitle": "Leverage and pip calculator",
+        "metaDescription": "",
+        "fullDescription": [
+            "Convenient data calculation for margin trading with leverage.",
+            "Forex Pip Calculator."
+        ],
+        "appStoreId": "1566723167",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2021-05-10",
+        "saleDate": "2021-05-25",
+        "salePrice": "600",
+        "salePriceComment": "250 + 350",
+        "gitHub": "https://github.com/sergeykushner/MarginTradingCalculator",
+        "flippa": [
+            "https://flippa.com/11041801-margin-trading-calculator",
+            "https://flippa.com/10857343-margin-trading-calculator",
+            "https://flippa.com/11042517-margin-trading-calculator"
+        ]
+    },
+    {
         "id": "4-layers",
         "displayName": "4Levels Up",
         "title": "4Levels Up",
