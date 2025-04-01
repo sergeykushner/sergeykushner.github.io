@@ -1,5 +1,142 @@
 [
     {
+        "id": "template",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "screenshots": [1, 1, 1],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
+    },
+    {
+        "id": "strike-balls",
+        "displayName": "StrikeBalls",
+        "title": "StrikeBalls - Shoot balls",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "googlePlayId": "com.sergeykushner.strikemoji",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2019-12-09",
+        "saleDate": "2020-02-15",
+        "salePrice": "25",
+        "gitHub": "",
+        "flippa": [
+            "https://flippa.com/10375302-strikeballs-shoot-balls",
+            "https://flippa.com/10420729-strikeballs-shoot-balls"
+        ]
+    },
+    {
+        "id": "destroy-blocks",
+        "displayName": "DestroyBlocks",
+        "title": "Destroy Blocks Puzzle Match-3 Game",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Destroy blocks by collecting 3 or more blocks together.",
+            "Your task is to crush the blocks until they drop below the line. Blocks crumble code near 3 or more identical blocks. The more blocks you destroy at a time, the more points you get. Use a pickaxe to aim."
+        ],
+        "googlePlayId": "com.sergeykushner.destroyblocks",
+        "screenshots": [0],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-01-12",
+        "saleDate": "2020-02-15",
+        "salePrice": "20",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
+    },
+    {
+        "id": "poker",
+        "displayName": "Poker",
+        "title": "Poker - Texas Holdem",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "googlePlayId": "com.kushnerapps.poker",
+        "screenshots": [0],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-04-29",
+        "saleDate": "2020-04-29",
+        "salePrice": "0",
+        "gitHub": "",
+        "flippa": [
+            "https://flippa.com/10544445-poker-texas-holdem",
+            "https://flippa.com/10565057-poker-texas-holdem"
+        ]
+    },
+    {
+        "id": "evil-wasp",
+        "displayName": "Evil Wasp",
+        "title": "Evil Wasp",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Collect One Color Honeycombs in Groups or Rows over 3 and Get points for their Destruction."
+        ],
+        "googlePlayId": "com.kushnerapps.evilwasp",
+        "screenshots": [0],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-05-02",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
+    },
+    {
+        "id": "deep-atmos",
+        "displayName": "DeepAtmos",
+        "title": "DeepAtmos - Relax and Calm",
+        "subtitle": "Sounds for Relaxation and Calm",
+        "metaDescription": "",
+        "fullDescription": [
+            "Find inner balance and peace with your beautiful self in DeepAtmos.",
+            "Enjoy relaxing scenes:",
+            "- Dawn by the sea",
+            "- River",
+            "- Forest",
+            "- Thunderstorm",
+            "- Night in the park",
+            "- And others ..."
+        ],
+        "appStoreId": "1491683757",
+        "googlePlayId": "com.sergeykushner.deepatmos",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-02-01",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            "https://flippa.com/10375281-deepatmos-relaxing-sounds"
+        ]
+    },
+    {
         "id": "tetra-blocks-tower",
         "displayName": "TetraBlocks",
         "title": "TetraBlocks Tower",
@@ -21,24 +158,95 @@
         ]
     },
     {
-        "id": "template",
-        "displayName": "",
-        "title": "",
+        "id": "fit-hub",
+        "displayName": "FitHub",
+        "title": "FitHub - Fitness Workout Guide",
+        "subtitle": "Your personal trainer",
+        "promoText": "Your personal trainer for the price of a cup of coffee! No subscriptions or in-app purchases!",
+        "metaDescription": "",
+        "fullDescription": [
+            "All muscle groups. Large list of exercises. Detailed complete description of the implementation. Tips, Tricks, Recommendations."
+        ],
+        "appStoreId": "1539652734",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-11-12",
+        "saleDate": "2021-12-31",
+        "salePrice": "1050",
+        "gitHub": "https://github.com/sergeykushner/FitHub",
+        "flippa": [
+            "https://flippa.com/11042514-fithub-fitness-workout-guide",
+            "https://flippa.com/11032927-fithub-fitness-workout-guide"
+        ]
+    },
+    {
+        "id": "cross-route-tracker",
+        "displayName": "Cross Route Tracker",
+        "title": "Cross Route Tracker",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "- Quickly save the route the first time you explore it.",
+            "- Follow a saved route.",
+            "- Stamp the lap time on the route."
+        ],
+        "appStoreId": "1548895380",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2021-01-20",
+        "saleDate": "2021-03-04",
+        "salePrice": "80",
+        "gitHub": "https://github.com/sergeykushner/CrossRouteTracker",
+        "flippa": [
+            "https://flippa.com/10783554-cross-route-tracker",
+            "https://flippa.com/10773624-cross-route-tracker",
+            "https://flippa.com/10783556-cross-route-tracker"
+        ]
+    },
+    {
+        "id": "pomodoro-timer",
+        "displayName": "Tempus",
+        "title": "Tempus - Pomodoro Timer",
         "subtitle": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
-        "appStoreId": "",
-        "screenshots": [1, 1, 1],
+        "appStoreId": "1546340017",
+        "screenshots": [1, 2, 3],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
+        "releaseDate": "2020-12-28",
+        "saleDate": "2021-02-01",
+        "salePrice": "130",
+        "gitHub": "https://github.com/sergeykushner/Tempus",
         "flippa": [
-            ""
+            "https://flippa.com/10757963-tempus-pomodoro-timer",
+            "https://flippa.com/10773621-tempus-pomodoro-timer"
+        ]
+    },
+    {
+        "id": "poker-dealer",
+        "displayName": "Poker Dealer",
+        "title": "Poker Dealer and Assistant",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "The application shows when, who should place a bet and which one. As well as replacing and believes the players chips."
+        ],
+        "appStoreId": "1547568075",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2021-01-06",
+        "saleDate": "2021-01-30",
+        "salePrice": "100",
+        "gitHub": "https://github.com/sergeykushner/PokerDealer",
+        "flippa": [
+            "https://flippa.com/10757956-poker-dealer-and-assistant",
+            "https://flippa.com/10770089-poker-dealer-and-assistant"
         ]
     },
     {
@@ -82,8 +290,8 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-21",
-        "saleDate": "",
-        "salePrice": "",
+        "saleDate": "2021-10-15",
+        "salePrice": "150",
         "gitHub": "https://github.com/sergeykushner/CyberBlackJack",
         "flippa": [
             "https://flippa.com/10934221-cyber-blackjack"
@@ -124,8 +332,8 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-28",
-        "saleDate": "",
-        "salePrice": "",
+        "saleDate": "2021-10-15",
+        "salePrice": "150",
         "gitHub": "https://github.com/sergeykushner/CyberRoulette",
         "flippa": [
             "https://flippa.com/10924073-cyber-roulette-casino"
@@ -406,6 +614,8 @@
         "salePrice": "1250",
         "gitHub": "https://github.com/sergeykushner/CaloriesTracker",
         "flippa": [
+            "https://flippa.com/11520741-caloriex-calories-tracker",
+            "https://flippa.com/11388944-caloriex-calories-tracker",
             "https://flippa.com/11540427-caloriex-calories-tracker"
         ]
     },
