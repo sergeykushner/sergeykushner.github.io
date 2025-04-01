@@ -27,7 +27,10 @@ a {
 }
 
 .apps-app-icon,
-.app-icon img,
+.app-icon img {
+    color: rgb(0 0 0 / 5%);
+}
+
 .divider {
     color: rgb(0 0 0 / 15%);
 }
@@ -60,9 +63,12 @@ a {
         color: rgb(10 132 255);
         color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
     }
-    
+
     .apps-app-icon,
-    .app-icon img,
+    .app-icon img {
+        color: rgb(0 0 0);
+    }
+    
     .divider {
         color: rgb(255 255 255 / 25%);
     }
