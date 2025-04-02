@@ -4,20 +4,51 @@
         "displayName": "",
         "title": "",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "",
+        "googlePlayId": "",
         "screenshots": [1, 1, 1],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "",
         "saleDate": "",
         "salePrice": "",
+        "standartFlippaListingFee": [
+            ""
+        ],
+        "flippaSuccessFee": "",
         "gitHub": "",
         "flippa": [
             ""
+        ]
+    },
+    {
+        "id": "truth-or-dare",
+        "displayName": "Truth Or Dare",
+        "title": "Truth Or Dare Fun Party Game",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1445141782",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2018-12-02",
+        "saleDate": "2020-02-19",
+        "salePrice": "300",
+        "standartFlippaListingFee": [
+            "30"
+        ],
+        "flippaSuccessFee": "30",
+        "gitHub": "https://github.com/sergeykushner/TruthOrDare",
+        "flippa": [
+            "https://flippa.com/10422634-truth-or-dare-fun-party-game"
         ]
     },
     {
@@ -40,6 +71,37 @@
         "flippa": [
             "https://flippa.com/10375302-strikeballs-shoot-balls",
             "https://flippa.com/10420729-strikeballs-shoot-balls"
+        ]
+    },
+    {
+        "id": "fwe",
+        "displayName": "FWE",
+        "title": "FWE Fitness Workouts Exercises",
+        "subtitle": "Workout at home everyday",
+        "promoText": "Improve your form and achieve your goals in 30 days! Start today to see results and get in shape!",
+        "metaDescription": "",
+        "fullDescription": [
+            "Improve your form and achieve your goals in 30 days! Start today to see results and get in shape! Lose weight with minimal effort, you will see improvements in your form in 30 days.",
+            "Functional training diary. A guide to all basic exercises. Native user-friendly interface.",
+            "Some features of the application:",
+            "- Control your workouts.",
+            "- Convenient recording.",
+            "- Data from a previous workout is always visible when recording a new one.",
+            "- The history of your workouts.",
+            "- Ready-made training base.",
+            "- All exercises contain an illustration with a working group of muscles, a description of the implementation, tips and recommendations.",
+            "- Ability to create your own exercises and muscle groups."
+        ],
+        "appStoreId": "1491181496",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2019-12-11",
+        "saleDate": "2020-05-01",
+        "salePrice": "225",
+        "gitHub": "",
+        "flippa": [
+            "https://flippa.com/10422823-fwe-fitness-workouts-exercises"
         ]
     },
     {
@@ -182,11 +244,12 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-02-01",
-        "saleDate": "",
-        "salePrice": "",
+        "saleDate": "2020-02-10",
+        "salePrice": "80",
         "gitHub": "",
         "flippa": [
-            "https://flippa.com/10375281-deepatmos-relaxing-sounds"
+            "https://flippa.com/10375281-deepatmos-relaxing-sounds",
+            "https://flippa.com/10407559-deepatmos-relaxing-sounds"
         ]
     },
     {
