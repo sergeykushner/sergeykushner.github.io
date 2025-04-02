@@ -76,8 +76,8 @@
         "googlePlayId": "",
         "screenshots": [
             1,
-            1,
-            1
+            2,
+            3
         ],
         "email": "",
         "privacyUpdatedDate": "",
@@ -103,15 +103,21 @@
         "fullDescription": [
             "With a simple user-friendly design, Gym Assistant makes it easy to record your workouts, monitor progress, view your weight and reps history in exercises. If you have just started to train recently, you can always see the information on how to do the exercise correctly. And if you already have experience in training, you will be able to find something new, interesting tips and tricks.",
             "Features",
-            "• Record your workouts. Add additional training data (workout duration, your weight, notes).",
-            ""
+            "- Record your workouts. Add additional training data (workout duration, your weight, notes).",
+            "- View the history of all workouts. History to exercise.",
+            "- When recording exercise data (weight and reps) for each set, weight and repetitions from the previous workout are immediately displayed. This allows you to not be lazy and trying to do more.",
+            "- If you have routines - you can not create a new one, but simply select the previous one and click 'Repeat'.",
+            "- Easily edit exercises in your workout.",
+            "- View information on all exercises directly from the workout diary window.",
+            "- Information on all exercises for all muscle groups with a convenient search. The information contains the image of the exercise with the selection of a working muscle group. Technique of the exercise. Tips and tricks.",
+            "- If you do not find the exercise you need in the list, you can add new exercises."
         ],
         "appStoreId": "1360308194",
         "googlePlayId": "",
         "screenshots": [
             1,
-            1,
-            1
+            2,
+            3
         ],
         "email": "",
         "privacyUpdatedDate": "",
@@ -721,7 +727,8 @@
         "appStoreId": "1544718858",
         "googlePlayId": "",
         "screenshots": [
-            0
+            1,
+            2
         ],
         "email": "",
         "privacyUpdatedDate": "",
