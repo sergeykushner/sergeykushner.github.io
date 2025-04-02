@@ -11,7 +11,11 @@
         ],
         "appStoreId": "",
         "googlePlayId": "",
-        "screenshots": [1, 1, 1],
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "",
@@ -21,22 +25,188 @@
             ""
         ],
         "flippaSuccessFee": "",
-        "gitHub": "",
-        "flippa": [
+        "flippaLink": [
             ""
-        ]
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "santa-sp",
+        "displayName": "Santa SP",
+        "title": "Santa SP - stickers with Santa",
+        "subtitle": "Funny Santa.",
+        "promoText": "Add Christmas and New Year's mood to our correspondence. 16 high-quality stickers with Santa..",
+        "metaDescription": "",
+        "fullDescription": [
+            "Christmas and New Year stickers with a funny Santa!"
+        ],
+        "appStoreId": "1247572527",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-12-11",
+        "saleDate": "2020-02-25",
+        "salePrice": "15",
+        "standartFlippaListingFee": [
+            "0"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
+            "https://flippa.com/10422799-bloody-answers-stickers"
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "xmas-abc-sp",
+        "displayName": "XMAS ABC",
+        "title": "XMAS ABC - Christmas alphabet",
+        "subtitle": "Write Christmas trees",
+        "promoText": "Make Christmas communication brighter!",
+        "metaDescription": "",
+        "fullDescription": [
+            "The usual text messages are diverse, but they look boring. You can use stickers, but what they can say is not always in the sticker pack. With this sticker pack you can create any short text messages combining stickers into words.",
+            "Merry Christmas and Happy New Year!"
+        ],
+        "appStoreId": "1247547224",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-12-14",
+        "saleDate": "2020-02-25",
+        "salePrice": "15",
+        "standartFlippaListingFee": [
+            "0"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
+            "https://flippa.com/10422799-bloody-answers-stickers"
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "gym-assistant",
+        "displayName": "Gym Assistant",
+        "title": "Gym Assistant Fitness Workouts",
+        "subtitle": "Training diary, exercise guide",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "With a simple user-friendly design, Gym Assistant makes it easy to record your workouts, monitor progress, view your weight and reps history in exercises. If you have just started to train recently, you can always see the information on how to do the exercise correctly. And if you already have experience in training, you will be able to find something new, interesting tips and tricks.",
+            "Features",
+            "• Record your workouts. Add additional training data (workout duration, your weight, notes).",
+            ""
+        ],
+        "appStoreId": "1360308194",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2018-04-01",
+        "saleDate": "",
+        "salePrice": "",
+        "standartFlippaListingFee": [
+            ""
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "bloody-answers",
+        "displayName": "Bloody Answers",
+        "title": "Bloody Answers Stickers",
+        "subtitle": "Answers in a bloody style.",
+        "promoText": "Halloween is coming. Add some “horror” to your posts!",
+        "metaDescription": "",
+        "fullDescription": [
+            "Short popular messages and answers in a bloody style.",
+            "Stickers:",
+            "- LIKE",
+            "- DISLIKE",
+            "- HI",
+            "- OK",
+            "- YES",
+            "- NO",
+            "- ?",
+            "- !",
+            "- HA-HA",
+            "- BFF",
+            "- ZZZ",
+            "- LOL",
+            "- OMG",
+            "- 100",
+            "- FFFFFFFUUUUUUUU",
+            "- NOW!",
+            "- GOOD LUCK",
+            "- REALLY?",
+            "- WHAT’S THIS?",
+            "- HEART",
+            "- Love You",
+            "- SMILE",
+            "- GO!",
+            "- BYE",
+            "- UGH",
+            "- THANKS",
+            "- #",
+            "- Skull",
+            "- Happy Birthday",
+            "- Happy Halloween",
+            "Do you need any more stickers? Write what you need in the reviews and we will add."
+        ],
+        "appStoreId": "1438132492",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2018-10-10",
+        "saleDate": "2020-02-25",
+        "salePrice": "30",
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
+            "https://flippa.com/10422799-bloody-answers-stickers"
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "truth-or-dare",
         "displayName": "Truth Or Dare",
         "title": "Truth Or Dare Fun Party Game",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "1445141782",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2018-12-02",
@@ -45,33 +215,43 @@
         "standartFlippaListingFee": [
             "30"
         ],
-        "flippaSuccessFee": "30",
-        "gitHub": "https://github.com/sergeykushner/TruthOrDare",
-        "flippa": [
+        "flippaSuccessFee": "35",
+        "flippaLink": [
             "https://flippa.com/10422634-truth-or-dare-fun-party-game"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/TruthOrDare"
     },
     {
         "id": "strike-balls",
         "displayName": "StrikeBalls",
         "title": "StrikeBalls - Shoot balls",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
+        "appStoreId": "",
         "googlePlayId": "com.sergeykushner.strikemoji",
-        "screenshots": [1, 2, 3],
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2019-12-09",
         "saleDate": "2020-02-15",
         "salePrice": "25",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
+            ""
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
             "https://flippa.com/10375302-strikeballs-shoot-balls",
             "https://flippa.com/10420729-strikeballs-shoot-balls"
-        ]
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "fwe",
@@ -93,22 +273,32 @@
             "- Ability to create your own exercises and muscle groups."
         ],
         "appStoreId": "1491181496",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2019-12-11",
         "saleDate": "2020-05-01",
         "salePrice": "225",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "22",
+        "flippaLink": [
             "https://flippa.com/10422823-fwe-fitness-workouts-exercises"
-        ]
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "destroy-blocks",
         "displayName": "DestroyBlocks",
         "title": "Destroy Blocks Puzzle Match-3 Game",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Destroy blocks by collecting 3 or more blocks together.",
@@ -116,22 +306,29 @@
         ],
         "appStoreId": "",
         "googlePlayId": "com.sergeykushner.destroyblocks",
-        "screenshots": [0],
+        "screenshots": [
+            0
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-01-12",
         "saleDate": "2020-02-15",
         "salePrice": "20",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
             ""
-        ]
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "falling-bubbles",
         "displayName": "Falling Bubbles",
         "title": "Falling Bubbles Puzzle Match-3 Game",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Collect bubbles in groups of the same colors so that they burst and do not fall.",
@@ -139,38 +336,51 @@
         ],
         "appStoreId": "",
         "googlePlayId": "com.kushnerapps.fallingbubbles",
-        "screenshots": [0],
+        "screenshots": [
+            0
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-02-25",
         "saleDate": "2020-04-17",
         "salePrice": "60",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
+            ""
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
             "https://flippa.com/10469014-texas-hold-em-poker-casino-game-gold-edition"
-        ]
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "poker-1",
         "displayName": "Poker",
         "title": "Texas Hold’em Poker - Casino Game (Gold Edition)",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Texas Hold’em Poker."
         ],
         "appStoreId": "",
         "googlePlayId": "com.infoapp.covid",
-        "screenshots": [0],
+        "screenshots": [
+            0
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-03-20",
         "saleDate": "2020-04-17",
         "salePrice": "65",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "12",
+        "flippaLink": [
             "https://flippa.com/10469014-texas-hold-em-poker-casino-game-gold-edition"
-        ]
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "word-game-catch-letter",
@@ -188,45 +398,62 @@
             "- Skull Symbol : Game Over."
         ],
         "appStoreId": "1506780150",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-04-07",
         "saleDate": "2020-06-13",
         "salePrice": "150",
-        "gitHub": "https://github.com/sergeykushner/CatchLetter",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "15",
+        "flippaLink": [
             "https://flippa.com/10571997-catch-letter-word-game"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/CatchLetter"
     },
     {
         "id": "poker-2",
         "displayName": "Poker",
         "title": "Poker - Texas Holdem",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "",
         "googlePlayId": "com.kushnerapps.poker",
-        "screenshots": [0],
+        "screenshots": [
+            0
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-04-29",
         "saleDate": "2020-04-29",
         "salePrice": "0",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
             "https://flippa.com/10544445-poker-texas-holdem",
             "https://flippa.com/10565057-poker-texas-holdem"
-        ]
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "deep-atmos",
         "displayName": "DeepAtmos",
         "title": "DeepAtmos - Relax and Calm",
         "subtitle": "Sounds for Relaxation and Calm",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Find inner balance and peace with your beautiful self in DeepAtmos.",
@@ -240,65 +467,92 @@
         ],
         "appStoreId": "1491683757",
         "googlePlayId": "com.sergeykushner.deepatmos",
-        "screenshots": [1, 2, 3],
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-02-01",
         "saleDate": "2020-02-10",
         "salePrice": "80",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
+            ""
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
             "https://flippa.com/10375281-deepatmos-relaxing-sounds",
             "https://flippa.com/10407559-deepatmos-relaxing-sounds"
-        ]
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "evil-wasp",
         "displayName": "Evil Wasp",
         "title": "Evil Wasp",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Collect One Color Honeycombs in Groups or Rows over 3 and Get points for their Destruction."
         ],
+        "appStoreId": "",
         "googlePlayId": "com.kushnerapps.evilwasp",
-        "screenshots": [0],
+        "screenshots": [
+            0
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-05-02",
         "saleDate": "2020-05-15",
         "salePrice": "100",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "10",
+        "flippaLink": [
             "https://flippa.com/10545145-evil-wasp"
-        ]
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "tetra-blocks-tower",
         "displayName": "TetraBlocks",
         "title": "TetraBlocks Tower",
         "subtitle": "To the Moon. And Higher.",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Stack up the blocks as high as you can! Compete for the best score in the world!"
         ],
         "appStoreId": "1509733548",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-05-14",
         "saleDate": "2020-07-20",
         "salePrice": "500",
-        "gitHub": "https://github.com/sergeykushner/TetraBlocksTower",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "50",
+        "flippaLink": [
             "https://flippa.com/10619784-tetrablocks-tower"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/TetraBlocksTower"
     },
     {
         "id": "water-balance",
         "displayName": "DROPS",
         "title": "DROPS - Water Balance",
         "subtitle": "Tracker and Reminders",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "- Water consumption tracker.",
@@ -307,44 +561,64 @@
             "- Convenient management."
         ],
         "appStoreId": "1520365442",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020/06/26",
         "saleDate": "2020-08-30",
         "salePrice": "200",
-        "gitHub": "https://github.com/sergeykushner/WaterBalance",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "20",
+        "flippaLink": [
             "https://flippa.com/10656524-drops-water-balance"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/WaterBalance"
     },
     {
         "id": "dice-poker",
         "displayName": "Yatzy",
         "title": "Yatzy - Dice Poker Game",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "You play Yatzy with five dices. The game consists of thirteen turns. The goal is to score as many points as possible in all the required categories altogether. All categories in the list must be filled.",
             "The game has a Leaderboard - you can compare your score with other players."
         ],
         "appStoreId": "1521476932",
-        "screenshots": [1, 2, 4],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            4
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-07-04",
         "saleDate": "2020-09-09",
         "salePrice": "210",
-        "gitHub": "https://github.com/sergeykushner/DicePoker",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "21",
+        "flippaLink": [
             "https://flippa.com/10656537-yatzy-dice-poker-game"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/DicePoker"
     },
     {
         "id": "post-creator",
         "displayName": "Postflix",
         "title": "Postflix",
         "subtitle": "Creating posts and stories",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Functions:",
@@ -353,16 +627,25 @@
             "- Saving posts from Instagram."
         ],
         "appStoreId": "1534001538",
-        "screenshots": [4, 5, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            4,
+            5,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-10-03",
         "saleDate": "2020-11-12",
         "salePrice": "250",
-        "gitHub": "https://github.com/sergeykushner/Postflix",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "25",
+        "flippaLink": [
             "https://flippa.com/10707747-postflix"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/Postflix"
     },
     {
         "id": "fit-hub",
@@ -375,17 +658,26 @@
             "All muscle groups. Large list of exercises. Detailed complete description of the implementation. Tips, Tricks, Recommendations."
         ],
         "appStoreId": "1539652734",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-11-12",
         "saleDate": "2021-12-31",
         "salePrice": "1050",
-        "gitHub": "https://github.com/sergeykushner/FitHub",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "105",
+        "flippaLink": [
             "https://flippa.com/11042514-fithub-fitness-workout-guide",
             "https://flippa.com/11032927-fithub-fitness-workout-guide"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/FitHub"
     },
     {
         "id": "run-sunta",
@@ -398,16 +690,23 @@
             "Collect as many gifts as possible with Santa constantly accelerating in a hurry!"
         ],
         "appStoreId": "1545825875",
-        "screenshots": [1],
+        "googlePlayId": "",
+        "screenshots": [
+            1
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-12-22",
         "saleDate": "2021-01-07",
         "salePrice": "125",
-        "gitHub": "https://github.com/sergeykushner/RunX",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "25",
+        "flippaLink": [
             "https://flippa.com/10747445-run-santa-run-xmas-game"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/RunX"
     },
     {
         "id": "party-star",
@@ -420,22 +719,30 @@
             "In this game, you will have access to various categories in which you and your friends will have to complete tasks, answer questions and do some other actions."
         ],
         "appStoreId": "1544718858",
-        "screenshots": [0],
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-12-22",
         "saleDate": "2021-01-07",
         "salePrice": "125",
-        "gitHub": "",
-        "flippa": [
+        "standartFlippaListingFee": [
             ""
-        ]
+        ],
+        "flippaSuccessFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
     },
     {
         "id": "crypto-bull",
         "displayName": "CryptoBull",
         "title": "CryptoBull - Cryptocurrencies",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Multifunctional application for managing your cryptocurrencies and mining.",
@@ -445,22 +752,32 @@
             "- News."
         ],
         "appStoreId": "1546906399",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-01-13",
         "saleDate": "2021-03-20",
         "salePrice": "1250",
-        "gitHub": "https://github.com/sergeykushner/CryptoBull",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15"
+        ],
+        "flippaSuccessFee": "125",
+        "flippaLink": [
             "https://flippa.com/10803578-cryptobull-cryptocurrencies"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/CryptoBull"
     },
     {
         "id": "cross-route-tracker",
         "displayName": "Cross Route Tracker",
         "title": "Cross Route Tracker",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "- Quickly save the route the first time you explore it.",
@@ -468,93 +785,137 @@
             "- Stamp the lap time on the route."
         ],
         "appStoreId": "1548895380",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-01-20",
         "saleDate": "2021-03-04",
         "salePrice": "80",
-        "gitHub": "https://github.com/sergeykushner/CrossRouteTracker",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15",
+            "7"
+        ],
+        "flippaSuccessFee": "8",
+        "flippaLink": [
             "https://flippa.com/10783554-cross-route-tracker",
             "https://flippa.com/10773624-cross-route-tracker",
             "https://flippa.com/10783556-cross-route-tracker"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/CrossRouteTracker"
     },
     {
         "id": "pomodoro-timer",
         "displayName": "Tempus",
         "title": "Tempus - Pomodoro Timer",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "1546340017",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-12-28",
         "saleDate": "2021-02-01",
         "salePrice": "130",
-        "gitHub": "https://github.com/sergeykushner/Tempus",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15",
+            "7"
+        ],
+        "flippaSuccessFee": "13",
+        "flippaLink": [
             "https://flippa.com/10757963-tempus-pomodoro-timer",
             "https://flippa.com/10773621-tempus-pomodoro-timer"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/Tempus"
     },
     {
         "id": "poker-dealer",
         "displayName": "Poker Dealer",
         "title": "Poker Dealer and Assistant",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "The application shows when, who should place a bet and which one. As well as replacing and believes the players chips."
         ],
         "appStoreId": "1547568075",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-01-06",
         "saleDate": "2021-01-30",
         "salePrice": "100",
-        "gitHub": "https://github.com/sergeykushner/PokerDealer",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15",
+            "7"
+        ],
+        "flippaSuccessFee": "15",
+        "flippaLink": [
             "https://flippa.com/10757956-poker-dealer-and-assistant",
             "https://flippa.com/10770089-poker-dealer-and-assistant"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/PokerDealer"
     },
     {
         "id": "margin-trading-calculator",
         "displayName": "Margin Trading",
         "title": "Margin Trading and Forex Pip",
         "subtitle": "Leverage and pip calculator",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Convenient data calculation for margin trading with leverage.",
             "Forex Pip Calculator."
         ],
         "appStoreId": "1566723167",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-05-10",
         "saleDate": "2021-05-25",
         "salePrice": "600",
-        "salePriceComment": "250 + 350",
-        "gitHub": "https://github.com/sergeykushner/MarginTradingCalculator",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15",
+            "15"
+        ],
+        "flippaSuccessFee": "60",
+        "flippaLink": [
             "https://flippa.com/11041801-margin-trading-calculator",
             "https://flippa.com/10857343-margin-trading-calculator",
             "https://flippa.com/11042517-margin-trading-calculator"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/MarginTradingCalculator",
+        "salePriceComment": "250 + 350"
     },
     {
         "id": "4-layers",
         "displayName": "4Levels Up",
         "title": "4Levels Up",
         "subtitle": "Rise Up First!",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Rules of the game:",
@@ -565,366 +926,540 @@
             "If 4 levels are built, it is impossible to install your character on them."
         ],
         "appStoreId": "1574095272",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-06-28",
         "saleDate": "2021-08-05",
         "salePrice": "150",
-        "gitHub": "https://github.com/sergeykushner/4LayersGame",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15",
+            "7"
+        ],
+        "flippaSuccessFee": "15",
+        "flippaLink": [
             "https://flippa.com/10891398-4levels-up",
             "https://flippa.com/10901374-4levels-up"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/4LayersGame"
     },
     {
         "id": "cyber-blackjack",
         "displayName": "Cyber Blackjack",
         "title": "Cyber Blackjack",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "1582157506",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-21",
         "saleDate": "2021-10-15",
         "salePrice": "150",
-        "gitHub": "https://github.com/sergeykushner/CyberBlackJack",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15",
+            "7"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/10934221-cyber-blackjack"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/CyberBlackJack"
     },
     {
         "id": "lucky-diamonds",
         "displayName": "Lucky Diamonds",
         "title": "Lucky Diamonds",
         "subtitle": "Cyberpunk Style",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Try your luck. Match 3 cyber diamonds in a row - get the Jackpot!"
         ],
         "appStoreId": "1582774225",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-25",
         "saleDate": "2022-04-30",
         "salePrice": "115",
-        "gitHub": "https://github.com/sergeykushner/LuckyDiamonds",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29",
+            "14"
+        ],
+        "flippaSuccessFee": "11",
+        "flippaLink": [
             "https://flippa.com/11178688-lucky-diamonds"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/LuckyDiamonds"
     },
     {
         "id": "cyber-roulette",
         "displayName": "Cyber Roulette",
         "title": "Cyber Roulette Casino",
         "subtitle": "Cyberpunk Style",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Play unusual roulette with a completely new design in Cyberpunk style! Good luck!"
         ],
         "appStoreId": "1581817561",
-        "screenshots": [1],
+        "googlePlayId": "",
+        "screenshots": [
+            1
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-28",
         "saleDate": "2021-10-15",
         "salePrice": "150",
-        "gitHub": "https://github.com/sergeykushner/CyberRoulette",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "15",
+            "7"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/10924073-cyber-roulette-casino"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/CyberRoulette"
     },
     {
         "id": "expense-tracker",
         "displayName": "ExpenseHub",
         "title": "ExpenseHub",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Simple, convenient and minimalist expense tracker."
         ],
         "appStoreId": "1610305735",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-02-16",
         "saleDate": "2022-04-29",
         "salePrice": "260",
-        "gitHub": "https://github.com/sergeykushner/ExpenseTracker",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29",
+            "14"
+        ],
+        "flippaSuccessFee": "26",
+        "flippaLink": [
             "https://flippa.com/11184278-expensehub"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/ExpenseTracker"
     },
     {
         "id": "next-show",
         "displayName": "NextShow",
         "title": "NextShow - Your TV Shows",
         "subtitle": "Track Your Favorite TV Shows",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Are you tired of constantly checking multiple streaming services to see if there's a new episode of your favorite TV show? Our app makes it easy to stay up-to-date on all your favorite shows. With NextShow, you can select the shows you want to follow, and we'll notify you as soon as a new episode becomes available on any streaming service. No more missed episodes or wasted time checking different apps. Download NextShow now and never miss an episode again."
         ],
         "appStoreId": "1610528984",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-02-17",
         "saleDate": "2022-03-05",
         "salePrice": "500",
-        "gitHub": "https://github.com/sergeykushner/NextShow",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "50",
+        "flippaLink": [
             "https://flippa.com/11128926-nextshow-your-tv-shows"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/NextShow"
     },
     {
         "id": "period-tracker",
         "displayName": "AVE",
         "title": "AVE - Private Period Tracker",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "A tracker in which you can record your periods and get data on the days of ovulation, fertility, chance of getting pregnant."
         ],
         "appStoreId": "1632582167",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-03",
         "saleDate": "2022-07-26",
         "salePrice": "500",
-        "gitHub": "https://github.com/sergeykushner/PeriodTracker",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "50",
+        "flippaLink": [
             "https://flippa.com/11243838-ave-private-period-tracker"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/PeriodTracker"
     },
     {
         "id": "word-game-woords",
         "displayName": "WOORDS",
         "title": "WOORDS - Words Game",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "1632805268",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-05",
         "saleDate": "2022-11-11",
         "salePrice": "750",
-        "gitHub": "https://github.com/sergeykushner/WordGame",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29",
+            "14",
+            "14"
+        ],
+        "flippaSuccessFee": "75",
+        "flippaLink": [
             "https://flippa.com/11246430-woords-words-game",
             "https://flippa.com/11279329-woords-words-game",
             "https://flippa.com/11310881-woords-words-game"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/WordGame"
     },
     {
         "id": "nft-creator",
         "displayName": "NFTX",
         "title": "NFTX - NFT Collection Creator",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Create your own NFT Collections from your images or create your own CryptoPunks."
         ],
         "appStoreId": "1633797900",
-        "screenshots": [1, 2, 4],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            4
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-10",
         "saleDate": "2022-08-21",
         "salePrice": "1250",
-        "gitHub": "https://github.com/sergeykushner/NFTCreator",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "125",
+        "flippaLink": [
             "https://flippa.com/11248496-nftx-nft-collection-creator"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/NFTCreator"
     },
     {
         "id": "charger-animations",
         "displayName": "CHARGEX",
         "title": "CHARGEX - Charging Animation",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "1633977789",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-12",
         "saleDate": "2022-09-03",
         "salePrice": "800",
-        "gitHub": "https://github.com/sergeykushner/Charger",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11248506-chargex-charging-animation"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/Charger"
     },
     {
         "id": "open-sea-wallet-portfolio",
         "displayName": "OSW",
         "title": "OSW - OpenSea Wallet Portfolio",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Add any wallets connected to the OpenSea and view the portfolio balance and NFTs in this portfolio."
         ],
         "appStoreId": "1635511901",
-        "screenshots": [1],
+        "googlePlayId": "",
+        "screenshots": [
+            1
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-20",
         "saleDate": "2022-08-12",
         "salePrice": "1600",
-        "gitHub": "https://github.com/sergeykushner/OpenSea",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "150",
+        "flippaLink": [
             "https://flippa.com/11257124-opensea-wallet-portfolio-osw"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/OpenSea"
     },
     {
         "id": "habit-tracker",
         "displayName": "DFLOW",
         "title": "DFLOW - Habit Tracker",
         "subtitle": "Daily routines and statistics",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "DFLOW is a habit tracking app that will help you develop good habits and reach your goals. Reminders when needed, statistics, habit analysis with charts, so you can easily achieve your goals."
         ],
         "appStoreId": "6443881739",
-        "screenshots": [2, 3, 4],
+        "googlePlayId": "",
+        "screenshots": [
+            2,
+            3,
+            4
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-10-20",
         "saleDate": "2022-11-18",
         "salePrice": "1000",
-        "gitHub": "https://github.com/sergeykushner/HabitTracker",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "100",
+        "flippaLink": [
             "https://flippa.com/11314040-dflow-habit-tracker"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/HabitTracker"
     },
     {
         "id": "pdf-resume-creator",
         "displayName": "PDFRC",
         "title": "PDFRC - PDF Resume Creator",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "1636852538",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-28",
         "saleDate": "2022-11-01",
         "salePrice": "1000",
-        "gitHub": "https://github.com/sergeykushner/PDFResumeCreator",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "100",
+        "flippaLink": [
             "https://flippa.com/11257445-pdf-resume-creator-pdfrc",
             "https://flippa.com/11278292-pdf-resume-creator-pdfrc",
             "https://flippa.com/11312707-pdf-resume-creator-pdfrc"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/PDFResumeCreator"
     },
     {
         "id": "fasting",
         "displayName": "IFX",
         "title": "IFX - Intermittent Fasting",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "6444643252",
-        "screenshots": [2, 3, 4],
+        "googlePlayId": "",
+        "screenshots": [
+            2,
+            3,
+            4
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-11-29",
         "saleDate": "2023-01-17",
         "salePrice": "1000",
-        "gitHub": "https://github.com/sergeykushner/Fasting",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "39"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11344167-ifx-intermittent-fasting"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/Fasting"
     },
     {
         "id": "movie-watchlist",
         "displayName": "MWLX",
         "title": "MWLX - Movie Watchlist",
         "subtitle": "",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Find out about Popular Movies, Now Playing Movies, Best and Top Rated Movies, Upcoming Movies.",
             "Add movies to your wishlist or to your personal watch library."
         ],
         "appStoreId": "1658692845",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-12-08",
         "saleDate": "2023-03-28",
         "salePrice": "765",
-        "gitHub": "https://github.com/sergeykushner/MovieWatchlist",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "39",
+            "19"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11413360-mwlx-movie-watchlist"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/MovieWatchlist"
     },
     {
         "id": "fuel-tracker",
         "displayName": "FUELX",
         "title": "FUELX - Fuel Fill Tracker",
         "subtitle": "Convenient refueling history",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Track your vehicle mileage and your fuel costs. Get Statistics. Easy to Use."
         ],
         "appStoreId": "6446119609",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-03-08",
         "saleDate": "2023-03-12",
         "salePrice": "850",
-        "gitHub": "https://github.com/sergeykushner/FuelTracker",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "39"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11427928-fuelx-fuel-fill-tracker"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/FuelTracker"
     },
     {
         "id": "calories-tracker",
         "displayName": "CALORIEX",
         "title": "CALORIEX - Calories Tracker",
         "subtitle": "Keep Track of Nutrition",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "1668551383",
-        "screenshots": [1, 4, 5],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            4,
+            5
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-01-28",
         "saleDate": "2023-07-20",
         "salePrice": "1250",
-        "gitHub": "https://github.com/sergeykushner/CaloriesTracker",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "39"
+        ],
+        "flippaSuccessFee": "125",
+        "flippaLink": [
             "https://flippa.com/11520741-caloriex-calories-tracker",
             "https://flippa.com/11388944-caloriex-calories-tracker",
             "https://flippa.com/11540427-caloriex-calories-tracker"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/CaloriesTracker"
     },
     {
         "id": "care-symbols",
         "displayName": "Clothtag",
         "title": "Clothtag",
         "subtitle": "Wardrobe Companion",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Discover the ultimate clothing care companion with Clothtag – your all-in-one guide to understanding and preserving your favorite garments. Seamlessly organize your wardrobe, decipher care symbols, and stay on top of clothing maintenance effortlessly.",
@@ -941,22 +1476,32 @@
             "Whether you're a fashion enthusiast or just want to make sure your clothes stand the test of time, Clothtag is your trusted companion for clothing care. Download now and make garment care effortless and enjoyable!"
         ],
         "appStoreId": "6461417294",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-09-09",
         "saleDate": "2023-09-26",
         "salePrice": "750",
-        "gitHub": "https://github.com/sergeykushner/CareSymbols",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "49"
+        ],
+        "flippaSuccessFee": "75",
+        "flippaLink": [
             "https://flippa.com/11635973-clothtag"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/CareSymbols"
     },
     {
         "id": "ai-writer",
         "displayName": "AIWL",
         "title": "AI Writer - Easy Text Creation",
         "subtitle": "Creating stories, poems, songs",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Unleash your creativity with AI Writer, the ultimate tool for generating and saving captivating text compositions! Whether you're crafting poems, composing songs, or creating immersive stories, AI Writer serves as your creative companion, providing an array of features to ignite your imagination.",
@@ -970,44 +1515,66 @@
             "Unlock your writing potential and transform your ideas into beautifully crafted compositions. Explore the world of words with AI Writer — where creativity knows no bounds!"
         ],
         "appStoreId": "6470300071",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-11-01",
         "saleDate": "2024-03-04",
         "salePrice": "700",
-        "gitHub": "https://github.com/sergeykushner/AIWriter",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "49",
+            "14"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11660162-aiwl-ai-writer-of-lyrics"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/AIWriter"
     },
     {
         "id": "assets",
         "displayName": "Assets",
         "title": "Assets - Money, Goals, Stuff",
         "subtitle": "Organize Everything",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             ""
         ],
         "appStoreId": "6476966560",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-02-23",
         "saleDate": "2024-05-09",
         "salePrice": "575",
-        "gitHub": "https://github.com/sergeykushner/Assets",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29",
+            "14"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11709626-assets-money-goals-stuff",
             "https://flippa.com/11734676-assets-money-goals-stuff"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/Assets"
     },
     {
         "id": "birthdays",
         "displayName": "Birthdays",
         "title": "Birthdays - All Time Intervals",
         "subtitle": "More Birthdays!",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Stay organized and never miss a beat with Birthdays, your go-to app for tracking time intervals since important dates! Whether it's birthdays, anniversaries, or special occasions, Birthdays helps you keep track of time passed with ease. Never lose track of time again! Download Birthdays now and start tracking time intervals in style!",
@@ -1017,43 +1584,63 @@
             "Privacy and Security: Rest assured that your data is safe and secure. Birthdays prioritizes user privacy and data protection."
         ],
         "appStoreId": "6478440784",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-02-26",
         "saleDate": "2024-05-21",
         "salePrice": "355",
-        "gitHub": "https://github.com/sergeykushner/Birthdays",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "35",
+        "flippaLink": [
             "https://flippa.com/11734760-birthdays-all-time-intervals"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/Birthdays"
     },
     {
         "id": "avoid-collision",
         "displayName": "Dodge Zone",
         "title": "Dodge Zone",
         "subtitle": "Last the longest! Be a Leader!",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Get ready for an exhilarating adventure in Dodge Zone! Your goal is to avoid collisions with obstacles and survive as long as possible. Only the fastest and most agile players will achieve the highest scores! The game gets progressively harder the longer you play, testing your reflexes and strategic thinking. Compete with players worldwide and climb to the top of the leaderboard."
         ],
         "appStoreId": "6532621925",
-        "screenshots": [1, 2, 3],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-07-16",
         "saleDate": "2024-08-09",
         "salePrice": "500",
-        "gitHub": "https://github.com/sergeykushner/AvoidCollision",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11768176-dodge-zone"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/AvoidCollision"
     },
     {
         "id": "cipheroji",
         "displayName": "Cipheroji",
         "title": "Cipheroji - Encryption & Emoji",
         "subtitle": "Encrypting text to emoji",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Cipheroji is a unique and fun way to encrypt your text. Transform your text into a series of emojis, providing an extra layer of encryption to keep your communications private and secure with the most reliable AES-256 encryption.",
@@ -1066,24 +1653,35 @@
             "Privacy and Security - Your privacy is our top priority. All encryption and decryption processes are performed locally on your device, ensuring that your texts remain secure and private."
         ],
         "appStoreId": "6590630312",
-        "screenshots": [1, 2, 3],
-        "productHunt": "<a href=\"https://www.producthunt.com/posts/cipheroji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-cipheroji\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=486550&theme=light&t=1743406173961\" alt=\"Cipheroji - Encrypting text to emoji | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-08-10",
         "saleDate": "2024-11-15",
         "salePrice": "250",
-        "gitHub": "https://github.com/sergeykushner/Cipheroji",
-        "flippa": [
+        "standartFlippaListingFee": [
+           "29",
+           "14"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11781517-cipheroji-encryption-emoji",
             "https://flippa.com/11828100-cipheroji-encryption-emoji"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/Cipheroji",
+        "productHuntBadge": "<a href=\"https://www.producthunt.com/posts/cipheroji?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-cipheroji\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=486550&theme=light&t=1743406173961\" alt=\"Cipheroji - Encrypting text to emoji | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
     },
     {
         "id": "brown-noise",
         "displayName": "Brownoise",
         "title": "Brownoise - True Brown Noise",
         "subtitle": "Relax, Focus, Sleep, Health",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "Immerse yourself in the soothing sounds of Brown Noise with our innovative Brownoise app. Designed to help you relax, concentrate, and sleep more soundly, this app offers a simple yet powerful audio experience.",
@@ -1094,23 +1692,33 @@
             "Transform your auditory environment and enhance your daily life with the calming sounds of brown noise. Download now and experience a new level of relaxation, focus, and sleep."
         ],
         "appStoreId": "6737122066",
-        "screenshots": [1, 2, 3],
-        "productHunt": "<a href=\"https://www.producthunt.com/posts/brownoise?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-brownoise\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=539066&theme=light&t=1743405853525\" alt=\"Brownoise - Relax, Focus, Sleep, Health | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-10-24",
         "saleDate": "2024-11-15",
         "salePrice": "250",
-        "gitHub": "https://github.com/sergeykushner/BrownNoise",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "0"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             ""
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/BrownNoise",
+        "productHuntBadge": "<a href=\"https://www.producthunt.com/posts/brownoise?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-brownoise\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=539066&theme=light&t=1743405853525\" alt=\"Brownoise - Relax, Focus, Sleep, Health | Product Hunt\" style=\"width: 250px; height: 54px;\" width=\"250\" height=\"54\" /></a>"
     },
     {
         "id": "quit-smoking",
         "displayName": "QST",
         "title": "QST - Quit Smoking Tracker",
         "subtitle": "Smoke-Free Life Monitoring",
+        "promoText": "",
         "metaDescription": "",
         "fullDescription": [
             "QST is your comprehensive guide to quitting smoking, with easy-to-track progress, motivational milestones, and financial insights that highlight the benefits of your journey to quit smoking. Track how long you've been smoke-free, see how much you've saved, and monitor your health improvements over time.",
@@ -1120,16 +1728,25 @@
             "QST is more than just a tracker; it's your partner in leading a healthier, smoke-free life. Quit smoking, save money, and rediscover your best self with QST!"
         ],
         "appStoreId": "6738115679",
-        "screenshots": [1, 2, 4],
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            4
+        ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-11-13",
         "saleDate": "2024-11-15",
         "salePrice": "250",
-        "gitHub": "https://github.com/sergeykushner/QuitSmoking",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "0"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             ""
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/QuitSmoking"
     },
     {
         "id": "time-capsule",
@@ -1151,16 +1768,25 @@
             "Get Capsula today and start preserving your memories for the future!"
         ],
         "appStoreId": "6740265085",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "email": "hares.picky-9o@icloud.com",
+        "privacyUpdatedDate": "January 10, 2025",
         "releaseDate": "2025-01-25",
         "saleDate": "2025-02-25",
         "salePrice": "1100",
-        "screenshots": [1, 2, 3],
-        "productHunt": "<a href=\"https://www.producthunt.com/posts/capsula-digital-time-capsule?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-capsula-digital-time-capsule\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=775257&theme=light&t=1736666904592\" alt=\"Capsula - Digital Time Capsule - Save and lock text and images | Product Hunt\" /></a>",
-        "email": "hares.picky-9o@icloud.com",
-        "privacyUpdatedDate": "January 10, 2025",
-        "gitHub": "https://github.com/sergeykushner/TimeCapsule",
-        "flippa": [
+        "standartFlippaListingFee": [
+            "29"
+        ],
+        "flippaSuccessFee": "0",
+        "flippaLink": [
             "https://flippa.com/11879597-capsula-digital-time-capsule"
-        ]
+        ],
+        "gitHubLink": "https://github.com/sergeykushner/TimeCapsule",
+        "productHuntBadge": "<a href=\"https://www.producthunt.com/posts/capsula-digital-time-capsule?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-capsula-digital-time-capsule\" target=\"_blank\"><img src=\"https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=775257&theme=light&t=1736666904592\" alt=\"Capsula - Digital Time Capsule - Save and lock text and images | Product Hunt\" /></a>"
     }
 ]
