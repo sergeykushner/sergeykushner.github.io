@@ -26,7 +26,8 @@ function updateMetaTags(app) {
     // Установка мета-тега для App Store с аргументом
     document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=myURL`);
     
-    const shareImageUrl = `https://sergeykushner.github.io/assets/apps/${app.id}/share.jpg`;
+    // Используем Cloudinary для изображения шаринга
+    const shareImageUrl = getShareImageUrl(app.id);
     document.getElementById('meta-og-image').setAttribute('content', shareImageUrl);
 }
 
@@ -34,13 +35,13 @@ function updateUI(app) {
     // Проверяем, использует ли пользователь темный режим
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
     
-    // Загрузка иконки приложения с учетом темного режима
-    const iconPath = `assets/apps/${app.id}/app-icon${prefersDarkMode ? '-dark' : ''}.png`;
-    document.getElementById("app-icon").src = iconPath;
+    // Загрузка иконки приложения с Cloudinary с учетом темного режима
+    const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
+    document.getElementById("app-icon").src = iconUrl;
     
     // Добавляем обработчик ошибки для иконки, чтобы использовать светлую версию, если темная не найдена
     document.getElementById("app-icon").onerror = function() {
-        this.src = `assets/apps/${app.id}/app-icon.png`;
+        this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
         this.onerror = null; // Предотвращаем бесконечный цикл
     };
     
@@ -53,15 +54,13 @@ function updateUI(app) {
 
     document.getElementById("app-store-link").href = `https://itunes.apple.com/us/app/id${app.appStoreId}`;
     
-    // Выбираем бейдж App Store в зависимости от темного режима
-    const appStoreBadgePath = prefersDarkMode 
-        ? "../../assets/badges/download-on-the-app-store-badge-white.svg" 
-        : "../../assets/badges/download-on-the-app-store-badge-black.svg";
-    document.querySelector("#app-store-link img").src = appStoreBadgePath;
+    // Выбираем бейдж App Store из Cloudinary в зависимости от темного режима
+    const appStoreBadgeUrl = getAppStoreBadgeUrl(prefersDarkMode);
+    document.querySelector("#app-store-link img").src = appStoreBadgeUrl;
     
     // Добавляем обработчик ошибки для бейджа, чтобы использовать светлую версию, если темная не найдена
     document.querySelector("#app-store-link img").onerror = function() {
-        this.src = "../../assets/badges/download-on-the-app-store-badge-black.svg";
+        this.src = getAppStoreBadgeUrl(false);
         this.onerror = null; // Предотвращаем бесконечный цикл
     };
     
@@ -92,21 +91,21 @@ function updateUI(app) {
     // Ограничиваем количество скриншотов в зависимости от устройства
     screenshotsToShow = screenshotsToShow.slice(0, maxScreenshots);
     
-    // Загружаем указанные скриншоты
+    // Загружаем указанные скриншоты из Cloudinary
     screenshotsToShow.forEach(screenNumber => {
         const screenshotDiv = document.createElement("div");
         screenshotDiv.className = "screenshot-item";
         
-        // Путь к скриншоту с учетом темного режима
-        const screenshotPath = `assets/apps/${app.id}/app-screen-${screenNumber}${prefersDarkMode ? '-dark' : ''}.png`;
+        // Получаем URL скриншота из Cloudinary с учетом темного режима
+        const screenshotUrl = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
         
         const img = document.createElement("img");
-        img.src = screenshotPath;
+        img.src = screenshotUrl;
         img.alt = `Screenshot ${screenNumber} of the app`;
         
         // Обработчик ошибки для использования светлой версии, если темная не найдена
         img.onerror = function() {
-            this.src = `assets/apps/${app.id}/app-screen-${screenNumber}.png`;
+            this.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', false);
             
             // Если и светлая версия не найдена, удаляем элемент
             this.onerror = function() {

@@ -1,0 +1,16 @@
+{
+  "name": "website",
+  "version": "1.0.0",
+  "description": "Personal website with Cloudinary integration",
+  "main": "app.js",
+  "scripts": {
+    "upload-assets": "node cloudinary-upload.js"
+  },
+  "dependencies": {
+    "cloudinary": "^1.40.0",
+    "dotenv": "^16.3.1",
+    "fs-extra": "^11.1.1"
+  },
+  "author": "Sergey Kushner",
+  "license": "MIT"
+} 
