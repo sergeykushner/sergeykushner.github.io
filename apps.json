@@ -52,6 +52,7 @@
             "Destroy blocks by collecting 3 or more blocks together.",
             "Your task is to crush the blocks until they drop below the line. Blocks crumble code near 3 or more identical blocks. The more blocks you destroy at a time, the more points you get. Use a pickaxe to aim."
         ],
+        "appStoreId": "",
         "googlePlayId": "com.sergeykushner.destroyblocks",
         "screenshots": [0],
         "email": "",
@@ -62,6 +63,51 @@
         "gitHub": "",
         "flippa": [
             ""
+        ]
+    },
+    {
+        "id": "falling-bubbles",
+        "displayName": "Falling Bubbles",
+        "title": "Falling Bubbles Puzzle Match-3 Game",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Collect bubbles in groups of the same colors so that they burst and do not fall.",
+            "You will find an exciting and at the same time simple game in which you have to shoot and thus collect bubbles into a group of the same color. If in a group of 3 or more bubbles with the same color, they burst and you are awarded points. The larger the group, the more points. A new line of bubbles is added periodically. Do not let the bubbles accumulate on the playing field and fall below the red line. Good game!"
+        ],
+        "appStoreId": "",
+        "googlePlayId": "com.kushnerapps.fallingbubbles",
+        "screenshots": [0],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-02-25",
+        "saleDate": "2020-04-17",
+        "salePrice": "60",
+        "gitHub": "",
+        "flippa": [
+            "https://flippa.com/10469014-texas-hold-em-poker-casino-game-gold-edition"
+        ]
+    },
+    {
+        "id": "poker-1",
+        "displayName": "Poker",
+        "title": "Texas Hold’em Poker - Casino Game (Gold Edition)",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Texas Hold’em Poker."
+        ],
+        "appStoreId": "",
+        "googlePlayId": "com.infoapp.covid",
+        "screenshots": [0],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-03-20",
+        "saleDate": "2020-04-17",
+        "salePrice": "65",
+        "gitHub": "",
+        "flippa": [
+            "https://flippa.com/10469014-texas-hold-em-poker-casino-game-gold-edition"
         ]
     },
     {
@@ -92,7 +138,7 @@
         ]
     },
     {
-        "id": "poker",
+        "id": "poker-2",
         "displayName": "Poker",
         "title": "Poker - Texas Holdem",
         "subtitle": "",
@@ -100,6 +146,7 @@
         "fullDescription": [
             ""
         ],
+        "appStoreId": "",
         "googlePlayId": "com.kushnerapps.poker",
         "screenshots": [0],
         "email": "",
@@ -156,11 +203,11 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-05-02",
-        "saleDate": "",
-        "salePrice": "",
+        "saleDate": "2020-05-15",
+        "salePrice": "100",
         "gitHub": "",
         "flippa": [
-            ""
+            "https://flippa.com/10545145-evil-wasp"
         ]
     },
     {
