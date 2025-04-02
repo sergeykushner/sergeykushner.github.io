@@ -73,6 +73,39 @@
         "gitHubLink": ""
     },
     {
+        "id": "voice-advisor",
+        "displayName": "VoiceAdvisor",
+        "title": "VoiceAdvisor",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Commands for Siri",
+            "- 35 categories",
+            "- More than 500 commands"
+        ],
+        "appStoreId": "1146995372",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            3,
+            5
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2016-09-10",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
         "id": "pokemon-go-guide",
         "displayName": "Guide for Pokemon GO",
         "title": "Guide for Pokemon GO",
@@ -96,6 +129,316 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2016-07-16",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "corn-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "pears-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "icecream-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "onion-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "strawberry-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "girls-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "boys-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "chost-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "memes-sp",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "garden-crash",
+        "displayName": "",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            1,
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "",
         "saleDate": "",
         "salePrice": "",
         "listingFee": [
