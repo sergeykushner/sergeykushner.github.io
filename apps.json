@@ -31,6 +31,83 @@
         "gitHubLink": ""
     },
     {
+        "id": "fit-advisor",
+        "displayName": "FitAdvisor",
+        "title": "FitAdvisor - your fitness instructor, guide to exercises and workout in the gym",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Do the exercises correctly. The most popular and effective exercises for training. The perfect guide for anyone who loves fitness and bodybuilding. Your personal trainer in your pocket!",
+            "- More than 100 exercises",
+            "- All muscle groups",
+            "- Illustration of the exercise showing all working muscles",
+            "- Detailed description of the exercise",
+            "- Advice on technology performance",
+            "- Recommendations for best results",
+            "- Various additional information about the exercise",
+            "With this app workout in the gym will become clearer and more effective."
+        ],
+        "appStoreId": "1107627168",
+        "googlePlayIdFree": "com.fitadvisorapp.fitadvisor",
+        "googlePlayIdPaid": "com.fitadvisorapp.fitadvisorpro",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2016-08-01",
+        "releaseDateAndroidFree": "2016-03-11",
+        "releaseDateAndroidPaid": "2016-06-09",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
+        "id": "pokemon-go-guide",
+        "displayName": "Guide for Pokemon GO",
+        "title": "Guide for Pokemon GO",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Guide for Pokemon GO - Guide to the Universe Pokemon. Be the best catcher! Personality 18 types of Pokemon with their detailed description.",
+            "Create a guide only launched in the near future will be added:",
+            "- All of the Pokemon pokedex",
+            "- Offensive Type Effectiveness.",
+            "- All the secrets and features in order to be the best catcher Pokemon.",
+            "- Localization of the most popular languages.",
+            "- Locations Pokemon."
+        ],
+        "appStoreId": "",
+        "googlePlayId": "com.kushnersergey.pokemongoadvisor",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2016-07-16",
+        "saleDate": "",
+        "salePrice": "",
+        "listingFee": [
+            ""
+        ],
+        "successFee": "",
+        "flippaLink": [
+            ""
+        ],
+        "gitHubLink": ""
+    },
+    {
         "id": "santa-sp",
         "displayName": "Santa SP",
         "title": "Santa SP - stickers with Santa",
