@@ -21,13 +21,18 @@ cloudinary.config({
 // Путь к директории с ассетами
 const assetsDir = path.join(__dirname, 'assets');
 
+// Корневая папка в Cloudinary для всех файлов сайта
+const CLOUDINARY_ROOT_FOLDER = 'website';
+
 // Функция для загрузки одного файла
 async function uploadFile(filePath, cloudinaryPath) {
-  console.log(`Загрузка ${filePath} на Cloudinary как ${cloudinaryPath}...`);
+  // Добавляем корневую папку к пути
+  const fullCloudinaryPath = `${CLOUDINARY_ROOT_FOLDER}/${cloudinaryPath}`;
+  console.log(`Загрузка ${filePath} на Cloudinary как ${fullCloudinaryPath}...`);
   
   try {
     const result = await cloudinary.uploader.upload(filePath, {
-      public_id: cloudinaryPath,
+      public_id: fullCloudinaryPath,
       overwrite: true
     });
     console.log(`Успешно загружено: ${result.secure_url}`);

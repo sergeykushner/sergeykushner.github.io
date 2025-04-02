@@ -1,6 +1,7 @@
 // Cloudinary конфигурация
-const CLOUDINARY_CLOUD_NAME = 'your-cloud-name';
+const CLOUDINARY_CLOUD_NAME = 'dh1nrzlvo';
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
+const CLOUDINARY_ROOT_FOLDER = 'website'; // Добавляем корневую папку
 
 /**
  * Генерирует URL для изображения из Cloudinary
@@ -15,8 +16,8 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     const darkModeSuffix = isDarkMode ? '-dark' : '';
     const fileName = `${imageName}${darkModeSuffix}.${extension}`;
     
-    // Структура пути в Cloudinary: /apps/{appId}/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/apps/${appId}/${fileName}`;
+    // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
 /**
@@ -25,7 +26,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
  * @returns {string} URL изображения для шэринга
  */
 function getShareImageUrl(appId) {
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/apps/${appId}/share.jpg`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share.jpg`;
 }
 
 /**
@@ -38,5 +39,5 @@ function getAppStoreBadgeUrl(isDarkMode = false) {
         ? 'download-on-the-app-store-badge-white' 
         : 'download-on-the-app-store-badge-black';
     
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/badges/${badgeName}.svg`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/badges/${badgeName}.svg`;
 } 
