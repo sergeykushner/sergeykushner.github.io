@@ -51,6 +51,10 @@ async function createFolders() {
   await createFolder(`${CLOUDINARY_ROOT_FOLDER}/badges`);
   await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
   await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/habit-tracker`);
+  
+  // Создаем папки для новых приложений
+  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/pokemon-go-guide`);
+  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/fit-advisor`);
 }
 
 // Функция для удаления всех файлов из папки в Cloudinary
@@ -90,6 +94,8 @@ async function clearFolder(folderPath) {
 async function clearAllFolders() {
   // Очищаем папки в обратном порядке (от самых вложенных к корневым)
   await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/habit-tracker`);
+  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/pokemon-go-guide`);
+  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/fit-advisor`);
   await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
   await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/badges`);
   await clearFolder(CLOUDINARY_ROOT_FOLDER);
@@ -184,6 +190,14 @@ async function uploadSelectedAssets() {
     // Загрузка ассетов для habit-tracker
     console.log("Загружаем ассеты для habit-tracker...");
     await uploadAppAssets('habit-tracker');
+    
+    // Загрузка ассетов для pokemon-go-guide
+    console.log("Загружаем ассеты для pokemon-go-guide...");
+    await uploadAppAssets('pokemon-go-guide');
+    
+    // Загрузка ассетов для fit-advisor
+    console.log("Загружаем ассеты для fit-advisor...");
+    await uploadAppAssets('fit-advisor');
     
     console.log('Загрузка выбранных ассетов успешно завершена!');
   } catch (error) {
