@@ -65,6 +65,33 @@
         ]
     },
     {
+        "id": "word-game-catch-letter",
+        "displayName": "Catch Letter",
+        "title": "Catch Letter - Word Game",
+        "subtitle": "Exercise Your Brain",
+        "promoText": "Improve your Memory and Test your Speedy Spelling Skills with the Catch Letter Word App!",
+        "metaDescription": "",
+        "fullDescription": [
+            "Collect the Word in 60 seconds.",
+            "For the collected Word you get Points. The number of points is equal to the number of Letters in the Word.",
+            "- Valid Letter : +1 seconds of time.",
+            "- Wrong Letter : -5 seconds of time.",
+            "- Emoji Symbol : +5 seconds of time.",
+            "- Skull Symbol : Game Over."
+        ],
+        "appStoreId": "1506780150",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-04-07",
+        "saleDate": "2020-06-13",
+        "salePrice": "150",
+        "gitHub": "https://github.com/sergeykushner/CatchLetter",
+        "flippa": [
+            "https://flippa.com/10571997-catch-letter-word-game"
+        ]
+    },
+    {
         "id": "poker",
         "displayName": "Poker",
         "title": "Poker - Texas Holdem",
@@ -567,7 +594,7 @@
         ]
     },
     {
-        "id": "word-game",
+        "id": "word-game-woords",
         "displayName": "WOORDS",
         "title": "WOORDS - Words Game",
         "subtitle": "",
