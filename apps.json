@@ -87,27 +87,6 @@
         ]
     },
     {
-        "id": "evil-wasp",
-        "displayName": "Evil Wasp",
-        "title": "Evil Wasp",
-        "subtitle": "",
-        "metaDescription": "",
-        "fullDescription": [
-            "Collect One Color Honeycombs in Groups or Rows over 3 and Get points for their Destruction."
-        ],
-        "googlePlayId": "com.kushnerapps.evilwasp",
-        "screenshots": [0],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2020-05-02",
-        "saleDate": "",
-        "salePrice": "",
-        "gitHub": "",
-        "flippa": [
-            ""
-        ]
-    },
-    {
         "id": "deep-atmos",
         "displayName": "DeepAtmos",
         "title": "DeepAtmos - Relax and Calm",
@@ -137,6 +116,27 @@
         ]
     },
     {
+        "id": "evil-wasp",
+        "displayName": "Evil Wasp",
+        "title": "Evil Wasp",
+        "subtitle": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Collect One Color Honeycombs in Groups or Rows over 3 and Get points for their Destruction."
+        ],
+        "googlePlayId": "com.kushnerapps.evilwasp",
+        "screenshots": [0],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-05-02",
+        "saleDate": "",
+        "salePrice": "",
+        "gitHub": "",
+        "flippa": [
+            ""
+        ]
+    },
+    {
         "id": "tetra-blocks-tower",
         "displayName": "TetraBlocks",
         "title": "TetraBlocks Tower",
@@ -155,6 +155,30 @@
         "gitHub": "https://github.com/sergeykushner/TetraBlocksTower",
         "flippa": [
             "https://flippa.com/10619784-tetrablocks-tower"
+        ]
+    },
+    {
+        "id": "water-balance",
+        "displayName": "DROPS",
+        "title": "DROPS - Water Balance",
+        "subtitle": "Tracker and Reminders",
+        "metaDescription": "",
+        "fullDescription": [
+            "- Water consumption tracker.",
+            "- Reminders.",
+            "- Sync with the Health app.",
+            "- Convenient management."
+        ],
+        "appStoreId": "1520365442",
+        "screenshots": [1, 2, 3],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020/06/26",
+        "saleDate": "2020-08-30",
+        "salePrice": "200",
+        "gitHub": "https://github.com/sergeykushner/WaterBalance",
+        "flippa": [
+            "https://flippa.com/10656524-drops-water-balance"
         ]
     },
     {
@@ -975,6 +999,7 @@
         "displayName": "Capsula",
         "title": "Capsula - Digital Time Capsule",
         "subtitle": "Add and lock text and images",
+        "promoText": "Lock your content.",
         "metaDescription": "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
         "fullDescription": [
             "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
