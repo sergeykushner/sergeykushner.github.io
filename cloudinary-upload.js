@@ -44,12 +44,13 @@ async function uploadBadges() {
   const badges = await fs.readdir(badgesDir);
   
   for (const badge of badges) {
+    if (badge === '.DS_Store') continue; // Пропускаем системные файлы
+
     const filePath = path.join(badgesDir, badge);
     const stat = await fs.stat(filePath);
     
     if (stat.isFile()) {
       const fileName = path.parse(badge).name;
-      const extension = path.parse(badge).ext.substring(1);
       await uploadFile(filePath, `badges/${fileName}`);
     }
   }
@@ -67,41 +68,34 @@ async function uploadAppAssets(appId) {
   const files = await fs.readdir(appDir);
   
   for (const file of files) {
+    if (file === '.DS_Store') continue; // Пропускаем системные файлы
+
     const filePath = path.join(appDir, file);
     const stat = await fs.stat(filePath);
     
     if (stat.isFile()) {
       const fileName = path.parse(file).name;
-      const extension = path.parse(file).ext.substring(1);
       await uploadFile(filePath, `apps/${appId}/${fileName}`);
     }
   }
 }
 
-// Основная функция для загрузки всех ассетов
-async function uploadAllAssets() {
+// Основная функция для загрузки выбранных ассетов
+async function uploadSelectedAssets() {
   try {
     // Загрузка всех бейджей
+    console.log("Загружаем бейджи...");
     await uploadBadges();
     
-    // Загрузка ассетов для всех приложений
-    const appsDir = path.join(assetsDir, 'apps');
-    const appFolders = await fs.readdir(appsDir);
+    // Загрузка ассетов для habit-tracker
+    console.log("Загружаем ассеты для habit-tracker...");
+    await uploadAppAssets('habit-tracker');
     
-    for (const appFolder of appFolders) {
-      const appPath = path.join(appsDir, appFolder);
-      const stat = await fs.stat(appPath);
-      
-      if (stat.isDirectory()) {
-        await uploadAppAssets(appFolder);
-      }
-    }
-    
-    console.log('Загрузка всех ассетов успешно завершена!');
+    console.log('Загрузка выбранных ассетов успешно завершена!');
   } catch (error) {
     console.error('Ошибка при загрузке ассетов:', error);
   }
 }
 
 // Вызов основной функции
-uploadAllAssets(); 
+uploadSelectedAssets(); 
