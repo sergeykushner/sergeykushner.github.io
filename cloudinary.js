@@ -14,7 +14,7 @@ const CLOUDINARY_ROOT_FOLDER = 'website'; // Добавляем корневую
 function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode = false) {
     // Добавляем суффикс темного режима, если нужно
     const darkModeSuffix = isDarkMode ? '-dark' : '';
-    const fileName = `${imageName}${darkModeSuffix}.${extension}`;
+    const fileName = `${imageName}${darkModeSuffix}`;
     
     // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
     return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
@@ -26,7 +26,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
  * @returns {string} URL изображения для шэринга
  */
 function getShareImageUrl(appId) {
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share.jpg`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share`;
 }
 
 /**
@@ -39,5 +39,5 @@ function getAppStoreBadgeUrl(isDarkMode = false) {
         ? 'download-on-the-app-store-badge-white' 
         : 'download-on-the-app-store-badge-black';
     
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/badges/${badgeName}.svg`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/badges/${badgeName}`;
 } 

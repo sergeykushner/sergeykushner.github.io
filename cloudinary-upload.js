@@ -24,16 +24,97 @@ const assetsDir = path.join(__dirname, 'assets');
 // Корневая папка в Cloudinary для всех файлов сайта
 const CLOUDINARY_ROOT_FOLDER = 'website';
 
+// Функция для создания папки в Cloudinary
+async function createFolder(folderPath) {
+  console.log(`Создание папки ${folderPath} в Cloudinary...`);
+  try {
+    const result = await cloudinary.api.create_folder(folderPath);
+    console.log(`Папка ${folderPath} создана успешно`);
+    return result;
+  } catch (error) {
+    // Если папка уже существует, это не ошибка
+    if (error.error && error.error.message === 'Folder already exists') {
+      console.log(`Папка ${folderPath} уже существует`);
+      return { success: true };
+    }
+    console.error(`Ошибка при создании папки ${folderPath}:`, error);
+    return null;
+  }
+}
+
+// Создаем все необходимые папки перед загрузкой
+async function createFolders() {
+  // Создаем корневую папку
+  await createFolder(CLOUDINARY_ROOT_FOLDER);
+  
+  // Создаем подпапки
+  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/badges`);
+  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
+  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/habit-tracker`);
+}
+
+// Функция для удаления всех файлов из папки в Cloudinary
+async function clearFolder(folderPath) {
+  console.log(`Очистка папки ${folderPath} в Cloudinary...`);
+  try {
+    // Получаем список всех файлов в папке
+    const result = await cloudinary.api.resources({ 
+      type: 'upload',
+      prefix: `${folderPath}/`,
+      max_results: 500
+    });
+    
+    if (result.resources && result.resources.length > 0) {
+      console.log(`Найдено ${result.resources.length} файлов для удаления`);
+      
+      // Удаляем каждый файл
+      for (const resource of result.resources) {
+        const publicId = resource.public_id;
+        console.log(`Удаление файла: ${publicId}`);
+        await cloudinary.uploader.destroy(publicId);
+      }
+      
+      console.log(`Все файлы в папке ${folderPath} удалены`);
+    } else {
+      console.log(`Папка ${folderPath} пуста или не существует`);
+    }
+    
+    return true;
+  } catch (error) {
+    console.error(`Ошибка при очистке папки ${folderPath}:`, error);
+    return false;
+  }
+}
+
+// Очистка всех папок перед загрузкой
+async function clearAllFolders() {
+  // Очищаем папки в обратном порядке (от самых вложенных к корневым)
+  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/habit-tracker`);
+  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
+  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/badges`);
+  await clearFolder(CLOUDINARY_ROOT_FOLDER);
+}
+
 // Функция для загрузки одного файла
 async function uploadFile(filePath, cloudinaryPath) {
-  // Добавляем корневую папку к пути
-  const fullCloudinaryPath = `${CLOUDINARY_ROOT_FOLDER}/${cloudinaryPath}`;
-  console.log(`Загрузка ${filePath} на Cloudinary как ${fullCloudinaryPath}...`);
+  // Разделяем путь на папку и имя файла
+  const lastSlashIndex = cloudinaryPath.lastIndexOf('/');
+  const folder = lastSlashIndex !== -1 
+    ? `${CLOUDINARY_ROOT_FOLDER}/${cloudinaryPath.substring(0, lastSlashIndex)}` 
+    : CLOUDINARY_ROOT_FOLDER;
+  const fileName = lastSlashIndex !== -1 
+    ? cloudinaryPath.substring(lastSlashIndex + 1) 
+    : cloudinaryPath;
+  
+  console.log(`Загрузка ${filePath} на Cloudinary в папку ${folder} с именем ${fileName}...`);
   
   try {
     const result = await cloudinary.uploader.upload(filePath, {
-      public_id: fullCloudinaryPath,
-      overwrite: true
+      folder: folder,
+      public_id: fileName,
+      overwrite: true,
+      use_filename: false,
+      unique_filename: false
     });
     console.log(`Успешно загружено: ${result.secure_url}`);
     return result;
@@ -88,6 +169,14 @@ async function uploadAppAssets(appId) {
 // Основная функция для загрузки выбранных ассетов
 async function uploadSelectedAssets() {
   try {
+    // Очищаем существующие файлы
+    console.log("Очищаем существующие файлы...");
+    await clearAllFolders();
+    
+    // Создаем папки в Cloudinary
+    console.log("Создаем папки в Cloudinary...");
+    await createFolders();
+    
     // Загрузка всех бейджей
     console.log("Загружаем бейджи...");
     await uploadBadges();
