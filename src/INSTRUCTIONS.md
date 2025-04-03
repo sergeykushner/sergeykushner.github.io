@@ -25,6 +25,35 @@
    - Убедиться, что файл `.env` содержит корректные ключи
    - Запустить скрипт загрузки: `node src/js/cloudinary-upload.js`
 
+## Загрузка скриншотов на Cloudinary
+
+Для загрузки новых скриншотов для приложения через API:
+
+1. Подготовьте скриншоты:
+   - Поместите все скриншоты в отдельную папку на Mac
+   - Для темной темы добавьте суффикс `-dark` в имена файлов
+
+2. Установите зависимости (только один раз):
+   ```bash
+   ./src/python/install_dependencies.sh
+   ```
+
+3. Запустите скрипт:
+   ```bash
+   python3 src/python/cloudinary_upload_screenshots.py <app-id> <путь-к-скриншотам>
+   ```
+   
+   Пример:
+   ```bash
+   python3 src/python/cloudinary_upload_screenshots.py time-capsule ~/Desktop/time-capsule-screenshots
+   ```
+
+4. После загрузки обновите массив `screenshots` в файле `src/data/apps.json` для вашего приложения
+   с соответствующими номерами скриншотов, затем обновите публичную версию:
+   ```bash
+   ./src/utils/update-public-json.sh
+   ```
+
 ## Структура публичных данных
 
 Все HTML файлы находятся в директории `public/`.
