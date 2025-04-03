@@ -2,7 +2,7 @@ async function loadAppDetail() {
     const urlParams = new URLSearchParams(window.location.search);
     const appId = urlParams.get("id");
     
-    const response = await fetch("../src/data/apps.json");
+    const response = await fetch("../public/data/apps-public.json");
     const apps = await response.json();
     const app = apps.find(a => a.id === appId);
     

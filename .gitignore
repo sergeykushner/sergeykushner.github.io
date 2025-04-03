@@ -9,4 +9,7 @@ node_modules/
 Thumbs.db
 
 # Logs
-*.log 
+*.log
+
+# Приватные данные
+src/data/apps.json 
