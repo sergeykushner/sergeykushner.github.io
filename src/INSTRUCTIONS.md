@@ -42,13 +42,10 @@
 
 3. Запустите скрипт:
    ```bash
-   python3 src/python/cloudinary_upload_screenshots.py <app-id> <путь-к-скриншотам>
+   python3 src/python/cloudinary_upload_screenshots.py
    ```
    
-   Пример:
-   ```bash
-   python3 src/python/cloudinary_upload_screenshots.py time-capsule ~/Desktop/time-capsule-screenshots
-   ```
+   Скрипт запросит у вас ID приложения и путь к папке со скриншотами.
 
 ### Вариант 2: Использование Node.js
 
@@ -63,18 +60,15 @@
 
 3. Установите зависимости (только один раз):
    ```bash
-   npm install cloudinary dotenv fs-extra
+   npm install cloudinary dotenv fs-extra readline-sync
    ```
 
 4. Запустите скрипт:
    ```bash
-   node src/js/cloudinary-upload-screenshots.js <app-id> <путь-к-скриншотам>
+   node src/js/cloudinary-upload-screenshots.js
    ```
    
-   Пример:
-   ```bash
-   node src/js/cloudinary-upload-screenshots.js time-capsule ~/Desktop/time-capsule-screenshots
-   ```
+   Скрипт запросит у вас ID приложения и путь к папке со скриншотами.
 
 5. После загрузки обновите массив `screenshots` в файле `src/data/apps.json` для вашего приложения
    с соответствующими номерами скриншотов, затем обновите публичную версию:

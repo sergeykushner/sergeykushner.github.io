@@ -5,9 +5,9 @@
 Для запуска:
 1. Установите необходимые зависимости: pip install cloudinary python-dotenv
 2. Проверьте, что файл .env содержит ваши учетные данные Cloudinary
-3. Запустите скрипт: python3 src/python/cloudinary_upload_screenshots.py <app-id> <path-to-screenshots>
+3. Запустите скрипт: python3 src/python/cloudinary_upload_screenshots.py
 
-Пример: python3 src/python/cloudinary_upload_screenshots.py time-capsule ~/Desktop/time-capsule-screenshots
+Скрипт запросит ID приложения и путь к папке со скриншотами в интерактивном режиме.
 """
 
 import os
@@ -19,14 +19,36 @@ import cloudinary
 import cloudinary.uploader
 import cloudinary.api
 
-# Проверяем аргументы командной строки
-if len(sys.argv) < 3:
-    print("Необходимо указать ID приложения и путь к скриншотам")
-    print("Пример: python3 src/python/cloudinary_upload_screenshots.py time-capsule ~/Desktop/time-capsule-screenshots")
-    sys.exit(1)
-
-app_id = sys.argv[1]
-screenshots_path = sys.argv[2]
+# Запрашиваем у пользователя ID приложения и путь к скриншотам
+def get_user_input():
+    print("Загрузка скриншотов на Cloudinary")
+    print("=================================")
+    
+    app_id = input("Введите ID приложения (например, time-capsule): ")
+    screenshots_path = input("Введите путь к папке со скриншотами: ")
+    
+    # Удаляем кавычки, если пользователь их добавил
+    screenshots_path = screenshots_path.strip('"\'')
+    app_id = app_id.strip('"\'')
+    
+    # Проверяем наличие обязательных параметров
+    if not app_id:
+        print("Ошибка: ID приложения не может быть пустым")
+        sys.exit(1)
+    
+    if not screenshots_path:
+        print("Ошибка: Путь к папке со скриншотами не может быть пустым")
+        sys.exit(1)
+    
+    # Проверяем существование директории со скриншотами
+    if not os.path.exists(screenshots_path):
+        print(f"Ошибка: Директория {screenshots_path} не найдена")
+        sys.exit(1)
+    
+    # Расширяем тильду в пути, если она есть
+    screenshots_path = os.path.expanduser(screenshots_path)
+    
+    return app_id, screenshots_path
 
 # Загружаем переменные окружения из .env файла
 env_path = os.path.join(os.path.dirname(__file__), '../../src/.env')
@@ -84,14 +106,9 @@ def upload_file(file_path, cloudinary_path):
         print(f"Ошибка при загрузке {file_path}: {e}")
         return None
 
-def upload_app_screenshots():
+def upload_app_screenshots(app_id, screenshots_path):
     """Загрузка всех скриншотов приложения."""
     try:
-        # Проверяем существование директории со скриншотами
-        if not os.path.exists(screenshots_path):
-            print(f"Директория {screenshots_path} не найдена")
-            sys.exit(1)
-        
         # Создаем папки для приложения, если они еще не существуют
         create_folder(CLOUDINARY_ROOT_FOLDER)
         create_folder(f"{CLOUDINARY_ROOT_FOLDER}/apps")
@@ -141,4 +158,16 @@ def upload_app_screenshots():
 
 # Запускаем загрузку скриншотов
 if __name__ == "__main__":
-    upload_app_screenshots() 
+    # Запрашиваем у пользователя параметры
+    app_id, screenshots_path = get_user_input()
+    print(f"\nЗагрузка скриншотов для приложения: {app_id}")
+    print(f"Из папки: {screenshots_path}\n")
+    
+    # Запрашиваем подтверждение
+    confirm = input("Продолжить? (y/n): ")
+    if confirm.lower() != 'y':
+        print("Операция отменена")
+        sys.exit(0)
+        
+    # Запускаем загрузку
+    upload_app_screenshots(app_id, screenshots_path) 
