@@ -3,9 +3,11 @@
  * Для запуска:
  * 1. Установите необходимые зависимости: npm install cloudinary dotenv fs-extra readline-sync
  * 2. Проверьте, что файл .env содержит ваши учетные данные Cloudinary
- * 3. Запустите скрипт: node src/js/cloudinary-upload-screenshots.js
+ * 3. Запустите скрипт: 
+ *    - Интерактивно: node src/js/cloudinary-upload-screenshots.js
+ *    - С аргументами: node src/js/cloudinary-upload-screenshots.js <app-id> <path-to-screenshots>
  * 
- * Скрипт запросит ID приложения и путь к папке со скриншотами в интерактивном режиме.
+ * Пример: node src/js/cloudinary-upload-screenshots.js time-capsule ~/Desktop/time-capsule-screenshots
  */
 
 const fs = require('fs-extra');
@@ -14,34 +16,58 @@ const readlineSync = require('readline-sync');
 require('dotenv').config({ path: path.join(__dirname, '../../src/.env') });
 const cloudinary = require('cloudinary').v2;
 
-// Функция для получения ввода пользователя
-function getUserInput() {
-  console.log('Загрузка скриншотов на Cloudinary');
-  console.log('=================================');
-  
-  const appId = readlineSync.question('Введите ID приложения (например, time-capsule): ');
-  let screenshotsPath = readlineSync.question('Введите путь к папке со скриншотами: ');
-  
-  // Удаляем кавычки, если пользователь их добавил
-  screenshotsPath = screenshotsPath.trim().replace(/^["']|["']$/g, '');
-  
-  // Проверяем наличие обязательных параметров
-  if (!appId) {
-    console.error('Ошибка: ID приложения не может быть пустым');
-    process.exit(1);
-  }
-  
-  if (!screenshotsPath) {
-    console.error('Ошибка: Путь к папке со скриншотами не может быть пустым');
-    process.exit(1);
-  }
-  
-  // Расширяем тильду в пути, если она есть (для macOS/Linux)
-  if (screenshotsPath.startsWith('~')) {
-    screenshotsPath = path.join(process.env.HOME, screenshotsPath.slice(1));
-  }
-  
-  return { appId, screenshotsPath };
+// Функция для получения ввода пользователя или использования аргументов командной строки
+function getInputOrArgs() {
+    // Получаем аргументы командной строки
+    const args = process.argv.slice(2);
+    
+    // Если предоставлены оба аргумента, используем их
+    if (args.length >= 2) {
+        const appId = args[0];
+        let screenshotsPath = args[1];
+        
+        // Удаляем кавычки, если пользователь их добавил
+        screenshotsPath = screenshotsPath.trim().replace(/^["']|["']$/g, '');
+        
+        // Расширяем тильду в пути, если она есть (для macOS/Linux)
+        if (screenshotsPath.startsWith('~')) {
+            screenshotsPath = path.join(process.env.HOME, screenshotsPath.slice(1));
+        }
+        
+        console.log(`\nИспользуются аргументы командной строки`);
+        console.log(`Приложение: ${appId}`);
+        console.log(`Путь к скриншотам: ${screenshotsPath}\n`);
+        
+        return { appId, screenshotsPath };
+    }
+    
+    // Иначе запрашиваем у пользователя
+    console.log('Загрузка скриншотов на Cloudinary');
+    console.log('=================================');
+    
+    const appId = readlineSync.question('Введите ID приложения (например, time-capsule): ');
+    let screenshotsPath = readlineSync.question('Введите путь к папке со скриншотами: ');
+    
+    // Удаляем кавычки, если пользователь их добавил
+    screenshotsPath = screenshotsPath.trim().replace(/^["']|["']$/g, '');
+    
+    // Проверяем наличие обязательных параметров
+    if (!appId) {
+        console.error('Ошибка: ID приложения не может быть пустым');
+        process.exit(1);
+    }
+    
+    if (!screenshotsPath) {
+        console.error('Ошибка: Путь к папке со скриншотами не может быть пустым');
+        process.exit(1);
+    }
+    
+    // Расширяем тильду в пути, если она есть (для macOS/Linux)
+    if (screenshotsPath.startsWith('~')) {
+        screenshotsPath = path.join(process.env.HOME, screenshotsPath.slice(1));
+    }
+    
+    return { appId, screenshotsPath };
 }
 
 // Конфигурация Cloudinary
@@ -104,12 +130,6 @@ async function uploadFile(filePath, cloudinaryPath) {
 // Функция для загрузки всех скриншотов приложения
 async function uploadAppScreenshots(appId, screenshotsPath) {
   try {
-    // Проверяем существование директории со скриншотами
-    if (!await fs.exists(screenshotsPath)) {
-      console.error(`Директория ${screenshotsPath} не найдена`);
-      process.exit(1);
-    }
-    
     // Создаем папку для приложения, если она еще не существует
     await createFolder(CLOUDINARY_ROOT_FOLDER);
     await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
@@ -174,17 +194,25 @@ async function uploadAppScreenshots(appId, screenshotsPath) {
 // Запускаем основную функцию
 async function main() {
   try {
-    // Запрашиваем у пользователя параметры
-    const { appId, screenshotsPath } = getUserInput();
+    // Запрашиваем у пользователя параметры или используем аргументы командной строки
+    const { appId, screenshotsPath } = getInputOrArgs();
     
     console.log(`\nЗагрузка скриншотов для приложения: ${appId}`);
     console.log(`Из папки: ${screenshotsPath}\n`);
     
-    // Запрашиваем подтверждение
-    const confirm = readlineSync.question('Продолжить? (y/n): ');
-    if (confirm.toLowerCase() !== 'y') {
-      console.log('Операция отменена');
-      process.exit(0);
+    // Проверяем существование директории со скриншотами
+    if (!await fs.exists(screenshotsPath)) {
+      console.error(`Директория ${screenshotsPath} не найдена`);
+      process.exit(1);
+    }
+    
+    // Запрашиваем подтверждение, если скрипт запущен в интерактивном режиме
+    if (process.argv.length < 4) {
+      const confirm = readlineSync.question('Продолжить? (y/n): ');
+      if (confirm.toLowerCase() !== 'y') {
+        console.log('Операция отменена');
+        process.exit(0);
+      }
     }
     
     // Запускаем загрузку
