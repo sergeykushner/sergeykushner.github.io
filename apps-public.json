@@ -311,6 +311,7 @@
         "screenshots": [
             1
         ],
+        "screenshotAspectRatio": "392 / 696",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2017-04-29"
@@ -329,8 +330,11 @@
         "appStoreId": "1229185540",
         "googlePlayId": "",
         "screenshots": [
-            1
+            1,
+            2,
+            3
         ],
+        "screenshotAspectRatio": "576 / 768",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2017-04-29"
@@ -351,6 +355,7 @@
             1,
             2
         ],
+        "screenshotAspectRatio": "576 / 768",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2017-04-10"
@@ -377,6 +382,7 @@
         "screenshots": [
             1
         ],
+        "screenshotAspectRatio": "576 / 768",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2016-09-16"
@@ -398,6 +404,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "495 / 994",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2017-12-11"
@@ -420,6 +427,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1260 / 2565",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2017-12-14"
@@ -450,6 +458,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1263 / 2565",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2018-04-01"
@@ -503,6 +512,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1260 / 2565",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2018-10-10"
@@ -524,6 +534,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2018-12-02"
@@ -545,6 +556,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1212 / 2457",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2019-12-09"
@@ -575,6 +587,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "392 / 696",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2019-12-11"
@@ -660,6 +673,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-04-07"
@@ -707,6 +721,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "460 / 996",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-02-01"
@@ -747,6 +762,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-05-14"
@@ -771,6 +787,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020/06/26"
@@ -793,6 +810,7 @@
             2,
             4
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-07-04"
@@ -817,6 +835,7 @@
             5,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-10-03"
@@ -838,6 +857,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-11-12"
@@ -857,6 +877,7 @@
         "screenshots": [
             1
         ],
+        "screenshotAspectRatio": "3036 / 1530",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-12-22"
@@ -877,6 +898,7 @@
             1,
             2
         ],
+        "screenshotAspectRatio": "1260 / 2565",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-12-22"
@@ -902,6 +924,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "510 / 1012",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-01-13"
@@ -925,6 +948,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-01-20"
@@ -946,6 +970,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-12-28"
@@ -967,6 +992,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-01-06"
@@ -989,6 +1015,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-05-10"
@@ -1015,6 +1042,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-06-28"
@@ -1036,6 +1064,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-21"
@@ -1057,6 +1086,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-25"
@@ -1076,6 +1106,7 @@
         "screenshots": [
             1
         ],
+        "screenshotAspectRatio": "3036 / 1530",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2021-08-28"
@@ -1097,6 +1128,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-02-16"
@@ -1118,6 +1150,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-02-17"
@@ -1139,6 +1172,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-03"
@@ -1160,6 +1194,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-05"
@@ -1181,6 +1216,7 @@
             2,
             4
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-10"
@@ -1202,6 +1238,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-12"
@@ -1242,6 +1279,7 @@
             3,
             4
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-10-20"
@@ -1263,6 +1301,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-07-28"
@@ -1284,6 +1323,7 @@
             3,
             4
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-11-29"
@@ -1306,6 +1346,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2022-12-08"
@@ -1327,6 +1368,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-03-08"
@@ -1348,6 +1390,7 @@
             4,
             5
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-01-28"
@@ -1380,6 +1423,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-09-09"
@@ -1409,6 +1453,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-11-01"
@@ -1430,6 +1475,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-02-23"
@@ -1455,6 +1501,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-02-26"
@@ -1476,6 +1523,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-07-16"
@@ -1504,6 +1552,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-08-10",
@@ -1531,6 +1580,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-10-24",
@@ -1557,6 +1607,7 @@
             2,
             4
         ],
+        "screenshotAspectRatio": "1530 / 3036",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-11-13"
@@ -1587,6 +1638,7 @@
             2,
             3
         ],
+        "screenshotAspectRatio": "1470 / 3000",
         "email": "hares.picky-9o@icloud.com",
         "privacyUpdatedDate": "January 10, 2025",
         "releaseDate": "2025-01-25",
