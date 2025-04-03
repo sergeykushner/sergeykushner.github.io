@@ -240,8 +240,8 @@
         "googlePlayId": "",
         "screenshots": [
             1,
-            1,
-            1
+            2,
+            3
         ],
         "email": "",
         "privacyUpdatedDate": "",
@@ -388,7 +388,7 @@
         "displayName": "Bloody Answers",
         "title": "Bloody Answers Stickers",
         "subtitle": "Answers in a bloody style.",
-        "promoText": "Halloween is coming. Add some “horror” to your posts!",
+        "promoText": "Halloween is coming. Add some \"horror\" to your posts!",
         "metaDescription": "",
         "fullDescription": [
             "Short popular messages and answers in a bloody style.",
@@ -411,7 +411,7 @@
             "- NOW!",
             "- GOOD LUCK",
             "- REALLY?",
-            "- WHAT’S THIS?",
+            "- WHAT'S THIS?",
             "- HEART",
             "- Love You",
             "- SMILE",
@@ -551,12 +551,12 @@
     {
         "id": "poker-1",
         "displayName": "Poker",
-        "title": "Texas Hold’em Poker - Casino Game (Gold Edition)",
+        "title": "Texas Hold'em Poker - Casino Game (Gold Edition)",
         "subtitle": "",
         "promoText": "",
         "metaDescription": "",
         "fullDescription": [
-            "Texas Hold’em Poker."
+            "Texas Hold'em Poker."
         ],
         "appStoreId": "",
         "googlePlayId": "com.infoapp.covid",
