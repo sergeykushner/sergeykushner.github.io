@@ -3,13 +3,13 @@
  * Для запуска:
  * 1. Установите необходимые зависимости: npm install cloudinary dotenv fs-extra
  * 2. Создайте файл .env с вашими учетными данными Cloudinary
- * 3. Запустите скрипт: node cloudinary-upload.js
+ * 3. Запустите скрипт: node src/js/cloudinary-upload.js
  */
 
-require('dotenv').config();
-const cloudinary = require('cloudinary').v2;
 const fs = require('fs-extra');
 const path = require('path');
+require('dotenv').config({ path: path.join(__dirname, '../../src/.env') });
+const cloudinary = require('cloudinary').v2;
 
 // Конфигурация Cloudinary
 cloudinary.config({
@@ -19,7 +19,7 @@ cloudinary.config({
 });
 
 // Путь к директории с ассетами
-const assetsDir = path.join(__dirname, 'assets');
+const assetsDir = path.join(__dirname, '../../assets');
 
 // Корневая папка в Cloudinary для всех файлов сайта
 const CLOUDINARY_ROOT_FOLDER = 'website';
