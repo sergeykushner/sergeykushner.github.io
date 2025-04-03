@@ -9,6 +9,6 @@ Thumbs.db
 *.log
 
 # Приватные данные
-src/data/apps.json 
+apps.json 
 src/.env
 assets/

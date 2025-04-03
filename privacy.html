@@ -42,7 +42,7 @@
                 const urlParams = new URLSearchParams(window.location.search);
                 const appId = urlParams.get("id");
                 
-                const response = await fetch("../../apps.json");
+                const response = await fetch("./apps.json");
                 const apps = await response.json();
                 const app = apps.find(a => a.id === appId);
                 

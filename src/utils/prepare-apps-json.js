@@ -3,7 +3,7 @@ const fs = require('fs');
 const path = require('path');
 
 // Пути к файлам
-const sourceFilePath = path.join(__dirname, '../data/apps.json');
+const sourceFilePath = path.join(__dirname, '../../apps.json');
 const targetFilePath = path.join(__dirname, '../../apps-public.json');
 
 // Ключи, которые нужно удалить из публичной версии
