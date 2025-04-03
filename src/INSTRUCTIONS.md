@@ -54,22 +54,29 @@
 
 1. Подготовьте скриншоты так же, как и для Python-скрипта.
 
-2. Установите зависимости (только один раз):
+2. Если Node.js не находится в PATH, добавьте его временно для текущей сессии:
    ```bash
-   /opt/homebrew/bin/npm install cloudinary dotenv fs-extra
+   export PATH="/opt/homebrew/bin:$PATH"
+   ```
+   
+   Для постоянного добавления в PATH добавьте эту строку в ваш ~/.zshrc или ~/.bash_profile.
+
+3. Установите зависимости (только один раз):
+   ```bash
+   npm install cloudinary dotenv fs-extra
    ```
 
-3. Запустите скрипт:
+4. Запустите скрипт:
    ```bash
-   /opt/homebrew/bin/node src/js/cloudinary-upload-screenshots.js <app-id> <путь-к-скриншотам>
+   node src/js/cloudinary-upload-screenshots.js <app-id> <путь-к-скриншотам>
    ```
    
    Пример:
    ```bash
-   /opt/homebrew/bin/node src/js/cloudinary-upload-screenshots.js time-capsule ~/Desktop/time-capsule-screenshots
+   node src/js/cloudinary-upload-screenshots.js time-capsule ~/Desktop/time-capsule-screenshots
    ```
 
-4. После загрузки обновите массив `screenshots` в файле `src/data/apps.json` для вашего приложения
+5. После загрузки обновите массив `screenshots` в файле `src/data/apps.json` для вашего приложения
    с соответствующими номерами скриншотов, затем обновите публичную версию:
    ```bash
    ./src/utils/update-public-json.sh
