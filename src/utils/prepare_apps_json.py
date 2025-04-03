@@ -4,7 +4,7 @@ import os
 
 # Пути к файлам
 source_file_path = os.path.join(os.path.dirname(__file__), '../data/apps.json')
-target_file_path = os.path.join(os.path.dirname(__file__), '../../public/data/apps-public.json')
+target_file_path = os.path.join(os.path.dirname(__file__), '../../apps-public.json')
 
 # Ключи, которые нужно удалить из публичной версии
 keys_to_remove = [
@@ -13,7 +13,8 @@ keys_to_remove = [
     'listingFee',
     'successFee',
     'flippaLink',
-    'salePriceComment'
+    'salePriceComment',
+    'gitHubLink'
 ]
 
 try:

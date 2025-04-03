@@ -4,8 +4,7 @@ const path = require('path');
 
 // Пути к файлам
 const sourceFilePath = path.join(__dirname, '../data/apps.json');
-const targetFilePath = path.join(__dirname, '../../public/data/apps-public.json');
-const rootTargetFilePath = path.join(__dirname, '../../data/apps-public.json');
+const targetFilePath = path.join(__dirname, '../../apps-public.json');
 
 // Ключи, которые нужно удалить из публичной версии
 const keysToRemove = [
@@ -23,12 +22,6 @@ try {
   const targetDir = path.dirname(targetFilePath);
   if (!fs.existsSync(targetDir)) {
     fs.mkdirSync(targetDir, { recursive: true });
-  }
-  
-  // Создаем корневую директорию data, если ее нет
-  const rootTargetDir = path.dirname(rootTargetFilePath);
-  if (!fs.existsSync(rootTargetDir)) {
-    fs.mkdirSync(rootTargetDir, { recursive: true });
   }
 
   // Читаем исходный файл
@@ -51,11 +44,7 @@ try {
   const jsonData = JSON.stringify(cleanedApps, null, 4);
   fs.writeFileSync(targetFilePath, jsonData, 'utf8');
   
-  // Также копируем в корневую директорию data
-  fs.writeFileSync(rootTargetFilePath, jsonData, 'utf8');
-  
   console.log(`Публичная версия успешно создана: ${targetFilePath}`);
-  console.log(`Копия сохранена в: ${rootTargetFilePath}`);
 } catch (error) {
   console.error('Произошла ошибка:', error);
 } 
