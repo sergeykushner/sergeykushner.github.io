@@ -42,9 +42,7 @@
         "googlePlayIdFree": "com.fitadvisorapp.fitadvisor",
         "googlePlayIdPaid": "com.fitadvisorapp.fitadvisorpro",
         "screenshots": [
-            1,
-            2,
-            3
+            0
         ],
         "email": "",
         "privacyUpdatedDate": "",
@@ -101,8 +99,8 @@
         "releaseDate": "2016-07-16"
     },
     {
-        "id": "corn-sp",
-        "displayName": "x",
+        "id": "garden-crash",
+        "displayName": "Garden Crash",
         "title": "",
         "subtitle": "",
         "promoText": "",
@@ -114,45 +112,118 @@
         "googlePlayId": "",
         "screenshots": [
             1,
-            1,
-            1
+            2
         ],
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": ""
+    },
+    {
+        "id": "rash-down",
+        "displayName": "Rash Down",
+        "title": "Rash Down",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": ""
+    },
+    {
+        "id": "rash-down-reskinned",
+        "displayName": "Rash Down Reskinned",
+        "title": "Rash Down Reskinned",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": ""
+    },
+    {
+        "id": "in-love",
+        "displayName": "IN LOVE",
+        "title": "IN LOVE - stickers with love messages",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Add colors to your text messages. Surprise your boyfriend. Well, or just find the right words. These stickers look like standard bubbles with text, but instead of a gray bubble, the one to whom you send it will receive a love message in a pink bubble! It will look unusual and romantic."
+        ],
+        "appStoreId": "1231745408",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-05-03"
+    },
+    {
+        "id": "corn-sp",
+        "displayName": "Corn SP",
+        "title": "Corn SP emoji stickers",
+        "subtitle": "Stickers with sweet corn.",
+        "promoText": "16 high-quality stickers.",
+        "metaDescription": "",
+        "fullDescription": [
+            "Funny stickers with corn will help you in communication. Why words if there are stickers)"
+        ],
+        "appStoreId": "1247856997",
+        "googlePlayId": "",
+        "screenshots": [
+            1
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-06-13"
     },
     {
         "id": "pears-sp",
-        "displayName": "",
-        "title": "",
-        "subtitle": "",
-        "promoText": "",
+        "displayName": "Pears SP",
+        "title": "Pears SP emoji stickers",
+        "subtitle": "Stickers with ripe pears.",
+        "promoText": "16 high-quality stickers.",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Funny stickers with pears will help you in communication. Why words if there are stickers)"
         ],
-        "appStoreId": "",
+        "appStoreId": "1247847652",
         "googlePlayId": "",
         "screenshots": [
-            1,
-            1,
             1
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-06-13"
     },
     {
         "id": "icecream-sp",
-        "displayName": "",
-        "title": "",
-        "subtitle": "",
-        "promoText": "",
+        "displayName": "Ice cream SP",
+        "title": "Ice cream SP emoji stickers",
+        "subtitle": "Stickers with tasty ice cream.",
+        "promoText": "16 high-quality stickers.",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Funny stickers with ice cream will help you in communication. Why words if there are stickers)"
         ],
-        "appStoreId": "",
+        "appStoreId": "1247871888",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -161,154 +232,153 @@
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-06-13"
     },
     {
         "id": "onion-sp",
-        "displayName": "",
-        "title": "",
-        "subtitle": "",
-        "promoText": "",
+        "displayName": "Onion SP",
+        "title": "Onion SP emoji stickers",
+        "subtitle": "Funny stickers with onions.",
+        "promoText": "16 high-quality stickers.",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Funny stickers with onions will help you in communication. Why words if there are stickers)"
         ],
-        "appStoreId": "",
+        "appStoreId": "1247521624",
         "googlePlayId": "",
         "screenshots": [
-            1,
-            1,
             1
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-06-28"
     },
     {
         "id": "strawberry-sp",
-        "displayName": "",
-        "title": "",
+        "displayName": "Strawberry SP",
+        "title": "Strawberry SP emoji",
         "subtitle": "",
         "promoText": "",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Stickers for iMessage with sweet strawberries emoji.",
+            "No words to express emotions? The strawberries will help you!",
+            "And if there is a free minute, leave your feedback (thank you in advance)."
         ],
-        "appStoreId": "",
+        "appStoreId": "1223055295",
         "googlePlayId": "",
         "screenshots": [
-            1,
-            1,
             1
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-04-06"
+    },
+    {
+        "id": "apples-sp",
+        "displayName": "Apples SP",
+        "title": "Apples SP emoji",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Stickers for iMessage with merry ripe apples.",
+            "Hello! We are merry ripe apples. And we will help you express your emotions :)",
+            "And if there is a free minute, leave your feedback (thank you in advance)."
+        ],
+        "appStoreId": "1223338313",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-04-07"
     },
     {
         "id": "girls-sp",
-        "displayName": "",
-        "title": "",
+        "displayName": "Girls SP",
+        "title": "Girls SP emoji stickers",
         "subtitle": "",
         "promoText": "",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Girls are different. Cheerful. Very angry. Thoughtful. In love. And why write words, if there are stickers. Express yourself! Install and use!",
+            "And if there is a free minute, leave your feedback (thank you in advance)."
         ],
-        "appStoreId": "",
+        "appStoreId": "1229167654",
         "googlePlayId": "",
         "screenshots": [
-            1,
-            1,
             1
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-04-29"
     },
     {
         "id": "boys-sp",
-        "displayName": "",
-        "title": "",
+        "displayName": "Boys SP",
+        "title": "Boys SP emoji - iMessage Sticker Packs",
         "subtitle": "",
         "promoText": "",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Guys are different. Cheerful. Very angry. Thoughtful. In love. And why write words if there are stickers. Express yourself! iMessage Sticker Packs for you. Install and use!",
+            "And if there is a free minute, leave your feedback (thank you in advance)."
         ],
-        "appStoreId": "",
+        "appStoreId": "1229185540",
         "googlePlayId": "",
         "screenshots": [
-            1,
-            2,
-            3
+            1
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-04-29"
     },
     {
         "id": "chost-sp",
-        "displayName": "",
-        "title": "",
+        "displayName": "Ghosts SP",
+        "title": "Ghosts SP emoji",
         "subtitle": "",
         "promoText": "",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Sticker pack for iMessage with funny ghosts."
         ],
-        "appStoreId": "",
+        "appStoreId": "1223477083",
         "googlePlayId": "",
         "screenshots": [
-            1,
-            1,
             1
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-04-10"
     },
     {
         "id": "memes-sp",
-        "displayName": "",
-        "title": "",
+        "displayName": "Memes SP",
+        "title": "Memes Sticker Pack",
         "subtitle": "",
         "promoText": "",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Memes - a way to replace a whole page of clever and carefully chosen words of one small picture.",
+            "Like a Boss",
+            "LOL",
+            "Trollface",
+            "Okay",
+            "Happy Face",
+            "NO",
+            "and others..."
         ],
-        "appStoreId": "",
+        "appStoreId": "1145277502",
         "googlePlayId": "",
         "screenshots": [
-            1,
-            1,
             1
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
-    },
-    {
-        "id": "garden-crash",
-        "displayName": "",
-        "title": "",
-        "subtitle": "",
-        "promoText": "",
-        "metaDescription": "",
-        "fullDescription": [
-            ""
-        ],
-        "appStoreId": "",
-        "googlePlayId": "",
-        "screenshots": [
-            1,
-            1,
-            1
-        ],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2016-09-16"
     },
     {
         "id": "santa-sp",
