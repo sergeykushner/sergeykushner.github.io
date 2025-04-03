@@ -117,14 +117,6 @@ function updateUI(app) {
         img.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
         img.alt = `Screenshot ${screenNumber} of the app`;
         
-        // Устанавливаем стили для изображения
-        img.style.position = 'absolute';
-        img.style.width = '100%';
-        img.style.height = '100%';
-        img.style.objectFit = 'cover';
-        img.style.borderRadius = '30px';
-        img.style.opacity = '0';
-        
         // Добавляем класс для анимации появления
         img.classList.add('screenshot-image');
         
