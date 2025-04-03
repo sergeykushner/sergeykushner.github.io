@@ -91,30 +91,78 @@ function updateUI(app) {
     // Ограничиваем количество скриншотов в зависимости от устройства
     screenshotsToShow = screenshotsToShow.slice(0, maxScreenshots);
     
-    // Загружаем указанные скриншоты из Cloudinary
-    screenshotsToShow.forEach(screenNumber => {
+    // Создаем плейсхолдеры для всех скриншотов сразу
+    for (let i = 0; i < maxScreenshots; i++) {
         const screenshotDiv = document.createElement("div");
         screenshotDiv.className = "screenshot-item";
         
-        // Получаем URL скриншота из Cloudinary с учетом темного режима
-        const screenshotUrl = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
+        // Применяем соотношение сторон из JSON, если оно указано
+        const aspectRatio = app.screenshotAspectRatio || '1530 / 3036';
+        screenshotDiv.style.aspectRatio = aspectRatio;
         
-        const img = document.createElement("img");
-        img.src = screenshotUrl;
+        // Добавляем скелетон-плейсхолдер
+        const skeleton = document.createElement("div");
+        skeleton.className = "screenshot-skeleton";
+        skeleton.id = `screenshot-placeholder-${i + 1}`;
+        
+        screenshotDiv.appendChild(skeleton);
+        screenshotsContainer.appendChild(screenshotDiv);
+    }
+    
+    // Загружаем все изображения асинхронно
+    screenshotsToShow.forEach((screenNumber, index) => {
+        const img = new Image();
+        
+        // Получаем URL скриншота из Cloudinary с учетом темного режима
+        img.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
         img.alt = `Screenshot ${screenNumber} of the app`;
+        
+        // Устанавливаем стили для изображения
+        img.style.position = 'absolute';
+        img.style.width = '100%';
+        img.style.height = '100%';
+        img.style.objectFit = 'cover';
+        img.style.borderRadius = '30px';
+        img.style.opacity = '0';
+        
+        // Добавляем класс для анимации появления
+        img.classList.add('screenshot-image');
         
         // Обработчик ошибки для использования светлой версии, если темная не найдена
         img.onerror = function() {
             this.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', false);
             
-            // Если и светлая версия не найдена, удаляем элемент
+            // Если и светлая версия не найдена, скрываем скелетон
             this.onerror = function() {
-                screenshotDiv.remove();
+                const placeholder = document.getElementById(`screenshot-placeholder-${index + 1}`);
+                if (placeholder) {
+                    placeholder.parentNode.style.display = 'none';
+                }
             };
         };
         
-        screenshotDiv.appendChild(img);
-        screenshotsContainer.appendChild(screenshotDiv);
+        // Обработчик загрузки изображения
+        img.onload = function() {
+            const placeholder = document.getElementById(`screenshot-placeholder-${index + 1}`);
+            if (placeholder) {
+                // Задержка для плавности (небольшая, чтобы не заставлять ждать пользователя)
+                setTimeout(() => {
+                    // Плавное исчезновение скелетона
+                    placeholder.style.opacity = '0';
+                    
+                    // После завершения анимации fade-out скелетона
+                    setTimeout(() => {
+                        // Заменяем плейсхолдер на загруженное изображение
+                        placeholder.parentNode.replaceChild(img, placeholder);
+                        
+                        // Плавное появление изображения
+                        setTimeout(() => {
+                            img.style.opacity = '1';
+                        }, 50);
+                    }, 200);
+                }, 100 * index); // Стаггерированная анимация для разных скриншотов
+            }
+        };
     });
     
     // Устанавливаем email в футере
