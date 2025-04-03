@@ -24,6 +24,50 @@ const assetsDir = path.join(__dirname, 'assets');
 // Корневая папка в Cloudinary для всех файлов сайта
 const CLOUDINARY_ROOT_FOLDER = 'website';
 
+// Массив уже загруженных приложений (чтобы не загружать их снова)
+const UPLOADED_APPS = [
+  'habit-tracker',
+  'pokemon-go-guide',
+  'fit-advisor',
+  'garden-crash',
+  'girls-sp',
+  'gym-assistant',
+  'icecream-sp',
+  'in-love',
+  'lucky-diamonds',
+  'margin-trading-calculator',
+  'memes-sp',
+  'movie-watchlist',
+  'next-show',
+  'nft-creator',
+  'onion-sp',
+  'open-sea-wallet-portfolio',
+  'party-star',
+  'pdf-resume-creator',
+  'pears-sp',
+  'period-tracker',
+  'poker-1',
+  'poker-2',
+  'poker-dealer',
+  'pomodoro-timer',
+  'post-creator',
+  'quit-smoking',
+  'run-sunta',
+  'santa-sp',
+  'strawberry-sp',
+  'strike-balls',
+  'strikemoji',
+  'template',
+  'tetra-blocks-tower',
+  'time-capsule',
+  'truth-or-dare',
+  'voice-advisor',
+  'water-balance',
+  'word-game-catch-letter',
+  'word-game-woords',
+  'xmas-abc-sp'
+];
+
 // Функция для создания папки в Cloudinary
 async function createFolder(folderPath) {
   console.log(`Создание папки ${folderPath} в Cloudinary...`);
@@ -40,65 +84,6 @@ async function createFolder(folderPath) {
     console.error(`Ошибка при создании папки ${folderPath}:`, error);
     return null;
   }
-}
-
-// Создаем все необходимые папки перед загрузкой
-async function createFolders() {
-  // Создаем корневую папку
-  await createFolder(CLOUDINARY_ROOT_FOLDER);
-  
-  // Создаем подпапки
-  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/badges`);
-  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
-  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/habit-tracker`);
-  
-  // Создаем папки для новых приложений
-  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/pokemon-go-guide`);
-  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/fit-advisor`);
-}
-
-// Функция для удаления всех файлов из папки в Cloudinary
-async function clearFolder(folderPath) {
-  console.log(`Очистка папки ${folderPath} в Cloudinary...`);
-  try {
-    // Получаем список всех файлов в папке
-    const result = await cloudinary.api.resources({ 
-      type: 'upload',
-      prefix: `${folderPath}/`,
-      max_results: 500
-    });
-    
-    if (result.resources && result.resources.length > 0) {
-      console.log(`Найдено ${result.resources.length} файлов для удаления`);
-      
-      // Удаляем каждый файл
-      for (const resource of result.resources) {
-        const publicId = resource.public_id;
-        console.log(`Удаление файла: ${publicId}`);
-        await cloudinary.uploader.destroy(publicId);
-      }
-      
-      console.log(`Все файлы в папке ${folderPath} удалены`);
-    } else {
-      console.log(`Папка ${folderPath} пуста или не существует`);
-    }
-    
-    return true;
-  } catch (error) {
-    console.error(`Ошибка при очистке папки ${folderPath}:`, error);
-    return false;
-  }
-}
-
-// Очистка всех папок перед загрузкой
-async function clearAllFolders() {
-  // Очищаем папки в обратном порядке (от самых вложенных к корневым)
-  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/habit-tracker`);
-  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/pokemon-go-guide`);
-  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/fit-advisor`);
-  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
-  await clearFolder(`${CLOUDINARY_ROOT_FOLDER}/badges`);
-  await clearFolder(CLOUDINARY_ROOT_FOLDER);
 }
 
 // Функция для загрузки одного файла
@@ -157,6 +142,9 @@ async function uploadAppAssets(appId) {
     return;
   }
   
+  // Создаем папку для приложения
+  await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/${appId}`);
+  
   const files = await fs.readdir(appDir);
   
   for (const file of files) {
@@ -172,38 +160,48 @@ async function uploadAppAssets(appId) {
   }
 }
 
-// Основная функция для загрузки выбранных ассетов
-async function uploadSelectedAssets() {
+// Функция загрузки всех приложений
+async function uploadAllApps() {
+  // Получаем список всех папок в директории apps
+  const appsDir = path.join(assetsDir, 'apps');
+  const appFolders = await fs.readdir(appsDir);
+  
+  // Фильтруем папки приложений (исключаем .DS_Store и уже загруженные)
+  const appsToUpload = appFolders.filter(folder => {
+    if (folder === '.DS_Store') return false;
+    if (UPLOADED_APPS.includes(folder)) return false;
+    
+    // Проверяем, что это директория
+    const folderPath = path.join(appsDir, folder);
+    return fs.statSync(folderPath).isDirectory();
+  });
+  
+  console.log(`Найдено ${appsToUpload.length} новых приложений для загрузки`);
+  
+  // Загружаем каждое приложение
+  for (const appFolder of appsToUpload) {
+    console.log(`\nЗагружаем ассеты для ${appFolder}...`);
+    await uploadAppAssets(appFolder);
+  }
+}
+
+// Основная функция для загрузки оставшихся ассетов
+async function uploadRemainingAssets() {
   try {
-    // Очищаем существующие файлы
-    console.log("Очищаем существующие файлы...");
-    await clearAllFolders();
+    // Создаем корневые папки в Cloudinary
+    console.log("Создаем корневые папки в Cloudinary...");
+    await createFolder(CLOUDINARY_ROOT_FOLDER);
+    await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
     
-    // Создаем папки в Cloudinary
-    console.log("Создаем папки в Cloudinary...");
-    await createFolders();
+    // Загружаем все приложения
+    console.log("Загружаем оставшиеся приложения...");
+    await uploadAllApps();
     
-    // Загрузка всех бейджей
-    console.log("Загружаем бейджи...");
-    await uploadBadges();
-    
-    // Загрузка ассетов для habit-tracker
-    console.log("Загружаем ассеты для habit-tracker...");
-    await uploadAppAssets('habit-tracker');
-    
-    // Загрузка ассетов для pokemon-go-guide
-    console.log("Загружаем ассеты для pokemon-go-guide...");
-    await uploadAppAssets('pokemon-go-guide');
-    
-    // Загрузка ассетов для fit-advisor
-    console.log("Загружаем ассеты для fit-advisor...");
-    await uploadAppAssets('fit-advisor');
-    
-    console.log('Загрузка выбранных ассетов успешно завершена!');
+    console.log('Загрузка оставшихся ассетов успешно завершена!');
   } catch (error) {
     console.error('Ошибка при загрузке ассетов:', error);
   }
 }
 
 // Вызов основной функции
-uploadSelectedAssets(); 
+uploadRemainingAssets(); 
