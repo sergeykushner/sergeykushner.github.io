@@ -29,6 +29,8 @@
 
 Для загрузки новых скриншотов для приложения через API:
 
+### Вариант 1: Использование Python (рекомендуется)
+
 1. Подготовьте скриншоты:
    - Поместите все скриншоты в отдельную папку на Mac
    - Для темной темы добавьте суффикс `-dark` в имена файлов
@@ -46,6 +48,25 @@
    Пример:
    ```bash
    python3 src/python/cloudinary_upload_screenshots.py time-capsule ~/Desktop/time-capsule-screenshots
+   ```
+
+### Вариант 2: Использование Node.js
+
+1. Подготовьте скриншоты так же, как и для Python-скрипта.
+
+2. Установите зависимости (только один раз):
+   ```bash
+   /opt/homebrew/bin/npm install cloudinary dotenv fs-extra
+   ```
+
+3. Запустите скрипт:
+   ```bash
+   /opt/homebrew/bin/node src/js/cloudinary-upload-screenshots.js <app-id> <путь-к-скриншотам>
+   ```
+   
+   Пример:
+   ```bash
+   /opt/homebrew/bin/node src/js/cloudinary-upload-screenshots.js time-capsule ~/Desktop/time-capsule-screenshots
    ```
 
 4. После загрузки обновите массив `screenshots` в файле `src/data/apps.json` для вашего приложения
