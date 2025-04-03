@@ -155,7 +155,8 @@ li {
         gap: 20px;
     }
 
-    .app-container {
+    .app-container,
+    .privacy-container {
         width: 100%;
         max-width: 800px;
         margin-left: auto;
