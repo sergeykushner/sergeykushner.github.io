@@ -38,10 +38,11 @@ li {
     gap: 50px;
 }
 
+.apps-app-icon,
 .app-icon img,
 .badges img {
     width: auto;
-    height: 50px;
+    height: 60px;
 }
 
 .index-links {
@@ -61,7 +62,7 @@ li {
     border-style: solid;
 }
 
-.app-container {
+.app-list-container {
     display: flex;
     justify-content: center;
     gap: 20px;
@@ -77,7 +78,8 @@ li {
 
 @media (orientation: landscape) {
     body {
-        margin-inline: 25%;
+        /* margin-inline: 25%; */
+        /* width: 100%; */
         /* max-width: 800px; */
         /* margin-left: auto; */
         /* margin-right: auto; */
@@ -87,14 +89,21 @@ li {
         gap: 50px;
     }
 
-    .apps-app-icon {
-        width: 100px;
-        height: 100px;
+    .app-list-container {
+        max-width: 1200px;
+        margin-left: auto;
+        margin-right: auto;
+        display: grid;
+        grid-template-columns: repeat(7, 1fr);
+        /*grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));*/
+        gap: 20px;
     }
 
     .app-container {
-        display: grid;
-        grid-template-columns: repeat(7, 1fr);
+        width: 100%;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
     }
 }
 
@@ -115,12 +124,7 @@ li {
         gap: 20px;
     }
 
-    .apps-app-icon {
-        width: 75px;
-        height: 75px;
-    }
-
-    .app-container {
+    .app-list-container {
         display: grid;
         grid-template-columns: repeat(4, 1fr); 
     }

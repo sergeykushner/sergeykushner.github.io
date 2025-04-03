@@ -1,7 +1,7 @@
 async function loadApps() {
     const response = await fetch("./apps-public.json");
     const apps = await response.json();
-    const container = document.querySelector(".app-container");
+    const container = document.querySelector(".app-list-container");
     
     // Проверяем, использует ли пользователь темный режим
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;

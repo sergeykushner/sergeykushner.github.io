@@ -48,4 +48,14 @@ a {
     p {
         line-height: 1.5;
     }
+
+    .app-list-container p {
+        font-size: 14px;
+    }
+}
+
+@media (orientation: portrait) {
+    .app-list-container p {
+        font-size: 12px;
+    }
 }
