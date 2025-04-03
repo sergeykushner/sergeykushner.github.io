@@ -2,9 +2,10 @@
   "name": "website",
   "version": "1.0.0",
   "description": "Personal website with Cloudinary integration",
-  "main": "app.js",
+  "main": "src/js/app.js",
   "scripts": {
-    "upload-assets": "node cloudinary-upload.js"
+    "upload-assets": "node src/js/cloudinary-upload.js",
+    "build": "cp -r public/* ."
   },
   "dependencies": {
     "cloudinary": "^1.40.0",
