@@ -19,7 +19,7 @@ function executeCommand(command) {
     return new Promise((resolve, reject) => {
         console.log(`Выполняется команда: ${command}`);
         
-        exec(command, { cwd: path.join(__dirname, '../..') }, (error, stdout, stderr) => {
+        exec(command, { cwd: path.join(__dirname, '..') }, (error, stdout, stderr) => {
             if (error) {
                 console.error(`Ошибка: ${error.message}`);
                 reject(error);
