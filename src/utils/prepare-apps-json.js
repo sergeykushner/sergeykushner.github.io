@@ -1,14 +1,10 @@
 // Скрипт для создания публичной версии apps.json без приватных данных
 const fs = require('fs');
 const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '../../src/.env') });
 
-// Путь к исходному файлу с приватными данными (из .env или по умолчанию)
-const sourceFilePath = process.env.APPS_JSON_PATH || path.join(__dirname, '../../apps.json');
+// Пути к файлам
+const sourceFilePath = path.join(__dirname, '../../apps.json');
 const targetFilePath = path.join(__dirname, '../../apps-public.json');
-
-console.log(`Исходный файл: ${sourceFilePath}`);
-console.log(`Целевой файл: ${targetFilePath}`);
 
 // Ключи, которые нужно удалить из публичной версии
 const keysToRemove = [
