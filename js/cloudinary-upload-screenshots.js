@@ -13,7 +13,7 @@
 const fs = require('fs-extra');
 const path = require('path');
 const readlineSync = require('readline-sync');
-require('dotenv').config({ path: path.join(__dirname, '../src/.env') });
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 const cloudinary = require('cloudinary').v2;
 
 // Функция для получения ввода пользователя или использования аргументов командной строки

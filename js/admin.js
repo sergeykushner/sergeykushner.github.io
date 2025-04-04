@@ -5,14 +5,14 @@
  * Для запуска:
  * 1. Установите необходимые зависимости: 
  *    npm install readline-sync cloudinary dotenv fs-extra child_process
- * 2. Запустите скрипт: node src/js/admin.js
+ * 2. Запустите скрипт: node js/admin.js
  */
 
 const readlineSync = require('readline-sync');
 const { exec } = require('child_process');
 const path = require('path');
 const fs = require('fs-extra');
-require('dotenv').config({ path: path.join(__dirname, '../../src/.env') });
+require('dotenv').config({ path: path.join(__dirname, '../.env') });
 
 // Функция для выполнения команды и возврата результата в виде промиса
 function executeCommand(command) {
@@ -40,7 +40,7 @@ function executeCommand(command) {
 async function updatePublicJson() {
     try {
         console.log('Запуск генерации публичной версии apps.json...');
-        await executeCommand('./src/utils/update-public-json.sh');
+        await executeCommand('./js/update-public-json.sh');
         console.log('Публичная версия JSON успешно обновлена!');
     } catch (error) {
         console.error('Произошла ошибка при обновлении публичного JSON:', error);
@@ -51,7 +51,7 @@ async function updatePublicJson() {
 async function uploadAllImages() {
     try {
         console.log('Запуск загрузки всех изображений из assets...');
-        await executeCommand('node src/js/cloudinary-upload.js');
+        await executeCommand('node js/cloudinary.js');
         console.log('Все изображения успешно загружены!');
     } catch (error) {
         console.error('Произошла ошибка при загрузке изображений:', error);
@@ -101,7 +101,7 @@ async function uploadAppScreenshots() {
         }
         
         // Запускаем скрипт с аргументами
-        const command = `node src/js/cloudinary-upload-screenshots.js "${appId}" "${screenshotsPath}"`;
+        const command = `node js/cloudinary-upload-screenshots.js "${appId}" "${screenshotsPath}"`;
         await executeCommand(command);
         
         // Спрашиваем пользователя, нужно ли обновить публичный JSON

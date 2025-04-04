@@ -54,7 +54,7 @@ function getAppStoreBadgeUrl(isDarkMode = false) {
 if (typeof require !== 'undefined') {
     const fs = require('fs-extra');
     const path = require('path');
-    require('dotenv').config({ path: path.join(__dirname, '../src/.env') });
+    require('dotenv').config({ path: path.join(__dirname, '../.env') });
     const cloudinary = require('cloudinary').v2;
 
     // Конфигурация Cloudinary
