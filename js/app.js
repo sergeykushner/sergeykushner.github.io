@@ -15,6 +15,35 @@ async function loadAppDetail() {
     updateUI(app);
 }
 
+// Соответствие устройств и соотношений сторон
+const DEVICE_ASPECT_RATIOS = {
+    "iPhone 16 Pro Max": "1320 / 2868",
+    "iPhone 15 Pro Max": "1530 / 3036",
+    // Другие устройства можно добавить по мере необходимости
+};
+
+// Соответствие устройств и радиусов скругления для скриншотов
+const DEVICE_CORNER_RADIUS = {
+    "iPhone 16 Pro Max": "20px",
+    "iPhone 15 Pro Max": "40px",
+    // Другие устройства можно добавить по мере необходимости
+};
+
+// Настройки для размещения скриншота внутри рамки устройства
+const DEVICE_SCREENSHOT_CONFIG = {
+    "iPhone 16 Pro Max": {
+        width: "89.79591837%",         // Ширина скриншота относительно рамки
+        offsetY: "0%",       // Смещение скриншота по вертикали
+        offsetX: "0%"         // Смещение скриншота по горизонтали
+    },
+    "iPhone 15 Pro Max": {
+        width: "87%",
+        offsetY: "-1%",
+        offsetX: "0%"
+    }
+    // Добавьте другие устройства с их настройками по мере необходимости
+};
+
 function updateMetaTags(app) {
     document.title = app.title;
     document.querySelector('meta[name="description"]').setAttribute("content", app.metaDescription);
@@ -68,8 +97,8 @@ function updateUI(app) {
     const phContainer = document.getElementById("product-hunt-container");
     
     // Проверка наличия Product Hunt бейджа
-    if (app.productHunt) {
-        phContainer.innerHTML = app.productHunt;
+    if (app.productHuntBadge) {
+        phContainer.innerHTML = app.productHuntBadge;
         phContainer.style.display = "block";
     } else {
         phContainer.style.display = "none";
@@ -91,22 +120,68 @@ function updateUI(app) {
     // Ограничиваем количество скриншотов в зависимости от устройства
     screenshotsToShow = screenshotsToShow.slice(0, maxScreenshots);
     
+    // Получаем тип устройства и его соотношение сторон
+    const deviceModel = app.screenshotProduct || "iPhone 16 Pro Max"; // По умолчанию iPhone 16 Pro Max
+    const aspectRatio = DEVICE_ASPECT_RATIOS[deviceModel] || "1530 / 3036";
+    const cornerRadius = DEVICE_CORNER_RADIUS[deviceModel] || "40px";
+    
+    // Получаем настройки для размещения скриншота в устройстве
+    const screenshotConfig = DEVICE_SCREENSHOT_CONFIG[deviceModel] || 
+        DEVICE_SCREENSHOT_CONFIG["iPhone 16 Pro Max"]; // Используем значения по умолчанию
+    
     // Создаем плейсхолдеры для всех скриншотов сразу
     for (let i = 0; i < maxScreenshots; i++) {
+        const screenshotContainer = document.createElement("div");
+        screenshotContainer.className = "screenshot-container";
+        screenshotContainer.setAttribute("data-device", deviceModel);
+        
+        // Создаем элемент для скриншота
         const screenshotDiv = document.createElement("div");
         screenshotDiv.className = "screenshot-item";
         
-        // Применяем соотношение сторон из JSON, если оно указано
-        const aspectRatio = app.screenshotAspectRatio || '1530 / 3036';
+        // Применяем соотношение сторон из маппинга устройств
         screenshotDiv.style.aspectRatio = aspectRatio;
         
-        // Добавляем скелетон-плейсхолдер
-        const skeleton = document.createElement("div");
-        skeleton.className = "screenshot-skeleton";
-        skeleton.id = `screenshot-placeholder-${i + 1}`;
+        // Применяем настройки размещения скриншота в устройстве
+        screenshotDiv.style.width = screenshotConfig.width;
+        screenshotDiv.style.transform = `translateY(${screenshotConfig.offsetY}) translateX(${screenshotConfig.offsetX})`;
         
-        screenshotDiv.appendChild(skeleton);
-        screenshotsContainer.appendChild(screenshotDiv);
+        // Создаем контейнер для изображения устройства
+        const deviceContainer = document.createElement("div");
+        deviceContainer.className = "device-bezel";
+        deviceContainer.id = `device-bezel-${i + 1}`;
+        deviceContainer.setAttribute("data-device", deviceModel);
+        
+        // Добавляем изображение устройства
+        const deviceBezel = document.createElement("img");
+        deviceBezel.className = "device-bezel-image";
+        deviceBezel.alt = `${deviceModel} Frame`;
+        
+        // Имя файла устройства (например, iphone-16-pro-max-natural-titanium-portrait.png)
+        const bezelFileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait.png';
+        deviceBezel.src = `../assets/product-bezels/${bezelFileName}`;
+        
+        // Обработчик ошибки загрузки рамки устройства
+        deviceBezel.onerror = function() {
+            // Пробуем загрузить стандартную рамку iPhone 16 Pro Max как запасной вариант
+            if (deviceModel !== "iPhone 16 Pro Max") {
+                this.src = '../assets/product-bezels/iphone-16-pro-max-natural-titanium-portrait.png';
+                
+                // Если и стандартная рамка не загрузилась, скрываем контейнер рамки
+                this.onerror = function() {
+                    deviceContainer.style.display = 'none';
+                };
+            } else {
+                // Если не удалось загрузить стандартную рамку, просто скрываем контейнер
+                deviceContainer.style.display = 'none';
+            }
+        };
+        
+        // Структура: скриншот внутри контейнера
+        deviceContainer.appendChild(deviceBezel);
+        screenshotContainer.appendChild(screenshotDiv);
+        screenshotContainer.appendChild(deviceContainer);
+        screenshotsContainer.appendChild(screenshotContainer);
     }
     
     // Загружаем все изображения асинхронно
@@ -117,43 +192,52 @@ function updateUI(app) {
         img.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
         img.alt = `Screenshot ${screenNumber} of the app`;
         
-        // Добавляем класс для анимации появления
+        // Добавляем класс для анимации появления и применяем радиус скругления
         img.classList.add('screenshot-image');
+        img.style.borderRadius = cornerRadius;
+        
+        // Применяем настройки размещения скриншота в устройстве для изображения
+        img.style.width = '100%'; // Изображение заполняет весь контейнер
+        img.style.height = '100%';
         
         // Обработчик ошибки для использования светлой версии, если темная не найдена
         img.onerror = function() {
             this.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', false);
             
-            // Если и светлая версия не найдена, скрываем скелетон
+            // Если и светлая версия не найдена, скрываем элементы
             this.onerror = function() {
-                const placeholder = document.getElementById(`screenshot-placeholder-${index + 1}`);
-                if (placeholder) {
-                    placeholder.parentNode.style.display = 'none';
+                const screenshotDiv = document.querySelectorAll('.screenshot-item')[index];
+                if (screenshotDiv) {
+                    screenshotDiv.style.display = 'none';
+                }
+                
+                // Также скрываем и рамку устройства
+                const deviceBezel = document.getElementById(`device-bezel-${index + 1}`);
+                if (deviceBezel) {
+                    deviceBezel.style.display = 'none';
                 }
             };
         };
         
+        // Сразу добавляем изображение к соответствующему контейнеру для скриншота
+        const screenshotDiv = document.querySelectorAll('.screenshot-item')[index];
+        if (screenshotDiv) {
+            screenshotDiv.appendChild(img);
+        }
+        
         // Обработчик загрузки изображения
         img.onload = function() {
-            const placeholder = document.getElementById(`screenshot-placeholder-${index + 1}`);
-            if (placeholder) {
-                // Задержка для плавности (небольшая, чтобы не заставлять ждать пользователя)
-                setTimeout(() => {
-                    // Плавное исчезновение скелетона
-                    placeholder.style.opacity = '0';
-                    
-                    // После завершения анимации fade-out скелетона
-                    setTimeout(() => {
-                        // Заменяем плейсхолдер на загруженное изображение
-                        placeholder.parentNode.replaceChild(img, placeholder);
-                        
-                        // Плавное появление изображения
-                        setTimeout(() => {
-                            img.style.opacity = '1';
-                        }, 50);
-                    }, 200);
-                }, 100 * index); // Стаггерированная анимация для разных скриншотов
+            // Отображаем рамку устройства после загрузки скриншота
+            const deviceBezel = document.getElementById(`device-bezel-${index + 1}`);
+            if (deviceBezel) {
+                const bezelImg = deviceBezel.querySelector('img');
+                if (bezelImg) {
+                    bezelImg.style.display = 'block';
+                }
             }
+            
+            // Показываем изображение скриншота
+            img.style.opacity = '1';
         };
     });
     
