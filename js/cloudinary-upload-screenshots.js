@@ -183,7 +183,7 @@ async function uploadAppScreenshots(appId, screenshotsPath) {
     }
     
     console.log('\nВсе скриншоты успешно загружены!');
-    console.log(`\nЧтобы использовать эти скриншоты, обновите значение screenshots в apps.json для приложения ${appId}:`);
+    console.log(`\nЧтобы использовать эти скриншоты, обновите значение screenshots в apps-metadata.json для приложения ${appId}:`);
     console.log(`\nНапример: [${Array.from({length: regularScreenshots.length}, (_, i) => i + 1).join(', ')}]`);
     
   } catch (error) {

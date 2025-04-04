@@ -12,7 +12,7 @@ Thumbs.db
 .vscode/
 
 # Приватные данные
-data/apps.json 
+data/apps-metadata.json 
 assets/
 
 # Env files

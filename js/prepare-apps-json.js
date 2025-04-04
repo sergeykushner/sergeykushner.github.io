@@ -1,10 +1,10 @@
-// Скрипт для создания публичной версии apps.json без приватных данных
+// Скрипт для создания публичной версии apps-metadata.json без приватных данных
 const fs = require('fs');
 const path = require('path');
 
 // Пути к файлам
-const sourceFilePath = path.join(__dirname, '../data/apps.json');
-const targetFilePath = path.join(__dirname, '../data/apps-public.json');
+const sourceFilePath = path.join(__dirname, '../data/apps-metadata.json');
+const targetFilePath = path.join(__dirname, '../data/apps-metadata-public.json');
 
 // Ключи, которые нужно удалить из публичной версии
 const keysToRemove = [

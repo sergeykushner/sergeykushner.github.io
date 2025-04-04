@@ -1,5 +1,5 @@
 async function loadApps() {
-    const response = await fetch("../data/apps-public.json");
+    const response = await fetch("../data/apps-metadata-public.json");
     const apps = await response.json();
     const container = document.querySelector(".app-list-container");
     

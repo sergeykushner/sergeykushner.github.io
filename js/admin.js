@@ -39,7 +39,7 @@ function executeCommand(command) {
 // Функция для запуска скрипта обновления публичного JSON
 async function updatePublicJson() {
     try {
-        console.log('Запуск генерации публичной версии apps.json...');
+        console.log('Запуск генерации публичной версии apps-metadata.json...');
         await executeCommand('./js/update-public-json.sh');
         console.log('Публичная версия JSON успешно обновлена!');
     } catch (error) {
@@ -122,7 +122,7 @@ async function main() {
     
     // Определяем доступные операции
     const operations = [
-        'Обновить публичный JSON (data/apps-public.json)',
+        'Обновить публичный JSON (data/apps-metadata-public.json)',
         'Загрузить все изображения из assets',
         'Загрузить скриншоты для конкретного приложения',
         'Выход'
