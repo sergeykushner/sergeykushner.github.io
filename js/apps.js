@@ -1,5 +1,5 @@
 async function loadApps() {
-    const response = await fetch("./apps-public.json");
+    const response = await fetch("./data/apps-public.json");
     const apps = await response.json();
     const container = document.querySelector(".app-list-container");
     
@@ -10,7 +10,7 @@ async function loadApps() {
     if (typeof getCloudinaryImageUrl !== 'function') {
         await new Promise((resolve) => {
             const script = document.createElement('script');
-            script.src = '../src/js/cloudinary.js';
+            script.src = './js/cloudinary.js';
             script.onload = resolve;
             document.head.appendChild(script);
         });
@@ -24,7 +24,7 @@ async function loadApps() {
         const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
 
         appDiv.innerHTML = `
-            <a href="app.html?id=${app.id}" class="apps-app-link">
+            <a href="pages/app.html?id=${app.id}" class="apps-app-link">
                 <img src="${iconUrl}" class="apps-app-icon" alt="${app.title}" 
                      onerror="if(this.getAttribute('data-tried-light') !== 'true') { 
                          this.setAttribute('data-tried-light', 'true'); 

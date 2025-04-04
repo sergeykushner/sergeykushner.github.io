@@ -13,5 +13,6 @@ Thumbs.db
 
 # Приватные данные
 apps.json 
+data/apps.json 
 src/.env
 assets/

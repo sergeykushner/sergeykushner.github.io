@@ -2,7 +2,7 @@ async function loadAppDetail() {
     const urlParams = new URLSearchParams(window.location.search);
     const appId = urlParams.get("id");
     
-    const response = await fetch("./apps-public.json");
+    const response = await fetch("./data/apps-public.json");
     const apps = await response.json();
     const app = apps.find(a => a.id === appId);
     
@@ -161,7 +161,7 @@ function updateUI(app) {
     document.getElementById("email-link").href = `mailto:${app.email}`;
     
     // Обновляем ссылку на страницу Privacy Policy
-    document.getElementById("privacy-link").href = `app-privacy.html?id=${app.id}`;
+    document.getElementById("privacy-link").href = `pages/app-privacy.html?id=${app.id}`;
 }
 
 // Вызов функции загрузки при загрузке страницы
