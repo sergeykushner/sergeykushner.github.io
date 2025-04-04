@@ -14,6 +14,9 @@ const path = require('path');
 const fs = require('fs-extra');
 require('dotenv').config({ path: path.join(__dirname, '../../src/.env') });
 
+// Получение пути к apps.json из переменной окружения или по умолчанию
+const appsJsonPath = process.env.APPS_JSON_PATH || path.join(__dirname, '../../apps.json');
+
 // Функция для выполнения команды и возврата результата в виде промиса
 function executeCommand(command) {
     return new Promise((resolve, reject) => {
