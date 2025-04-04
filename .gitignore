@@ -13,13 +13,7 @@ Thumbs.db
 
 # Приватные данные
 data/apps.json 
-src/.env
 assets/
 
 # Env files
 .env
-.env.*
-!.env.example
-
-# Packages
-/package-lock.json
