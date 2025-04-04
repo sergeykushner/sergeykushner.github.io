@@ -2,12 +2,10 @@
   "name": "website",
   "version": "1.0.0",
   "description": "Personal website with Cloudinary integration",
-  "main": "js/app.js",
+  "main": "src/js/app.js",
   "scripts": {
-    "upload-assets": "node js/cloudinary.js",
-    "upload-screenshots": "node js/cloudinary-upload-screenshots.js",
-    "admin": "node js/admin.js",
-    "update-public-json": "js/update-public-json.sh"
+    "upload-assets": "node src/js/cloudinary-upload.js",
+    "build": "rm -rf .github.io && mkdir .github.io && cp -R public/* .github.io/ && cp -R src .github.io/ && cp -R assets .github.io/ && cp package.json package-lock.json .gitignore .github.io/"
   },
   "dependencies": {
     "cloudinary": "^1.40.0",
