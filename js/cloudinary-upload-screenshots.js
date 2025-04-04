@@ -116,7 +116,7 @@ async function uploadFile(filePath, cloudinaryPath) {
       folder: folder,
       public_id: fileName,
       overwrite: true,
-      use_filename: false,
+      use_filename: true,
       unique_filename: false
     });
     console.log(`Успешно загружено: ${result.secure_url}`);
@@ -150,41 +150,17 @@ async function uploadAppScreenshots(appId, screenshotsPath) {
     // Сортируем файлы по имени
     imageFiles.sort();
     
-    // Отделяем обычные скриншоты от темных
-    const regularScreenshots = [];
-    const darkScreenshots = [];
-    
+    // Загружаем каждое изображение, сохраняя оригинальное имя файла
     for (const file of imageFiles) {
-      if (file.toLowerCase().includes('dark')) {
-        darkScreenshots.push(file);
-      } else {
-        regularScreenshots.push(file);
-      }
-    }
-    
-    // Загружаем каждый обычный скриншот
-    for (let i = 0; i < regularScreenshots.length; i++) {
-      const file = regularScreenshots[i];
       const filePath = path.join(screenshotsPath, file);
-      const screenNumber = i + 1;
-      const cloudinaryFileName = `app-screen-${screenNumber}`;
+      // Используем имя файла без расширения как имя в Cloudinary
+      const fileNameWithoutExt = path.basename(file, path.extname(file));
       
-      await uploadFile(filePath, `apps/${appId}/${cloudinaryFileName}`);
-    }
-    
-    // Загружаем каждый темный скриншот
-    for (let i = 0; i < darkScreenshots.length; i++) {
-      const file = darkScreenshots[i];
-      const filePath = path.join(screenshotsPath, file);
-      const screenNumber = i + 1;
-      const cloudinaryFileName = `app-screen-${screenNumber}-dark`;
-      
-      await uploadFile(filePath, `apps/${appId}/${cloudinaryFileName}`);
+      await uploadFile(filePath, `apps/${appId}/${fileNameWithoutExt}`);
     }
     
     console.log('\nВсе скриншоты успешно загружены!');
-    console.log(`\nЧтобы использовать эти скриншоты, обновите значение screenshots в apps-metadata.json для приложения ${appId}:`);
-    console.log(`\nНапример: [${Array.from({length: regularScreenshots.length}, (_, i) => i + 1).join(', ')}]`);
+    console.log(`\nИзображения загружены с их оригинальными именами.`);
     
   } catch (error) {
     console.error('Ошибка при загрузке скриншотов:', error);
