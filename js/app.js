@@ -161,7 +161,7 @@ function updateUI(app) {
     document.getElementById("email-link").href = `mailto:${app.email}`;
     
     // Обновляем ссылку на страницу Privacy Policy
-    document.getElementById("privacy-link").href = `privacy.html?id=${app.id}`;
+    document.getElementById("privacy-link").href = `app-privacy.html?id=${app.id}`;
 }
 
 // Вызов функции загрузки при загрузке страницы
