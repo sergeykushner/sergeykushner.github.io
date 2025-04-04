@@ -13,8 +13,8 @@
         "googlePlayId": "",
         "screenshots": [
             1,
-            2,
-            3
+            1,
+            1
         ],
         "email": "",
         "privacyUpdatedDate": "",
@@ -1292,6 +1292,7 @@
         "screenshots": [
             1
         ],
+        "screenshotAspectRatio": "1260 / 2565",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2017-06-28"
