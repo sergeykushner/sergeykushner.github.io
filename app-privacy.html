@@ -24,10 +24,10 @@
     </head>
     
     <body>
-        <div class="privacy-container">
-        <div class="title privacy-title">
-            <h1 id="privacy-title"></h1>
-            <h3 id="privacy-updated"></h3>
+        <div class="app-privacy-container">
+        <div class="title app-privacy-title">
+            <h1 id="app-privacy-title"></h1>
+            <h3 id="app-privacy-updated"></h3>
         </div>
         <section class="app-privacy-content-section">
             <p>The <span id="app-name"></span> app does not collect or store any user data, except for locally storing your data on the device and on Apple's iCloud service. For more details, please refer to their privacy policy
@@ -58,8 +58,8 @@
                 document.getElementById("canonical-link").setAttribute("href", `https://sergeykushner.github.io/privacy.html?id=${app.id}`);
                 
                 // Update content
-                document.getElementById("privacy-title").textContent = `${app.displayName} Privacy Policy`;
-                document.getElementById("privacy-updated").textContent = `Updated ${app.privacyUpdatedDate}`;
+                document.getElementById("app-privacy-title").textContent = `${app.displayName} Privacy Policy`;
+                document.getElementById("app-privacy-updated").textContent = `Updated ${app.privacyUpdatedDate}`;
                 document.getElementById("app-name").textContent = app.displayName;
                 document.getElementById("email-link").href = `mailto:${app.email}`;
                 document.getElementById("email-link").textContent = "email me";
