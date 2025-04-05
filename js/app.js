@@ -24,8 +24,8 @@ const DEVICE_ASPECT_RATIOS = {
 
 // Соответствие устройств и радиусов скругления для скриншотов
 const DEVICE_CORNER_RADIUS = {
-    "iPhone 16 Pro Max": "29px",
-    "iPhone 15 Pro Max": "25px",
+    "iPhone 16 Pro Max": "9%",
+    "iPhone 15 Pro Max": "8%",
     // Другие устройства можно добавить по мере необходимости
 };
 
