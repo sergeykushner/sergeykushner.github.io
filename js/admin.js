@@ -101,7 +101,7 @@ async function uploadAppScreenshots() {
         }
         
         // Запускаем скрипт с аргументами
-        const command = `node js/cloudinary-upload-screenshots.js "${appId}" "${screenshotsPath}"`;
+        const command = `node js/cloudinary-tools.js upload "${appId}" "${screenshotsPath}"`;
         await executeCommand(command);
         
         // Спрашиваем пользователя, нужно ли обновить публичный JSON
@@ -115,6 +115,17 @@ async function uploadAppScreenshots() {
     }
 }
 
+// Функция для инвалидации кеша Cloudinary
+async function invalidateCloudinaryCache() {
+    try {
+        console.log('Запуск инвалидации кеша Cloudinary...');
+        await executeCommand('node js/cloudinary-tools.js invalidate');
+        console.log('Инвалидация кеша завершена!');
+    } catch (error) {
+        console.error('Произошла ошибка при инвалидации кеша:', error);
+    }
+}
+
 // Основная функция
 async function main() {
     console.log('Административный скрипт для сайта');
@@ -125,6 +136,7 @@ async function main() {
         'Обновить публичный JSON (data/apps-metadata-public.json)',
         'Загрузить все изображения из assets',
         'Загрузить скриншоты для конкретного приложения',
+        'Инвалидировать кеш Cloudinary',
         'Выход'
     ];
     
@@ -141,6 +153,9 @@ async function main() {
             break;
         case 2:
             await uploadAppScreenshots();
+            break;
+        case 3:
+            await invalidateCloudinaryCache();
             break;
         default:
             console.log('Выход из скрипта');
