@@ -129,117 +129,108 @@ function updateUI(app) {
     const screenshotConfig = DEVICE_SCREENSHOT_CONFIG[deviceModel] || 
         DEVICE_SCREENSHOT_CONFIG["iPhone 16 Pro Max"]; // Используем значения по умолчанию
     
-    // Создаем плейсхолдеры для всех скриншотов сразу
-    for (let i = 0; i < maxScreenshots; i++) {
+    // Загружаем рамку устройства заранее
+    function createScreenshotElement(screenNumber, index) {
+        // Имя файла устройства (например, iphone-16-pro-max-natural-titanium-portrait.png)
+        const bezelFileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait.png';
+        const bezelFilePath = `../assets/product-bezels/${bezelFileName}`;
+        // Запасной вариант рамки устройства
+        const fallbackBezelPath = '../assets/product-bezels/iphone-16-pro-max-natural-titanium-portrait.png';
+        
+        // Создаем основной контейнер для скриншота
         const screenshotContainer = document.createElement("div");
         screenshotContainer.className = "screenshot-container";
         screenshotContainer.setAttribute("data-device", deviceModel);
         
         // Создаем элемент для скриншота
-        const screenshotDiv = document.createElement("div");
-        screenshotDiv.className = "screenshot-item";
+        const screenshotItem = document.createElement("div");
+        screenshotItem.className = "screenshot-item";
         
         // Применяем соотношение сторон из маппинга устройств
-        screenshotDiv.style.aspectRatio = aspectRatio;
+        screenshotItem.style.aspectRatio = aspectRatio;
         
         // Применяем настройки размещения скриншота в устройстве
-        screenshotDiv.style.width = screenshotConfig.width;
-        screenshotDiv.style.transform = `translateY(${screenshotConfig.offsetY}) translateX(${screenshotConfig.offsetX})`;
+        screenshotItem.style.width = screenshotConfig.width;
+        screenshotItem.style.transform = `translateY(${screenshotConfig.offsetY}) translateX(${screenshotConfig.offsetX})`;
         
-        // Создаем контейнер для изображения устройства
-        const deviceContainer = document.createElement("div");
-        deviceContainer.className = "device-bezel";
-        deviceContainer.id = `device-bezel-${i + 1}`;
-        deviceContainer.setAttribute("data-device", deviceModel);
+        // Сначала создаем и добавляем рамку устройства (она должна загрузиться первой)
+        const deviceBezel = document.createElement("div");
+        deviceBezel.className = "device-bezel";
         
-        // Добавляем изображение устройства
-        const deviceBezel = document.createElement("img");
-        deviceBezel.className = "device-bezel-image";
-        deviceBezel.alt = `${deviceModel} Frame`;
+        const bezelImg = new Image();
+        bezelImg.className = "device-bezel-image";
+        bezelImg.alt = `${deviceModel} Frame`;
+        bezelImg.src = bezelFilePath;
         
-        // Имя файла устройства (например, iphone-16-pro-max-natural-titanium-portrait.png)
-        const bezelFileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait.png';
-        deviceBezel.src = `../assets/product-bezels/${bezelFileName}`;
-        
-        // Обработчик ошибки загрузки рамки устройства
-        deviceBezel.onerror = function() {
+        // Обработчик ошибки для рамки устройства
+        bezelImg.onerror = function() {
             // Пробуем загрузить стандартную рамку iPhone 16 Pro Max как запасной вариант
             if (deviceModel !== "iPhone 16 Pro Max") {
-                this.src = '../assets/product-bezels/iphone-16-pro-max-natural-titanium-portrait.png';
+                this.src = fallbackBezelPath;
                 
-                // Если и стандартная рамка не загрузилась, скрываем контейнер рамки
+                // Если и стандартная рамка не загрузилась, скрываем элемент рамки
                 this.onerror = function() {
-                    deviceContainer.style.display = 'none';
+                    deviceBezel.style.display = 'none';
                 };
             } else {
-                // Если не удалось загрузить стандартную рамку, просто скрываем контейнер
-                deviceContainer.style.display = 'none';
+                // Если не удалось загрузить стандартную рамку, скрываем элемент
+                deviceBezel.style.display = 'none';
             }
         };
         
-        // Структура: скриншот внутри контейнера
-        deviceContainer.appendChild(deviceBezel);
-        screenshotContainer.appendChild(screenshotDiv);
-        screenshotContainer.appendChild(deviceContainer);
-        screenshotsContainer.appendChild(screenshotContainer);
+        // Теперь создаем и добавляем скриншот
+        const screenshotImg = new Image();
+        screenshotImg.className = 'screenshot-image';
+        screenshotImg.alt = `Screenshot ${screenNumber} of the app`;
+        screenshotImg.style.borderRadius = cornerRadius;
+        
+        // Загружаем скриншот с учетом темного режима
+        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+        screenshotImg.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
+        
+        // Обработчик ошибки для скриншота
+        screenshotImg.onerror = function() {
+            // Если темная версия не загрузилась, пробуем светлую
+            if (prefersDarkMode) {
+                this.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', false);
+                this.onerror = function() {
+                    screenshotContainer.style.display = 'none'; // Скрываем весь контейнер, если оба варианта не загружаются
+                };
+            } else {
+                screenshotContainer.style.display = 'none'; // Скрываем контейнер, если изображение не загружается
+            }
+        };
+        
+        // Обработчик успешной загрузки скриншота
+        screenshotImg.onload = function() {
+            this.style.opacity = '1'; // Показываем скриншот когда он загрузился
+        };
+        
+        // Собираем структуру
+        deviceBezel.appendChild(bezelImg);
+        screenshotItem.appendChild(screenshotImg);
+        screenshotContainer.appendChild(deviceBezel);
+        screenshotContainer.appendChild(screenshotItem);
+        
+        return screenshotContainer;
     }
     
-    // Загружаем все изображения асинхронно
+    // Создаем все скриншоты и добавляем их в контейнер
     screenshotsToShow.forEach((screenNumber, index) => {
-        const img = new Image();
-        
-        // Получаем URL скриншота из Cloudinary с учетом темного режима
-        img.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
-        img.alt = `Screenshot ${screenNumber} of the app`;
-        
-        // Добавляем класс для анимации появления и применяем радиус скругления
-        img.classList.add('screenshot-image');
-        img.style.borderRadius = cornerRadius;
-        
-        // Применяем настройки размещения скриншота в устройстве для изображения
-        img.style.width = '100%'; // Изображение заполняет весь контейнер
-        img.style.height = '100%';
-        
-        // Обработчик ошибки для использования светлой версии, если темная не найдена
-        img.onerror = function() {
-            this.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', false);
-            
-            // Если и светлая версия не найдена, скрываем элементы
-            this.onerror = function() {
-                const screenshotDiv = document.querySelectorAll('.screenshot-item')[index];
-                if (screenshotDiv) {
-                    screenshotDiv.style.display = 'none';
-                }
-                
-                // Также скрываем и рамку устройства
-                const deviceBezel = document.getElementById(`device-bezel-${index + 1}`);
-                if (deviceBezel) {
-                    deviceBezel.style.display = 'none';
-                }
-            };
-        };
-        
-        // Сразу добавляем изображение к соответствующему контейнеру для скриншота
-        const screenshotDiv = document.querySelectorAll('.screenshot-item')[index];
-        if (screenshotDiv) {
-            screenshotDiv.appendChild(img);
-        }
-        
-        // Обработчик загрузки изображения
-        img.onload = function() {
-            // Отображаем рамку устройства после загрузки скриншота
-            const deviceBezel = document.getElementById(`device-bezel-${index + 1}`);
-            if (deviceBezel) {
-                const bezelImg = deviceBezel.querySelector('img');
-                if (bezelImg) {
-                    bezelImg.style.display = 'block';
-                }
-            }
-            
-            // Показываем изображение скриншота
-            img.style.opacity = '1';
-        };
+        const screenshotElement = createScreenshotElement(screenNumber, index);
+        screenshotsContainer.appendChild(screenshotElement);
     });
+    
+    // Всегда создаем три контейнера в режиме landscape для сохранения макета
+    if (!isPortrait && screenshotsToShow.length < 3) {
+        // Добавляем пустые плейсхолдеры для сохранения макета
+        for (let i = screenshotsToShow.length; i < 3; i++) {
+            const placeholderContainer = document.createElement("div");
+            placeholderContainer.className = "screenshot-container";
+            placeholderContainer.style.visibility = "hidden"; // Делаем невидимым, но сохраняем в потоке
+            screenshotsContainer.appendChild(placeholderContainer);
+        }
+    }
     
     // Устанавливаем email в футере
     document.getElementById("email-link").href = `mailto:${app.email}`;
