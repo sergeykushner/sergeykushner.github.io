@@ -17,7 +17,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     const fileName = `${imageName}${darkModeSuffix}`;
     
     // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/v4/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v5/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
 /**
@@ -52,7 +52,7 @@ function getDeviceBezelUrl(deviceModel) {
     const fileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
     
     // Структура пути в Cloudinary: /website/product-bezels/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v2/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}`;
 }
 
 /**

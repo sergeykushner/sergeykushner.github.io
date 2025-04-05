@@ -18,27 +18,27 @@ async function loadAppDetail() {
 // Соответствие устройств и соотношений сторон
 const DEVICE_ASPECT_RATIOS = {
     "iPhone 16 Pro Max": "1320 / 2868",
-    "iPhone 15 Pro Max": "1530 / 3036",
+    "iPhone 15 Pro Max": "1290 / 2796",
     // Другие устройства можно добавить по мере необходимости
 };
 
 // Соответствие устройств и радиусов скругления для скриншотов
 const DEVICE_CORNER_RADIUS = {
-    "iPhone 16 Pro Max": "20px",
-    "iPhone 15 Pro Max": "40px",
+    "iPhone 16 Pro Max": "29px",
+    "iPhone 15 Pro Max": "25px",
     // Другие устройства можно добавить по мере необходимости
 };
 
 // Настройки для размещения скриншота внутри рамки устройства
 const DEVICE_SCREENSHOT_CONFIG = {
     "iPhone 16 Pro Max": {
-        width: "89.79591837%",         // Ширина скриншота относительно рамки
+        width: "90%",         //  Screenshot 1320W / Bezel 1470W * 100% = 89.79591837%
         offsetY: "0%",       // Смещение скриншота по вертикали
         offsetX: "0%"         // Смещение скриншота по горизонтали
     },
     "iPhone 15 Pro Max": {
-        width: "87%",
-        offsetY: "-1%",
+        width: "85%", //  Screenshot 1290W / Bezel 1530W * 100% = 89.79591837
+        offsetY: "0%",
         offsetX: "0%"
     }
     // Добавьте другие устройства с их настройками по мере необходимости

@@ -17,16 +17,12 @@ body,
     border-style: solid;
 }
 
-.hero-device-group img {
-    width: 100%;
-    margin-bottom: 15px;
-}
-
 .screenshots-gallery {
     display: flex;
     width: 100%;
     justify-content: center;
     align-items: center;
+    margin-bottom: 50px;
     gap: 20px;
     flex-wrap: nowrap;
 }
@@ -42,7 +38,7 @@ body,
 
 .screenshot-item {
     position: relative;
-    z-index: 2;
+    z-index: 0;
     width: 100%;
     display: flex;
     justify-content: center;
