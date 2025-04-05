@@ -16,8 +16,14 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     const darkModeSuffix = isDarkMode ? '-dark' : '';
     const fileName = `${imageName}${darkModeSuffix}`;
     
+    // Добавляем трансформации для иконок приложений (128px)
+    let transformations = '';
+    if (imageName === 'app-icon') {
+        transformations = 'w_128,h_128,c_fill/';
+    }
+    
     // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/v5/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}v2/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
 /**
