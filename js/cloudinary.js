@@ -43,6 +43,19 @@ function getAppStoreBadgeUrl(isDarkMode = false) {
 }
 
 /**
+ * Получает URL для рамки устройства из Cloudinary
+ * @param {string} deviceModel - Модель устройства (например, 'iPhone 16 Pro Max')
+ * @returns {string} URL рамки устройства
+ */
+function getDeviceBezelUrl(deviceModel) {
+    // Преобразуем имя модели устройства в имя файла
+    const fileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
+    
+    // Структура пути в Cloudinary: /website/product-bezels/{fileName}
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}`;
+}
+
+/**
  * NODE.JS ФУНКЦИИ ДЛЯ ЗАГРУЗКИ ФАЙЛОВ НА CLOUDINARY
  * Для запуска:
  * 1. Установите необходимые зависимости: npm install cloudinary dotenv fs-extra
@@ -203,51 +216,105 @@ if (typeof require !== 'undefined') {
         }
     }
 
-    // Функция загрузки всех приложений
-    async function uploadAllApps() {
-        // Получаем список всех папок в директории apps
-        const appsDir = path.join(assetsDir, 'apps');
-        const appFolders = await fs.readdir(appsDir);
+    // Функция для загрузки рамок устройств
+    async function uploadDeviceBezels() {
+        const bezelsDir = path.join(assetsDir, 'product-bezels');
         
-        // Фильтруем папки приложений (исключаем .DS_Store и уже загруженные)
-        const appsToUpload = appFolders.filter(folder => {
-            if (folder === '.DS_Store') return false;
-            if (UPLOADED_APPS.includes(folder)) return false;
-            
-            // Проверяем, что это директория
-            const folderPath = path.join(appsDir, folder);
-            return fs.statSync(folderPath).isDirectory();
-        });
-        
-        console.log(`Найдено ${appsToUpload.length} новых приложений для загрузки`);
-        
-        // Загружаем каждое приложение
-        for (const appFolder of appsToUpload) {
-            console.log(`\nЗагружаем ассеты для ${appFolder}...`);
-            await uploadAppAssets(appFolder);
+        if (!await fs.exists(bezelsDir)) {
+            console.log('Директория product-bezels не найдена');
+            return;
         }
+        
+        // Создаем папку для рамок устройств
+        await createFolder(`${CLOUDINARY_ROOT_FOLDER}/product-bezels`);
+        
+        const files = await fs.readdir(bezelsDir);
+        
+        for (const file of files) {
+            if (file === '.DS_Store') continue; // Пропускаем системные файлы
+            
+            const filePath = path.join(bezelsDir, file);
+            const stat = await fs.stat(filePath);
+            
+            if (stat.isFile()) {
+                const fileName = path.parse(file).name;
+                console.log(`Загрузка рамки устройства: ${fileName}`);
+                await uploadFile(filePath, `product-bezels/${fileName}`);
+            }
+        }
+        
+        console.log('Все рамки устройств успешно загружены');
     }
 
-    // Основная функция для загрузки оставшихся ассетов
-    async function uploadRemainingAssets() {
+    // Функция для обработки аргументов командной строки
+    function parseArgs() {
+        const args = process.argv.slice(2);
+        return args;
+    }
+
+    // Main function
+    async function main() {
         try {
-            // Создаем корневые папки в Cloudinary
-            console.log("Создаем корневые папки в Cloudinary...");
+            // Получаем аргументы командной строки
+            const args = parseArgs();
+            const command = args[0] || 'all';
+            
+            // Проверяем команду
+            if (command === 'bezels') {
+                // Загружаем только рамки устройств
+                console.log("Загрузка только рамок устройств...");
+                await createFolder(CLOUDINARY_ROOT_FOLDER);
+                await createFolder(`${CLOUDINARY_ROOT_FOLDER}/product-bezels`);
+                await uploadDeviceBezels();
+                console.log("Загрузка рамок устройств завершена!");
+                return;
+            }
+            
+            // Если команда all или не указана, загружаем всё
+            // Создаем основную папку website, если она еще не существует
             await createFolder(CLOUDINARY_ROOT_FOLDER);
-            await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
             
-            // Загружаем все приложения
-            console.log("Загружаем оставшиеся приложения...");
-            await uploadAllApps();
+            // Загружаем бейджи App Store
+            await uploadBadges();
             
-            console.log('Загрузка оставшихся ассетов успешно завершена!');
+            // Загружаем рамки устройств
+            await uploadDeviceBezels();
+            
+            // Загружаем ассеты для всех приложений из конфигурации
+            const appsDir = path.join(assetsDir, 'apps');
+            const appFolders = await fs.readdir(appsDir);
+            
+            console.log(`Найдено ${appFolders.length} папок с приложениями`);
+            
+            for (const appFolder of appFolders) {
+                if (appFolder === '.DS_Store') continue; // Пропускаем системные файлы
+                
+                if (UPLOADED_APPS.includes(appFolder)) {
+                    console.log(`Приложение ${appFolder} уже загружено, пропускаем...`);
+                    continue;
+                }
+                
+                console.log(`Загрузка ассетов для приложения ${appFolder}...`);
+                await uploadAppAssets(appFolder);
+            }
+            
+            console.log('Все файлы успешно загружены!');
+            
         } catch (error) {
-            console.error('Ошибка при загрузке ассетов:', error);
+            console.error('Произошла ошибка при загрузке файлов:', error);
         }
     }
 
     // Если файл запущен напрямую (не импортирован)
     if (require.main === module) {
-        uploadRemainingAssets();
+        main();
     }
+}
+
+if (typeof window !== 'undefined') {
+    // Экспортируем функции для использования в браузере
+    window.getCloudinaryImageUrl = getCloudinaryImageUrl;
+    window.getAppStoreBadgeUrl = getAppStoreBadgeUrl;
+    window.getShareImageUrl = getShareImageUrl;
+    window.getDeviceBezelUrl = getDeviceBezelUrl;
 } 

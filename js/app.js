@@ -133,9 +133,12 @@ function updateUI(app) {
     function createScreenshotElement(screenNumber, index) {
         // Имя файла устройства (например, iphone-16-pro-max-natural-titanium-portrait.png)
         const bezelFileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait.png';
-        const bezelFilePath = `../assets/product-bezels/${bezelFileName}`;
-        // Запасной вариант рамки устройства
-        const fallbackBezelPath = '../assets/product-bezels/iphone-16-pro-max-natural-titanium-portrait.png';
+        
+        // Используем Cloudinary для получения рамки устройства
+        const bezelFilePath = getDeviceBezelUrl(deviceModel);
+        
+        // Запасной вариант рамки устройства из Cloudinary
+        const fallbackBezelPath = getDeviceBezelUrl('iPhone 16 Pro Max');
         
         // Создаем основной контейнер для скриншота
         const screenshotContainer = document.createElement("div");
