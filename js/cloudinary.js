@@ -17,7 +17,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     const fileName = `${imageName}${darkModeSuffix}`;
     
     // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/v2/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v4/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
 /**
