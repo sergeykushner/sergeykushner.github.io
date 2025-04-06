@@ -19,6 +19,8 @@ async function loadAppDetail() {
 const DEVICE_ASPECT_RATIOS = {
     "iPhone 16 Pro Max": "1320 / 2868",
     "iPhone 15 Pro Max": "1290 / 2796",
+    "Google Pixel 1": "1212 / 2457",
+    "iPhone 15 Pro Max - Landscape": "3036 / 1530",
     // Другие устройства можно добавить по мере необходимости
 };
 
