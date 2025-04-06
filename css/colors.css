@@ -17,7 +17,8 @@ li {
     color: rgb(0 0 0);
 }
 
-.title h3 {
+.title h3,
+.screenshots-missing {
     color: rgb(60 60 67 / 60%);
 }
 
@@ -33,6 +34,10 @@ a {
 
 .divider {
     color: rgb(0 0 0 / 15%);
+}
+
+.screenshots-missing {
+    border: 1px dashed rgb(0 0 0 / 15%);
 }
 
 .screenshot-image {
@@ -59,7 +64,8 @@ a {
         color: rgb(255 255 255);
     }
     
-    .title h3 {
+    .title h3,
+    .screenshots-missing {
         color: rgb(235 235 245 / 60%);
     }
     
@@ -75,6 +81,10 @@ a {
     
     .divider {
         color: rgb(255 255 255 / 25%);
+    }
+
+    .screenshots-missing {
+        border: 1px dashed rgb(255 255 255 / 25%);
     }
 
     .apps-app-icon,

@@ -23,6 +23,10 @@ a {
     text-decoration: none;
 }
 
+.screenshots-missing {
+    font-size: 1.2rem;
+}
+
 .footer-links a {
     /*font-weight: 300;
     font-size: 13px; */
