@@ -28,7 +28,7 @@ const DEVICE_ASPECT_RATIOS = {
     "App Store Screenshot 2160/3840": "2160 / 3840",
     "Screenshot 1176/2088 ": "1176 / 2088",
     "App Store Screenshot 1176/2088": "1176 / 2088",
-    "Screenshot 1728/2304 ": "1728 / 2304",
+    "Screenshot 1728/2304": "1728 / 2304",
     "App Store Screenshot 495/994": "495 / 994",
     // Другие устройства можно добавить по мере необходимости
 };
@@ -64,8 +64,8 @@ const DEVICE_SCREENSHOT_CONFIG = {
         offsetX: "0%"
     },
     "Screenshot 1176/2088": {
-        width: "90%",
-        offsetY: "0%",
+        width: "86%",
+        offsetY: "0.25%",
         offsetX: "0%"
     },
     "Google Pixel 1": {
@@ -194,7 +194,7 @@ function updateUI(app) {
             "Screenshots Missing",
             "App Store Screenshot 460/996",
             "App Store Screenshot 2160/3840",
-            "Screenshot 1728/2304 ",
+            "Screenshot 1728/2304",
             "App Store Screenshot 495/994",
             "App Store Screenshot 392/696"
         ];

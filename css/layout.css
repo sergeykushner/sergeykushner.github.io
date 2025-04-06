@@ -23,7 +23,6 @@ body,
     justify-content: center;
     align-items: center;
     margin-bottom: 50px;
-    gap: 20px;
     flex-wrap: nowrap;
 }
 
