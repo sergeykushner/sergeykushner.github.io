@@ -54,8 +54,16 @@ function getAppStoreBadgeUrl(isDarkMode = false) {
  * @returns {string} URL рамки устройства
  */
 function getDeviceBezelUrl(deviceModel) {
-    // Преобразуем имя модели устройства в имя файла
-    const fileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
+    // Маппинг устройств на имя файла рамки
+    const deviceBezelFiles = {
+        "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
+        "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
+        "Google Pixel 1": "google-pixel-1-silver-portrait"
+    };
+    
+    // Получаем имя файла из маппинга или генерируем его из имени устройства
+    const fileName = deviceBezelFiles[deviceModel] || 
+        deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
     
     // Структура пути в Cloudinary: /website/product-bezels/{fileName}
     return `${CLOUDINARY_BASE_URL}/image/upload/v2/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}`;

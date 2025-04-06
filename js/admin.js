@@ -7,6 +7,7 @@ const fs = require('fs-extra');
 const path = require('path');
 const cloudinary = require('cloudinary').v2;
 const cloudinaryManager = require('./cloudinary-manager');
+const { exec } = require('child_process');
 
 // Пути к директориям с ресурсами
 const appsDir = path.join(__dirname, '../assets/apps');
@@ -39,6 +40,7 @@ async function main() {
                     'Загрузить изображения приложений',
                     'Инвалидировать кэш изображений в Cloudinary',
                     'Перезагрузить все изображения из assets',
+                    'Обновить публичный JSON',
                     'Выход'
                 ]
             }
@@ -59,6 +61,9 @@ async function main() {
                 break;
             case 'Перезагрузить все изображения из assets':
                 await uploadAllAssets();
+                break;
+            case 'Обновить публичный JSON':
+                await updatePublicJson();
                 break;
             case 'Выход':
                 console.log('Выход из скрипта');
@@ -496,6 +501,45 @@ async function getAppDirectories() {
     }
     
     return appDirs;
+}
+
+/**
+ * Функция для выполнения команды и возврата результата в виде промиса
+ * @param {string} command - Команда для выполнения
+ * @returns {Promise<string>} Результат выполнения команды
+ */
+function executeCommand(command) {
+    return new Promise((resolve, reject) => {
+        console.log(`Выполняется команда: ${command}`);
+        
+        exec(command, { cwd: path.join(__dirname, '..') }, (error, stdout, stderr) => {
+            if (error) {
+                console.error(`Ошибка: ${error.message}`);
+                reject(error);
+                return;
+            }
+            
+            if (stderr) {
+                console.error(`Ошибка: ${stderr}`);
+            }
+            
+            console.log(`Результат: ${stdout}`);
+            resolve(stdout);
+        });
+    });
+}
+
+/**
+ * Обновление публичного JSON с метаданными приложений
+ */
+async function updatePublicJson() {
+    try {
+        console.log('Запуск генерации публичной версии apps-metadata.json...');
+        await executeCommand('./js/update-public-json.sh');
+        console.log('Публичная версия JSON успешно обновлена!');
+    } catch (error) {
+        console.error('Произошла ошибка при обновлении публичного JSON:', error);
+    }
 }
 
 // Запускаем скрипт

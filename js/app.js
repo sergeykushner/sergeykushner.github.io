@@ -35,8 +35,10 @@ const DEVICE_ASPECT_RATIOS = {
 
 // Соответствие устройств и радиусов скругления для скриншотов
 const DEVICE_CORNER_RADIUS = {
+    "Slide 16/9": "50%",
     "iPhone 16 Pro Max": "7%",
     "iPhone 15 Pro Max": "7%",
+    "Google Pixel 1": "0%",
     // Другие устройства можно добавить по мере необходимости
 };
 
@@ -48,11 +50,24 @@ const DEVICE_SCREENSHOT_CONFIG = {
         offsetX: "0%"         // Смещение скриншота по горизонтали
     },
     "iPhone 15 Pro Max": {
-        width: "85%", //  Screenshot 1290W / Bezel 1530W * 100% = 89.79591837
-        offsetY: "0.4%",
+        width: "84.5%", //  Screenshot 1290W / Bezel 1530W * 100% = 89.79591837
+        offsetY: "0%", 
         offsetX: "0%"
+    },
+    "Google Pixel 1": {
+        width: "90%",
+        offsetY: "-1%",
+        offsetX: "-0.4%"
     }
     // Добавьте другие устройства с их настройками по мере необходимости
+};
+
+// Настройки для конкретных моделей устройств и их файлов рамок
+const DEVICE_BEZEL_FILES = {
+    "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
+    "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
+    "Google Pixel 1": "google-pixel-1-silver-portrait"
+    // Другие устройства можно добавить по мере необходимости
 };
 
 function updateMetaTags(app) {
@@ -143,7 +158,7 @@ function updateUI(app) {
     // Получаем тип устройства и его соотношение сторон
     const deviceModel = app.screenshotProduct || "iPhone 16 Pro Max"; // По умолчанию iPhone 16 Pro Max
     const aspectRatio = DEVICE_ASPECT_RATIOS[deviceModel] || "1530 / 3036";
-    const cornerRadius = DEVICE_CORNER_RADIUS[deviceModel] || "40px";
+    const cornerRadius = DEVICE_CORNER_RADIUS[deviceModel] || "0%";
     
     // Получаем настройки для размещения скриншота в устройстве
     const screenshotConfig = DEVICE_SCREENSHOT_CONFIG[deviceModel] || 
@@ -156,27 +171,28 @@ function updateUI(app) {
             "Slide 16/9",
             "App Store Screenshot 510/1012",
             "Screenshots Missing",
-            "Google Pixel 1",
             "App Store Screenshot 460/996",
             "iPhone 15 Pro Max - Landscape",
             "App Store Screenshot 2160/3840",
             "Screenshot 1176/2088 ",
             "App Store Screenshot 1176/2088",
             "Screenshot 1728/2304 ",
-            "App Store Screenshot 495/994"
+            "App Store Screenshot 495/994",
+            "App Store Screenshot 392/696"
         ];
         
         // Проверяем, нужно ли отображать рамку устройства
         const shouldShowBezel = !noBezelScreenshotTypes.includes(deviceModel);
         
-        // Имя файла устройства (например, iphone-16-pro-max-natural-titanium-portrait.png)
-        const bezelFileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait.png';
+        // Получаем имя файла устройства из маппинга или генерируем его
+        const bezelFileName = DEVICE_BEZEL_FILES[deviceModel] || 
+            deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
         
         // Используем Cloudinary для получения рамки устройства
-        const bezelFilePath = shouldShowBezel ? getDeviceBezelUrl(deviceModel) : '';
+        const bezelUrl = shouldShowBezel ? getDeviceBezelUrl(deviceModel) : '';
         
         // Запасной вариант рамки устройства из Cloudinary
-        const fallbackBezelPath = shouldShowBezel ? getDeviceBezelUrl('iPhone 16 Pro Max') : '';
+        const fallbackBezelUrl = shouldShowBezel ? getDeviceBezelUrl('iPhone 16 Pro Max') : '';
         
         // Создаем основной контейнер для скриншота
         const screenshotContainer = document.createElement("div");
@@ -213,13 +229,13 @@ function updateUI(app) {
             const bezelImg = new Image();
             bezelImg.className = "device-bezel-image";
             bezelImg.alt = `${deviceModel} Frame`;
-            bezelImg.src = bezelFilePath;
+            bezelImg.src = bezelUrl;
             
             // Обработчик ошибки для рамки устройства
             bezelImg.onerror = function() {
                 // Пробуем загрузить стандартную рамку iPhone 16 Pro Max как запасной вариант
                 if (deviceModel !== "iPhone 16 Pro Max") {
-                    this.src = fallbackBezelPath;
+                    this.src = fallbackBezelUrl;
                     
                     // Если и стандартная рамка не загрузилась, скрываем элемент рамки
                     this.onerror = function() {
