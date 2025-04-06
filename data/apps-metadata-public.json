@@ -1293,7 +1293,9 @@
         "appStoreId": "1247521624",
         "googlePlayId": "",
         "screenshots": [
-            1
+            1,
+            2,
+            3
         ],
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
@@ -1398,7 +1400,8 @@
         "screenshots": [
             1,
             2,
-            5
+            5,
+            3
         ],
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
@@ -1533,7 +1536,8 @@
         "googlePlayId": "",
         "screenshots": [
             1,
-            2
+            2,
+            3
         ],
         "screenshotProduct": "App Store Screenshot 2160/3840",
         "email": "",
@@ -1561,7 +1565,7 @@
     },
     {
         "id": "rash-down-reskinned",
-        "displayName": "Rash Down Reskinned",
+        "displayName": "Rash Down 2",
         "title": "Rash Down Reskinned",
         "subtitle": "",
         "promoText": "",

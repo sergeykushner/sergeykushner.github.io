@@ -44,12 +44,12 @@ const DEVICE_CORNER_RADIUS = {
 const DEVICE_SCREENSHOT_CONFIG = {
     "iPhone 16 Pro Max": {
         width: "90%",         //  Screenshot 1320W / Bezel 1470W * 100% = 89.79591837%
-        offsetY: "0%",       // Смещение скриншота по вертикали
+        offsetY: "0.1%",       // Смещение скриншота по вертикали
         offsetX: "0%"         // Смещение скриншота по горизонтали
     },
     "iPhone 15 Pro Max": {
         width: "85%", //  Screenshot 1290W / Bezel 1530W * 100% = 89.79591837
-        offsetY: "0%",
+        offsetY: "0.4%",
         offsetX: "0%"
     }
     // Добавьте другие устройства с их настройками по мере необходимости
@@ -124,6 +124,15 @@ function updateUI(app) {
     // иначе используем стандартные номера (1, 2, 3)
     let screenshotsToShow = app.screenshots || [1, 2, 3];
     
+    // Если в массиве screenshots указан 0 или массив пустой, показываем текст "Screenshots Missing"
+    if (screenshotsToShow.length === 0 || (screenshotsToShow.length === 1 && screenshotsToShow[0] === 0)) {
+        const missingContainer = document.createElement("div");
+        missingContainer.className = "screenshots-missing";
+        missingContainer.textContent = "Screenshots Missing";
+        screenshotsContainer.appendChild(missingContainer);
+        return; // Прекращаем выполнение функции, так как скриншотов нет
+    }
+    
     // Определяем максимальное количество скриншотов для отображения (3 для десктопа, 2 для мобильного)
     const isPortrait = window.matchMedia('(orientation: portrait)').matches;
     const maxScreenshots = isPortrait ? 2 : 3;
@@ -173,6 +182,7 @@ function updateUI(app) {
         const screenshotContainer = document.createElement("div");
         screenshotContainer.className = "screenshot-container";
         screenshotContainer.setAttribute("data-device", deviceModel);
+        
         
         // Создаем элемент для скриншота
         const screenshotItem = document.createElement("div");
@@ -275,17 +285,6 @@ function updateUI(app) {
         const screenshotElement = createScreenshotElement(screenNumber, index);
         screenshotsContainer.appendChild(screenshotElement);
     });
-    
-    // Всегда создаем три контейнера в режиме landscape для сохранения макета
-    if (!isPortrait && screenshotsToShow.length < 3) {
-        // Добавляем пустые плейсхолдеры для сохранения макета
-        for (let i = screenshotsToShow.length; i < 3; i++) {
-            const placeholderContainer = document.createElement("div");
-            placeholderContainer.className = "screenshot-container";
-            placeholderContainer.style.visibility = "hidden"; // Делаем невидимым, но сохраняем в потоке
-            screenshotsContainer.appendChild(placeholderContainer);
-        }
-    }
     
     // Устанавливаем email в футере
     document.getElementById("email-link").href = `mailto:${app.email}`;
