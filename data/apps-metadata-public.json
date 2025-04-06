@@ -1,27 +1,5 @@
 [
     {
-        "id": "template",
-        "displayName": "",
-        "title": "",
-        "subtitle": "",
-        "promoText": "",
-        "metaDescription": "",
-        "fullDescription": [
-            ""
-        ],
-        "appStoreId": "",
-        "googlePlayId": "",
-        "screenshots": [
-            1,
-            1,
-            1
-        ],
-        "screenshotProduct": "iPhone 16 Pro Max",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": ""
-    },
-    {
         "id": "time-capsule",
         "displayName": "Capsula",
         "title": "Capsula - Digital Time Capsule",
@@ -1315,7 +1293,9 @@
         "appStoreId": "1247856997",
         "googlePlayId": "",
         "screenshots": [
-            1
+            1,
+            2,
+            3
         ],
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
@@ -1335,7 +1315,9 @@
         "appStoreId": "1247847652",
         "googlePlayId": "",
         "screenshots": [
-            1
+            1,
+            2,
+            3
         ],
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
@@ -1356,8 +1338,8 @@
         "googlePlayId": "",
         "screenshots": [
             1,
-            1,
-            1
+            2,
+            3
         ],
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
@@ -1446,7 +1428,7 @@
             1,
             2
         ],
-        "screenshotProduct": "Screenshot 1728/2304 ",
+        "screenshotProduct": "Screenshot 1728/2304",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2017-04-10"
@@ -1487,7 +1469,9 @@
         "appStoreId": "1223055295",
         "googlePlayId": "",
         "screenshots": [
-            1
+            1,
+            2,
+            3
         ],
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
@@ -1516,7 +1500,7 @@
         "screenshots": [
             1
         ],
-        "screenshotProduct": "Screenshot 1728/2304 ",
+        "screenshotProduct": "Screenshot 1728/2304",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2016-09-16"
@@ -1660,5 +1644,25 @@
         "releaseDate": "2016-08-01",
         "releaseDateAndroidFree": "2016-03-11",
         "releaseDateAndroidPaid": "2016-06-09"
+    },
+    {
+        "id": "template",
+        "displayName": "Template",
+        "title": "Template",
+        "subtitle": "Template App Subtitle",
+        "promoText": "Template App Promo Text",
+        "metaDescription": "Template App Meta Description",
+        "fullDescription": [
+            "Template App Description"
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "iPhone 16 Pro Max",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": ""
     }
 ]

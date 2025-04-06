@@ -63,16 +63,16 @@ const DEVICE_SCREENSHOT_CONFIG = {
         offsetY: "0%", 
         offsetX: "0%"
     },
-    "Screenshot 1176/2088": {
-        width: "86%",
-        offsetY: "0.25%",
-        offsetX: "0%"
-    },
-    "Google Pixel 1": {
-        width: "90%",
-        offsetY: "-1%",
-        offsetX: "-0.4%"
-    }
+    // "Screenshot 1176/2088": {
+    //     width: "86%",
+    //     offsetY: "0.25%",
+    //     offsetX: "0%"
+    // },
+    // "Google Pixel 1": {
+    //     width: "90%",
+    //     offsetY: "-1%",
+    //     offsetX: "-0.4%"
+    // }
     // Добавьте другие устройства с их настройками по мере необходимости
 };
 
@@ -81,8 +81,8 @@ const DEVICE_BEZEL_FILES = {
     "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max - Landscape": "iphone-15-pro-max-natural-titanium-landscape",
-    "Screenshot 1176/2088": "iphone-6s-plus-space-gray-portrait",
-    "Google Pixel 1": "google-pixel-1-silver-portrait"
+    // "Screenshot 1176/2088": "iphone-6s-plus-space-gray-portrait",
+    // "Google Pixel 1": "google-pixel-1-silver-portrait"
     // Другие устройства можно добавить по мере необходимости
 };
 
@@ -190,13 +190,16 @@ function updateUI(app) {
         // Список типов скриншотов, для которых не нужно отображать рамку устройства
         const noBezelScreenshotTypes = [
             "Slide 16/9",
-            "App Store Screenshot 510/1012",
             "Screenshots Missing",
-            "App Store Screenshot 460/996",
             "App Store Screenshot 2160/3840",
-            "Screenshot 1728/2304",
+            "App Store Screenshot 1176/2088",
+            "App Store Screenshot 510/1012",
             "App Store Screenshot 495/994",
-            "App Store Screenshot 392/696"
+            "App Store Screenshot 460/996",
+            "App Store Screenshot 392/696",
+            "Screenshot 1728/2304",
+            "Screenshot 1176/2088",
+            "Google Pixel 1"
         ];
         
         // Список типов скриншотов без рамки, но с применением скругления
