@@ -3,9 +3,9 @@
  * 
  * Использование:
  * node js/cloudinary-upload-script.js bezels        # Загрузить все рамки устройств
- * node js/cloudinary-upload-script.js app <app-id>  # Загрузить все ресурсы приложения
- * node js/cloudinary-upload-script.js smartapp <app-id>  # Умная загрузка ресурсов приложения
- * node js/cloudinary-upload-script.js screenshots <app-id>  # Загрузить скриншоты для приложения
+ * node js/cloudinary-upload-script.js app <app-id>  # Загрузка ресурсов приложения
+ * node js/cloudinary-upload-script.js badges        # Загрузить бейджи
+ * node js/cloudinary-upload-script.js all           # Загрузить все ресурсы
  */
 
 const path = require('path');
@@ -22,12 +22,6 @@ const UPLOAD_MODES = {
     ALL: 0,        // Загрузить все (перезаписать существующие)
     SPECIFIC: 1,   // Загрузить конкретный файл
     NEW_ONLY: 2    // Загрузить только новые файлы
-};
-
-// Валидные опции для команд
-const VALID_OPTIONS = {
-    bezels: ['all', 'new'],
-    screenshots: ['all', 'new']
 };
 
 /**
@@ -47,23 +41,7 @@ async function processArgs() {
         case 'bezels':
             await uploadBezels(args[1] || 'all');
             break;
-        case 'screenshots':
-            if (args.length < 2) {
-                console.error('Не указан ID приложения');
-                showHelp();
-                return;
-            }
-            await uploadScreenshots(args[1], args[2] || 'all');
-            break;
         case 'app':
-            if (args.length < 2) {
-                console.error('Не указан ID приложения');
-                showHelp();
-                return;
-            }
-            await uploadAppAssets(args[1]);
-            break;
-        case 'smartapp':
             if (args.length < 2) {
                 console.error('Не указан ID приложения');
                 showHelp();
@@ -103,17 +81,11 @@ function showHelp() {
   all                           Перезагрузить все изображения из assets 
                                (бейджи, рамки устройств, все приложения)
   
-  app <app-id>                  Загрузить все изображения конкретного приложения
-                               (иконки, превью, скриншоты)
-  
-  smartapp <app-id>             Умная загрузка всех изображений приложения
+  app <app-id>                  Загрузка всех изображений приложения
                                (обнаруживает скриншоты в любом месте, поддерживает структуру папок)
   
   bezels [all|new|<имя файла>]   Загрузить рамки устройств 
                                  (all - все, new - только новые, <имя файла> - конкретный файл)
-  
-  screenshots <app-id> [all|new] Загрузить скриншоты для приложения
-                                 (all - все, new - только новые)
   
   badges                         Загрузить все бейджи
 
@@ -138,16 +110,16 @@ async function checkDirectoryExists(dirPath, dirName) {
 /**
  * Обработка опции загрузки
  * @param {string} option - Опция загрузки (all, new, или имя файла)
- * @param {string} command - Команда (bezels, screenshots)
  * @returns {number} Режим загрузки (0 - все, 1 - конкретный файл, 2 - только новые)
  */
-function parseUploadOption(option, command) {
-    if (VALID_OPTIONS[command] && VALID_OPTIONS[command].includes(option)) {
-        return option === 'all' ? UPLOAD_MODES.ALL : UPLOAD_MODES.NEW_ONLY;
+function parseUploadOption(option) {
+    if (option === 'all') {
+        return UPLOAD_MODES.ALL;
+    } else if (option === 'new') {
+        return UPLOAD_MODES.NEW_ONLY;
+    } else {
+        return UPLOAD_MODES.SPECIFIC;
     }
-    
-    // Если опция не входит в список валидных, считаем её именем файла
-    return UPLOAD_MODES.SPECIFIC;
 }
 
 /**
@@ -161,7 +133,7 @@ async function uploadBezels(option = 'all') {
         return;
     }
     
-    const mode = parseUploadOption(option, 'bezels');
+    const mode = parseUploadOption(option);
     let specificFile = null;
     
     if (mode === UPLOAD_MODES.ALL) {
@@ -196,38 +168,6 @@ async function uploadBezels(option = 'all') {
     
     const count = await cloudinaryManager.uploadDeviceBezels(bezelsDir, mode, specificFile);
     console.log(`Загрузка рамок устройств завершена. Загружено: ${count}`);
-}
-
-/**
- * Загрузка скриншотов для приложения
- * @param {string} appId - ID приложения
- * @param {string} option - Опция загрузки (all, new)
- */
-async function uploadScreenshots(appId, option = 'all') {
-    console.log(`Загрузка скриншотов для приложения ${appId}...`);
-    
-    const screenshotsPath = path.join(appsDir, appId, 'screenshots');
-    
-    if (!await checkDirectoryExists(screenshotsPath, 'скриншотов')) {
-        return;
-    }
-    
-    const mode = parseUploadOption(option, 'screenshots');
-    
-    if (mode === UPLOAD_MODES.SPECIFIC) {
-        console.error(`Неизвестная опция: ${option}`);
-        console.log('Допустимые опции: all, new');
-        return;
-    }
-    
-    if (mode === UPLOAD_MODES.ALL) {
-        console.log('Режим: загрузка всех скриншотов');
-    } else if (mode === UPLOAD_MODES.NEW_ONLY) {
-        console.log('Режим: загрузка только новых скриншотов');
-    }
-    
-    const count = await cloudinaryManager.uploadAppScreenshots(appId, screenshotsPath, mode);
-    console.log(`Загрузка скриншотов для приложения ${appId} завершена. Загружено: ${count}`);
 }
 
 /**
@@ -277,7 +217,12 @@ async function uploadAllAssets() {
         // Для каждого приложения загружаем ассеты
         for (const appFolder of appDirs) {
             console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
-            await cloudinaryManager.uploadAppAssets(appFolder, appsDir, true);
+            const result = await cloudinaryManager.smartUploadAppAssets(appFolder, appsDir, true);
+            if (result.errors && result.errors.length > 0) {
+                console.warn(`⚠️ Загрузка приложения ${appFolder} выполнена с ошибками`);
+            } else {
+                console.log(`✅ Загрузка приложения ${appFolder} успешно завершена`);
+            }
         }
         
         console.log('\nВсе изображения успешно перезагружены!');
@@ -314,35 +259,11 @@ async function getAppDirectories() {
 }
 
 /**
- * Загрузка ресурсов для конкретного приложения
- * @param {string} appId - ID приложения
- */
-async function uploadAppAssets(appId) {
-    console.log(`Загрузка всех изображений для приложения ${appId}...`);
-    
-    const appPath = path.join(appsDir, appId);
-    
-    if (!await checkDirectoryExists(appPath, 'приложения')) {
-        return;
-    }
-    
-    // Загружаем ассеты заново (параметр true означает удалить существующие)
-    console.log(`Загрузка всех ресурсов для приложения ${appId}...`);
-    const success = await cloudinaryManager.uploadAppAssets(appId, appsDir, true);
-    
-    if (success) {
-        console.log(`Все изображения для приложения ${appId} успешно загружены`);
-    } else {
-        console.error(`При загрузке изображений для приложения ${appId} произошли ошибки`);
-    }
-}
-
-/**
- * Умная загрузка ресурсов приложения
+ * Загрузка ресурсов приложения
  * @param {string} appId - ID приложения
  */
 async function uploadSmartAppAssets(appId) {
-    console.log(`Умная загрузка ресурсов для приложения ${appId}...`);
+    console.log(`Загрузка ресурсов для приложения ${appId}...`);
     
     const appPath = path.join(appsDir, appId);
     
@@ -371,7 +292,7 @@ async function uploadSmartAppAssets(appId) {
             });
         }
     } catch (error) {
-        console.error(`При умной загрузке изображений для приложения ${appId} произошла ошибка:`, error);
+        console.error(`При загрузке изображений для приложения ${appId} произошла ошибка:`, error);
     }
 }
 
