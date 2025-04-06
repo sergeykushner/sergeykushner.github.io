@@ -4,6 +4,7 @@
  * Использование:
  * node js/cloudinary-upload-script.js bezels        # Загрузить все рамки устройств
  * node js/cloudinary-upload-script.js app <app-id>  # Загрузить все ресурсы приложения
+ * node js/cloudinary-upload-script.js smartapp <app-id>  # Умная загрузка ресурсов приложения
  * node js/cloudinary-upload-script.js screenshots <app-id>  # Загрузить скриншоты для приложения
  */
 
@@ -62,6 +63,14 @@ async function processArgs() {
             }
             await uploadAppAssets(args[1]);
             break;
+        case 'smartapp':
+            if (args.length < 2) {
+                console.error('Не указан ID приложения');
+                showHelp();
+                return;
+            }
+            await uploadSmartAppAssets(args[1]);
+            break;
         case 'badges':
             await uploadBadges();
             break;
@@ -96,6 +105,9 @@ function showHelp() {
   
   app <app-id>                  Загрузить все изображения конкретного приложения
                                (иконки, превью, скриншоты)
+  
+  smartapp <app-id>             Умная загрузка всех изображений приложения
+                               (обнаруживает скриншоты в любом месте, поддерживает структуру папок)
   
   bezels [all|new|<имя файла>]   Загрузить рамки устройств 
                                  (all - все, new - только новые, <имя файла> - конкретный файл)
@@ -322,6 +334,44 @@ async function uploadAppAssets(appId) {
         console.log(`Все изображения для приложения ${appId} успешно загружены`);
     } else {
         console.error(`При загрузке изображений для приложения ${appId} произошли ошибки`);
+    }
+}
+
+/**
+ * Умная загрузка ресурсов приложения
+ * @param {string} appId - ID приложения
+ */
+async function uploadSmartAppAssets(appId) {
+    console.log(`Умная загрузка ресурсов для приложения ${appId}...`);
+    
+    const appPath = path.join(appsDir, appId);
+    
+    if (!await checkDirectoryExists(appPath, 'приложения')) {
+        return;
+    }
+    
+    try {
+        const result = await cloudinaryManager.smartUploadAppAssets(appId, appsDir, true);
+        
+        // Итоговая статистика
+        const totalFiles = (result.appIcon ? 1 : 0) + 
+                          (result.preview ? 1 : 0) + 
+                          result.screenshots.light.length + 
+                          result.screenshots.dark.length + 
+                          result.otherImages.length;
+        
+        console.log(`\n=== Итоги загрузки для ${appId} ===`);
+        console.log(`✅ Успешно загружено файлов: ${totalFiles}`);
+        console.log(`❌ Ошибок загрузки: ${result.errors.length}`);
+        
+        if (result.errors.length > 0) {
+            console.error('\nСписок ошибок:');
+            result.errors.forEach((error, index) => {
+                console.error(`${index + 1}. ${error}`);
+            });
+        }
+    } catch (error) {
+        console.error(`При умной загрузке изображений для приложения ${appId} произошла ошибка:`, error);
     }
 }
 

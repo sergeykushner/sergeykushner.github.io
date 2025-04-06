@@ -35,6 +35,7 @@ async function main() {
                 name: 'operation',
                 message: 'Выберите операцию:',
                 choices: [
+                    'Умная загрузка изображений приложений (новая версия)',
                     'Загрузить бейджи на Cloudinary',
                     'Загрузить рамки устройств на Cloudinary',
                     'Загрузить изображения приложений',
@@ -47,6 +48,9 @@ async function main() {
         ]);
         
         switch (operation) {
+            case 'Умная загрузка изображений приложений (новая версия)':
+                await uploadAppImagesImproved();
+                break;
             case 'Загрузить бейджи на Cloudinary':
                 await uploadBadges();
                 break;
@@ -188,29 +192,10 @@ async function uploadBezels() {
 }
 
 /**
- * Загрузка изображений приложений на Cloudinary
+ * Загрузка изображений приложений на Cloudinary с использованием улучшенного метода
  */
-async function uploadAppImages() {
-    console.log('Загрузка изображений приложений на Cloudinary...');
-    
-    // Выводим подменю для выбора операции
-    const { subOperation } = await inquirer.prompt([
-        {
-            type: 'list',
-            name: 'subOperation',
-            message: 'Выберите операцию:',
-            choices: [
-                'Загрузить все изображения для приложения (перезаписать существующие)',
-                'Загрузить только скриншоты для приложения (перезаписать существующие)',
-                'Загрузить только новые скриншоты для приложения',
-                'Назад'
-            ]
-        }
-    ]);
-    
-    if (subOperation === 'Назад') {
-        return;
-    }
+async function uploadAppImagesImproved() {
+    console.log('Умная загрузка изображений приложений на Cloudinary...');
     
     // Получаем список папок приложений
     const appFolders = await getAppDirectories();
@@ -220,81 +205,104 @@ async function uploadAppImages() {
         return;
     }
     
-    // Выбираем приложение
-    const { selectedApp } = await inquirer.prompt([
+    // Предлагаем выбрать конкретное приложение или все приложения
+    const { appSelectionMode } = await inquirer.prompt([
         {
             type: 'list',
-            name: 'selectedApp',
-            message: 'Выберите приложение:',
-            choices: appFolders
+            name: 'appSelectionMode',
+            message: 'Выберите режим загрузки:',
+            choices: [
+                { name: 'Загрузить изображения для конкретного приложения', value: 'single' },
+                { name: 'Загрузить изображения для всех приложений', value: 'all' }
+            ]
         }
     ]);
     
-    // Проверяем существование папки с изображениями приложения
-    const appDir = path.join(appsDir, selectedApp);
-    
-    if (!await fs.exists(appDir)) {
-        console.error(`Директория для приложения ${selectedApp} не найдена`);
-        return;
-    }
-    
-    // Выполняем выбранную операцию
-    switch (subOperation) {
-        case 'Загрузить все изображения для приложения (перезаписать существующие)':
-            const { confirmAll } = await inquirer.prompt([
-                {
-                    type: 'confirm',
-                    name: 'confirmAll',
-                    message: `Все существующие изображения для приложения ${selectedApp} будут удалены и заменены новыми. Продолжить?`,
-                    default: false
-                }
-            ]);
-            
-            if (!confirmAll) {
-                console.log('Операция отменена');
-                return;
+    if (appSelectionMode === 'all') {
+        const { confirmAll } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'confirmAll',
+                message: 'Будут загружены изображения для ВСЕХ приложений. Продолжить?',
+                default: false
             }
+        ]);
+        
+        if (!confirmAll) {
+            console.log('Операция отменена');
+            return;
+        }
+        
+        // Загрузка всех приложений
+        console.log(`Запуск умной загрузки для ${appFolders.length} приложений...`);
+        
+        const results = {
+            success: 0,
+            failed: 0,
+            skipped: 0,
+            details: {}
+        };
+        
+        for (const appId of appFolders) {
+            console.log(`\n📱 Загрузка приложения: ${appId}`);
             
-            console.log(`Загрузка всех ресурсов для приложения ${selectedApp}...`);
-            const success = await cloudinaryManager.uploadAppAssets(selectedApp, appsDir, true);
-            
-            if (success) {
-                console.log(`Все изображения для приложения ${selectedApp} успешно загружены`);
-            } else {
-                console.error(`При загрузке изображений для приложения ${selectedApp} произошли ошибки`);
-            }
-            break;
-            
-        case 'Загрузить только скриншоты для приложения (перезаписать существующие)':
-        case 'Загрузить только новые скриншоты для приложения':
-            const mode = subOperation.includes('новые') ? UPLOAD_MODES.NEW_ONLY : UPLOAD_MODES.ALL;
-            const screenshotsDir = path.join(appDir, 'screenshots');
-            
-            if (!await fs.exists(screenshotsDir)) {
-                console.error(`Директория скриншотов для приложения ${selectedApp} не найдена`);
-                return;
-            }
-            
-            if (mode === UPLOAD_MODES.ALL) {
-                const { confirmScreenshots } = await inquirer.prompt([
-                    {
-                        type: 'confirm',
-                        name: 'confirmScreenshots',
-                        message: `Все существующие скриншоты для приложения ${selectedApp} будут перезаписаны. Продолжить?`,
-                        default: false
-                    }
-                ]);
+            try {
+                const result = await cloudinaryManager.smartUploadAppAssets(appId, appsDir, true);
                 
-                if (!confirmScreenshots) {
-                    console.log('Операция отменена');
-                    return;
+                if (result.errors && result.errors.length > 0) {
+                    console.warn(`⚠️ Загрузка приложения ${appId} выполнена с ошибками`);
+                    results.details[appId] = 'partial';
+                    results.failed++;
+                } else {
+                    console.log(`✅ Загрузка приложения ${appId} успешно завершена`);
+                    results.details[appId] = 'success';
+                    results.success++;
                 }
+            } catch (error) {
+                console.error(`❌ Не удалось загрузить приложение ${appId}:`, error.message);
+                results.details[appId] = 'failed';
+                results.failed++;
             }
-            
-            console.log(`Загрузка скриншотов для приложения ${selectedApp}...`);
-            const count = await cloudinaryManager.uploadAppScreenshots(selectedApp, screenshotsDir, mode);
-            console.log(`Загрузка скриншотов завершена. Загружено: ${count}`);
-            break;
+        }
+        
+        console.log('\n====== Итоги загрузки всех приложений ======');
+        console.log(`✅ Успешно загружено: ${results.success}`);
+        console.log(`⚠️ Загружено с ошибками: ${results.failed}`);
+        console.log(`⏭️ Пропущено: ${results.skipped}`);
+        console.log('=========================================');
+    } else {
+        // Выбираем приложение
+        const { selectedApp } = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'selectedApp',
+                message: 'Выберите приложение:',
+                choices: appFolders
+            }
+        ]);
+        
+        const { confirm } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'confirm',
+                message: `Запустить умную загрузку для приложения ${selectedApp}?`,
+                default: true
+            }
+        ]);
+        
+        if (!confirm) {
+            console.log('Операция отменена');
+            return;
+        }
+        
+        console.log(`Запуск умной загрузки для приложения ${selectedApp}...`);
+        
+        try {
+            await cloudinaryManager.smartUploadAppAssets(selectedApp, appsDir, true);
+            console.log('\nЗагрузка изображений завершена!');
+        } catch (error) {
+            console.error('Ошибка при загрузке изображений:', error);
+        }
     }
 }
 
@@ -531,6 +539,117 @@ async function updatePublicJson() {
         console.log('Публичная версия JSON успешно обновлена!');
     } catch (error) {
         console.error('Произошла ошибка при обновлении публичного JSON:', error);
+    }
+}
+
+/**
+ * Загрузка изображений приложений на Cloudinary (старая версия)
+ */
+async function uploadAppImages() {
+    console.log('Загрузка изображений приложений на Cloudinary...');
+    
+    // Выводим подменю для выбора операции
+    const { subOperation } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'subOperation',
+            message: 'Выберите операцию:',
+            choices: [
+                'Загрузить все изображения для приложения (перезаписать существующие)',
+                'Загрузить только скриншоты для приложения (перезаписать существующие)',
+                'Загрузить только новые скриншоты для приложения',
+                'Назад'
+            ]
+        }
+    ]);
+    
+    if (subOperation === 'Назад') {
+        return;
+    }
+    
+    // Получаем список папок приложений
+    const appFolders = await getAppDirectories();
+    
+    if (appFolders.length === 0) {
+        console.error('Нет доступных приложений');
+        return;
+    }
+    
+    // Выбираем приложение
+    const { selectedApp } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'selectedApp',
+            message: 'Выберите приложение:',
+            choices: appFolders
+        }
+    ]);
+    
+    // Проверяем существование папки с изображениями приложения
+    const appDir = path.join(appsDir, selectedApp);
+    
+    if (!await fs.exists(appDir)) {
+        console.error(`Директория для приложения ${selectedApp} не найдена`);
+        return;
+    }
+    
+    // Выполняем выбранную операцию
+    switch (subOperation) {
+        case 'Загрузить все изображения для приложения (перезаписать существующие)':
+            const { confirmAll } = await inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'confirmAll',
+                    message: `Все существующие изображения для приложения ${selectedApp} будут удалены и заменены новыми. Продолжить?`,
+                    default: false
+                }
+            ]);
+            
+            if (!confirmAll) {
+                console.log('Операция отменена');
+                return;
+            }
+            
+            console.log(`Загрузка всех ресурсов для приложения ${selectedApp}...`);
+            const success = await cloudinaryManager.uploadAppAssets(selectedApp, appsDir, true);
+            
+            if (success) {
+                console.log(`Все изображения для приложения ${selectedApp} успешно загружены`);
+            } else {
+                console.error(`При загрузке изображений для приложения ${selectedApp} произошли ошибки`);
+            }
+            break;
+            
+        case 'Загрузить только скриншоты для приложения (перезаписать существующие)':
+        case 'Загрузить только новые скриншоты для приложения':
+            const mode = subOperation.includes('новые') ? UPLOAD_MODES.NEW_ONLY : UPLOAD_MODES.ALL;
+            const screenshotsDir = path.join(appDir, 'screenshots');
+            
+            if (!await fs.exists(screenshotsDir)) {
+                console.error(`Директория скриншотов для приложения ${selectedApp} не найдена`);
+                return;
+            }
+            
+            if (mode === UPLOAD_MODES.ALL) {
+                const { confirmScreenshots } = await inquirer.prompt([
+                    {
+                        type: 'confirm',
+                        name: 'confirmScreenshots',
+                        message: `Все существующие скриншоты для приложения ${selectedApp} будут перезаписаны. Продолжить?`,
+                        default: false
+                    }
+                ]);
+                
+                if (!confirmScreenshots) {
+                    console.log('Операция отменена');
+                    return;
+                }
+            }
+            
+            console.log(`Загрузка скриншотов для приложения ${selectedApp}...`);
+            const count = await cloudinaryManager.uploadAppScreenshots(selectedApp, screenshotsDir, mode);
+            console.log(`Загрузка скриншотов завершена. Загружено: ${count}`);
+            break;
     }
 }
 
