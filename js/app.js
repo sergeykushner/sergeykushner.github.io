@@ -38,6 +38,7 @@ const DEVICE_CORNER_RADIUS = {
     "Slide 16/9": "10px",
     "iPhone 16 Pro Max": "7%",
     "iPhone 15 Pro Max": "7%",
+    "iPhone 15 Pro Max - Landscape": "7%",
     "Google Pixel 1": "0%",
     // Другие устройства можно добавить по мере необходимости
 };
@@ -54,6 +55,11 @@ const DEVICE_SCREENSHOT_CONFIG = {
         offsetY: "0%", 
         offsetX: "0%"
     },
+    "iPhone 15 Pro Max - Landscape": {
+        width: "92%", //  Screenshot iPhone 15 Pro Max, Bezel iPhone 15 Pro  
+        offsetY: "0%", 
+        offsetX: "0%"
+    },
     "Google Pixel 1": {
         width: "90%",
         offsetY: "-1%",
@@ -66,6 +72,7 @@ const DEVICE_SCREENSHOT_CONFIG = {
 const DEVICE_BEZEL_FILES = {
     "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
+    "iPhone 15 Pro Max - Landscape": "iphone-15-pro-max-natural-titanium-landscape",
     "Google Pixel 1": "google-pixel-1-silver-portrait"
     // Другие устройства можно добавить по мере необходимости
 };
@@ -172,7 +179,6 @@ function updateUI(app) {
             "App Store Screenshot 510/1012",
             "Screenshots Missing",
             "App Store Screenshot 460/996",
-            "iPhone 15 Pro Max - Landscape",
             "App Store Screenshot 2160/3840",
             "Screenshot 1176/2088 ",
             "App Store Screenshot 1176/2088",

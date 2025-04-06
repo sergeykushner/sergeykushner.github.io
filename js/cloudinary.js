@@ -58,6 +58,7 @@ function getDeviceBezelUrl(deviceModel) {
     const deviceBezelFiles = {
         "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
         "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
+        "iPhone 15 Pro Max - Landscape": "iphone-15-pro-max-natural-titanium-landscape",
         "Google Pixel 1": "google-pixel-1-silver-portrait"
     };
     
