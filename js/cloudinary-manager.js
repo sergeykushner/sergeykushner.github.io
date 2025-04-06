@@ -56,9 +56,40 @@ async function getExistingResources(folderPath) {
  */
 async function createFolder(folderName) {
     try {
-        await cloudinary.api.create_folder(folderName);
-        console.log(`Создана папка: ${folderName}`);
-        return true;
+        // Проверяем, содержит ли имя папки вложенные пути
+        if (folderName.includes('/')) {
+            // Разбиваем путь на компоненты
+            const parts = folderName.split('/');
+            let currentPath = '';
+            
+            // Создаем каждую папку по пути
+            for (const part of parts) {
+                if (!part) continue; // Пропускаем пустые части (например, если путь начинается с /)
+                
+                currentPath = currentPath ? `${currentPath}/${part}` : part;
+                console.log(`Создание вложенной папки: ${currentPath}`);
+                
+                try {
+                    await cloudinary.api.create_folder(currentPath);
+                    console.log(`Создана вложенная папка: ${currentPath}`);
+                } catch (subError) {
+                    // Если папка уже существует, продолжаем
+                    if (subError.error && subError.error.message.includes('Folder already exists')) {
+                        console.log(`Вложенная папка ${currentPath} уже существует`);
+                    } else {
+                        console.error(`Ошибка при создании вложенной папки ${currentPath}:`, subError.message);
+                        // Продолжаем создание других папок
+                    }
+                }
+            }
+            return true;
+        } else {
+            // Создаем одиночную папку
+            console.log(`Создание папки: ${folderName}`);
+            await cloudinary.api.create_folder(folderName);
+            console.log(`Создана папка: ${folderName}`);
+            return true;
+        }
     } catch (error) {
         // Если папка уже существует, не считаем это ошибкой
         if (error.error && error.error.message.includes('Folder already exists')) {
@@ -138,11 +169,32 @@ async function deleteFolderContents(folderPath) {
  */
 async function uploadFile(filePath, publicId, options = {}) {
     try {
-        const result = await cloudinary.uploader.upload(filePath, {
-            public_id: publicId,
+        console.log(`Загрузка файла ${filePath} с publicId ${publicId}...`);
+        
+        // Извлекаем путь к папке из publicId
+        const lastSlashIndex = publicId.lastIndexOf('/');
+        const folderPath = lastSlashIndex !== -1 ? publicId.substring(0, lastSlashIndex) : '';
+        const actualPublicId = lastSlashIndex !== -1 ? publicId.substring(lastSlashIndex + 1) : publicId;
+        
+        // Если есть путь к папке, создаем папку перед загрузкой
+        if (folderPath) {
+            await createFolder(folderPath);
+        }
+        
+        const uploadOptions = {
+            public_id: actualPublicId,
             overwrite: true,
             ...options
-        });
+        };
+        
+        // Если есть путь к папке, добавляем его в опции
+        if (folderPath) {
+            uploadOptions.folder = folderPath;
+        }
+        
+        const result = await cloudinary.uploader.upload(filePath, uploadOptions);
+        
+        console.log(`Успешно загружен файл. URL: ${result.secure_url}, PublicId: ${result.public_id}`);
         return result;
     } catch (error) {
         console.error(`Ошибка при загрузке файла ${filePath}:`, error.message);
@@ -201,6 +253,12 @@ async function uploadDeviceBezels(bezelsDir, mode = 0, specificFile = null) {
         // Создаем папку для рамок устройств
         const bezelsFolder = `${CLOUDINARY_ROOT_FOLDER}/product-bezels`;
         await createFolder(bezelsFolder);
+        
+        // Если не в режиме "только новые", сначала удаляем все существующие файлы из папки
+        if (mode !== 2) {
+            console.log('Удаление существующих рамок устройств...');
+            await deleteFolderContents(bezelsFolder);
+        }
         
         // Если загружаем конкретный файл
         if (mode === 1 && specificFile) {
