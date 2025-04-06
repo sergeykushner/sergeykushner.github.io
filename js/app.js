@@ -36,6 +36,7 @@ const DEVICE_ASPECT_RATIOS = {
 // Соответствие устройств и радиусов скругления для скриншотов
 const DEVICE_CORNER_RADIUS = {
     "Slide 16/9": "10px",
+    "Screenshot 1176/2088": "0%",
     "iPhone 16 Pro Max": "7%",
     "iPhone 15 Pro Max": "7%",
     "iPhone 15 Pro Max - Landscape": "7%",
@@ -60,6 +61,11 @@ const DEVICE_SCREENSHOT_CONFIG = {
         offsetY: "0%", 
         offsetX: "0%"
     },
+    "Screenshot 1176/2088": {
+        width: "90%",
+        offsetY: "0%",
+        offsetX: "0%"
+    },
     "Google Pixel 1": {
         width: "90%",
         offsetY: "-1%",
@@ -73,9 +79,15 @@ const DEVICE_BEZEL_FILES = {
     "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max - Landscape": "iphone-15-pro-max-natural-titanium-landscape",
+    "Screenshot 1176/2088": "iphone-6s-plus-space-gray-portrait",
     "Google Pixel 1": "google-pixel-1-silver-portrait"
     // Другие устройства можно добавить по мере необходимости
 };
+
+// Делаем маппинг доступным глобально для использования в cloudinary.js
+if (typeof window !== 'undefined') {
+    window.DEVICE_BEZEL_FILES = DEVICE_BEZEL_FILES;
+}
 
 function updateMetaTags(app) {
     document.title = app.title;
@@ -180,8 +192,6 @@ function updateUI(app) {
             "Screenshots Missing",
             "App Store Screenshot 460/996",
             "App Store Screenshot 2160/3840",
-            "Screenshot 1176/2088 ",
-            "App Store Screenshot 1176/2088",
             "Screenshot 1728/2304 ",
             "App Store Screenshot 495/994",
             "App Store Screenshot 392/696"
