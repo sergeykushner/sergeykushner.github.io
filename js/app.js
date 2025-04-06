@@ -35,7 +35,7 @@ const DEVICE_ASPECT_RATIOS = {
 
 // Соответствие устройств и радиусов скругления для скриншотов
 const DEVICE_CORNER_RADIUS = {
-    "Slide 16/9": "50%",
+    "Slide 16/9": "10px",
     "iPhone 16 Pro Max": "7%",
     "iPhone 15 Pro Max": "7%",
     "Google Pixel 1": "0%",
@@ -261,8 +261,14 @@ function updateUI(app) {
         screenshotImg.className = 'screenshot-image';
         screenshotImg.alt = `Screenshot ${screenNumber} of the app`;
         
-        // Для скриншотов без рамки не нужно скругление углов
-        screenshotImg.style.borderRadius = shouldShowBezel ? cornerRadius : "0";
+        // Для скриншотов применяем разные правила скругления углов
+        if (deviceModel === "Slide 16/9") {
+            // Для Slide 16/9 применяем скругление даже без рамки
+            screenshotImg.style.borderRadius = DEVICE_CORNER_RADIUS[deviceModel] || "0";
+        } else {
+            // Для других типов: скругление только с рамкой
+            screenshotImg.style.borderRadius = shouldShowBezel ? cornerRadius : "0";
+        }
         
         // Загружаем скриншот с учетом темного режима
         const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
