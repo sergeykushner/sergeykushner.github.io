@@ -78,7 +78,7 @@ function showHelp() {
   node js/cloudinary-upload-script.js <команда> [опции]
 
 Команды:
-  all                           Перезагрузить все изображения из assets 
+  all                           Перезагрузить все изображения из assets на Cloudinary
                                (бейджи, рамки устройств, все приложения)
   
   app <app-id>                  Загрузка всех изображений приложения
@@ -218,10 +218,10 @@ async function uploadAllAssets() {
         for (const appFolder of appDirs) {
             console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
             const result = await cloudinaryManager.smartUploadAppAssets(appFolder, appsDir, true);
-            if (result.errors && result.errors.length > 0) {
-                console.warn(`⚠️ Загрузка приложения ${appFolder} выполнена с ошибками`);
+            if (result.failed > 0) {
+                console.warn(`⚠️ Загрузка приложения ${appFolder} выполнена с ошибками: ${result.failed} ошибок из ${result.total} файлов`);
             } else {
-                console.log(`✅ Загрузка приложения ${appFolder} успешно завершена`);
+                console.log(`✅ Загрузка приложения ${appFolder} успешно завершена: ${result.success} файлов`);
             }
         }
         
@@ -263,7 +263,7 @@ async function getAppDirectories() {
  * @param {string} appId - ID приложения
  */
 async function uploadSmartAppAssets(appId) {
-    console.log(`Загрузка ресурсов для приложения ${appId}...`);
+    console.log(`Умная загрузка ресурсов для приложения ${appId}...`);
     
     const appPath = path.join(appsDir, appId);
     
@@ -274,25 +274,18 @@ async function uploadSmartAppAssets(appId) {
     try {
         const result = await cloudinaryManager.smartUploadAppAssets(appId, appsDir, true);
         
-        // Итоговая статистика
-        const totalFiles = (result.appIcon ? 1 : 0) + 
-                          (result.preview ? 1 : 0) + 
-                          result.screenshots.light.length + 
-                          result.screenshots.dark.length + 
-                          result.otherImages.length;
-        
         console.log(`\n=== Итоги загрузки для ${appId} ===`);
-        console.log(`✅ Успешно загружено файлов: ${totalFiles}`);
-        console.log(`❌ Ошибок загрузки: ${result.errors.length}`);
+        console.log(`✅ Успешно загружено файлов: ${result.success}`);
+        console.log(`❌ Ошибок загрузки: ${result.failed}`);
         
-        if (result.errors.length > 0) {
+        if (result.errors && result.errors.length > 0) {
             console.error('\nСписок ошибок:');
             result.errors.forEach((error, index) => {
                 console.error(`${index + 1}. ${error}`);
             });
         }
     } catch (error) {
-        console.error(`При загрузке изображений для приложения ${appId} произошла ошибка:`, error);
+        console.error(`При умной загрузке изображений для приложения ${appId} произошла ошибка:`, error);
     }
 }
 

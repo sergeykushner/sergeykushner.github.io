@@ -14,6 +14,7 @@ Thumbs.db
 # Приватные данные
 data/apps-metadata.json 
 assets/
+assets.zip
 
 # Env files
 .env

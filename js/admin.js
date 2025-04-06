@@ -35,11 +35,11 @@ async function main() {
                 name: 'operation',
                 message: 'Выберите операцию:',
                 choices: [
-                    'Загрузка изображений приложений',
+                    'Загрузка изображений приложений на Cloudinary',
                     'Загрузить бейджи на Cloudinary',
                     'Загрузить рамки устройств на Cloudinary',
                     'Инвалидировать кэш изображений в Cloudinary',
-                    'Перезагрузить все изображения из assets',
+                    'Перезагрузить все изображения из assets на Cloudinary',
                     'Обновить публичный JSON',
                     'Выход'
                 ]
@@ -47,7 +47,7 @@ async function main() {
         ]);
         
         switch (operation) {
-            case 'Загрузка изображений приложений':
+            case 'Загрузка изображений приложений на Cloudinary':
                 await uploadAppImagesImproved();
                 break;
             case 'Загрузить бейджи на Cloudinary':
@@ -59,7 +59,7 @@ async function main() {
             case 'Инвалидировать кэш изображений в Cloudinary':
                 await invalidateCache();
                 break;
-            case 'Перезагрузить все изображения из assets':
+            case 'Перезагрузить все изображения из assets на Cloudinary':
                 await uploadAllAssets();
                 break;
             case 'Обновить публичный JSON':
@@ -335,12 +335,21 @@ async function invalidateCache() {
             type: 'list',
             name: 'selectedFolder',
             message: 'Выберите папку для инвалидации кэша:',
-            choices: folders.map(folder => ({
-                name: `${folder.name} (${folder.path})`,
-                value: folder.path
-            }))
+            choices: [
+                ...folders.map(folder => ({
+                    name: `${folder.name} (${folder.path})`,
+                    value: folder.path
+                })),
+                { name: '⬅️ Вернуться в главное меню', value: 'back' }
+            ]
         }
     ]);
+    
+    // Если выбран вариант возврата, возвращаемся в главное меню
+    if (selectedFolder === 'back') {
+        console.log('Возврат в главное меню...');
+        return;
+    }
     
     const { confirm } = await inquirer.prompt([
         {
@@ -476,10 +485,10 @@ async function uploadAllAssets() {
         for (const appFolder of appDirs) {
             console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
             const result = await cloudinaryManager.smartUploadAppAssets(appFolder, appsDir, true);
-            if (result.errors && result.errors.length > 0) {
-                console.warn(`⚠️ Загрузка приложения ${appFolder} выполнена с ошибками`);
+            if (result.failed > 0) {
+                console.warn(`⚠️ Загрузка приложения ${appFolder} выполнена с ошибками: ${result.failed} ошибок из ${result.total} файлов`);
             } else {
-                console.log(`✅ Загрузка приложения ${appFolder} успешно завершена`);
+                console.log(`✅ Загрузка приложения ${appFolder} успешно завершена: ${result.success} файлов`);
             }
         }
         

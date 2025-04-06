@@ -23,7 +23,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     }
     
     // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}v3/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
 /**
@@ -70,7 +70,7 @@ function getDeviceBezelUrl(deviceModel) {
     
     // Структура пути в Cloudinary: /website/product-bezels/{fileName}.png
     // Указываем расширение .png, так как файлы загружаются как png
-    return `${CLOUDINARY_BASE_URL}/image/upload/v2/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}.png`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}.png`;
 }
 
 // Экспортируем функции для использования в браузере

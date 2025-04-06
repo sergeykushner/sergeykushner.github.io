@@ -67,35 +67,32 @@ async function createFolder(folderName) {
                 if (!part) continue; // Пропускаем пустые части (например, если путь начинается с /)
                 
                 currentPath = currentPath ? `${currentPath}/${part}` : part;
-                console.log(`Создание вложенной папки: ${currentPath}`);
                 
                 try {
                     await cloudinary.api.create_folder(currentPath);
-                    console.log(`Создана вложенная папка: ${currentPath}`);
                 } catch (subError) {
-                    // Если папка уже существует, продолжаем
-                    if (subError.error && subError.error.message.includes('Folder already exists')) {
-                        console.log(`Вложенная папка ${currentPath} уже существует`);
-                    } else {
-                        console.error(`Ошибка при создании вложенной папки ${currentPath}:`, subError.message);
-                        // Продолжаем создание других папок
+                    // Если папка уже существует, продолжаем без вывода сообщений
+                    if (!subError.error || !subError.error.message.includes('Folder already exists')) {
+                        console.error(`Ошибка при создании папки ${currentPath}:`, subError.message);
                     }
                 }
             }
             return true;
         } else {
             // Создаем одиночную папку
-            console.log(`Создание папки: ${folderName}`);
-            await cloudinary.api.create_folder(folderName);
-            console.log(`Создана папка: ${folderName}`);
-            return true;
+            try {
+                await cloudinary.api.create_folder(folderName);
+                return true;
+            } catch (error) {
+                // Если папка уже существует, не считаем это ошибкой
+                if (error.error && error.error.message.includes('Folder already exists')) {
+                    return true;
+                }
+                console.error(`Ошибка при создании папки ${folderName}:`, error.message);
+                return false;
+            }
         }
     } catch (error) {
-        // Если папка уже существует, не считаем это ошибкой
-        if (error.error && error.error.message.includes('Folder already exists')) {
-            console.log(`Папка ${folderName} уже существует`);
-            return true;
-        }
         console.error(`Ошибка при создании папки ${folderName}:`, error.message);
         return false;
     }
@@ -359,201 +356,77 @@ async function smartUploadAppAssets(appId, appsDir, cleanExisting = true, option
             await deleteAppFolder(appId);
         }
         
-        // Создаем базовые папки
-        await createFolder(CLOUDINARY_ROOT_FOLDER);
-        await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
+        // Создаем базовую папку приложения один раз для всех файлов
         await createFolder(appDestFolder);
         
-        // Получаем список всех файлов в директории приложения (включая поддиректории)
-        const allFiles = await getAllFiles(appSourceDir);
+        // Получаем только файлы из корневой директории приложения (без поддиректорий)
+        const files = await fs.readdir(appSourceDir);
         
         // Фильтруем только изображения
-        const imageFiles = allFiles.filter(file => {
+        const imageFiles = files.filter(file => {
             const ext = path.extname(file).toLowerCase();
-            return IMAGE_EXTENSIONS.includes(ext);
+            return IMAGE_EXTENSIONS.includes(ext) && file !== '.DS_Store';
         });
         
-        console.log(`Найдено ${imageFiles.length} файлов изображений для загрузки`);
+        console.log(`Найдено ${imageFiles.length} файлов изображений в корневой папке для загрузки`);
         
         // Результаты загрузки
         const result = {
-            appIcon: false,
-            preview: false,
-            screenshots: {
-                light: [],
-                dark: []
-            },
-            otherImages: [],
+            total: 0,
+            failed: 0,
+            success: 0,
             errors: []
         };
         
-        // Загружаем иконку приложения
-        const iconFiles = imageFiles.filter(file => 
-            (path.basename(file) === 'icon.png' || path.basename(file) === 'app-icon.png') && 
-            path.dirname(file) === appSourceDir
-        );
+        // Создаем объект uploadOptions с указанием папки, для избежания повторного создания
+        const uploadOptions = {
+            folder: appDestFolder,
+            overwrite: true,
+            ...options
+        };
         
-        if (iconFiles.length > 0) {
-            const iconFile = iconFiles[0];
-            const uploadResult = await uploadFile(
-                iconFile, 
-                `${appDestFolder}/icon`,
-                { transformation: [{ width: 128, height: 128, crop: 'fill' }] }
-            );
+        // Загружаем каждое изображение с сохранением исходного имени
+        for (const file of imageFiles) {
+            const filePath = path.join(appSourceDir, file);
+            const fileName = path.parse(file).name;
             
-            if (uploadResult) {
-                console.log(`✅ Загружена иконка приложения: ${path.basename(iconFile)}`);
-                result.appIcon = uploadResult.secure_url;
-            } else {
-                console.error(`❌ Ошибка при загрузке иконки приложения: ${path.basename(iconFile)}`);
-                result.errors.push(`Ошибка при загрузке иконки: ${path.basename(iconFile)}`);
+            // Загружаем файл напрямую с указанием папки
+            try {
+                const result = await cloudinary.uploader.upload(filePath, {
+                    public_id: fileName,
+                    ...uploadOptions
+                });
+                
+                console.log(`✅ Загружен файл: ${file}`);
+                result.success++;
+            } catch (error) {
+                console.error(`❌ Ошибка при загрузке файла: ${file}`, error.message);
+                result.errors.push(`Ошибка при загрузке файла: ${file}`);
+                result.failed++;
             }
-        } else {
-            console.warn(`⚠️ Иконка приложения не найдена для ${appId}`);
-        }
-        
-        // Загружаем превью приложения
-        const previewFiles = imageFiles.filter(file => 
-            path.basename(file) === 'preview.png' && 
-            path.dirname(file) === appSourceDir
-        );
-        
-        if (previewFiles.length > 0) {
-            const previewFile = previewFiles[0];
-            const uploadResult = await uploadFile(previewFile, `${appDestFolder}/preview`);
             
-            if (uploadResult) {
-                console.log(`✅ Загружено превью приложения: ${path.basename(previewFile)}`);
-                result.preview = uploadResult.secure_url;
-            } else {
-                console.error(`❌ Ошибка при загрузке превью приложения: ${path.basename(previewFile)}`);
-                result.errors.push(`Ошибка при загрузке превью: ${path.basename(previewFile)}`);
-            }
-        } else {
-            console.warn(`⚠️ Превью приложения не найдено для ${appId}`);
-        }
-        
-        // Находим все скриншоты
-        const screenshotFiles = imageFiles.filter(file => {
-            const fileName = path.basename(file);
-            return fileName.startsWith('app-screen') && 
-                  (path.dirname(file) === appSourceDir || 
-                   path.dirname(file) === path.join(appSourceDir, 'screenshots'));
-        });
-        
-        if (screenshotFiles.length > 0) {
-            console.log(`Найдено ${screenshotFiles.length} скриншотов для загрузки`);
-            
-            // Создаем папку screenshots, если нужно
-            const screenshotsInSubdir = screenshotFiles.some(file => 
-                path.dirname(file) === path.join(appSourceDir, 'screenshots')
-            );
-            
-            // Сортируем скриншоты по имени файла (чтобы сохранить порядок)
-            screenshotFiles.sort((a, b) => {
-                return path.basename(a).localeCompare(path.basename(b));
-            });
-            
-            // Загружаем каждый скриншот
-            for (const screenshotFile of screenshotFiles) {
-                const fileName = path.basename(screenshotFile, path.extname(screenshotFile));
-                const isDarkMode = fileName.includes('-dark');
-                const publicId = screenshotsInSubdir
-                    ? `${appDestFolder}/screenshots/${fileName}`
-                    : `${appDestFolder}/${fileName}`;
-                
-                const uploadResult = await uploadFile(screenshotFile, publicId);
-                
-                if (uploadResult) {
-                    console.log(`✅ Загружен скриншот: ${fileName}`);
-                    
-                    if (isDarkMode) {
-                        result.screenshots.dark.push({
-                            name: fileName,
-                            url: uploadResult.secure_url
-                        });
-                    } else {
-                        result.screenshots.light.push({
-                            name: fileName,
-                            url: uploadResult.secure_url
-                        });
-                    }
-                } else {
-                    console.error(`❌ Ошибка при загрузке скриншота: ${fileName}`);
-                    result.errors.push(`Ошибка при загрузке скриншота: ${fileName}`);
-                }
-            }
-        } else {
-            console.warn(`⚠️ Скриншоты не найдены для ${appId}`);
-        }
-        
-        // Загружаем прочие изображения, если они есть
-        const otherImages = imageFiles.filter(file => {
-            const fileName = path.basename(file);
-            return !fileName.startsWith('app-screen') && 
-                   fileName !== 'icon.png' && 
-                   fileName !== 'app-icon.png' &&
-                   fileName !== 'preview.png';
-        });
-        
-        if (otherImages.length > 0) {
-            console.log(`Найдено ${otherImages.length} дополнительных изображений для загрузки`);
-            
-            for (const imageFile of otherImages) {
-                const relativePath = path.relative(appSourceDir, imageFile);
-                const fileDir = path.dirname(relativePath);
-                const fileName = path.basename(imageFile, path.extname(imageFile));
-                
-                // Создаем подпапки, если нужно
-                let publicId;
-                if (fileDir === '.') {
-                    publicId = `${appDestFolder}/${fileName}`;
-                } else {
-                    // Заменяем обратные слэши на прямые для Windows
-                    const dirPath = fileDir.replace(/\\/g, '/');
-                    await createFolder(`${appDestFolder}/${dirPath}`);
-                    publicId = `${appDestFolder}/${dirPath}/${fileName}`;
-                }
-                
-                const uploadResult = await uploadFile(imageFile, publicId);
-                
-                if (uploadResult) {
-                    console.log(`✅ Загружено дополнительное изображение: ${relativePath}`);
-                    result.otherImages.push({
-                        name: relativePath,
-                        url: uploadResult.secure_url
-                    });
-                } else {
-                    console.error(`❌ Ошибка при загрузке дополнительного изображения: ${relativePath}`);
-                    result.errors.push(`Ошибка при загрузке дополнительного изображения: ${relativePath}`);
-                }
-            }
+            result.total++;
         }
         
         // Итоговая статистика
-        const totalFiles = (result.appIcon ? 1 : 0) + 
-                          (result.preview ? 1 : 0) + 
-                          result.screenshots.light.length + 
-                          result.screenshots.dark.length + 
-                          result.otherImages.length;
-        
         console.log(`\n=== Итоги загрузки для ${appId} ===`);
-        console.log(`✅ Успешно загружено файлов: ${totalFiles}`);
-        console.log(`❌ Ошибок загрузки: ${result.errors.length}`);
-        console.log(`📱 Скриншотов (светлая тема): ${result.screenshots.light.length}`);
-        console.log(`🌙 Скриншотов (темная тема): ${result.screenshots.dark.length}`);
-        console.log(`🖼️ Дополнительных изображений: ${result.otherImages.length}`);
+        console.log(`✅ Успешно загружено файлов: ${result.success}`);
+        console.log(`❌ Ошибок загрузки: ${result.failed}`);
+        
+        if (result.errors.length > 0) {
+            console.error('\nСписок ошибок:');
+            result.errors.forEach((error, index) => {
+                console.error(`${index + 1}. ${error}`);
+            });
+        }
         
         return result;
     } catch (error) {
         console.error(`Ошибка при загрузке ассетов для ${appId}:`, error.message);
         return {
-            success: false,
-            error: error.message,
-            appIcon: false,
-            preview: false,
-            screenshots: { light: [], dark: [] },
-            otherImages: [],
+            success: 0,
+            failed: 0,
+            total: 0,
             errors: [error.message]
         };
     }
