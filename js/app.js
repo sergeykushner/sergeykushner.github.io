@@ -41,6 +41,8 @@ const DEVICE_CORNER_RADIUS = {
     "iPhone 15 Pro Max": "7%",
     "iPhone 15 Pro Max - Landscape": "7%",
     "Google Pixel 1": "0%",
+    "App Store Screenshot 460/996": "10px",
+    "App Store Screenshot 392/696": "10px"
     // Другие устройства можно добавить по мере необходимости
 };
 
@@ -197,6 +199,13 @@ function updateUI(app) {
             "App Store Screenshot 392/696"
         ];
         
+        // Список типов скриншотов без рамки, но с применением скругления
+        const noBezelWithRadiusTypes = [
+            "Slide 16/9",
+            "App Store Screenshot 460/996",
+            "App Store Screenshot 392/696"
+        ];
+        
         // Проверяем, нужно ли отображать рамку устройства
         const shouldShowBezel = !noBezelScreenshotTypes.includes(deviceModel);
         
@@ -278,8 +287,8 @@ function updateUI(app) {
         screenshotImg.alt = `Screenshot ${screenNumber} of the app`;
         
         // Для скриншотов применяем разные правила скругления углов
-        if (deviceModel === "Slide 16/9") {
-            // Для Slide 16/9 применяем скругление даже без рамки
+        if (noBezelWithRadiusTypes.includes(deviceModel)) {
+            // Для скриншотов без рамки, но со скруглением
             screenshotImg.style.borderRadius = DEVICE_CORNER_RADIUS[deviceModel] || "0";
         } else {
             // Для других типов: скругление только с рамкой
