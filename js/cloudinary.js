@@ -23,7 +23,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     }
     
     // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}v2/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}v3/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
 /**
