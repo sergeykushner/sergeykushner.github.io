@@ -564,17 +564,17 @@ async function uploadAppImages() {
     ]);
     
     if (subOperation === 'Назад') {
-        return;
-    }
-    
+            return;
+        }
+        
     // Получаем список папок приложений
     const appFolders = await getAppDirectories();
     
     if (appFolders.length === 0) {
         console.error('Нет доступных приложений');
-        return;
-    }
-    
+            return;
+        }
+        
     // Выбираем приложение
     const { selectedApp } = await inquirer.prompt([
         {
@@ -590,9 +590,9 @@ async function uploadAppImages() {
     
     if (!await fs.exists(appDir)) {
         console.error(`Директория для приложения ${selectedApp} не найдена`);
-        return;
-    }
-    
+            return;
+        }
+        
     // Выполняем выбранную операцию
     switch (subOperation) {
         case 'Загрузить все изображения для приложения (перезаписать существующие)':
@@ -606,10 +606,10 @@ async function uploadAppImages() {
             ]);
             
             if (!confirmAll) {
-                console.log('Операция отменена');
-                return;
-            }
-            
+            console.log('Операция отменена');
+            return;
+        }
+        
             console.log(`Загрузка всех ресурсов для приложения ${selectedApp}...`);
             const success = await cloudinaryManager.uploadAppAssets(selectedApp, appsDir, true);
             
