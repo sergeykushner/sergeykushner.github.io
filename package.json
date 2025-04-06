@@ -4,9 +4,12 @@
   "description": "Personal website with Cloudinary integration",
   "main": "js/app.js",
   "scripts": {
-    "upload-assets": "node js/cloudinary.js",
-    "upload-screenshots": "node js/cloudinary-upload-screenshots.js",
     "admin": "node js/admin.js",
+    "upload-all": "node js/cloudinary-upload-script.js all",
+    "upload-app": "node js/cloudinary-upload-script.js app",
+    "upload-bezels": "node js/cloudinary-upload-script.js bezels",
+    "upload-screenshots": "node js/cloudinary-upload-script.js screenshots",
+    "upload-badges": "node js/cloudinary-upload-script.js badges",
     "update-public-json": "js/update-public-json.sh"
   },
   "homepage": "https://sergeykushner.github.io",
@@ -18,9 +21,9 @@
   "author": "Sergey Kushner",
   "license": "MIT",
   "dependencies": {
-    "cloudinary": "^1.40.0",
+    "cloudinary": "^1.41.0",
     "dotenv": "^16.3.1",
     "fs-extra": "^11.1.1",
-    "readline-sync": "^1.4.10"
+    "inquirer": "^8.2.5"
   }
 }

@@ -1,516 +1,369 @@
 /**
- * Административный скрипт для выполнения различных операций
- * с сайтом и данными.
- * 
- * Для запуска:
- * 1. Установите необходимые зависимости: 
- *    npm install readline-sync cloudinary dotenv fs-extra child_process
- * 2. Запустите скрипт: node js/admin.js
+ * Административный скрипт для управления приложением
  */
 
-const readlineSync = require('readline-sync');
-const { exec } = require('child_process');
-const path = require('path');
+const inquirer = require('inquirer');
 const fs = require('fs-extra');
-require('dotenv').config({ path: path.join(__dirname, '../.env') });
+const path = require('path');
 const cloudinary = require('cloudinary').v2;
+const cloudinaryManager = require('./cloudinary-manager');
 
-// Конфигурация Cloudinary
-cloudinary.config({
-    cloud_name: process.env.CLOUDINARY_CLOUD_NAME,
-    api_key: process.env.CLOUDINARY_API_KEY,
-    api_secret: process.env.CLOUDINARY_API_SECRET
-});
-
-// Корневая папка в Cloudinary для всех файлов сайта
-const CLOUDINARY_ROOT_FOLDER = 'website';
-
-// Путь к директории с ассетами приложений
+// Пути к директориям с ресурсами
 const appsDir = path.join(__dirname, '../assets/apps');
+const badgesDir = path.join(__dirname, '../assets/badges');
+const bezelsDir = path.join(__dirname, '../assets/product-bezels');
 
-// Функция для выполнения команды и возврата результата в виде промиса
-function executeCommand(command) {
-    return new Promise((resolve, reject) => {
-        console.log(`Выполняется команда: ${command}`);
+// Константы для режимов загрузки
+const UPLOAD_MODES = {
+    ALL: 0,        // Загрузить все (перезаписать существующие)
+    SPECIFIC: 1,   // Загрузить конкретный файл
+    NEW_ONLY: 2    // Загрузить только новые файлы
+};
+
+/**
+ * Точка входа в административный скрипт
+ */
+async function main() {
+    try {
+        console.log('=== Административный скрипт ===');
         
-        exec(command, { cwd: path.join(__dirname, '..') }, (error, stdout, stderr) => {
-            if (error) {
-                console.error(`Ошибка: ${error.message}`);
-                reject(error);
-                return;
+        // Выводим главное меню
+        const { operation } = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'operation',
+                message: 'Выберите операцию:',
+                choices: [
+                    'Загрузить бейджи на Cloudinary',
+                    'Загрузить рамки устройств на Cloudinary',
+                    'Загрузить изображения приложений',
+                    'Инвалидировать кэш изображений в Cloudinary',
+                    'Перезагрузить все изображения из assets',
+                    'Выход'
+                ]
             }
-            
-            if (stderr) {
-                console.error(`Ошибка: ${stderr}`);
-            }
-            
-            console.log(`Результат: ${stdout}`);
-            resolve(stdout);
-        });
-    });
-}
-
-// Функция для запуска скрипта обновления публичного JSON
-async function updatePublicJson() {
-    try {
-        console.log('Запуск генерации публичной версии apps-metadata.json...');
-        await executeCommand('./js/update-public-json.sh');
-        console.log('Публичная версия JSON успешно обновлена!');
-    } catch (error) {
-        console.error('Произошла ошибка при обновлении публичного JSON:', error);
-    }
-}
-
-// Функция для удаления папки приложения в Cloudinary
-async function deleteAppFolder(appId) {
-    const folderPath = `${CLOUDINARY_ROOT_FOLDER}/apps/${appId}`;
-    console.log(`Удаление папки ${folderPath} из Cloudinary...`);
-    
-    try {
-        // Сначала получаем список всех ресурсов в папке
-        const resources = await cloudinary.search
-            .expression(`folder:${folderPath}`)
-            .max_results(500)
-            .execute();
+        ]);
         
-        // Удаляем все ресурсы
-        if (resources.total_count > 0) {
-            console.log(`Найдено ${resources.total_count} ресурсов для удаления`);
-            
-            for (const resource of resources.resources) {
-                await cloudinary.uploader.destroy(resource.public_id);
-                console.log(`Удален ресурс: ${resource.public_id}`);
-            }
-        } else {
-            console.log(`В папке ${folderPath} не найдено ресурсов для удаления`);
+        switch (operation) {
+            case 'Загрузить бейджи на Cloudinary':
+                await uploadBadges();
+                break;
+            case 'Загрузить рамки устройств на Cloudinary':
+                await uploadBezels();
+                break;
+            case 'Загрузить изображения приложений':
+                await uploadAppImages();
+                break;
+            case 'Инвалидировать кэш изображений в Cloudinary':
+                await invalidateCache();
+                break;
+            case 'Перезагрузить все изображения из assets':
+                await uploadAllAssets();
+                break;
+            case 'Выход':
+                console.log('Выход из скрипта');
+                process.exit(0);
+                break;
         }
         
-        // Теперь удаляем саму папку
-        try {
-            await cloudinary.api.delete_folder(folderPath);
-            console.log(`Папка ${folderPath} успешно удалена`);
-        } catch (folderError) {
-            // Если папки нет, это не ошибка
-            console.log(`Папка ${folderPath} уже удалена или не существует`);
-        }
-        
-        return true;
+        // После выполнения операции возвращаемся в главное меню
+        await main();
     } catch (error) {
-        console.error(`Ошибка при удалении папки ${folderPath}:`, error);
-        return false;
+        console.error('Произошла ошибка:', error);
+        process.exit(1);
     }
 }
 
-// Функция для создания папки в Cloudinary
-async function createFolder(folderPath) {
-    console.log(`Создание папки ${folderPath} в Cloudinary...`);
-    try {
-        const result = await cloudinary.api.create_folder(folderPath);
-        console.log(`Папка ${folderPath} создана успешно`);
-        return result;
-    } catch (error) {
-        // Если папка уже существует, это не ошибка
-        if (error.error && error.error.message === 'Folder already exists') {
-            console.log(`Папка ${folderPath} уже существует`);
-            return { success: true };
-        }
-        console.error(`Ошибка при создании папки ${folderPath}:`, error);
-        return null;
-    }
-}
-
-// Функция для загрузки одного файла
-async function uploadFile(filePath, cloudinaryPath) {
-    // Разделяем путь на папку и имя файла
-    const lastSlashIndex = cloudinaryPath.lastIndexOf('/');
-    const folder = lastSlashIndex !== -1 
-        ? `${CLOUDINARY_ROOT_FOLDER}/${cloudinaryPath.substring(0, lastSlashIndex)}` 
-        : CLOUDINARY_ROOT_FOLDER;
-    const fileName = lastSlashIndex !== -1 
-        ? cloudinaryPath.substring(lastSlashIndex + 1) 
-        : cloudinaryPath;
-    
-    console.log(`Загрузка ${filePath} на Cloudinary в папку ${folder} с именем ${fileName}...`);
-    
-    try {
-        const result = await cloudinary.uploader.upload(filePath, {
-            folder: folder,
-            public_id: fileName,
-            overwrite: true,
-            use_filename: false,
-            unique_filename: false
-        });
-        console.log(`Успешно загружено: ${result.secure_url}`);
-        return result;
-    } catch (error) {
-        console.error(`Ошибка при загрузке ${filePath}:`, error);
-        return null;
-    }
-}
-
-// Функция для загрузки ассетов для приложения
-async function uploadAppAssets(appId) {
-    const appDir = path.join(appsDir, appId);
-    
-    if (!await fs.exists(appDir)) {
-        console.log(`Директория для приложения ${appId} не найдена`);
-        return;
-    }
-    
-    // Создаем папку для приложения
-    await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
-    await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/${appId}`);
-    
-    const files = await fs.readdir(appDir);
-    
-    for (const file of files) {
-        if (file === '.DS_Store') continue; // Пропускаем системные файлы
-
-        const filePath = path.join(appDir, file);
-        const stat = await fs.stat(filePath);
-        
-        if (stat.isFile()) {
-            const fileName = path.parse(file).name;
-            await uploadFile(filePath, `apps/${appId}/${fileName}`);
-        }
-    }
-    
-    console.log(`Все файлы для приложения ${appId} успешно загружены`);
-}
-
-// Функция для загрузки бейджей
+/**
+ * Загрузка бейджей на Cloudinary
+ */
 async function uploadBadges() {
-    const badgesDir = path.join(__dirname, '../assets/badges');
+    console.log('Загрузка бейджей на Cloudinary...');
     
     if (!await fs.exists(badgesDir)) {
-        console.log('Директория badges не найдена');
+        console.error('Директория с бейджами не найдена');
         return;
     }
     
-    // Создаем папку для бейджей
-    await createFolder(`${CLOUDINARY_ROOT_FOLDER}/badges`);
-    
-    const files = await fs.readdir(badgesDir);
-    
-    for (const file of files) {
-        if (file === '.DS_Store') continue; // Пропускаем системные файлы
-
-        const filePath = path.join(badgesDir, file);
-        const stat = await fs.stat(filePath);
-        
-        if (stat.isFile()) {
-            const fileName = path.parse(file).name;
-            await uploadFile(filePath, `badges/${fileName}`);
+    const { confirm } = await inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'confirm',
+            message: 'Все существующие бейджи будут перезаписаны. Продолжить?',
+            default: false
         }
+    ]);
+    
+    if (!confirm) {
+        console.log('Операция отменена');
+        return;
     }
     
-    console.log('Все бейджи успешно загружены');
+    const success = await cloudinaryManager.uploadBadges(badgesDir);
+    
+    if (success) {
+        console.log('Бейджи успешно загружены');
+    } else {
+        console.error('При загрузке бейджей произошли ошибки');
+    }
 }
 
-// Функция для загрузки рамок устройств
-async function uploadDeviceBezels() {
-    const bezelsDir = path.join(__dirname, '../assets/product-bezels');
+/**
+ * Загрузка рамок устройств на Cloudinary
+ */
+async function uploadBezels() {
+    console.log('Загрузка рамок устройств на Cloudinary...');
     
     if (!await fs.exists(bezelsDir)) {
-        console.log('Директория product-bezels не найдена');
+        console.error('Директория с рамками устройств не найдена');
         return;
     }
     
-    // Создаем папку для рамок устройств
-    await createFolder(`${CLOUDINARY_ROOT_FOLDER}/product-bezels`);
+    // Получаем опции загрузки
+    const { mode } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'mode',
+            message: 'Выберите режим загрузки:',
+            choices: [
+                { name: 'Загрузить все рамки (перезаписать существующие)', value: 'all' },
+                { name: 'Загрузить конкретную рамку', value: 'specific' },
+                { name: 'Загрузить только новые рамки', value: 'new' }
+            ]
+        }
+    ]);
     
-    const files = await fs.readdir(bezelsDir);
+    let uploadMode = UPLOAD_MODES.ALL;
+    let specificFile = null;
     
-    for (const file of files) {
-        if (file === '.DS_Store') continue; // Пропускаем системные файлы
+    if (mode === 'all') {
+        const { confirm } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'confirm',
+                message: 'Все существующие рамки будут перезаписаны. Продолжить?',
+                default: false
+            }
+        ]);
         
-        const filePath = path.join(bezelsDir, file);
-        const stat = await fs.stat(filePath);
-        
-        if (stat.isFile()) {
-            const fileName = path.parse(file).name;
-            console.log(`Загрузка рамки устройства: ${fileName}`);
-            await uploadFile(filePath, `product-bezels/${fileName}`);
-        }
-    }
-    
-    console.log('Все рамки устройств успешно загружены');
-}
-
-// Функция для перезагрузки всех изображений из assets
-async function reuploadAllImages() {
-    try {
-        console.log('Перезагрузка всех изображений из assets...');
-        
-        // Создаем основную папку website, если она еще не существует
-        await createFolder(CLOUDINARY_ROOT_FOLDER);
-
-        // Загружаем бейджи App Store
-        await uploadBadges();
-        
-        // Загружаем рамки устройств
-        await uploadDeviceBezels();
-        
-        // Получаем список всех папок приложений
-        const appFolders = await fs.readdir(appsDir);
-        console.log(`Найдено ${appFolders.length} папок с приложениями`);
-        
-        // Для каждого приложения удаляем и заново загружаем ассеты
-        for (const appFolder of appFolders) {
-            if (appFolder === '.DS_Store') continue; // Пропускаем системные файлы
-            
-            // Проверяем, что это директория
-            const folderPath = path.join(appsDir, appFolder);
-            const stats = await fs.stat(folderPath);
-            if (!stats.isDirectory()) continue;
-            
-            console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
-            
-            // Сначала удаляем папку с изображениями приложения
-            await deleteAppFolder(appFolder);
-            
-            // Затем загружаем ассеты заново
-            await uploadAppAssets(appFolder);
-        }
-        
-        console.log('\nВсе изображения успешно перезагружены!');
-    } catch (error) {
-        console.error('Произошла ошибка при перезагрузке изображений:', error);
-    }
-}
-
-// Функция для запуска скрипта загрузки скриншотов для конкретного приложения
-async function uploadAppScreenshots() {
-    try {
-        // Получаем от пользователя ID приложения
-        const appId = readlineSync.question('Введите ID приложения (например, time-capsule): ');
-        if (!appId) {
-            console.error('Ошибка: ID приложения не может быть пустым');
-            return;
-        }
-        
-        // Получаем от пользователя путь к папке со скриншотами
-        let screenshotsPath = readlineSync.question('Введите путь к папке со скриншотами: ');
-        
-        // Удаляем кавычки, если пользователь их добавил
-        screenshotsPath = screenshotsPath.trim().replace(/^["']|["']$/g, '');
-        
-        if (!screenshotsPath) {
-            console.error('Ошибка: Путь к папке со скриншотами не может быть пустым');
-            return;
-        }
-        
-        // Расширяем тильду в пути, если она есть (для macOS/Linux)
-        if (screenshotsPath.startsWith('~')) {
-            screenshotsPath = path.join(process.env.HOME, screenshotsPath.slice(1));
-        }
-        
-        // Проверяем существование директории со скриншотами
-        if (!await fs.exists(screenshotsPath)) {
-            console.error(`Ошибка: Директория ${screenshotsPath} не найдена`);
-            return;
-        }
-        
-        console.log(`\nЗагрузка скриншотов для приложения: ${appId}`);
-        console.log(`Из папки: ${screenshotsPath}\n`);
-        
-        // Запрашиваем подтверждение
-        const confirm = readlineSync.question('Продолжить? (y/n): ');
-        if (confirm.toLowerCase() !== 'y') {
+        if (!confirm) {
             console.log('Операция отменена');
             return;
         }
+    } else if (mode === 'specific') {
+        // Получаем список файлов с рамками
+        const files = await fs.readdir(bezelsDir);
+        const imageFiles = cloudinaryManager.filterImageFiles(files);
         
-        // Создаем папку для приложения, если она еще не существует
-        await createFolder(CLOUDINARY_ROOT_FOLDER);
-        await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
-        await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps/${appId}`);
-        
-        // Получаем список файлов в директории
-        const files = await fs.readdir(screenshotsPath);
-        
-        // Фильтруем только изображения
-        const imageExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-        const imageFiles = files.filter(file => {
-            const ext = path.extname(file).toLowerCase();
-            return imageExtensions.includes(ext);
-        });
-        
-        console.log(`Найдено ${imageFiles.length} изображений для загрузки`);
+        if (imageFiles.length === 0) {
+            console.error('В директории нет файлов с рамками устройств');
+            return;
+        }
         
         // Сортируем файлы по имени
         imageFiles.sort();
         
-        // Загружаем каждое изображение, сохраняя оригинальное имя файла
-        for (const file of imageFiles) {
-            const filePath = path.join(screenshotsPath, file);
-            // Используем имя файла без расширения как имя в Cloudinary
-            const fileNameWithoutExt = path.basename(file, path.extname(file));
+        const { selectedFile } = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'selectedFile',
+                message: 'Выберите файл для загрузки:',
+                choices: imageFiles
+            }
+        ]);
+        
+        specificFile = selectedFile;
+        uploadMode = UPLOAD_MODES.SPECIFIC;
+    } else if (mode === 'new') {
+        uploadMode = UPLOAD_MODES.NEW_ONLY;
+    }
+    
+    const count = await cloudinaryManager.uploadDeviceBezels(bezelsDir, uploadMode, specificFile);
+    console.log(`Загрузка рамок устройств завершена. Загружено: ${count}`);
+}
+
+/**
+ * Загрузка изображений приложений на Cloudinary
+ */
+async function uploadAppImages() {
+    console.log('Загрузка изображений приложений на Cloudinary...');
+    
+    // Выводим подменю для выбора операции
+    const { subOperation } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'subOperation',
+            message: 'Выберите операцию:',
+            choices: [
+                'Загрузить все изображения для приложения (перезаписать существующие)',
+                'Загрузить только скриншоты для приложения (перезаписать существующие)',
+                'Загрузить только новые скриншоты для приложения',
+                'Назад'
+            ]
+        }
+    ]);
+    
+    if (subOperation === 'Назад') {
+        return;
+    }
+    
+    // Получаем список папок приложений
+    const appFolders = await getAppDirectories();
+    
+    if (appFolders.length === 0) {
+        console.error('Нет доступных приложений');
+        return;
+    }
+    
+    // Выбираем приложение
+    const { selectedApp } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'selectedApp',
+            message: 'Выберите приложение:',
+            choices: appFolders
+        }
+    ]);
+    
+    // Проверяем существование папки с изображениями приложения
+    const appDir = path.join(appsDir, selectedApp);
+    
+    if (!await fs.exists(appDir)) {
+        console.error(`Директория для приложения ${selectedApp} не найдена`);
+        return;
+    }
+    
+    // Выполняем выбранную операцию
+    switch (subOperation) {
+        case 'Загрузить все изображения для приложения (перезаписать существующие)':
+            const { confirmAll } = await inquirer.prompt([
+                {
+                    type: 'confirm',
+                    name: 'confirmAll',
+                    message: `Все существующие изображения для приложения ${selectedApp} будут удалены и заменены новыми. Продолжить?`,
+                    default: false
+                }
+            ]);
             
-            await uploadFile(filePath, `apps/${appId}/${fileNameWithoutExt}`);
-        }
-        
-        console.log('\nВсе скриншоты успешно загружены!');
-        
-        // Спрашиваем пользователя, нужно ли обновить публичный JSON
-        const updateJson = readlineSync.question('Обновить публичный JSON? (y/n): ');
-        if (updateJson.toLowerCase() === 'y') {
-            await updatePublicJson();
-        }
-        
-    } catch (error) {
-        console.error('Произошла ошибка при загрузке скриншотов:', error);
+            if (!confirmAll) {
+                console.log('Операция отменена');
+                return;
+            }
+            
+            console.log(`Удаление существующих ресурсов для приложения ${selectedApp}...`);
+            await cloudinaryManager.deleteAppFolder(selectedApp);
+            
+            console.log(`Загрузка всех ресурсов для приложения ${selectedApp}...`);
+            const success = await cloudinaryManager.uploadAppAssets(selectedApp, appsDir);
+            
+            if (success) {
+                console.log(`Все изображения для приложения ${selectedApp} успешно загружены`);
+            } else {
+                console.error(`При загрузке изображений для приложения ${selectedApp} произошли ошибки`);
+            }
+            break;
+            
+        case 'Загрузить только скриншоты для приложения (перезаписать существующие)':
+        case 'Загрузить только новые скриншоты для приложения':
+            const mode = subOperation.includes('новые') ? UPLOAD_MODES.NEW_ONLY : UPLOAD_MODES.ALL;
+            const screenshotsDir = path.join(appDir, 'screenshots');
+            
+            if (!await fs.exists(screenshotsDir)) {
+                console.error(`Директория скриншотов для приложения ${selectedApp} не найдена`);
+                return;
+            }
+            
+            if (mode === UPLOAD_MODES.ALL) {
+                const { confirmScreenshots } = await inquirer.prompt([
+                    {
+                        type: 'confirm',
+                        name: 'confirmScreenshots',
+                        message: `Все существующие скриншоты для приложения ${selectedApp} будут перезаписаны. Продолжить?`,
+                        default: false
+                    }
+                ]);
+                
+                if (!confirmScreenshots) {
+                    console.log('Операция отменена');
+                    return;
+                }
+            }
+            
+            console.log(`Загрузка скриншотов для приложения ${selectedApp}...`);
+            const count = await cloudinaryManager.uploadAppScreenshots(selectedApp, screenshotsDir, mode);
+            console.log(`Загрузка скриншотов завершена. Загружено: ${count}`);
+            break;
     }
 }
 
-// Функция для перезагрузки только выбранных приложений
-async function reuploadSelectedApps() {
-    try {
-        // Получаем список всех папок приложений
-        const appFolders = await fs.readdir(appsDir);
-        const appOptions = appFolders
-            .filter(folder => folder !== '.DS_Store')
-            .filter(async (folder) => {
-                // Проверяем, что это директория
-                const folderPath = path.join(appsDir, folder);
-                const stats = await fs.stat(folderPath);
-                return stats.isDirectory();
-            });
-        
-        console.log('Выберите приложения для перезагрузки:');
-        console.log('Используйте пробел для выбора/отмены, Enter для подтверждения.');
-        
-        // Используем multiselect для выбора нескольких приложений
-        const selectedApps = readlineSync.keyInSelect(appOptions, 'Выберите приложения (0 - для всех):', 
-            { 
-                cancel: 'Отмена',
-                guide: true
-            });
-        
-        // Если пользователь выбрал 0 (все) или отменил операцию
-        if (selectedApps === -1) {
-            console.log('Операция отменена');
-            return;
-        }
-        
-        let appsToReupload = [];
-        
-        if (selectedApps === 0) { // Выбраны все приложения
-            appsToReupload = appOptions;
-        } else {
-            appsToReupload = [appOptions[selectedApps]];
-        }
-        
-        console.log(`\nБудут перезагружены следующие приложения (${appsToReupload.length}): ${appsToReupload.join(', ')}`);
-        
-        // Запрашиваем подтверждение
-        const confirm = readlineSync.question('Продолжить? (y/n): ');
-        if (confirm.toLowerCase() !== 'y') {
-            console.log('Операция отменена');
-            return;
-        }
-        
-        // Создаем основную папку website, если она еще не существует
-        await createFolder(CLOUDINARY_ROOT_FOLDER);
-        await createFolder(`${CLOUDINARY_ROOT_FOLDER}/apps`);
-        
-        // Для каждого выбранного приложения удаляем и заново загружаем ассеты
-        for (const appId of appsToReupload) {
-            console.log(`\nПерезагрузка ассетов для приложения ${appId}...`);
-            
-            // Сначала удаляем папку с изображениями приложения
-            await deleteAppFolder(appId);
-            
-            // Затем загружаем ассеты заново
-            await uploadAppAssets(appId);
-        }
-        
-        console.log('\nВыбранные приложения успешно перезагружены!');
-        
-        // Спрашиваем пользователя, нужно ли обновить публичный JSON
-        const updateJson = readlineSync.question('Обновить публичный JSON? (y/n): ');
-        if (updateJson.toLowerCase() === 'y') {
-            await updatePublicJson();
-        }
-        
-    } catch (error) {
-        console.error('Произошла ошибка при перезагрузке приложений:', error);
+/**
+ * Инвалидация кэша изображений в Cloudinary
+ */
+async function invalidateCache() {
+    console.log('Инвалидация кэша изображений в Cloudinary...');
+    
+    // Получаем список папок
+    const folders = await listCloudinaryFolders();
+    
+    if (folders.length === 0) {
+        console.error('Не удалось получить список папок');
+        return;
     }
+    
+    // Выбираем папку для инвалидации
+    const { selectedFolder } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'selectedFolder',
+            message: 'Выберите папку для инвалидации кэша:',
+            choices: folders.map(folder => ({
+                name: `${folder.name} (${folder.path})`,
+                value: folder.path
+            }))
+        }
+    ]);
+    
+    const { confirm } = await inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'confirm',
+            message: `Вы уверены, что хотите инвалидировать кэш для ${selectedFolder}?`,
+            default: false
+        }
+    ]);
+    
+    if (!confirm) {
+        console.log('Операция отменена');
+        return;
+    }
+    
+    const count = await invalidateByFolder(selectedFolder);
+    console.log(`Инвалидация кэша завершена. Обработано ${count} ресурсов.`);
 }
 
-// Функция для инвалидации кеша Cloudinary
-async function invalidateCloudinaryCache() {
-    try {
-        // Получаем список папок
-        const folders = await listFolders();
-        
-        if (folders.length === 0) {
-            console.error('Не удалось получить список папок');
-            return;
-        }
-        
-        // Запрашиваем у пользователя выбор папки
-        const folderIndex = readlineSync.keyInSelect(
-            folders.map(folder => folder.name),
-            'Выберите папку для инвалидации кеша:'
-        );
-        
-        // Если пользователь отменил операцию
-        if (folderIndex === -1) {
-            console.log('Операция отменена');
-            return;
-        }
-        
-        const selectedFolder = folders[folderIndex];
-        
-        // Запрашиваем подтверждение
-        console.log(`\nВы собираетесь инвалидировать кеш для папки: ${selectedFolder.path}`);
-        const confirm = readlineSync.question('Продолжить? (y/n): ');
-        
-        if (confirm.toLowerCase() !== 'y') {
-            console.log('Операция отменена');
-            return;
-        }
-        
-        // Запускаем инвалидацию
-        if (selectedFolder.path === 'all') {
-            await invalidateByFolder('all');
-        } else {
-            await invalidateByFolder(selectedFolder.path);
-        }
-    } catch (error) {
-        console.error('Произошла ошибка при инвалидации кеша:', error);
-    }
-}
-
-// Функция для получения списка папок в Cloudinary
-async function listFolders() {
+/**
+ * Получение списка доступных папок в Cloudinary
+ * @returns {Promise<Array<object>>} Список папок
+ */
+async function listCloudinaryFolders() {
     try {
         // Получаем список корневых папок
         const rootResult = await cloudinary.api.root_folders();
         
         // Ищем нашу основную папку сайта
-        const websiteFolder = rootResult.folders.find(folder => folder.path === CLOUDINARY_ROOT_FOLDER);
+        const websiteFolder = rootResult.folders.find(folder => folder.path === cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
         
         if (!websiteFolder) {
-            console.error(`Папка ${CLOUDINARY_ROOT_FOLDER} не найдена в Cloudinary`);
+            console.error(`Папка ${cloudinaryManager.CLOUDINARY_ROOT_FOLDER} не найдена в Cloudinary`);
             return [];
         }
         
         // Получаем список подпапок внутри основной папки
-        const subFoldersResult = await cloudinary.api.sub_folders(CLOUDINARY_ROOT_FOLDER);
-        
-        console.log('Доступные папки:');
-        console.log(`0. Все папки (${CLOUDINARY_ROOT_FOLDER}/*)`);
-        console.log(`1. Корневая папка (${CLOUDINARY_ROOT_FOLDER})`);
-        
-        subFoldersResult.folders.forEach((folder, index) => {
-            console.log(`${index + 2}. ${folder.path}`);
-        });
+        const subFoldersResult = await cloudinary.api.sub_folders(cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
         
         return [
             { path: 'all', name: 'Все папки' },
-            { path: CLOUDINARY_ROOT_FOLDER, name: 'Корневая папка' },
+            { path: cloudinaryManager.CLOUDINARY_ROOT_FOLDER, name: 'Корневая папка' },
             ...subFoldersResult.folders
         ];
     } catch (error) {
@@ -519,11 +372,15 @@ async function listFolders() {
     }
 }
 
-// Функция для инвалидации ресурсов в папке
+/**
+ * Инвалидация ресурсов в указанной папке
+ * @param {string} folderPath - Путь к папке
+ * @returns {Promise<number>} Количество инвалидированных ресурсов
+ */
 async function invalidateByFolder(folderPath) {
     try {
         // Если выбраны все папки, используем корневую папку сайта
-        const prefix = folderPath === 'all' ? CLOUDINARY_ROOT_FOLDER : folderPath;
+        const prefix = folderPath === 'all' ? cloudinaryManager.CLOUDINARY_ROOT_FOLDER : folderPath;
         
         console.log(`Начинаю инвалидацию ресурсов в папке: ${prefix}`);
         
@@ -557,46 +414,92 @@ async function invalidateByFolder(folderPath) {
     }
 }
 
-// Основная функция
-async function main() {
-    console.log('Административный скрипт для сайта');
-    console.log('=================================');
+/**
+ * Загрузка всех ресурсов из папки assets
+ */
+async function uploadAllAssets() {
+    console.log('Перезагрузка всех изображений из папки assets...');
     
-    // Определяем доступные операции
-    const operations = [
-        'Обновить публичный JSON (data/apps-metadata-public.json)',
-        'Перезагрузить все изображения из assets',
-        'Перезагрузить только выбранные приложения',
-        'Загрузить скриншоты для конкретного приложения',
-        'Инвалидировать кеш Cloudinary',
-        'Выход'
-    ];
+    const { confirm } = await inquirer.prompt([
+        {
+            type: 'confirm',
+            name: 'confirm',
+            message: 'Все существующие изображения будут перезаписаны. Продолжить?',
+            default: false
+        }
+    ]);
     
-    // Используем readline-sync для создания меню
-    const index = readlineSync.keyInSelect(operations, 'Выберите операцию:');
+    if (!confirm) {
+        console.log('Операция отменена');
+        return;
+    }
     
-    // Обрабатываем выбор пользователя
-    switch (index) {
-        case 0:
-            await updatePublicJson();
-            break;
-        case 1:
-            await reuploadAllImages();
-            break;
-        case 2:
-            await reuploadSelectedApps();
-            break;
-        case 3:
-            await uploadAppScreenshots();
-            break;
-        case 4:
-            await invalidateCloudinaryCache();
-            break;
-        default:
-            console.log('Выход из скрипта');
-            break;
+    // Создаем основную папку website, если она еще не существует
+    await cloudinaryManager.createFolder(cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
+
+    // Загружаем бейджи
+    console.log('\n=== Загрузка бейджей ===');
+    await cloudinaryManager.uploadBadges(badgesDir);
+    
+    // Загружаем рамки устройств
+    console.log('\n=== Загрузка рамок устройств ===');
+    await cloudinaryManager.uploadDeviceBezels(bezelsDir, UPLOAD_MODES.ALL);
+    
+    // Получаем список всех папок приложений
+    console.log('\n=== Загрузка ресурсов приложений ===');
+    try {
+        // Получаем список директорий приложений
+        const appDirs = await getAppDirectories();
+        
+        console.log(`Найдено ${appDirs.length} папок с приложениями`);
+        
+        // Для каждого приложения удаляем и заново загружаем ассеты
+        for (const appFolder of appDirs) {
+            console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
+            
+            // Сначала удаляем папку с изображениями приложения
+            await cloudinaryManager.deleteAppFolder(appFolder);
+            
+            // Затем загружаем ассеты заново
+            await cloudinaryManager.uploadAppAssets(appFolder, appsDir);
+        }
+        
+        console.log('\nВсе изображения успешно перезагружены!');
+    } catch (error) {
+        console.error('Произошла ошибка при перезагрузке изображений:', error);
     }
 }
 
+/**
+ * Получение списка директорий приложений
+ * @returns {Promise<Array<string>>} Список имен директорий приложений
+ */
+async function getAppDirectories() {
+    if (!await fs.exists(appsDir)) {
+        console.error('Директория apps не найдена');
+        return [];
+    }
+    
+    const appFolders = await fs.readdir(appsDir);
+    const appDirs = [];
+    
+    // Фильтруем только директории и пропускаем системные файлы
+    for (const folder of appFolders) {
+        if (folder === '.DS_Store') continue;
+        
+        const folderPath = path.join(appsDir, folder);
+        const stats = await fs.stat(folderPath);
+        
+        if (stats.isDirectory()) {
+            appDirs.push(folder);
+        }
+    }
+    
+    return appDirs;
+}
+
 // Запускаем скрипт
-main(); 
+main().catch(err => {
+    console.error('Критическая ошибка:', err);
+    process.exit(1);
+});
