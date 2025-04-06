@@ -255,11 +255,8 @@ async function uploadAppImages() {
                 return;
             }
             
-            console.log(`Удаление существующих ресурсов для приложения ${selectedApp}...`);
-            await cloudinaryManager.deleteAppFolder(selectedApp);
-            
             console.log(`Загрузка всех ресурсов для приложения ${selectedApp}...`);
-            const success = await cloudinaryManager.uploadAppAssets(selectedApp, appsDir);
+            const success = await cloudinaryManager.uploadAppAssets(selectedApp, appsDir, true);
             
             if (success) {
                 console.log(`Все изображения для приложения ${selectedApp} успешно загружены`);
@@ -444,7 +441,7 @@ async function uploadAllAssets() {
 
     // Загружаем бейджи
     console.log('\n=== Загрузка бейджей ===');
-    await cloudinaryManager.uploadBadges(badgesDir);
+    await cloudinaryManager.uploadBadges(badgesDir, true);
     
     // Загружаем рамки устройств
     console.log('\n=== Загрузка рамок устройств ===');
@@ -458,15 +455,10 @@ async function uploadAllAssets() {
         
         console.log(`Найдено ${appDirs.length} папок с приложениями`);
         
-        // Для каждого приложения удаляем и заново загружаем ассеты
+        // Для каждого приложения загружаем ассеты
         for (const appFolder of appDirs) {
             console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
-            
-            // Сначала удаляем папку с изображениями приложения
-            await cloudinaryManager.deleteAppFolder(appFolder);
-            
-            // Затем загружаем ассеты заново
-            await cloudinaryManager.uploadAppAssets(appFolder, appsDir);
+            await cloudinaryManager.uploadAppAssets(appFolder, appsDir, true);
         }
         
         console.log('\nВсе изображения успешно перезагружены!');

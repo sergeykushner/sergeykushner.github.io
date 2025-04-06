@@ -205,13 +205,20 @@ async function uploadFile(filePath, publicId, options = {}) {
 /**
  * Загрузка бейджей на Cloudinary
  * @param {string} badgesDir - Путь к локальной директории с бейджами
+ * @param {boolean} cleanExisting - Удалить существующие файлы перед загрузкой
  * @returns {Promise<boolean>} Успешность загрузки
  */
-async function uploadBadges(badgesDir) {
+async function uploadBadges(badgesDir, cleanExisting = true) {
     try {
         // Создаем папку для бейджей
         const badgesFolder = `${CLOUDINARY_ROOT_FOLDER}/badges`;
         await createFolder(badgesFolder);
+        
+        // Если нужно, удаляем существующие файлы
+        if (cleanExisting) {
+            console.log('Удаление существующих бейджей...');
+            await deleteFolderContents(badgesFolder);
+        }
         
         // Получаем список файлов бейджей
         const badgeFiles = await fs.readdir(badgesDir);
@@ -330,12 +337,19 @@ async function deleteAppFolder(appId) {
  * Загрузка ассетов приложения на Cloudinary
  * @param {string} appId - ID приложения
  * @param {string} appsDir - Путь к локальной директории с приложениями
+ * @param {boolean} cleanExisting - Удалять существующие ресурсы перед загрузкой
  * @returns {Promise<boolean>} Успешность загрузки
  */
-async function uploadAppAssets(appId, appsDir) {
+async function uploadAppAssets(appId, appsDir, cleanExisting = true) {
     try {
         const appSourceDir = path.join(appsDir, appId);
         const appDestFolder = `${CLOUDINARY_ROOT_FOLDER}/apps/${appId}`;
+        
+        // Если нужно, удаляем существующую папку приложения
+        if (cleanExisting) {
+            console.log(`Удаление существующих ресурсов для приложения ${appId}...`);
+            await deleteAppFolder(appId);
+        }
         
         // Создаем папку для приложения
         await createFolder(CLOUDINARY_ROOT_FOLDER);
@@ -393,6 +407,12 @@ async function uploadAppScreenshots(appId, screenshotsDir, mode = 0) {
         await createFolder(appFolder);
         await createFolder(screenshotsFolder);
         
+        // Если не в режиме "только новые", сначала удаляем все существующие файлы
+        if (mode !== 2) {
+            console.log(`Удаление существующих скриншотов для ${appId}...`);
+            await deleteFolderContents(screenshotsFolder);
+        }
+        
         // Получаем список файлов скриншотов
         const screenshotFiles = await fs.readdir(screenshotsDir);
         const imageFiles = filterImageFiles(screenshotFiles);
@@ -441,6 +461,7 @@ async function uploadAppScreenshots(appId, screenshotsDir, mode = 0) {
 module.exports = {
     CLOUDINARY_ROOT_FOLDER,
     filterImageFiles,
+    getExistingResources,
     createFolder,
     deleteFolder,
     deleteFile,

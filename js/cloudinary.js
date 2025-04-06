@@ -65,8 +65,9 @@ function getDeviceBezelUrl(deviceModel) {
     const fileName = deviceBezelFiles[deviceModel] || 
         deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
     
-    // Структура пути в Cloudinary: /website/product-bezels/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/v2/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}`;
+    // Структура пути в Cloudinary: /website/product-bezels/{fileName}.png
+    // Указываем расширение .png, так как файлы загружаются как png
+    return `${CLOUDINARY_BASE_URL}/image/upload/v2/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}.png`;
 }
 
 // Экспортируем функции для использования в браузере

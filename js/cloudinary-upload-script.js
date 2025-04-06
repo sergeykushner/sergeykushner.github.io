@@ -228,7 +228,7 @@ async function uploadBadges() {
         return;
     }
     
-    const success = await cloudinaryManager.uploadBadges(badgesDir);
+    const success = await cloudinaryManager.uploadBadges(badgesDir, true);
     
     if (success) {
         console.log('Загрузка бейджей завершена успешно');
@@ -248,11 +248,11 @@ async function uploadAllAssets() {
 
     // Загружаем бейджи
     console.log('\n=== Загрузка бейджей ===');
-    await uploadBadges();
+    await cloudinaryManager.uploadBadges(badgesDir, true);
     
     // Загружаем рамки устройств
     console.log('\n=== Загрузка рамок устройств ===');
-    await uploadBezels('all');
+    await cloudinaryManager.uploadDeviceBezels(bezelsDir, UPLOAD_MODES.ALL);
     
     // Получаем список всех папок приложений
     console.log('\n=== Загрузка ресурсов приложений ===');
@@ -262,10 +262,10 @@ async function uploadAllAssets() {
         
         console.log(`Найдено ${appDirs.length} папок с приложениями`);
         
-        // Для каждого приложения удаляем и заново загружаем ассеты
+        // Для каждого приложения загружаем ассеты
         for (const appFolder of appDirs) {
             console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
-            await uploadAppAssets(appFolder);
+            await cloudinaryManager.uploadAppAssets(appFolder, appsDir, true);
         }
         
         console.log('\nВсе изображения успешно перезагружены!');
@@ -314,13 +314,9 @@ async function uploadAppAssets(appId) {
         return;
     }
     
-    // Сначала удаляем существующие ресурсы приложения
-    console.log(`Удаление существующих ресурсов для приложения ${appId}...`);
-    await cloudinaryManager.deleteAppFolder(appId);
-    
-    // Затем загружаем ассеты заново
+    // Загружаем ассеты заново (параметр true означает удалить существующие)
     console.log(`Загрузка всех ресурсов для приложения ${appId}...`);
-    const success = await cloudinaryManager.uploadAppAssets(appId, appsDir);
+    const success = await cloudinaryManager.uploadAppAssets(appId, appsDir, true);
     
     if (success) {
         console.log(`Все изображения для приложения ${appId} успешно загружены`);
