@@ -90,7 +90,7 @@ li {
 .index-links {
     display: flex;
     flex-direction: column;
-    gap: 50px;
+    gap: 25px;
 }
 
 .footer-links {

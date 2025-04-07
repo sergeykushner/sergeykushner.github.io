@@ -20,7 +20,7 @@ h4 {
 }
 
 a {
-    text-decoration: none;
+    /*text-decoration: none;*/
 }
 
 .screenshots-missing {
@@ -40,11 +40,10 @@ a {
 
 .apps-app-title {
     margin-top: 5px;
-    color: var(--text-color);
 }
 
-.apps-app-link {
-    color: inherit;
+/* Remove underline from app links on the apps page */
+a.apps-app-link {
     text-decoration: none;
 }
 
