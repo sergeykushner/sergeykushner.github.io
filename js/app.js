@@ -99,21 +99,8 @@ function updateMetaTags(app) {
     const appUrl = `https://sergeykushner.github.io/pages/app.html?id=${app.id}`;
     document.getElementById('meta-og-url').setAttribute('content', appUrl);
     
-    // Динамически создаем мета-тег для Smart App Banner
-    // Удаляем существующий тег, если он есть
-    const existingTag = document.querySelector('meta[name="apple-itunes-app"]');
-    if (existingTag) {
-        existingTag.remove();
-    }
-    
-    // Создаем новый мета-тег
-    const newMetaTag = document.createElement('meta');
-    newMetaTag.setAttribute('name', 'apple-itunes-app');
-    newMetaTag.setAttribute('content', `app-id=${app.appStoreId}, app-argument=${window.location.href}`);
-    
-    // Добавляем в head перед всеми остальными мета-тегами
-    const head = document.querySelector('head');
-    head.insertBefore(newMetaTag, head.firstChild);
+    // Обновляем мета-тег для Smart App Banner
+    document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=${window.location.href}`);
     
     // Используем Cloudinary для изображения шаринга
     const shareImageUrl = getShareImageUrl(app.id);
