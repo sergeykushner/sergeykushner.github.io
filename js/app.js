@@ -153,7 +153,13 @@ function updateUI(app) {
     
     // Проверка наличия Product Hunt бейджа
     if (app.productHuntBadge) {
-        phContainer.innerHTML = app.productHuntBadge;
+        // Удаляем инлайновые атрибуты width и height из HTML бейджа
+        let badgeHTML = app.productHuntBadge;
+        badgeHTML = badgeHTML.replace(/ width="\d+"/g, '');
+        badgeHTML = badgeHTML.replace(/ height="\d+"/g, '');
+        badgeHTML = badgeHTML.replace(/ style="[^>]*?(?:width|height):[^>]*?"/g, ''); // Удаляем инлайновые стили width/height
+
+        phContainer.innerHTML = badgeHTML;
         phContainer.style.display = "block";
     } else {
         phContainer.style.display = "none";

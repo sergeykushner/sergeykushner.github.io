@@ -31,7 +31,6 @@ body,
     display: flex;
     justify-content: center;
     align-items: center;
-    max-width: 30%;
     flex: 1;
 }
 
@@ -84,7 +83,6 @@ li {
 
 .badges {
     display: flex;
-    align-items: center; /* Вертикальное выравнивание по центру (опционально) */
     justify-content: center;
     gap: 50px;
 }
@@ -107,9 +105,8 @@ li {
 }
 
 .app-list-container {
-    display: flex;
+    display: grid;
     justify-content: center;
-    gap: 20px;
 }
 
 .app-item {
@@ -144,15 +141,13 @@ li {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
-        display: grid;
         grid-template-columns: repeat(7, 1fr);
         /*grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));*/
-        gap: 20px;
+        gap: 30px;
     }
 
     .app-container,
     .app-privacy-container {
-        width: 100%;
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
@@ -166,8 +161,7 @@ li {
 
     .apps-app-icon,
     .app-icon img,
-    .badges img, {
-        width: auto;
+    .badges img {
         height: 60px;
     }
     
@@ -175,13 +169,6 @@ li {
         display: none;
     }
 
-    .apps-app-icon,
-    .app-icon img,
-    .badges img {
-        width: auto;
-        height: 60px;
-    }
-    
     .badges {
         flex-direction: column;
     }
@@ -191,12 +178,8 @@ li {
         flex-wrap: wrap; /* В мобильном виде разрешаем перенос */
     }
 
-    .screenshot-container {
-        max-width: 45%; /* В мобильном два скриншота по ширине */
-    }
-
     .app-list-container {
-        display: grid;
         grid-template-columns: repeat(4, 1fr); 
+        gap: 20px;
     }
 }
