@@ -11,7 +11,7 @@ cloudinary.config({
 });
 
 // Разрешенные расширения изображений
-const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
+const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.webp', '.svg'];
 
 /**
  * Корневая папка для всех ресурсов на Cloudinary
@@ -213,6 +213,9 @@ async function uploadFile(filePath, publicId, options = {}) {
  */
 async function uploadBadges(badgesDir, cleanExisting = true) {
     try {
+        console.log(`Проверка директории бейджей: ${badgesDir}`);
+        console.log(`Директория существует: ${await fs.exists(badgesDir)}`);
+        
         // Создаем папку для бейджей
         const badgesFolder = `${CLOUDINARY_ROOT_FOLDER}/badges`;
         await createFolder(badgesFolder);
@@ -225,9 +228,13 @@ async function uploadBadges(badgesDir, cleanExisting = true) {
         
         // Получаем список файлов бейджей
         const badgeFiles = await fs.readdir(badgesDir);
+        console.log(`Всего файлов в директории: ${badgeFiles.length}`);
+        console.log(`Файлы в директории: ${badgeFiles.join(', ')}`);
+        
         const imageFiles = filterImageFiles(badgeFiles);
         
         console.log(`Найдено ${imageFiles.length} файлов бейджей для загрузки`);
+        console.log(`Отфильтрованные файлы: ${imageFiles.join(', ')}`);
         
         // Загружаем каждый бейдж
         let uploadedCount = 0;
@@ -235,6 +242,9 @@ async function uploadBadges(badgesDir, cleanExisting = true) {
             const filePath = path.join(badgesDir, file);
             const fileName = path.parse(file).name;
             const publicId = `${badgesFolder}/${fileName}`;
+            
+            console.log(`Загрузка файла: ${filePath}`);
+            console.log(`Файл существует: ${await fs.exists(filePath)}`);
             
             const result = await uploadFile(filePath, publicId);
             if (result) {
