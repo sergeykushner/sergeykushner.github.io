@@ -89,13 +89,6 @@ li {
     gap: 50px;
 }
 
-.apps-app-icon,
-.app-icon img,
-.badges img {
-    width: auto;
-    height: 60px;
-}
-
 .index-links {
     display: flex;
     flex-direction: column;
@@ -136,6 +129,14 @@ li {
         /* margin-right: auto; */
     }
 
+    .apps-app-icon,
+    .app-icon img,
+    .badges img,
+    #product-hunt-container {
+        width: auto;
+        height: 70px;
+    }
+
     .screenshots-gallery {
         gap: 50px;
     }
@@ -163,9 +164,24 @@ li {
     body {
         margin-inline: 20px;
     }
+
+    .apps-app-icon,
+    .app-icon img,
+    .badges img,
+    #product-hunt-container {
+        width: auto;
+        height: 60px;
+    }
     
     .app-icon img {
         display: none;
+    }
+
+    .apps-app-icon,
+    .app-icon img,
+    .badges img {
+        width: auto;
+        height: 60px;
     }
     
     .badges {
