@@ -19,6 +19,12 @@ const IMAGE_EXTENSIONS = ['.png', '.jpg', '.jpeg', '.gif', '.webp'];
 const CLOUDINARY_ROOT_FOLDER = 'website';
 
 /**
+ * Корневая папка для всех ресурсов на Cloudinary
+ */
+const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME; 
+const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
+
+/**
  * Фильтрация файлов изображений из списка файлов
  * @param {Array<string>} files - Список файлов
  * @returns {Array<string>} Отфильтрованный список файлов изображений
@@ -464,8 +470,117 @@ async function getAllFiles(dir) {
     return result;
 }
 
+/**
+ * Получение списка директорий приложений
+ * @param {string} appsDir - Путь к директории приложений
+ * @returns {Promise<Array<string>>} Список имен директорий приложений
+ */
+async function getAppDirectories(appsDir) {
+    if (!await fs.exists(appsDir)) {
+        console.error('Директория apps не найдена');
+        return [];
+    }
+    
+    const appFolders = await fs.readdir(appsDir);
+    const appDirs = [];
+    
+    // Фильтруем только директории и пропускаем системные файлы
+    for (const folder of appFolders) {
+        if (folder === '.DS_Store') continue;
+        
+        const folderPath = path.join(appsDir, folder);
+        const stats = await fs.stat(folderPath);
+        
+        if (stats.isDirectory()) {
+            appDirs.push(folder);
+        }
+    }
+    
+    return appDirs;
+}
+
+/**
+ * Генерирует URL для изображения из Cloudinary
+ * @param {string} appId - ID приложения
+ * @param {string} imageName - Имя изображения (например, 'app-icon', 'app-screen-1')
+ * @param {string} extension - Расширение файла (например, 'png', 'jpg')
+ * @param {boolean} isDarkMode - Флаг темного режима
+ * @returns {string} Полный URL к изображению в Cloudinary
+ */
+function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode = false) {
+    // Добавляем суффикс темного режима, если нужно
+    const darkModeSuffix = isDarkMode ? '-dark' : '';
+    const fileName = `${imageName}${darkModeSuffix}`;
+    
+    // Добавляем трансформации для иконок приложений (128px)
+    let transformations = '';
+    if (imageName === 'app-icon') {
+        transformations = 'w_128,h_128,c_fill/';
+    }
+    
+    // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
+    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
+}
+
+/**
+ * Получает URL для шэринг-изображения приложения
+ * @param {string} appId - ID приложения
+ * @returns {string} URL изображения для шэринга
+ */
+function getShareImageUrl(appId) {
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share`;
+}
+
+/**
+ * Получает URL для бейджа App Store
+ * @param {boolean} isDarkMode - Флаг темного режима
+ * @returns {string} URL бейджа App Store
+ */
+function getAppStoreBadgeUrl(isDarkMode = false) {
+    const badgeName = isDarkMode 
+        ? 'download-on-the-app-store-badge-white' 
+        : 'download-on-the-app-store-badge-black';
+    
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/badges/${badgeName}`;
+}
+
+/**
+ * Получает URL для рамки устройства из Cloudinary
+ * @param {string} deviceModel - Модель устройства (например, 'iPhone 16 Pro Max')
+ * @returns {string} URL рамки устройства
+ */
+function getDeviceBezelUrl(deviceModel) {
+    // Получаем имя файла из маппинга app.js или генерируем его из имени устройства
+    // Маппинг определен в app.js в объекте DEVICE_BEZEL_FILES
+    let fileName;
+    
+    // Если функция вызывается из браузера и доступен глобальный объект window.DEVICE_BEZEL_FILES
+    if (typeof window !== 'undefined' && window.DEVICE_BEZEL_FILES) {
+        fileName = window.DEVICE_BEZEL_FILES[deviceModel];
+    }
+    
+    // Если имя файла не найдено, генерируем его из модели устройства
+    if (!fileName) {
+        fileName = deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
+    }
+    
+    // Структура пути в Cloudinary: /website/product-bezels/{fileName}.png
+    // Указываем расширение .png, так как файлы загружаются как png
+    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}.png`;
+}
+
+// Экспортируем функции для использования в браузере
+if (typeof window !== 'undefined') {
+    window.getCloudinaryImageUrl = getCloudinaryImageUrl;
+    window.getAppStoreBadgeUrl = getAppStoreBadgeUrl;
+    window.getShareImageUrl = getShareImageUrl;
+    window.getDeviceBezelUrl = getDeviceBezelUrl;
+}
+
 module.exports = {
     CLOUDINARY_ROOT_FOLDER,
+    CLOUDINARY_CLOUD_NAME,
+    CLOUDINARY_BASE_URL,
     filterImageFiles,
     getExistingResources,
     createFolder,
@@ -477,5 +592,10 @@ module.exports = {
     uploadDeviceBezels,
     deleteAppFolder,
     smartUploadAppAssets,
-    getAllFiles
+    getAllFiles,
+    getAppDirectories,
+    getCloudinaryImageUrl,
+    getAppStoreBadgeUrl,
+    getShareImageUrl,
+    getDeviceBezelUrl
 };

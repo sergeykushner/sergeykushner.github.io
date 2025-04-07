@@ -5,12 +5,11 @@
   "main": "js/app.js",
   "scripts": {
     "admin": "node js/admin.js",
-    "upload-all": "node js/cloudinary-upload-script.js all",
-    "upload-app": "node js/cloudinary-upload-script.js app",
-    "upload-bezels": "node js/cloudinary-upload-script.js bezels",
-    "upload-screenshots": "node js/cloudinary-upload-script.js screenshots",
-    "upload-badges": "node js/cloudinary-upload-script.js badges",
-    "update-public-json": "js/update-public-json.sh"
+    "upload-all": "node js/admin.js all",
+    "upload-app": "node js/admin.js app",
+    "upload-bezels": "node js/admin.js bezels",
+    "upload-badges": "node js/admin.js badges",
+    "update-public-json": "node js/admin.js update-json"
   },
   "homepage": "https://sergeykushner.github.io",
   "repository": {
