@@ -131,8 +131,7 @@ li {
 
     .apps-app-icon,
     .app-icon img,
-    .badges img,
-    #product-hunt-container {
+    .badges img {
         width: auto;
         height: 70px;
     }
@@ -167,8 +166,7 @@ li {
 
     .apps-app-icon,
     .app-icon img,
-    .badges img,
-    #product-hunt-container {
+    .badges img, {
         width: auto;
         height: 60px;
     }
