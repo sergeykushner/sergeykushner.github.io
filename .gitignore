@@ -9,7 +9,7 @@ Thumbs.db
 *.log
 
 # VSCode
-.vscode/
+# .vscode/
 
 # Приватные данные
 data/apps-metadata.json 
