@@ -99,12 +99,15 @@ function updateMetaTags(app) {
     const appUrl = `https://sergeykushner.github.io/pages/app.html?id=${app.id}`;
     document.getElementById('meta-og-url').setAttribute('content', appUrl);
     
-    // Обновляем мета-тег для Smart App Banner
+    // Установка мета-тега для Smart App Banner
     document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=${window.location.href}`);
     
     // Используем Cloudinary для изображения шаринга
     const shareImageUrl = getShareImageUrl(app.id);
     document.getElementById('meta-og-image').setAttribute('content', shareImageUrl);
+    
+    // Устанавливаем apple-mobile-web-app-title
+    document.querySelector('meta[name="apple-mobile-web-app-title"]').setAttribute("content", app.title);
 }
 
 function updateUI(app) {
