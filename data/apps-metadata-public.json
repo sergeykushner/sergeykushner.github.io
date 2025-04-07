@@ -1590,6 +1590,26 @@
         "releaseDate": "2016-09-10"
     },
     {
+        "id": "pok-advisor",
+        "displayName": "PokAdvisor",
+        "title": "PokAdvisor - guide for Pokemon GO and Pokedex",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "appStoreId": "1135070732",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": ""
+    },
+    {
         "id": "pokemon-go-guide",
         "displayName": "Guide for Pokemon GO",
         "title": "Guide for Pokemon GO",
