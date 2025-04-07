@@ -1515,9 +1515,7 @@
         "screenshotProduct": "Screenshot 1728/2304",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2016-09-16",
-        "appStoreUnits": "795",
-        "appStoreUnitsSales": "1.51"
+        "releaseDate": "2016-09-16"
     },
     {
         "id": "garden-crash",
@@ -1601,9 +1599,7 @@
         "screenshotProduct": "Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2016-09-10",
-        "appStoreUnits": "1600",
-        "appStoreUnitsSales": "88.82"
+        "releaseDate": "2016-09-10"
     },
     {
         "id": "pok-advisor",
@@ -1679,9 +1675,7 @@
         "privacyUpdatedDate": "",
         "releaseDate": "2016-08-01",
         "releaseDateAndroidFree": "2016-03-11",
-        "releaseDateAndroidPaid": "2016-06-09",
-        "appStoreUnits": "17600",
-        "appStoreUnitsSales": "903"
+        "releaseDateAndroidPaid": "2016-06-09"
     },
     {
         "id": "template",

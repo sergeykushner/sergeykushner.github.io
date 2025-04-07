@@ -18,6 +18,8 @@ async function updatePublicJson() {
 
         // Ключи, которые нужно удалить из публичной версии
         const keysToRemove = [
+            "appStoreUnits",
+            "appStoreUnitsSales",
             'saleDate',
             'salePrice',
             'listingFee',
