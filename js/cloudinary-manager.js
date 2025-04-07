@@ -23,6 +23,7 @@ const CLOUDINARY_ROOT_FOLDER = 'website';
  */
 const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME; 
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
+const ASSET_VERSION = 'v1'; // Новая константа версионирования
 
 /**
  * Фильтрация файлов изображений из списка файлов
@@ -529,7 +530,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     }
     
     // Структура пути в Cloudinary: /website/apps/{appId}/{fileName}
-    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
 /**
@@ -538,7 +539,7 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
  * @returns {string} URL изображения для шэринга
  */
 function getShareImageUrl(appId) {
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share`;
 }
 
 /**
@@ -551,7 +552,7 @@ function getAppStoreBadgeUrl(isDarkMode = false) {
         ? 'download-on-the-app-store-badge-white' 
         : 'download-on-the-app-store-badge-black';
     
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/badges/${badgeName}`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/badges/${badgeName}`;
 }
 
 /**
@@ -576,7 +577,7 @@ function getDeviceBezelUrl(deviceModel) {
     
     // Структура пути в Cloudinary: /website/product-bezels/{fileName}.png
     // Указываем расширение .png, так как файлы загружаются как png
-    return `${CLOUDINARY_BASE_URL}/image/upload/v1/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}.png`;
+    return `${CLOUDINARY_BASE_URL}/image/upload/${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/product-bezels/${fileName}.png`;
 }
 
 // Экспортируем функции для использования в браузере
@@ -591,6 +592,7 @@ module.exports = {
     CLOUDINARY_ROOT_FOLDER,
     CLOUDINARY_CLOUD_NAME,
     CLOUDINARY_BASE_URL,
+    ASSET_VERSION,
     filterImageFiles,
     getExistingResources,
     createFolder,

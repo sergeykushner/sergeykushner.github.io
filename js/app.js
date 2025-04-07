@@ -13,7 +13,11 @@ async function loadAppDetail() {
 
     updateMetaTags(app);
 
-    updateUI(app);
+    // Defer UI updates slightly using requestAnimationFrame
+    // to allow the browser to potentially process meta tag changes first.
+    requestAnimationFrame(() => {
+        updateUI(app);
+    });
 }
 
 // Соответствие устройств и соотношений сторон
