@@ -258,8 +258,8 @@ async function uploadDeviceBezels(bezelsDir, mode = 0, specificFile = null) {
         const bezelsFolder = `${CLOUDINARY_ROOT_FOLDER}/product-bezels`;
         await createFolder(bezelsFolder);
         
-        // Если не в режиме "только новые", сначала удаляем все существующие файлы из папки
-        if (mode !== 2) {
+        // Удаляем существующие файлы ТОЛЬКО если выбран режим "все" (mode === 0)
+        if (mode === 0) {
             console.log('Удаление существующих рамок устройств...');
             await deleteFolderContents(bezelsFolder);
         }
@@ -292,27 +292,33 @@ async function uploadDeviceBezels(bezelsDir, mode = 0, specificFile = null) {
             console.log(`Найдено ${existingFiles.length} существующих файлов на Cloudinary`);
         }
         
-        // Загружаем каждую рамку
+        // Загружаем каждую рамку (в режимах 0 - все или 2 - только новые)
         let uploadedCount = 0;
         for (const file of imageFiles) {
-            const filePath = path.join(bezelsDir, file);
-            const fileName = path.parse(file).name;
-            const publicId = `${bezelsFolder}/${fileName}`;
-            
-            // Если режим "только новые" и файл уже существует, пропускаем
-            if (mode === 2 && existingFiles.includes(fileName)) {
-                console.log(`Пропуск существующего файла: ${file}`);
-                continue;
+            // Пропускаем загрузку, если это режим "только новые" и файл существует
+            if (mode === 2) {
+                const fileNameWithoutExt = path.parse(file).name;
+                if (existingFiles.includes(fileNameWithoutExt)) {
+                    console.log(`Пропуск существующего файла: ${file}`);
+                    continue;
+                }
             }
             
-            const result = await uploadFile(filePath, publicId);
-            if (result) {
-                uploadedCount++;
-                console.log(`Загружена рамка: ${file}`);
+            // Загружаем файл, если это режим "все" (0) или файл новый (в режиме 2)
+            if (mode === 0 || mode === 2) {
+                const filePath = path.join(bezelsDir, file);
+                const fileName = path.parse(file).name;
+                const publicId = `${bezelsFolder}/${fileName}`;
+                
+                const result = await uploadFile(filePath, publicId);
+                if (result) {
+                    uploadedCount++;
+                    console.log(`Загружена рамка: ${file}`);
+                }
             }
         }
         
-        console.log(`Загружено ${uploadedCount} из ${imageFiles.length} рамок устройств`);
+        console.log(`Загружено ${uploadedCount} рамок устройств`);
         return uploadedCount;
     } catch (error) {
         console.error('Ошибка при загрузке рамок устройств:', error.message);
