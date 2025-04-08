@@ -546,6 +546,28 @@
         "releaseDate": "2022-02-16"
     },
     {
+        "id": "workout-node",
+        "type": "Website",
+        "displayName": "WORKOUTNODE.COM",
+        "title": "WORKOUTNODE.COM",
+        "subtitle": "Fitness Website",
+        "promoText": "",
+        "metaDescription": "Template App Meta Description",
+        "fullDescription": [
+            "Template App Description"
+        ],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "websiteLink": "https://workoutnode.com/",
+        "screenshots": [
+            1
+        ],
+        "screenshotProduct": "Website Screenshot 1440/950",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-05-01"
+    },
+    {
         "id": "cyber-roulette",
         "displayName": "Cyber Roulette",
         "title": "Cyber Roulette Casino",
@@ -1525,9 +1547,12 @@
         "promoText": "",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Colorful and fun puzzle game in which you have to collect berries, vegetables, fruit, buns.",
+            "The game is about Four in a row, meaning you have to line up four identical berries, vegetables, fruits or buns to get points. But be careful! If you only get three in a row you get minus points.",
+            "And if at one point you feel like you can't solve the puzzle - you can use various bonuses that are bought for coins.",
+            "Collect fruits and vegetables, compete with your friends and compare your results. Are you up for the challenge?"
         ],
-        "appStoreId": "",
+        "appStoreId": "1225362001",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1537,26 +1562,32 @@
         "screenshotProduct": "App Store Screenshot 2160/3840",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-04-14"
     },
     {
         "id": "rash-down",
         "displayName": "Rash Down",
         "title": "Rash Down",
         "subtitle": "",
-        "promoText": "",
+        "promoText": "Download now the new football rugby arcade game !",
         "metaDescription": "",
         "fullDescription": [
-            ""
+            "Touch the screen and slide to avoid the obstacles !",
+            "Pick as many money as you can !",
+            "Do your best to get a touchdown and don't be taken down by any obstacles coming after you!",
+            "Unlock new features with the money you gathered and unlock the new content!",
+            "Be the best in your leaderboard!",
+            "Also share and invite your friends to beat the high score and rush to the victory together !",
+            "Become the best quarterback - go the farthest!"
         ],
-        "appStoreId": "",
+        "appStoreId": "1222709122",
         "googlePlayId": "",
         "screenshots": [
             0
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2017-04-06"
     },
     {
         "id": "rash-down-reskinned",
@@ -1622,6 +1653,28 @@
         "releaseDate": ""
     },
     {
+        "id": "rex-fit",
+        "displayName": "RexFit",
+        "title": "RexFit",
+        "subtitle": "Workouts. Routines. Exercises.",
+        "promoText": "Description of exercises and training diary. What will help you train properly.",
+        "metaDescription": "",
+        "fullDescription": [
+            "To achieve new results, it is important to do the exercises correctly. And increase the number of sets and weight. But how to remember all these repetitions and weights when the exercises are too much? Record your results! This will help not only to streamline the training process, but also motivate you. In the training diary, you can see how many sets you have made and how much weight you have in your last workout. And do one more!) So you will progress and become better and better.",
+            "And if you are not sure or do not know how to do the exercise correctly, you can see its description.",
+            "In this application there are more than 100 exercises with a description of the implementation, tips and recommendations for implementation. You can also create your own ones, which are not in the list."
+        ],
+        "appStoreId": "1261012298",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-08-16"
+    },
+    {
         "id": "pokemon-go-guide",
         "displayName": "Guide for Pokemon GO",
         "title": "Guide for Pokemon GO",
@@ -1679,22 +1732,30 @@
     },
     {
         "id": "template",
+        "type": "App",
+        "platform": [
+            "iOS"
+        ],
         "displayName": "Template",
-        "title": "Template",
+        "title": "Template App",
         "subtitle": "Template App Subtitle",
         "promoText": "Template App Promo Text",
         "metaDescription": "Template App Meta Description",
         "fullDescription": [
+            "Template App Description",
             "Template App Description"
         ],
-        "appStoreId": "",
-        "googlePlayId": "",
+        "appStoreId": "0000000000",
+        "googlePlayId": "com.example.template",
         "screenshots": [
-            0
+            0,
+            1
         ],
         "screenshotProduct": "iPhone 16 Pro Max",
         "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "privacyUpdatedDate": "2025-01-01",
+        "releaseDate": "2025-01-01",
+        "appStoreSales": null,
+        "appStoreProceeds": null
     }
 ]

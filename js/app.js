@@ -35,12 +35,14 @@ const DEVICE_ASPECT_RATIOS = {
     "App Store Screenshot 1176/2088": "1176 / 2088",
     "Screenshot 1728/2304": "1728 / 2304",
     "App Store Screenshot 495/994": "495 / 994",
+    "Website Screenshot 1440/950": "1440 / 950"
     // Другие устройства можно добавить по мере необходимости
 };
 
 // Соответствие устройств и радиусов скругления для скриншотов
 const DEVICE_CORNER_RADIUS = {
     "Slide 16/9": "10px",
+    "Website Screenshot 1440/950": "10px",
     "Screenshot 1176/2088": "0%",
     "iPhone 16 Pro Max": "7%",
     "iPhone 15 Pro Max": "7%",
@@ -202,8 +204,9 @@ function updateUI(app) {
     function createScreenshotElement(screenNumber, index) {
         // Список типов скриншотов, для которых не нужно отображать рамку устройства
         const noBezelScreenshotTypes = [
-            "Slide 16/9",
             "Screenshots Missing",
+            "Slide 16/9",
+            "Website Screenshot 1440/950",
             "App Store Screenshot 2160/3840",
             "App Store Screenshot 1176/2088",
             "App Store Screenshot 510/1012",
@@ -218,8 +221,9 @@ function updateUI(app) {
         // Список типов скриншотов без рамки, но с применением скругления
         const noBezelWithRadiusTypes = [
             "Slide 16/9",
+            "Website Screenshot 1440/950",
             "App Store Screenshot 460/996",
-            "App Store Screenshot 392/696"
+            "App Store Screenshot 392/696",
         ];
         
         // Проверяем, нужно ли отображать рамку устройства
