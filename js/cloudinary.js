@@ -2,7 +2,7 @@
 const CLOUDINARY_CLOUD_NAME = 'dh1nrzlvo';
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
 const CLOUDINARY_ROOT_FOLDER = 'website'; // Добавляем корневую папку
-const ASSET_VERSION = 'v2'; // Новая константа версионирования
+const ASSET_VERSION = 'v3'; // Новая константа версионирования
 
 /**
  * Генерирует URL для изображения из Cloudinary

@@ -18,7 +18,7 @@
             "With a strong emphasis on privacy and security, all user data is stored locally on the device and in iCloud using encryption, ensuring that your content remains private and secure.",
             "Get Capsula today and start preserving your memories for the future!"
         ],
-        "appStoreId": "6740265085",
+        "apple_id": "6740265085",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -49,7 +49,7 @@
             "Personalized Health Timeline: See your body's recovery stages with a detailed timeline that covers improvements in health, energy, and overall well-being.",
             "QST is more than just a tracker; it's your partner in leading a healthier, smoke-free life. Quit smoking, save money, and rediscover your best self with QST!"
         ],
-        "appStoreId": "6738115679",
+        "apple_id": "6738115679",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -76,7 +76,7 @@
             "Brown Noise is known for its deep, soothing sound profile, which can help mask background noise, improve sleep quality, enhance concentration, and create a calming atmosphere. Whether you're studying, meditating, or trying to sleep, our app provides the auditory support you need to achieve your goals.",
             "Transform your auditory environment and enhance your daily life with the calming sounds of brown noise. Download now and experience a new level of relaxation, focus, and sleep."
         ],
-        "appStoreId": "6737122066",
+        "apple_id": "6737122066",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -110,7 +110,7 @@
             "Why Choose Cipheroji? - Cipheroji offers a novel approach to text security. By leveraging the universal language of emojis, it provides a fun and engaging way to keep your conversations private. With the power of AES-256 encryption, you can be confident that your texts are protected by the most reliable encryption available.",
             "Privacy and Security - Your privacy is our top priority. All encryption and decryption processes are performed locally on your device, ensuring that your texts remain secure and private."
         ],
-        "appStoreId": "6590630312",
+        "apple_id": "6590630312",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -137,7 +137,7 @@
         "fullDescription": [
             "Get ready for an exhilarating adventure in Dodge Zone! Your goal is to avoid collisions with obstacles and survive as long as possible. Only the fastest and most agile players will achieve the highest scores! The game gets progressively harder the longer you play, testing your reflexes and strategic thinking. Compete with players worldwide and climb to the top of the leaderboard."
         ],
-        "appStoreId": "6532621925",
+        "apple_id": "6532621925",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -163,7 +163,7 @@
             "Sleek and Intuitive Design: Enjoy a sleek and intuitive interface designed for quick and easy navigation. Access all features with just a few taps.",
             "Privacy and Security: Rest assured that your data is safe and secure. Birthdays prioritizes user privacy and data protection."
         ],
-        "appStoreId": "6478440784",
+        "apple_id": "6478440784",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -173,7 +173,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2024-02-26"
+        "releaseDate": "2024-02-26",
+        "appStoreSales": 4.99,
+        "appStoreProceeds": 4.24
     },
     {
         "id": "assets",
@@ -185,7 +187,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "6476966560",
+        "apple_id": "6476966560",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -195,7 +197,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2024-02-23"
+        "releaseDate": "2024-02-23",
+        "appStoreSales": 11.64594,
+        "appStoreProceeds": 8.533723
     },
     {
         "id": "ai-writer",
@@ -215,7 +219,7 @@
             "Seamless Integration: Built with SwiftUI and Core Data, AI Writer ensures a seamless experience, combining elegant design with robust performance.",
             "Unlock your writing potential and transform your ideas into beautifully crafted compositions. Explore the world of words with AI Writer — where creativity knows no bounds!"
         ],
-        "appStoreId": "6470300071",
+        "apple_id": "6470300071",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -225,7 +229,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2023-11-01"
+        "releaseDate": "2023-11-01",
+        "appStoreSales": 110.877632,
+        "appStoreProceeds": 86.76192599999999
     },
     {
         "id": "care-symbols",
@@ -248,7 +254,7 @@
             "With Clothtag, tailor your clothing care preferences. Select your favorite care labels, view detailed care information, and stay organized in a way that suits your unique style and clothing care routine.",
             "Whether you're a fashion enthusiast or just want to make sure your clothes stand the test of time, Clothtag is your trusted companion for clothing care. Download now and make garment care effortless and enjoyable!"
         ],
-        "appStoreId": "6461417294",
+        "apple_id": "6461417294",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -270,7 +276,7 @@
         "fullDescription": [
             "Track your vehicle mileage and your fuel costs. Get Statistics. Easy to Use."
         ],
-        "appStoreId": "6446119609",
+        "apple_id": "6446119609",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -292,7 +298,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "1668551383",
+        "apple_id": "1668551383",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -302,7 +308,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2023-01-28"
+        "releaseDate": "2023-01-28",
+        "appStoreSales": 35.62252513593498,
+        "appStoreProceeds": 29.402637543958832
     },
     {
         "id": "movie-watchlist",
@@ -315,7 +323,7 @@
             "Find out about Popular Movies, Now Playing Movies, Best and Top Rated Movies, Upcoming Movies.",
             "Add movies to your wishlist or to your personal watch library."
         ],
-        "appStoreId": "1658692845",
+        "apple_id": "1658692845",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -325,7 +333,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-12-08"
+        "releaseDate": "2022-12-08",
+        "appStoreSales": 10.62194,
+        "appStoreProceeds": 7.721785
     },
     {
         "id": "fasting",
@@ -337,7 +347,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "6444643252",
+        "apple_id": "6444643252",
         "googlePlayId": "",
         "screenshots": [
             2,
@@ -347,7 +357,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-11-29"
+        "releaseDate": "2022-11-29",
+        "appStoreSales": 5.4678761063,
+        "appStoreProceeds": 4.649734513364
     },
     {
         "id": "habit-tracker",
@@ -359,7 +371,7 @@
         "fullDescription": [
             "DFLOW is a habit tracking app that will help you develop good habits and reach your goals. Reminders when needed, statistics, habit analysis with charts, so you can easily achieve your goals."
         ],
-        "appStoreId": "6443881739",
+        "apple_id": "6443881739",
         "googlePlayId": "",
         "screenshots": [
             2,
@@ -381,7 +393,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "1636852538",
+        "apple_id": "1636852538",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -391,7 +403,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-28"
+        "releaseDate": "2022-07-28",
+        "appStoreSales": 24.83077,
+        "appStoreProceeds": 19.840925
     },
     {
         "id": "open-sea-wallet-portfolio",
@@ -403,7 +417,7 @@
         "fullDescription": [
             "Add any wallets connected to the OpenSea and view the portfolio balance and NFTs in this portfolio."
         ],
-        "appStoreId": "1635511901",
+        "apple_id": "1635511901",
         "googlePlayId": "",
         "screenshots": [
             1
@@ -411,7 +425,9 @@
         "screenshotProduct": "Slide 16/9",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-20"
+        "releaseDate": "2022-07-20",
+        "appStoreSales": 33.13454353348876,
+        "appStoreProceeds": 26.65609976905436
     },
     {
         "id": "charger-animations",
@@ -423,7 +439,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "1633977789",
+        "apple_id": "1633977789",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -433,7 +449,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-12"
+        "releaseDate": "2022-07-12",
+        "appStoreSales": 8.97,
+        "appStoreProceeds": 7.62
     },
     {
         "id": "nft-creator",
@@ -445,7 +463,7 @@
         "fullDescription": [
             "Create your own NFT Collections from your images or create your own CryptoPunks."
         ],
-        "appStoreId": "1633797900",
+        "apple_id": "1633797900",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -455,7 +473,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-10"
+        "releaseDate": "2022-07-10",
+        "appStoreSales": 18.68993319502,
+        "appStoreProceeds": 13.8710812240658
     },
     {
         "id": "word-game-woords",
@@ -467,7 +487,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "1632805268",
+        "apple_id": "1632805268",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -477,7 +497,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-05"
+        "releaseDate": "2022-07-05",
+        "appStoreSales": 2.610175,
+        "appStoreProceeds": 1.9687
     },
     {
         "id": "period-tracker",
@@ -489,7 +511,7 @@
         "fullDescription": [
             "A tracker in which you can record your periods and get data on the days of ovulation, fertility, chance of getting pregnant."
         ],
-        "appStoreId": "1632582167",
+        "apple_id": "1632582167",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -499,7 +521,32 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-07-03"
+        "releaseDate": "2022-07-03",
+        "appStoreSales": 5.782665726389,
+        "appStoreProceeds": 4.75833568407304
+    },
+    {
+        "id": "workout-node",
+        "type": "Website",
+        "displayName": "WorkoutNode",
+        "title": "WorkoutNode",
+        "subtitle": "Fitness Website",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "apple_id": "",
+        "googlePlayId": "",
+        "websiteLink": "https://workoutnode.com/",
+        "screenshots": [
+            1
+        ],
+        "screenshotProduct": "Website Screenshot 1440/950",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2022-05-01",
+        "appStoreSales": null
     },
     {
         "id": "next-show",
@@ -511,7 +558,7 @@
         "fullDescription": [
             "Are you tired of constantly checking multiple streaming services to see if there's a new episode of your favorite TV show? Our app makes it easy to stay up-to-date on all your favorite shows. With NextShow, you can select the shows you want to follow, and we'll notify you as soon as a new episode becomes available on any streaming service. No more missed episodes or wasted time checking different apps. Download NextShow now and never miss an episode again."
         ],
-        "appStoreId": "1610528984",
+        "apple_id": "1610528984",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -521,7 +568,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-02-17"
+        "releaseDate": "2022-02-17",
+        "appStoreSales": 15.36409284350169,
+        "appStoreProceeds": 10.70905669222929
     },
     {
         "id": "expense-tracker",
@@ -533,7 +582,7 @@
         "fullDescription": [
             "Simple, convenient and minimalist expense tracker."
         ],
-        "appStoreId": "1610305735",
+        "apple_id": "1610305735",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -543,29 +592,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2022-02-16"
-    },
-    {
-        "id": "workout-node",
-        "type": "Website",
-        "displayName": "WORKOUTNODE.COM",
-        "title": "WORKOUTNODE.COM",
-        "subtitle": "Fitness Website",
-        "promoText": "",
-        "metaDescription": "Template App Meta Description",
-        "fullDescription": [
-            "Template App Description"
-        ],
-        "appStoreId": "",
-        "googlePlayId": "",
-        "websiteLink": "https://workoutnode.com/",
-        "screenshots": [
-            1
-        ],
-        "screenshotProduct": "Website Screenshot 1440/950",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2022-05-01"
+        "releaseDate": "2022-02-16",
+        "appStoreSales": 21.69004700238094,
+        "appStoreProceeds": 17.973055911797342
     },
     {
         "id": "cyber-roulette",
@@ -577,7 +606,7 @@
         "fullDescription": [
             "Play unusual roulette with a completely new design in Cyberpunk style! Good luck!"
         ],
-        "appStoreId": "1581817561",
+        "apple_id": "1581817561",
         "googlePlayId": "",
         "screenshots": [
             1
@@ -597,7 +626,7 @@
         "fullDescription": [
             "Try your luck. Match 3 cyber diamonds in a row - get the Jackpot!"
         ],
-        "appStoreId": "1582774225",
+        "apple_id": "1582774225",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -619,7 +648,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "1582157506",
+        "apple_id": "1582157506",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -646,7 +675,7 @@
             "The goal of the game is to create three levels and put your character on it. Accordingly, do not let your opponent do it first.",
             "If 4 levels are built, it is impossible to install your character on them."
         ],
-        "appStoreId": "1574095272",
+        "apple_id": "1574095272",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -656,7 +685,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2021-06-28"
+        "releaseDate": "2021-06-28",
+        "appStoreSales": 0.28177369123659,
+        "appStoreProceeds": 0.17160653376063
     },
     {
         "id": "margin-trading-calculator",
@@ -669,7 +700,7 @@
             "Convenient data calculation for margin trading with leverage.",
             "Forex Pip Calculator."
         ],
-        "appStoreId": "1566723167",
+        "apple_id": "1566723167",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -679,7 +710,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2021-05-10"
+        "releaseDate": "2021-05-10",
+        "appStoreSales": 94.19273469100098,
+        "appStoreProceeds": 63.11971742670814
     },
     {
         "id": "cross-route-tracker",
@@ -693,7 +726,7 @@
             "- Follow a saved route.",
             "- Stamp the lap time on the route."
         ],
-        "appStoreId": "1548895380",
+        "apple_id": "1548895380",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -719,7 +752,7 @@
             "- Mining and Pool tools.",
             "- News."
         ],
-        "appStoreId": "1546906399",
+        "apple_id": "1546906399",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -729,7 +762,9 @@
         "screenshotProduct": "App Store Screenshot 510/1012",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2021-01-13"
+        "releaseDate": "2021-01-13",
+        "appStoreSales": 53.3601431907622,
+        "appStoreProceeds": 35.053552312897
     },
     {
         "id": "poker-dealer",
@@ -741,7 +776,7 @@
         "fullDescription": [
             "The application shows when, who should place a bet and which one. As well as replacing and believes the players chips."
         ],
-        "appStoreId": "1547568075",
+        "apple_id": "1547568075",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -763,7 +798,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "1546340017",
+        "apple_id": "1546340017",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -776,26 +811,6 @@
         "releaseDate": "2020-12-28"
     },
     {
-        "id": "run-sunta",
-        "displayName": "Run Santa",
-        "title": "Run Santa Run! - XMAS Game",
-        "subtitle": "",
-        "promoText": "Merry Christmas and a Happy New Year to everyone!",
-        "metaDescription": "",
-        "fullDescription": [
-            "Collect as many gifts as possible with Santa constantly accelerating in a hurry!"
-        ],
-        "appStoreId": "1545825875",
-        "googlePlayId": "",
-        "screenshots": [
-            1
-        ],
-        "screenshotProduct": "iPhone 15 Pro Max - Landscape",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2020-12-22"
-    },
-    {
         "id": "party-star",
         "displayName": "Party Star",
         "title": "Party Star - XMAS Party Game",
@@ -805,13 +820,33 @@
         "fullDescription": [
             "In this game, you will have access to various categories in which you and your friends will have to complete tasks, answer questions and do some other actions."
         ],
-        "appStoreId": "1544718858",
+        "apple_id": "1544718858",
         "googlePlayId": "",
         "screenshots": [
             1,
             2
         ],
         "screenshotProduct": "Screenshot 1176/2088",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-12-22"
+    },
+    {
+        "id": "run-sunta",
+        "displayName": "Run Santa",
+        "title": "Run Santa Run! - XMAS Game",
+        "subtitle": "",
+        "promoText": "Merry Christmas and a Happy New Year to everyone!",
+        "metaDescription": "",
+        "fullDescription": [
+            "Collect as many gifts as possible with Santa constantly accelerating in a hurry!"
+        ],
+        "apple_id": "1545825875",
+        "googlePlayId": "",
+        "screenshots": [
+            1
+        ],
+        "screenshotProduct": "iPhone 15 Pro Max - Landscape",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2020-12-22"
@@ -826,7 +861,7 @@
         "fullDescription": [
             "All muscle groups. Large list of exercises. Detailed complete description of the implementation. Tips, Tricks, Recommendations."
         ],
-        "appStoreId": "1539652734",
+        "apple_id": "1539652734",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -836,7 +871,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-11-12"
+        "releaseDate": "2020-11-12",
+        "appStoreSales": 23.15456350950056,
+        "appStoreProceeds": 15.18049415447579
     },
     {
         "id": "post-creator",
@@ -851,7 +888,7 @@
             "- Create photo collages.",
             "- Saving posts from Instagram."
         ],
-        "appStoreId": "1534001538",
+        "apple_id": "1534001538",
         "googlePlayId": "",
         "screenshots": [
             4,
@@ -861,7 +898,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-10-03"
+        "releaseDate": "2020-10-03",
+        "appStoreSales": 17.06682352999107,
+        "appStoreProceeds": 9.94697859199842
     },
     {
         "id": "dice-poker",
@@ -874,7 +913,7 @@
             "You play Yatzy with five dices. The game consists of thirteen turns. The goal is to score as many points as possible in all the required categories altogether. All categories in the list must be filled.",
             "The game has a Leaderboard - you can compare your score with other players."
         ],
-        "appStoreId": "1521476932",
+        "apple_id": "1521476932",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -884,7 +923,36 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-07-04"
+        "releaseDate": "2020-07-04",
+        "appStoreSales": 15.0719091951,
+        "appStoreProceeds": 9.639868508913999
+    },
+    {
+        "id": "water-balance",
+        "displayName": "DROPS",
+        "title": "DROPS - Water Balance",
+        "subtitle": "Tracker and Reminders",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "- Water consumption tracker.",
+            "- Reminders.",
+            "- Sync with the Health app.",
+            "- Convenient management."
+        ],
+        "apple_id": "1520365442",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "screenshotProduct": "iPhone 15 Pro Max",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020/06/26",
+        "appStoreSales": 6.2522710681394,
+        "appStoreProceeds": 4.1856988029462
     },
     {
         "id": "tetra-blocks-tower",
@@ -896,7 +964,7 @@
         "fullDescription": [
             "Stack up the blocks as high as you can! Compete for the best score in the world!"
         ],
-        "appStoreId": "1509733548",
+        "apple_id": "1509733548",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -906,7 +974,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-05-14"
+        "releaseDate": "2020-05-14",
+        "appStoreSales": 3.96,
+        "appStoreProceeds": 2.8
     },
     {
         "id": "evil-wasp",
@@ -918,7 +988,7 @@
         "fullDescription": [
             "Collect One Color Honeycombs in Groups or Rows over 3 and Get points for their Destruction."
         ],
-        "appStoreId": "",
+        "apple_id": "",
         "googlePlayId": "com.kushnerapps.evilwasp",
         "screenshots": [
             0
@@ -926,7 +996,8 @@
         "screenshotProduct": "Screenshots Missing",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-05-02"
+        "releaseDate": "2020-05-02",
+        "appStoreSales": null
     },
     {
         "id": "poker-2",
@@ -938,14 +1009,15 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "",
+        "apple_id": "",
         "googlePlayId": "com.kushnerapps.poker",
         "screenshots": [
             0
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-04-29"
+        "releaseDate": "2020-04-29",
+        "appStoreSales": null
     },
     {
         "id": "word-game-catch-letter",
@@ -962,7 +1034,7 @@
             "- Emoji Symbol : +5 seconds of time.",
             "- Skull Symbol : Game Over."
         ],
-        "appStoreId": "1506780150",
+        "apple_id": "1506780150",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -975,6 +1047,35 @@
         "releaseDate": "2020-04-07"
     },
     {
+        "id": "home-workouts",
+        "type": "App",
+        "platform": [
+            "iOS"
+        ],
+        "displayName": "Home Workouts",
+        "title": "Home Workouts - Be Fit",
+        "subtitle": "Home Workouts Programs",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Training programs designed specifically for home workouts - no equipment needed!",
+            "Detailed descriptions and instructions for each exercise to ensure proper form",
+            "High quality video demonstrations showing correct exercise technique",
+            "Customizable workout timer to track your sessions and rest periods",
+            "NOTE: You need a subscription to access the features of this app. The app uses an auto-renewable subscription. The payment for the subscription will be charged to your iTunes Account at confirmation of purchase. The subscription provides you unlimited playlists, a sleep timer, and removes all ads.",
+            "The subscription automatically renews unless auto-renew is turned off at least 24-hours before the end of the current period. Your account will be charged for renewal within 24-hours prior to the end of the current period. Auto-renewal may be turned off by going to the user's Account Settings after purchase. Any unused portion of a free trial period, if offered, will be forfeited when the user purchases a subscription to that publication, where applicable."
+        ],
+        "apple_id": "1504307040",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-04-01"
+    },
+    {
         "id": "poker-1",
         "displayName": "Poker",
         "title": "Texas Hold'em Poker - Casino Game (Gold Edition)",
@@ -984,14 +1085,15 @@
         "fullDescription": [
             "Texas Hold'em Poker."
         ],
-        "appStoreId": "",
+        "apple_id": "",
         "googlePlayId": "com.infoapp.covid",
         "screenshots": [
             0
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-03-20"
+        "releaseDate": "2020-03-20",
+        "appStoreSales": null
     },
     {
         "id": "falling-bubbles",
@@ -1004,14 +1106,34 @@
             "Collect bubbles in groups of the same colors so that they burst and do not fall.",
             "You will find an exciting and at the same time simple game in which you have to shoot and thus collect bubbles into a group of the same color. If in a group of 3 or more bubbles with the same color, they burst and you are awarded points. The larger the group, the more points. A new line of bubbles is added periodically. Do not let the bubbles accumulate on the playing field and fall below the red line. Good game!"
         ],
-        "appStoreId": "",
+        "apple_id": "",
         "googlePlayId": "com.kushnerapps.fallingbubbles",
         "screenshots": [
             0
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-02-25"
+        "releaseDate": "2020-02-25",
+        "appStoreSales": null
+    },
+    {
+        "id": "drive-balls",
+        "displayName": "DriveBalls",
+        "title": "DriveBalls - Tap Tap Game",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "A simple but exciting Tap Tap game in which you have to drive the ball forward, avoiding obstacles and collecting targets."
+        ],
+        "apple_id": "1288758347",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2020-02-19"
     },
     {
         "id": "deep-atmos",
@@ -1030,7 +1152,7 @@
             "- Night in the park",
             "- And others ..."
         ],
-        "appStoreId": "1491683757",
+        "apple_id": "1491683757",
         "googlePlayId": "com.sergeykushner.deepatmos",
         "screenshots": [
             1,
@@ -1053,39 +1175,15 @@
             "Destroy blocks by collecting 3 or more blocks together.",
             "Your task is to crush the blocks until they drop below the line. Blocks crumble code near 3 or more identical blocks. The more blocks you destroy at a time, the more points you get. Use a pickaxe to aim."
         ],
-        "appStoreId": "",
+        "apple_id": "",
         "googlePlayId": "com.sergeykushner.destroyblocks",
         "screenshots": [
             0
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2020-01-12"
-    },
-    {
-        "id": "water-balance",
-        "displayName": "DROPS",
-        "title": "DROPS - Water Balance",
-        "subtitle": "Tracker and Reminders",
-        "promoText": "",
-        "metaDescription": "",
-        "fullDescription": [
-            "- Water consumption tracker.",
-            "- Reminders.",
-            "- Sync with the Health app.",
-            "- Convenient management."
-        ],
-        "appStoreId": "1520365442",
-        "googlePlayId": "",
-        "screenshots": [
-            1,
-            2,
-            3
-        ],
-        "screenshotProduct": "iPhone 15 Pro Max",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2020/06/26"
+        "releaseDate": "2020-01-12",
+        "appStoreSales": null
     },
     {
         "id": "fwe",
@@ -1106,7 +1204,7 @@
             "- All exercises contain an illustration with a working group of muscles, a description of the implementation, tips and recommendations.",
             "- Ability to create your own exercises and muscle groups."
         ],
-        "appStoreId": "1491181496",
+        "apple_id": "1491181496",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1116,7 +1214,9 @@
         "screenshotProduct": "App Store Screenshot 392/696",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2019-12-11"
+        "releaseDate": "2019-12-11",
+        "appStoreSales": 6.01231811549,
+        "appStoreProceeds": 4.0836981446744005
     },
     {
         "id": "strike-balls",
@@ -1128,7 +1228,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "",
+        "apple_id": "",
         "googlePlayId": "com.sergeykushner.strikemoji",
         "screenshots": [
             1,
@@ -1138,7 +1238,8 @@
         "screenshotProduct": "Google Pixel 1",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2019-12-09"
+        "releaseDate": "2019-12-09",
+        "appStoreSales": null
     },
     {
         "id": "truth-or-dare",
@@ -1150,7 +1251,7 @@
         "fullDescription": [
             ""
         ],
-        "appStoreId": "1445141782",
+        "apple_id": "1445141782",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1160,7 +1261,9 @@
         "screenshotProduct": "iPhone 15 Pro Max",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2018-12-02"
+        "releaseDate": "2018-12-02",
+        "appStoreSales": 508.4480282252942,
+        "appStoreProceeds": 322.4320020795368
     },
     {
         "id": "bloody-answers",
@@ -1204,7 +1307,7 @@
             "- Happy Halloween",
             "Do you need any more stickers? Write what you need in the reviews and we will add."
         ],
-        "appStoreId": "1438132492",
+        "apple_id": "1438132492",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1214,7 +1317,9 @@
         "screenshotProduct": "Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2018-10-10"
+        "releaseDate": "2018-10-10",
+        "appStoreSales": 40.874350093848136,
+        "appStoreProceeds": 28.60338043921734
     },
     {
         "id": "gym-assistant",
@@ -1235,7 +1340,7 @@
             "- Information on all exercises for all muscle groups with a convenient search. The information contains the image of the exercise with the selection of a working muscle group. Technique of the exercise. Tips and tricks.",
             "- If you do not find the exercise you need in the list, you can add new exercises."
         ],
-        "appStoreId": "1360308194",
+        "apple_id": "1360308194",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1245,7 +1350,9 @@
         "screenshotProduct": "Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2018-04-01"
+        "releaseDate": "2018-04-01",
+        "appStoreSales": 1878.0228348664302,
+        "appStoreProceeds": 1198.8164962398046
     },
     {
         "id": "xmas-abc-sp",
@@ -1258,7 +1365,7 @@
             "The usual text messages are diverse, but they look boring. You can use stickers, but what they can say is not always in the sticker pack. With this sticker pack you can create any short text messages combining stickers into words.",
             "Merry Christmas and Happy New Year!"
         ],
-        "appStoreId": "1247547224",
+        "apple_id": "1247547224",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1268,7 +1375,9 @@
         "screenshotProduct": "Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-12-14"
+        "releaseDate": "2017-12-14",
+        "appStoreSales": 9.410348805832,
+        "appStoreProceeds": 6.4077986640824
     },
     {
         "id": "santa-sp",
@@ -1280,7 +1389,7 @@
         "fullDescription": [
             "Christmas and New Year stickers with a funny Santa!"
         ],
-        "appStoreId": "1247572527",
+        "apple_id": "1247572527",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1290,7 +1399,59 @@
         "screenshotProduct": "App Store Screenshot 495/994",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-12-11"
+        "releaseDate": "2017-12-11",
+        "appStoreSales": 162.53966750704956,
+        "appStoreProceeds": 114.8
+    },
+    {
+        "id": "rex-fit",
+        "displayName": "RexFit",
+        "title": "RexFit",
+        "subtitle": "Workouts. Routines. Exercises.",
+        "promoText": "Description of exercises and training diary. What will help you train properly.",
+        "metaDescription": "",
+        "fullDescription": [
+            "To achieve new results, it is important to do the exercises correctly. And increase the number of sets and weight. But how to remember all these repetitions and weights when the exercises are too much? Record your results! This will help not only to streamline the training process, but also motivate you. In the training diary, you can see how many sets you have made and how much weight you have in your last workout. And do one more!) So you will progress and become better and better.",
+            "And if you are not sure or do not know how to do the exercise correctly, you can see its description.",
+            "In this application there are more than 100 exercises with a description of the implementation, tips and recommendations for implementation. You can also create your own ones, which are not in the list."
+        ],
+        "apple_id": "1261012298",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-08-16",
+        "appStoreSales": 449.4531731776045,
+        "appStoreProceeds": 307.0637666765785
+    },
+    {
+        "id": "summer-sp",
+        "type": "App",
+        "platform": [
+            "iOS"
+        ],
+        "displayName": "Summer SP",
+        "title": "Summer SP",
+        "subtitle": "Summer stickers",
+        "promoText": "16 high-quality stickers.",
+        "metaDescription": "",
+        "fullDescription": [
+            "Summer stickers"
+        ],
+        "apple_id": "1247831685",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-07-17",
+        "appStoreSales": 2.3167877263266003,
+        "appStoreProceeds": 1.4316837721122986
     },
     {
         "id": "onion-sp",
@@ -1302,7 +1463,7 @@
         "fullDescription": [
             "Funny stickers with onions will help you in communication. Why words if there are stickers)"
         ],
-        "appStoreId": "1247521624",
+        "apple_id": "1247521624",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1312,29 +1473,9 @@
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-06-28"
-    },
-    {
-        "id": "corn-sp",
-        "displayName": "Corn SP",
-        "title": "Corn SP emoji stickers",
-        "subtitle": "Stickers with sweet corn.",
-        "promoText": "16 high-quality stickers.",
-        "metaDescription": "",
-        "fullDescription": [
-            "Funny stickers with corn will help you in communication. Why words if there are stickers)"
-        ],
-        "appStoreId": "1247856997",
-        "googlePlayId": "",
-        "screenshots": [
-            1,
-            2,
-            3
-        ],
-        "screenshotProduct": "App Store Screenshot 1176/2088",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2017-06-13"
+        "releaseDate": "2017-06-28",
+        "appStoreSales": 0.5561500000002947,
+        "appStoreProceeds": 0.3291500000001744
     },
     {
         "id": "pears-sp",
@@ -1346,7 +1487,7 @@
         "fullDescription": [
             "Funny stickers with pears will help you in communication. Why words if there are stickers)"
         ],
-        "appStoreId": "1247847652",
+        "apple_id": "1247847652",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1356,7 +1497,33 @@
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-06-13"
+        "releaseDate": "2017-06-13",
+        "appStoreSales": 2.2441310089804545,
+        "appStoreProceeds": 1.5567177319950696
+    },
+    {
+        "id": "corn-sp",
+        "displayName": "Corn SP",
+        "title": "Corn SP emoji stickers",
+        "subtitle": "Stickers with sweet corn.",
+        "promoText": "16 high-quality stickers.",
+        "metaDescription": "",
+        "fullDescription": [
+            "Funny stickers with corn will help you in communication. Why words if there are stickers)"
+        ],
+        "apple_id": "1247856997",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "screenshotProduct": "App Store Screenshot 1176/2088",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-06-13",
+        "appStoreSales": 3.2341310089804542,
+        "appStoreProceeds": 2.2567177319950695
     },
     {
         "id": "icecream-sp",
@@ -1368,7 +1535,7 @@
         "fullDescription": [
             "Funny stickers with ice cream will help you in communication. Why words if there are stickers)"
         ],
-        "appStoreId": "1247871888",
+        "apple_id": "1247871888",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1378,7 +1545,9 @@
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-06-13"
+        "releaseDate": "2017-06-13",
+        "appStoreSales": 3.2341310089804542,
+        "appStoreProceeds": 2.2567177319950695
     },
     {
         "id": "in-love",
@@ -1390,7 +1559,7 @@
         "fullDescription": [
             "Add colors to your text messages. Surprise your boyfriend. Well, or just find the right words. These stickers look like standard bubbles with text, but instead of a gray bubble, the one to whom you send it will receive a love message in a pink bubble! It will look unusual and romantic."
         ],
-        "appStoreId": "1231745408",
+        "apple_id": "1231745408",
         "googlePlayId": "",
         "screenshots": [
             0
@@ -1398,7 +1567,9 @@
         "screenshotProduct": "Screenshots Missing",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-05-03"
+        "releaseDate": "2017-05-03",
+        "appStoreSales": 167.23672570068607,
+        "appStoreProceeds": 105.49121757335858
     },
     {
         "id": "girls-sp",
@@ -1411,7 +1582,7 @@
             "Girls are different. Cheerful. Very angry. Thoughtful. In love. And why write words, if there are stickers. Express yourself! Install and use!",
             "And if there is a free minute, leave your feedback (thank you in advance)."
         ],
-        "appStoreId": "1229167654",
+        "apple_id": "1229167654",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1421,7 +1592,9 @@
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-04-29"
+        "releaseDate": "2017-04-29",
+        "appStoreSales": 10.374076465045912,
+        "appStoreProceeds": 6.539257378059081
     },
     {
         "id": "boys-sp",
@@ -1434,7 +1607,7 @@
             "Guys are different. Cheerful. Very angry. Thoughtful. In love. And why write words if there are stickers. Express yourself! iMessage Sticker Packs for you. Install and use!",
             "And if there is a free minute, leave your feedback (thank you in advance)."
         ],
-        "appStoreId": "1229185540",
+        "apple_id": "1229185540",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1444,7 +1617,36 @@
         "screenshotProduct": "Screenshot 1728/2304",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-04-29"
+        "releaseDate": "2017-04-29",
+        "appStoreSales": 7.677303483145135,
+        "appStoreProceeds": 4.732379438201702
+    },
+    {
+        "id": "garden-crash",
+        "displayName": "Garden Crash",
+        "title": "",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Colorful and fun puzzle game in which you have to collect berries, vegetables, fruit, buns.",
+            "The game is about Four in a row, meaning you have to line up four identical berries, vegetables, fruits or buns to get points. But be careful! If you only get three in a row you get minus points.",
+            "And if at one point you feel like you can't solve the puzzle - you can use various bonuses that are bought for coins.",
+            "Collect fruits and vegetables, compete with your friends and compare your results. Are you up for the challenge?"
+        ],
+        "apple_id": "1225362001",
+        "googlePlayId": "",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "screenshotProduct": "App Store Screenshot 2160/3840",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-04-14",
+        "appStoreSales": 103.92524075561913,
+        "appStoreProceeds": 64.14431123343896
     },
     {
         "id": "chost-sp",
@@ -1456,7 +1658,7 @@
         "fullDescription": [
             "Sticker pack for iMessage with funny ghosts."
         ],
-        "appStoreId": "1223477083",
+        "apple_id": "1223477083",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1465,7 +1667,9 @@
         "screenshotProduct": "Screenshot 1728/2304",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-04-10"
+        "releaseDate": "2017-04-10",
+        "appStoreSales": 7.356645961288978,
+        "appStoreProceeds": 5.0089902852617785
     },
     {
         "id": "apples-sp",
@@ -1479,14 +1683,41 @@
             "Hello! We are merry ripe apples. And we will help you express your emotions :)",
             "And if there is a free minute, leave your feedback (thank you in advance)."
         ],
-        "appStoreId": "1223338313",
+        "apple_id": "1223338313",
         "googlePlayId": "",
         "screenshots": [
             0
         ],
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-04-07"
+        "releaseDate": "2017-04-07",
+        "appStoreSales": 17.745175017894898,
+        "appStoreProceeds": 11.834397789429795
+    },
+    {
+        "id": "rash-down",
+        "displayName": "Rash Down",
+        "title": "Rash Down",
+        "subtitle": "",
+        "promoText": "Download now the new football rugby arcade game !",
+        "metaDescription": "",
+        "fullDescription": [
+            "Touch the screen and slide to avoid the obstacles !",
+            "Pick as many money as you can !",
+            "Do your best to get a touchdown and don't be taken down by any obstacles coming after you!",
+            "Unlock new features with the money you gathered and unlock the new content!",
+            "Be the best in your leaderboard!",
+            "Also share and invite your friends to beat the high score and rush to the victory together !",
+            "Become the best quarterback - go the farthest!"
+        ],
+        "apple_id": "1222709122",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2017-04-06"
     },
     {
         "id": "strawberry-sp",
@@ -1500,7 +1731,7 @@
             "No words to express emotions? The strawberries will help you!",
             "And if there is a free minute, leave your feedback (thank you in advance)."
         ],
-        "appStoreId": "1223055295",
+        "apple_id": "1223055295",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1510,7 +1741,9 @@
         "screenshotProduct": "App Store Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2017-04-06"
+        "releaseDate": "2017-04-06",
+        "appStoreSales": 17.357369858094852,
+        "appStoreProceeds": 11.846549844835517
     },
     {
         "id": "memes-sp",
@@ -1529,7 +1762,7 @@
             "NO",
             "and others..."
         ],
-        "appStoreId": "1145277502",
+        "apple_id": "1145277502",
         "googlePlayId": "",
         "screenshots": [
             1
@@ -1537,76 +1770,9 @@
         "screenshotProduct": "Screenshot 1728/2304",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2016-09-16"
-    },
-    {
-        "id": "garden-crash",
-        "displayName": "Garden Crash",
-        "title": "",
-        "subtitle": "",
-        "promoText": "",
-        "metaDescription": "",
-        "fullDescription": [
-            "Colorful and fun puzzle game in which you have to collect berries, vegetables, fruit, buns.",
-            "The game is about Four in a row, meaning you have to line up four identical berries, vegetables, fruits or buns to get points. But be careful! If you only get three in a row you get minus points.",
-            "And if at one point you feel like you can't solve the puzzle - you can use various bonuses that are bought for coins.",
-            "Collect fruits and vegetables, compete with your friends and compare your results. Are you up for the challenge?"
-        ],
-        "appStoreId": "1225362001",
-        "googlePlayId": "",
-        "screenshots": [
-            1,
-            2,
-            3
-        ],
-        "screenshotProduct": "App Store Screenshot 2160/3840",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2017-04-14"
-    },
-    {
-        "id": "rash-down",
-        "displayName": "Rash Down",
-        "title": "Rash Down",
-        "subtitle": "",
-        "promoText": "Download now the new football rugby arcade game !",
-        "metaDescription": "",
-        "fullDescription": [
-            "Touch the screen and slide to avoid the obstacles !",
-            "Pick as many money as you can !",
-            "Do your best to get a touchdown and don't be taken down by any obstacles coming after you!",
-            "Unlock new features with the money you gathered and unlock the new content!",
-            "Be the best in your leaderboard!",
-            "Also share and invite your friends to beat the high score and rush to the victory together !",
-            "Become the best quarterback - go the farthest!"
-        ],
-        "appStoreId": "1222709122",
-        "googlePlayId": "",
-        "screenshots": [
-            0
-        ],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2017-04-06"
-    },
-    {
-        "id": "rash-down-reskinned",
-        "displayName": "Rash Down 2",
-        "title": "Rash Down Reskinned",
-        "subtitle": "",
-        "promoText": "",
-        "metaDescription": "",
-        "fullDescription": [
-            ""
-        ],
-        "appStoreId": "",
-        "googlePlayId": "",
-        "screenshots": [
-            0
-        ],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": ""
+        "releaseDate": "2016-09-16",
+        "appStoreSales": 3.9772232678458024,
+        "appStoreProceeds": 2.75041919560406
     },
     {
         "id": "voice-advisor",
@@ -1620,7 +1786,7 @@
             "- 35 categories",
             "- More than 500 commands"
         ],
-        "appStoreId": "1146995372",
+        "apple_id": "1146995372",
         "googlePlayId": "",
         "screenshots": [
             1,
@@ -1630,74 +1796,9 @@
         "screenshotProduct": "Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2016-09-10"
-    },
-    {
-        "id": "pok-advisor",
-        "displayName": "PokAdvisor",
-        "title": "PokAdvisor - guide for Pokemon GO and Pokedex",
-        "subtitle": "",
-        "promoText": "",
-        "metaDescription": "",
-        "fullDescription": [
-            ""
-        ],
-        "appStoreId": "1135070732",
-        "googlePlayId": "",
-        "screenshots": [
-            0
-        ],
-        "screenshotProduct": "",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": ""
-    },
-    {
-        "id": "rex-fit",
-        "displayName": "RexFit",
-        "title": "RexFit",
-        "subtitle": "Workouts. Routines. Exercises.",
-        "promoText": "Description of exercises and training diary. What will help you train properly.",
-        "metaDescription": "",
-        "fullDescription": [
-            "To achieve new results, it is important to do the exercises correctly. And increase the number of sets and weight. But how to remember all these repetitions and weights when the exercises are too much? Record your results! This will help not only to streamline the training process, but also motivate you. In the training diary, you can see how many sets you have made and how much weight you have in your last workout. And do one more!) So you will progress and become better and better.",
-            "And if you are not sure or do not know how to do the exercise correctly, you can see its description.",
-            "In this application there are more than 100 exercises with a description of the implementation, tips and recommendations for implementation. You can also create your own ones, which are not in the list."
-        ],
-        "appStoreId": "1261012298",
-        "googlePlayId": "",
-        "screenshots": [
-            0
-        ],
-        "screenshotProduct": "",
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2017-08-16"
-    },
-    {
-        "id": "pokemon-go-guide",
-        "displayName": "Guide for Pokemon GO",
-        "title": "Guide for Pokemon GO",
-        "subtitle": "",
-        "promoText": "",
-        "metaDescription": "",
-        "fullDescription": [
-            "Guide for Pokemon GO - Guide to the Universe Pokemon. Be the best catcher! Personality 18 types of Pokemon with their detailed description.",
-            "Create a guide only launched in the near future will be added:",
-            "- All of the Pokemon pokedex",
-            "- Offensive Type Effectiveness.",
-            "- All the secrets and features in order to be the best catcher Pokemon.",
-            "- Localization of the most popular languages.",
-            "- Locations Pokemon."
-        ],
-        "appStoreId": "",
-        "googlePlayId": "com.kushnersergey.pokemongoadvisor",
-        "screenshots": [
-            0
-        ],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2016-07-16"
+        "releaseDate": "2016-09-10",
+        "appStoreSales": 132.91377064372216,
+        "appStoreProceeds": 88.0057963452976
     },
     {
         "id": "fit-advisor",
@@ -1717,7 +1818,7 @@
             "- Various additional information about the exercise",
             "With this app workout in the gym will become clearer and more effective."
         ],
-        "appStoreId": "1107627168",
+        "apple_id": "1107627168",
         "googlePlayIdFree": "com.fitadvisorapp.fitadvisor",
         "googlePlayIdPaid": "com.fitadvisorapp.fitadvisorpro",
         "screenshots": [
@@ -1728,7 +1829,68 @@
         "privacyUpdatedDate": "",
         "releaseDate": "2016-08-01",
         "releaseDateAndroidFree": "2016-03-11",
-        "releaseDateAndroidPaid": "2016-06-09"
+        "releaseDateAndroidPaid": "2016-06-09",
+        "appStoreSales": 903.0962482448489,
+        "appStoreProceeds": 603.318415906516
+    },
+    {
+        "id": "pokemon-go-guide",
+        "displayName": "Guide for Pokemon GO",
+        "title": "Guide for Pokemon GO",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            "Guide for Pokemon GO - Guide to the Universe Pokemon. Be the best catcher! Personality 18 types of Pokemon with their detailed description.",
+            "Create a guide only launched in the near future will be added:",
+            "- All of the Pokemon pokedex",
+            "- Offensive Type Effectiveness.",
+            "- All the secrets and features in order to be the best catcher Pokemon.",
+            "- Localization of the most popular languages.",
+            "- Locations Pokemon."
+        ],
+        "apple_id": "",
+        "googlePlayId": "com.kushnersergey.pokemongoadvisor",
+        "screenshots": [
+            0
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2016-07-16",
+        "appStoreSales": null
+    },
+    {
+        "apple_id": "1248248229",
+        "id": "tasty-emoji-stickers",
+        "displayName": "Tasty SP",
+        "title": "Tasty emoji stickers",
+        "type": "App Bundle",
+        "platform": "",
+        "releaseDate": "0001-01-01",
+        "appStoreSales": 2.99,
+        "appStoreProceeds": 2.1
+    },
+    {
+        "id": "boys-girls-sp",
+        "apple_id": "1247890110",
+        "displayName": "Boys + Girls SP",
+        "title": "Boys + Girls emoji stickers",
+        "type": "App Bundle",
+        "platform": "",
+        "releaseDate": "0001-01-01",
+        "appStoreSales": 1.99,
+        "appStoreProceeds": 1.4
+    },
+    {
+        "id": "xmas-pack",
+        "apple_id": "1444431397",
+        "displayName": "XMAS Pack",
+        "title": "XMAS Pack - Christmas and New Year stickers",
+        "type": "App Bundle",
+        "platform": "",
+        "releaseDate": "0001-01-01",
+        "appStoreSales": 18.3054995707,
+        "appStoreProceeds": 12.58836034333924
     },
     {
         "id": "template",
@@ -1745,7 +1907,7 @@
             "Template App Description",
             "Template App Description"
         ],
-        "appStoreId": "0000000000",
+        "apple_id": "0000000000",
         "googlePlayId": "com.example.template",
         "screenshots": [
             0,
@@ -1753,9 +1915,27 @@
         ],
         "screenshotProduct": "iPhone 16 Pro Max",
         "email": "",
-        "privacyUpdatedDate": "2025-01-01",
-        "releaseDate": "2025-01-01",
-        "appStoreSales": null,
-        "appStoreProceeds": null
+        "privacyUpdatedDate": "",
+        "releaseDate": "0001-01-01"
+    },
+    {
+        "id": "pok-advisor",
+        "displayName": "PokAdvisor",
+        "title": "PokAdvisor - guide for Pokemon GO and Pokedex",
+        "subtitle": "",
+        "promoText": "",
+        "metaDescription": "",
+        "fullDescription": [
+            ""
+        ],
+        "apple_id": "1135070732",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "",
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": ""
     }
 ]
