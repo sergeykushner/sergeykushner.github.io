@@ -5,7 +5,7 @@
         "platform": [
             "iOS"
         ],
-        "status": "sold",
+        "status": "availableForSale",
         "displayName": "Capsula",
         "title": "Capsula - Digital Time Capsule",
         "subtitle": "Add and lock text and images",
@@ -24,7 +24,7 @@
             "Get Capsula today and start preserving your memories for the future!"
         ],
         "appStoreId": "6740265085",
-        "googlePlayId": "",
+        "googlePlayId": "x",
         "screenshots": [
             1,
             2,

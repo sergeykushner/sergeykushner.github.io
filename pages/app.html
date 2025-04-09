@@ -24,15 +24,13 @@
     
     <body>
         <div class="app-container">
-        <div class="title">
+        <div>
             <picture class="app-icon">
                 <img src="" alt="App Icon" id="app-icon" />
             </picture>
-            
             <h1 id="app-title"></h1>
             <h3 id="app-subtitle"></h3>
         </div>
-        
         <div id="screenshots-container" class="screenshots-gallery">
             <!-- Скриншоты будут добавлены динамически из JS -->
         </div>
@@ -40,14 +38,16 @@
         <div class="app-description" id="app-description">
             <!-- Контент будет добавлен динамически из JS -->
         </div>
-        <div class="badges">
-            <a href="" id="app-store-link" title="Download on the App Store" target="_blank">
-                <img id="app-store-badge" alt="Download on the App Store Badge" />
-            </a>
-            <a href="" id="google-play-link" title="Get it on Google Play" target="_blank" style="display: none;">
-                <img id="google-play-badge" alt="Get it on Google Play Badge" />
-            </a>
-            <div id="product-hunt-container"></div>
+        <div class="badges-container">
+            <div class="badges">
+                <a href="" id="app-store-link" title="Download on the App Store" target="_blank">
+                    <img id="app-store-badge" alt="Download on the App Store Badge" />
+                </a>
+                <a href="" id="google-play-link" title="Get it on Google Play" target="_blank" style="display: none;">
+                    <img id="google-play-badge" alt="Get it on Google Play Badge" />
+                </a>
+                <div id="product-hunt-container"></div>
+            </div>
         </div>
         <footer class="footer-links">
             <a href="app-privacy.html" id="privacy-link" title="Privacy Policy">Privacy Policy</a>
