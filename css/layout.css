@@ -1,3 +1,7 @@
+body {
+    background-color: var(--body-background-color);
+}
+
 body,
 .badges {
     margin-top: 50px;
@@ -9,12 +13,53 @@ body,
     margin-bottom: 50px;
 }
 
+header {
+    margin: 2rem auto;
+    text-align: center;
+}
+
+main {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 1rem;
+}
+
+.section {
+    margin: 2rem 0;
+}
+
+.btn-link {
+    display: inline-block;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--btn-background-color);
+    color: var(--btn-text-color);
+    text-decoration: none;
+    border-radius: 10px;
+    transition: background-color 0.3s ease;
+    min-width: 200px;
+    text-align: center;
+}
+
+.btn-link:hover {
+    background-color: var(--btn-background-color-hover);
+}
+
+.empty-message {
+    text-align: center;
+    margin: 2rem auto;
+    padding: 1rem;
+    color: #666;
+    font-size: 1.2rem;
+}
+
 .apps-app-icon,
 .app-icon img {
     aspect-ratio: 1 / 1;
     border-radius: 22%;
     border-width: 1px;
     border-style: solid;
+    color: var(--app-icon-color);
 }
 
 .screenshots-gallery {
@@ -72,6 +117,7 @@ body,
 
 .screenshots-missing {
     width: 100%;
+    color: var(--secondary-text-color);
     text-align: center;
     padding: 50px 0;
     border-radius: 10px;
@@ -87,9 +133,10 @@ li {
     gap: 50px;
 }
 
-.index-links {
+.home-links {
     display: flex;
     flex-direction: column;
+    align-items: center;
     gap: 25px;
 }
 
@@ -100,6 +147,7 @@ li {
 }
 
 .divider {
+    color: var(--divider-color);
     border: 0.5px;
     border-style: solid;
 }
