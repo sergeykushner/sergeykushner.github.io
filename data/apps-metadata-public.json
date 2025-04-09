@@ -1092,7 +1092,7 @@
         "id": "evil-wasp",
         "type": "App",
         "platform": [
-            "iOS"
+            "Android"
         ],
         "displayName": "Evil Wasp",
         "title": "Evil Wasp",
@@ -1116,7 +1116,7 @@
         "id": "poker-2",
         "type": "App",
         "platform": [
-            "iOS"
+            "Android"
         ],
         "displayName": "Poker",
         "title": "Poker - Texas Holdem",
@@ -1199,7 +1199,7 @@
         "id": "poker-1",
         "type": "App",
         "platform": [
-            "iOS"
+            "Android"
         ],
         "displayName": "Poker",
         "title": "Texas Hold'em Poker - Casino Game (Gold Edition)",
@@ -1222,7 +1222,7 @@
         "id": "falling-bubbles",
         "type": "App",
         "platform": [
-            "iOS"
+            "Android"
         ],
         "displayName": "Falling Bubbles",
         "title": "Falling Bubbles Puzzle Match-3 Game",
@@ -1269,7 +1269,8 @@
         "id": "deep-atmos",
         "type": "App",
         "platform": [
-            "iOS"
+            "iOS",
+            "Android"
         ],
         "displayName": "DeepAtmos",
         "title": "DeepAtmos - Relax and Calm",
@@ -1302,7 +1303,7 @@
         "id": "destroy-blocks",
         "type": "App",
         "platform": [
-            "iOS"
+            "Android"
         ],
         "displayName": "DestroyBlocks",
         "title": "Destroy Blocks Puzzle Match-3 Game",
@@ -1361,7 +1362,7 @@
         "id": "strike-balls",
         "type": "App",
         "platform": [
-            "iOS"
+            "Android"
         ],
         "displayName": "StrikeBalls",
         "title": "StrikeBalls - Shoot balls",
@@ -1411,7 +1412,7 @@
     },
     {
         "id": "bloody-answers",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1504,7 +1505,7 @@
     },
     {
         "id": "xmas-abc-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1531,7 +1532,7 @@
     },
     {
         "id": "santa-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1583,7 +1584,7 @@
     },
     {
         "id": "summer-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1607,7 +1608,7 @@
     },
     {
         "id": "onion-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1633,7 +1634,7 @@
     },
     {
         "id": "pears-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1659,7 +1660,7 @@
     },
     {
         "id": "corn-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1685,7 +1686,7 @@
     },
     {
         "id": "icecream-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1711,7 +1712,7 @@
     },
     {
         "id": "in-love",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1735,7 +1736,7 @@
     },
     {
         "id": "girls-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1762,7 +1763,7 @@
     },
     {
         "id": "boys-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1818,7 +1819,7 @@
     },
     {
         "id": "chost-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1843,7 +1844,7 @@
     },
     {
         "id": "apples-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1897,7 +1898,7 @@
     },
     {
         "id": "strawberry-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -1925,7 +1926,7 @@
     },
     {
         "id": "memes-sp",
-        "type": "App",
+        "type": "iMessage Stickers",
         "platform": [
             "iOS"
         ],
@@ -2010,7 +2011,8 @@
         "id": "fit-advisor",
         "type": "App",
         "platform": [
-            "iOS"
+            "iOS",
+            "Android"
         ],
         "displayName": "FitAdvisor",
         "title": "FitAdvisor - your fitness instructor, guide to exercises and workout in the gym",
@@ -2029,6 +2031,8 @@
             "With this app workout in the gym will become clearer and more effective."
         ],
         "appStoreId": "1107627168",
+        "googlePlayId": "com.fitadvisorapp.fitadvisor",
+        "googlePlayIdSecond": "com.fitadvisorapp.fitadvisorpro",
         "screenshots": [
             0
         ],
@@ -2036,8 +2040,6 @@
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "2016-08-01",
-        "googlePlayIdFree": "com.fitadvisorapp.fitadvisor",
-        "googlePlayIdPaid": "com.fitadvisorapp.fitadvisorpro",
         "releaseDateAndroidFree": "2016-03-11",
         "releaseDateAndroidPaid": "2016-06-09"
     },
@@ -2045,7 +2047,7 @@
         "id": "pokemon-go-guide",
         "type": "App",
         "platform": [
-            "iOS"
+            "Android"
         ],
         "displayName": "Guide for Pokemon GO",
         "title": "Guide for Pokemon GO",
@@ -2116,7 +2118,7 @@
         "screenshots": [
             0
         ],
-        "screenshotProduct": "iPhone 16 Pro Max",
+        "screenshotProduct": "",
         "email": "",
         "privacyUpdatedDate": "",
         "releaseDate": "0001-01-01"
