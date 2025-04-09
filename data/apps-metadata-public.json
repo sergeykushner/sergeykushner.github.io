@@ -1236,7 +1236,9 @@
         "appStoreId": "",
         "googlePlayId": "com.kushnerapps.fallingbubbles",
         "screenshots": [
-            0
+            1,
+            2,
+            3
         ],
         "email": "",
         "privacyUpdatedDate": "",
@@ -2008,6 +2010,37 @@
         "releaseDate": ""
     },
     {
+        "id": "pokemon-go-guide",
+        "type": "App",
+        "platform": [
+            "Android"
+        ],
+        "displayName": "Guide for Pokemon GO",
+        "title": "Guide for Pokemon GO",
+        "subtitle": "",
+        "promoText": "",
+        "shortDescription": "",
+        "fullDescription": [
+            "Guide for Pokemon GO - Guide to the Universe Pokemon. Be the best catcher! Personality 18 types of Pokemon with their detailed description.",
+            "Create a guide only launched in the near future will be added:",
+            "- All of the Pokemon pokedex",
+            "- Offensive Type Effectiveness.",
+            "- All the secrets and features in order to be the best catcher Pokemon.",
+            "- Localization of the most popular languages.",
+            "- Locations Pokemon."
+        ],
+        "appStoreId": "",
+        "googlePlayId": "com.kushnersergey.pokemongoadvisor",
+        "screenshots": [
+            1,
+            2,
+            3
+        ],
+        "email": "",
+        "privacyUpdatedDate": "",
+        "releaseDate": "2016-07-16"
+    },
+    {
         "id": "fit-advisor",
         "type": "App",
         "platform": [
@@ -2039,43 +2072,16 @@
         "screenshotProduct": "Screenshot 1176/2088",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "2016-08-01",
-        "releaseDateAndroidFree": "2016-03-11",
-        "releaseDateAndroidPaid": "2016-06-09"
-    },
-    {
-        "id": "pokemon-go-guide",
-        "type": "App",
-        "platform": [
-            "Android"
-        ],
-        "displayName": "Guide for Pokemon GO",
-        "title": "Guide for Pokemon GO",
-        "subtitle": "",
-        "promoText": "",
-        "shortDescription": "",
-        "fullDescription": [
-            "Guide for Pokemon GO - Guide to the Universe Pokemon. Be the best catcher! Personality 18 types of Pokemon with their detailed description.",
-            "Create a guide only launched in the near future will be added:",
-            "- All of the Pokemon pokedex",
-            "- Offensive Type Effectiveness.",
-            "- All the secrets and features in order to be the best catcher Pokemon.",
-            "- Localization of the most popular languages.",
-            "- Locations Pokemon."
-        ],
-        "appStoreId": "",
-        "googlePlayId": "com.kushnersergey.pokemongoadvisor",
-        "screenshots": [
-            0
-        ],
-        "email": "",
-        "privacyUpdatedDate": "",
-        "releaseDate": "2016-07-16"
+        "releaseDate": "2016-03-11",
+        "releaseDateGooglePlayProVersion": "2016-06-09",
+        "releaseDateAppStore": "2016-08-01"
     },
     {
         "id": "tasty-emoji-stickers",
         "type": "App Bundle",
-        "platform": "",
+        "platform": [
+            "iOS"
+        ],
         "displayName": "Tasty SP",
         "title": "Tasty emoji stickers",
         "appStoreId": "1248248229",
@@ -2084,7 +2090,9 @@
     {
         "id": "boys-girls-sp",
         "type": "App Bundle",
-        "platform": "",
+        "platform": [
+            "iOS"
+        ],
         "displayName": "Boys + Girls SP",
         "title": "Boys + Girls emoji stickers",
         "appStoreId": "1247890110",
@@ -2093,14 +2101,16 @@
     {
         "id": "xmas-pack",
         "type": "App Bundle",
-        "platform": "",
+        "platform": [
+            "iOS"
+        ],
         "displayName": "XMAS Pack",
         "title": "XMAS Pack - Christmas and New Year stickers",
         "appStoreId": "1444431397",
         "releaseDate": "0001-01-01"
     },
     {
-        "id": "template",
+        "id": "",
         "type": "App",
         "platform": [
             "iOS"
@@ -2121,6 +2131,6 @@
         "screenshotProduct": "",
         "email": "",
         "privacyUpdatedDate": "",
-        "releaseDate": "0001-01-01"
+        "releaseDate": ""
     }
 ]
