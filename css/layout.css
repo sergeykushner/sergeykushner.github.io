@@ -32,35 +32,32 @@ main {
 .btn-link {
     display: inline-block;
     padding: 0.75rem 1.5rem;
+    min-width: 200px;
+    
     background-color: var(--btn-background-color);
     color: var(--btn-text-color);
-    text-decoration: none;
-    border-radius: 10px;
-    transition: background-color 0.3s ease;
-    min-width: 200px;
+    
     text-align: center;
+    text-decoration: none;
+    
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
 }
 
 .btn-link:hover {
     background-color: var(--btn-background-color-hover);
 }
 
-.empty-message {
-    text-align: center;
-    margin: 2rem auto;
-    padding: 1rem;
-    color: #666;
-    font-size: 1.2rem;
-}
-
 .apps-app-icon,
 .app-icon img {
-    aspect-ratio: 1 / 1;
-    border-radius: 22%;
+    aspect-ratio: 1 / 1; 
     border-width: 1px;
     border-style: solid;
-    color: var(--app-icon-color);
+    border-color: var(--app-icon-border-color); 
+    border-radius: 22%; 
+    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom)); 
 }
+
 
 .screenshots-gallery {
     display: flex;
@@ -117,6 +114,7 @@ main {
 
 .screenshots-missing {
     width: 100%;
+    border: 1px dashed var(--divider-color);
     color: var(--secondary-text-color);
     text-align: center;
     padding: 50px 0;
@@ -163,6 +161,7 @@ li {
     align-items: center; /* Центрирование по горизонтали */
     text-align: center;
     text-decoration: none;
+    border: 1px solid var(--divider-color);
 }
 
 @media (orientation: landscape) {

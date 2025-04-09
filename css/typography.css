@@ -4,17 +4,17 @@ body {
 }
 
 h1 {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     font-weight: 700; /* bold */
 }
 
 h2 {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     font-weight: 600;
 }
 
 h3 {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     font-weight: 500;
 }
 
@@ -23,13 +23,17 @@ h3 {
 }
 
 h4 {
-    color: var(--text-color);
+    color: var(--primary-text-color);
     font-weight: 400; /* normal */
 }
 
 a {
     color: var(--link-color);
     /*text-decoration: none;*/
+}
+
+.app-item a {
+    color: var(--primary-text-color);
 }
 
 .screenshots-missing {

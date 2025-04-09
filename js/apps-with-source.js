@@ -2,13 +2,52 @@ async function loadApps() {
     const response = await fetch("../data/apps-metadata-public.json");
     const allApps = await response.json();
     
-    // Фильтруем приложения:
-    // 1. Исключаем те, у которых type === "App Bundle"
-    // 2. Оставляем только те, у которых gitHubLink не пустой
+    // Список ID приложений, которые должны отображаться
+    // (список можно редактировать вручную, удаляя ненужные ID)
+    const allowedAppIds = [
+        "4-layers",
+        "ai-writer",  
+        "assets",
+        "avoid-collision",
+        "birthdays",
+        "brown-noise",
+        "calories-tracker",
+        "care-symbols",
+        "charger-animations",
+        "cipheroji",
+        "cross-route-tracker",
+        "cyber-blackjack",
+        "cyber-roulette",
+        "dice-poker",
+        "expense-tracker",
+        "fasting",
+        "fuel-tracker",
+        "habit-tracker",
+        "lucky-diamonds",
+        "margin-trading-calculator",
+        "movie-watchlist",
+        "next-show",
+        "nft-creator",
+        "open-sea-wallet-portfolio",
+        "pdf-resume-creator",
+        "period-tracker",
+        "poker-dealer",
+        "pomodoro-timer",
+        "post-creator",
+        "quit-smoking",
+        "run-sunta",
+        "tetra-blocks-tower",
+        "time-capsule",
+        "truth-or-dare",
+        "water-balance",
+        "word-game-catch-letter",
+        "word-game-woords"
+    ];
+    
+    // Фильтруем приложения по списку ID и исключаем App Bundle
     const apps = allApps.filter(app => {
         return app.type !== "App Bundle" && 
-               app.gitHubLink && 
-               app.gitHubLink.trim() !== "";
+               allowedAppIds.includes(app.id);
     });
     
     const container = document.querySelector(".app-list-container");
@@ -30,7 +69,7 @@ async function loadApps() {
     if (apps.length === 0) {
         const emptyMessage = document.createElement("div");
         emptyMessage.className = "empty-message";
-        emptyMessage.textContent = "No GitHub apps found";
+        emptyMessage.textContent = "No selected apps found";
         container.appendChild(emptyMessage);
         return;
     }

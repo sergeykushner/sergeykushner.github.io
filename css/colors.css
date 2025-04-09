@@ -1,42 +1,27 @@
 :root {
     --body-background-color: white;
-    --text-color: black;
+    --primary-text-color: black;
     --secondary-text-color: rgb(60 60 67 / 60%);
-    --link-color: rgb(0 122 255);
+    --link-color: rgb(0 122 255); /* color(display-p3 0.039216 0.517647 1.000000 / 1.000000); */
     --btn-background-color: rgb(0 122 255);
-    --btn-background-color-hover: rgb(0 102 204);
+    --btn-background-color-hover: rgb(0 122 255 / 80%);
     --btn-text-color: white;
-    --app-icon-color: rgb(0 0 0 / 5%);
+    --app-icon-border-color: rgb(0 0 0 / 5%);
     --divider-color: rgb(0 0 0 / 15%);
-}
-
-.screenshots-missing {
-    border: 1px dashed rgb(0 0 0 / 15%);
 }
 
 @media (prefers-color-scheme: dark) {   
     :root {
         --body-background-color: black;
-        --text-color: white;
+        --primary-text-color: white;
         --secondary-text-color: rgb(235 235 245 / 60%);
         --link-color: rgb(10 132 255);
         --btn-background-color: rgb(10 132 255);
         --btn-background-color-hover: rgb(0 102 204);
-        --app-icon-color: black;
+        --app-icon-border-color: black;
         --divider-color: rgb(255 255 255 / 25%);
-    }
 
-    .btn-link {
-        background-color: rgb(10 132 255);
-        background-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+        --app-icon-gradient-top: #313131;
+        --app-icon-gradient-bottom: #151515;
     }
-
-    .screenshots-missing {
-        border: 1px dashed rgb(255 255 255 / 25%);
-    }
-
-    .apps-app-icon,
-    .app-icon img {
-    background: linear-gradient(to bottom, #313131, #151515);
-}
 }
