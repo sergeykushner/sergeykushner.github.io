@@ -5,6 +5,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Capsula",
         "title": "Capsula - Digital Time Capsule",
         "subtitle": "Add and lock text and images",
@@ -45,6 +46,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "QST",
         "title": "QST - Quit Smoking Tracker",
         "subtitle": "Smoke-Free Life Monitoring",
@@ -75,6 +77,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Brownoise",
         "title": "Brownoise - True Brown Noise",
         "subtitle": "Relax, Focus, Sleep, Health",
@@ -111,6 +114,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Cipheroji",
         "title": "Cipheroji - Encryption & Emoji",
         "subtitle": "Encrypting text to emoji",
@@ -149,6 +153,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Dodge Zone",
         "title": "Dodge Zone",
         "subtitle": "Last the longest! Be a Leader!",
@@ -175,6 +180,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Birthdays",
         "title": "Birthdays - All Time Intervals",
         "subtitle": "More Birthdays!",
@@ -205,6 +211,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Assets",
         "title": "Assets - Money, Goals, Stuff",
         "subtitle": "Organize Everything",
@@ -231,6 +238,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "AIWL",
         "title": "AI Writer - Easy Text Creation",
         "subtitle": "Creating stories, poems, songs",
@@ -265,6 +273,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Clothtag",
         "title": "Clothtag",
         "subtitle": "Wardrobe Companion",
@@ -302,6 +311,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "FUELX",
         "title": "FUELX - Fuel Fill Tracker",
         "subtitle": "Convenient refueling history",
@@ -328,6 +338,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "CALORIEX",
         "title": "CALORIEX - Calories Tracker",
         "subtitle": "Keep Track of Nutrition",
@@ -354,6 +365,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "MWLX",
         "title": "MWLX - Movie Watchlist",
         "subtitle": "",
@@ -381,6 +393,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "IFX",
         "title": "IFX - Intermittent Fasting",
         "subtitle": "",
@@ -407,6 +420,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "DFLOW",
         "title": "DFLOW - Habit Tracker",
         "subtitle": "Daily routines and statistics",
@@ -433,6 +447,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "PDFRC",
         "title": "PDFRC - PDF Resume Creator",
         "subtitle": "",
@@ -459,6 +474,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "OSW",
         "title": "OSW - OpenSea Wallet Portfolio",
         "subtitle": "",
@@ -483,6 +499,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "CHARGEX",
         "title": "CHARGEX - Charging Animation",
         "subtitle": "",
@@ -509,6 +526,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "NFTX",
         "title": "NFTX - NFT Collection Creator",
         "subtitle": "",
@@ -535,6 +553,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "WOORDS",
         "title": "WOORDS - Words Game",
         "subtitle": "",
@@ -561,6 +580,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "AVE",
         "title": "AVE - Private Period Tracker",
         "subtitle": "",
@@ -587,6 +607,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "WorkoutNode",
         "title": "WorkoutNode",
         "subtitle": "Fitness Website",
@@ -612,6 +633,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "NextShow",
         "title": "NextShow - Your TV Shows",
         "subtitle": "Track Your Favorite TV Shows",
@@ -638,6 +660,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "ExpenseHub",
         "title": "ExpenseHub",
         "subtitle": "",
@@ -664,6 +687,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Cyber Roulette",
         "title": "Cyber Roulette Casino",
         "subtitle": "Cyberpunk Style",
@@ -688,6 +712,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Lucky Diamonds",
         "title": "Lucky Diamonds",
         "subtitle": "Cyberpunk Style",
@@ -714,6 +739,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Cyber Blackjack",
         "title": "Cyber Blackjack",
         "subtitle": "",
@@ -740,6 +766,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "4Levels Up",
         "title": "4Levels Up",
         "subtitle": "Rise Up First!",
@@ -771,6 +798,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Margin Trading",
         "title": "Margin Trading and Forex Pip",
         "subtitle": "Leverage and pip calculator",
@@ -798,6 +826,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Cross Route Tracker",
         "title": "Cross Route Tracker",
         "subtitle": "",
@@ -826,6 +855,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "CryptoBull",
         "title": "CryptoBull - Cryptocurrencies",
         "subtitle": "",
@@ -856,6 +886,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Poker Dealer",
         "title": "Poker Dealer and Assistant",
         "subtitle": "",
@@ -882,6 +913,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Tempus",
         "title": "Tempus - Pomodoro Timer",
         "subtitle": "",
@@ -908,6 +940,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Party Star",
         "title": "Party Star - XMAS Party Game",
         "subtitle": "Let's Play!",
@@ -933,6 +966,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Run Santa",
         "title": "Run Santa Run! - XMAS Game",
         "subtitle": "",
@@ -957,6 +991,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "FitHub",
         "title": "FitHub - Fitness Workout Guide",
         "subtitle": "Your personal trainer",
@@ -983,6 +1018,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Postflix",
         "title": "Postflix",
         "subtitle": "Creating posts and stories",
@@ -1012,6 +1048,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Yatzy",
         "title": "Yatzy - Dice Poker Game",
         "subtitle": "",
@@ -1039,6 +1076,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "DROPS",
         "title": "DROPS - Water Balance",
         "subtitle": "Tracker and Reminders",
@@ -1068,6 +1106,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "TetraBlocks",
         "title": "TetraBlocks Tower",
         "subtitle": "To the Moon. And Higher.",
@@ -1094,6 +1133,7 @@
         "platform": [
             "Android"
         ],
+        "status": "sold",
         "displayName": "Evil Wasp",
         "title": "Evil Wasp",
         "subtitle": "",
@@ -1118,6 +1158,7 @@
         "platform": [
             "Android"
         ],
+        "status": "deleted",
         "displayName": "Poker",
         "title": "Poker - Texas Holdem",
         "subtitle": "",
@@ -1141,6 +1182,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Catch Letter",
         "title": "Catch Letter - Word Game",
         "subtitle": "Exercise Your Brain",
@@ -1172,6 +1214,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Home Workouts",
         "title": "Home Workouts - Be Fit",
         "subtitle": "Home Workouts Programs",
@@ -1201,6 +1244,7 @@
         "platform": [
             "Android"
         ],
+        "status": "sold",
         "displayName": "Poker",
         "title": "Texas Hold'em Poker - Casino Game (Gold Edition)",
         "subtitle": "",
@@ -1224,6 +1268,7 @@
         "platform": [
             "Android"
         ],
+        "status": "sold",
         "displayName": "Falling Bubbles",
         "title": "Falling Bubbles Puzzle Match-3 Game",
         "subtitle": "",
@@ -1251,6 +1296,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "DriveBalls",
         "title": "DriveBalls - Tap Tap Game",
         "subtitle": "",
@@ -1275,6 +1321,7 @@
             "iOS",
             "Android"
         ],
+        "status": "sold",
         "displayName": "DeepAtmos",
         "title": "DeepAtmos - Relax and Calm",
         "subtitle": "Sounds for Relaxation and Calm",
@@ -1308,6 +1355,7 @@
         "platform": [
             "Android"
         ],
+        "status": "sold",
         "displayName": "DestroyBlocks",
         "title": "Destroy Blocks Puzzle Match-3 Game",
         "subtitle": "",
@@ -1332,6 +1380,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "FWE",
         "title": "FWE Fitness Workouts Exercises",
         "subtitle": "Workout at home everyday",
@@ -1367,6 +1416,7 @@
         "platform": [
             "Android"
         ],
+        "status": "sold",
         "displayName": "StrikeBalls",
         "title": "StrikeBalls - Shoot balls",
         "subtitle": "",
@@ -1393,6 +1443,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Truth Or Dare",
         "title": "Truth Or Dare Fun Party Game",
         "subtitle": "",
@@ -1419,6 +1470,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Bloody Answers",
         "title": "Bloody Answers Stickers",
         "subtitle": "Answers in a bloody style.",
@@ -1477,6 +1529,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Gym Assistant",
         "title": "Gym Assistant Fitness Workouts",
         "subtitle": "Training diary, exercise guide",
@@ -1512,6 +1565,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "XMAS ABC",
         "title": "XMAS ABC - Christmas alphabet",
         "subtitle": "Write Christmas trees",
@@ -1539,6 +1593,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Santa SP",
         "title": "Santa SP - stickers with Santa",
         "subtitle": "Funny Santa.",
@@ -1565,6 +1620,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "RexFit",
         "title": "RexFit",
         "subtitle": "Workouts. Routines. Exercises.",
@@ -1591,6 +1647,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Summer SP",
         "title": "Summer SP",
         "subtitle": "Summer stickers",
@@ -1615,6 +1672,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Onion SP",
         "title": "Onion SP emoji stickers",
         "subtitle": "Funny stickers with onions.",
@@ -1641,6 +1699,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Pears SP",
         "title": "Pears SP emoji stickers",
         "subtitle": "Stickers with ripe pears.",
@@ -1667,6 +1726,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Corn SP",
         "title": "Corn SP emoji stickers",
         "subtitle": "Stickers with sweet corn.",
@@ -1693,6 +1753,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Ice cream SP",
         "title": "Ice cream SP emoji stickers",
         "subtitle": "Stickers with tasty ice cream.",
@@ -1719,6 +1780,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "IN LOVE",
         "title": "IN LOVE - stickers with love messages",
         "subtitle": "",
@@ -1743,6 +1805,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Girls SP",
         "title": "Girls SP emoji stickers",
         "subtitle": "",
@@ -1770,6 +1833,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Boys SP",
         "title": "Boys SP emoji - iMessage Sticker Packs",
         "subtitle": "",
@@ -1797,6 +1861,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Garden Crash",
         "title": "",
         "subtitle": "",
@@ -1826,6 +1891,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Ghosts SP",
         "title": "Ghosts SP emoji",
         "subtitle": "",
@@ -1851,6 +1917,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Apples SP",
         "title": "Apples SP emoji",
         "subtitle": "",
@@ -1876,6 +1943,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Rash Down",
         "title": "Rash Down",
         "subtitle": "",
@@ -1905,6 +1973,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Strawberry SP",
         "title": "Strawberry SP emoji",
         "subtitle": "",
@@ -1933,6 +2002,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Memes SP",
         "title": "Memes Sticker Pack",
         "subtitle": "",
@@ -1964,6 +2034,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "VoiceAdvisor",
         "title": "VoiceAdvisor",
         "subtitle": "",
@@ -1992,6 +2063,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "deleted",
         "displayName": "PokAdvisor",
         "title": "PokAdvisor - guide for Pokemon GO and Pokedex",
         "subtitle": "",
@@ -2016,6 +2088,7 @@
         "platform": [
             "Android"
         ],
+        "status": "unknown",
         "displayName": "Guide for Pokemon GO",
         "title": "Guide for Pokemon GO",
         "subtitle": "",
@@ -2049,6 +2122,7 @@
             "iOS",
             "Android"
         ],
+        "status": "sold",
         "displayName": "FitAdvisor",
         "title": "FitAdvisor - your fitness instructor, guide to exercises and workout in the gym",
         "subtitle": "",
@@ -2084,6 +2158,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Tasty SP",
         "title": "Tasty emoji stickers",
         "appStoreId": "1248248229",
@@ -2095,6 +2170,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "Boys + Girls SP",
         "title": "Boys + Girls emoji stickers",
         "appStoreId": "1247890110",
@@ -2106,6 +2182,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "sold",
         "displayName": "XMAS Pack",
         "title": "XMAS Pack - Christmas and New Year stickers",
         "appStoreId": "1444431397",
@@ -2117,6 +2194,7 @@
         "platform": [
             "iOS"
         ],
+        "status": "",
         "displayName": "",
         "title": "",
         "subtitle": "",
