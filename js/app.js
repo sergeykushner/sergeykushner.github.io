@@ -100,9 +100,9 @@ if (typeof window !== 'undefined') {
 
 function updateMetaTags(app) {
     document.title = app.title;
-    document.querySelector('meta[name="description"]').setAttribute("content", app.metaDescription);
+    document.querySelector('meta[name="description"]').setAttribute("content", app.shortDescription);
     document.querySelector('meta[property="og:title"]').setAttribute("content", app.title);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", app.metaDescription);
+    document.querySelector('meta[property="og:description"]').setAttribute("content", app.shortDescription);
     const appUrl = `https://sergeykushner.github.io/pages/app.html?id=${app.id}`;
     document.getElementById('meta-og-url').setAttribute('content', appUrl);
     

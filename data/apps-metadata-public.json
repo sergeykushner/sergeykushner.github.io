@@ -9,7 +9,7 @@
         "title": "Capsula - Digital Time Capsule",
         "subtitle": "Add and lock text and images",
         "promoText": "Lock your content.",
-        "metaDescription": "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
+        "shortDescription": "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
         "fullDescription": [
             "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
             "Key Features:",
@@ -49,7 +49,7 @@
         "title": "QST - Quit Smoking Tracker",
         "subtitle": "Smoke-Free Life Monitoring",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "QST is your comprehensive guide to quitting smoking, with easy-to-track progress, motivational milestones, and financial insights that highlight the benefits of your journey to quit smoking. Track how long you've been smoke-free, see how much you've saved, and monitor your health improvements over time.",
             "Progress Tracking: Track your days smoke-free, see immediate benefits, and stay motivated with key health milestones.",
@@ -79,7 +79,7 @@
         "title": "Brownoise - True Brown Noise",
         "subtitle": "Relax, Focus, Sleep, Health",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Immerse yourself in the soothing sounds of Brown Noise with our innovative Brownoise app. Designed to help you relax, concentrate, and sleep more soundly, this app offers a simple yet powerful audio experience.",
             "Customizable Brown Noise Generation: Adjust the intensity, frequency, and gain to create the perfect sound environment tailored to your needs. Use the intuitive sliders to fine-tune the noise for relaxation or focus.",
@@ -115,7 +115,7 @@
         "title": "Cipheroji - Encryption & Emoji",
         "subtitle": "Encrypting text to emoji",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Cipheroji is a unique and fun way to encrypt your text. Transform your text into a series of emojis, providing an extra layer of encryption to keep your communications private and secure with the most reliable AES-256 encryption.",
             "Emoji Encryption - Convert your text into a series of emojis, making them readable only to those with the corresponding decryption key.",
@@ -153,7 +153,7 @@
         "title": "Dodge Zone",
         "subtitle": "Last the longest! Be a Leader!",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Get ready for an exhilarating adventure in Dodge Zone! Your goal is to avoid collisions with obstacles and survive as long as possible. Only the fastest and most agile players will achieve the highest scores! The game gets progressively harder the longer you play, testing your reflexes and strategic thinking. Compete with players worldwide and climb to the top of the leaderboard."
         ],
@@ -179,7 +179,7 @@
         "title": "Birthdays - All Time Intervals",
         "subtitle": "More Birthdays!",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Stay organized and never miss a beat with Birthdays, your go-to app for tracking time intervals since important dates! Whether it's birthdays, anniversaries, or special occasions, Birthdays helps you keep track of time passed with ease. Never lose track of time again! Download Birthdays now and start tracking time intervals in style!",
             "Precise Time Tracking: Effortlessly monitor the number of months, weeks, days, hours, minutes, and seconds since any important event.",
@@ -209,7 +209,7 @@
         "title": "Assets - Money, Goals, Stuff",
         "subtitle": "Organize Everything",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -235,7 +235,7 @@
         "title": "AI Writer - Easy Text Creation",
         "subtitle": "Creating stories, poems, songs",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Unleash your creativity with AI Writer, the ultimate tool for generating and saving captivating text compositions! Whether you're crafting poems, composing songs, or creating immersive stories, AI Writer serves as your creative companion, providing an array of features to ignite your imagination.",
             "Features:",
@@ -269,7 +269,7 @@
         "title": "Clothtag",
         "subtitle": "Wardrobe Companion",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Discover the ultimate clothing care companion with Clothtag – your all-in-one guide to understanding and preserving your favorite garments. Seamlessly organize your wardrobe, decipher care symbols, and stay on top of clothing maintenance effortlessly.",
             "Wardrobe Organization Made Easy",
@@ -306,7 +306,7 @@
         "title": "FUELX - Fuel Fill Tracker",
         "subtitle": "Convenient refueling history",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Track your vehicle mileage and your fuel costs. Get Statistics. Easy to Use."
         ],
@@ -332,7 +332,7 @@
         "title": "CALORIEX - Calories Tracker",
         "subtitle": "Keep Track of Nutrition",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -358,7 +358,7 @@
         "title": "MWLX - Movie Watchlist",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Find out about Popular Movies, Now Playing Movies, Best and Top Rated Movies, Upcoming Movies.",
             "Add movies to your wishlist or to your personal watch library."
@@ -385,7 +385,7 @@
         "title": "IFX - Intermittent Fasting",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -411,7 +411,7 @@
         "title": "DFLOW - Habit Tracker",
         "subtitle": "Daily routines and statistics",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "DFLOW is a habit tracking app that will help you develop good habits and reach your goals. Reminders when needed, statistics, habit analysis with charts, so you can easily achieve your goals."
         ],
@@ -437,7 +437,7 @@
         "title": "PDFRC - PDF Resume Creator",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -463,7 +463,7 @@
         "title": "OSW - OpenSea Wallet Portfolio",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Add any wallets connected to the OpenSea and view the portfolio balance and NFTs in this portfolio."
         ],
@@ -487,7 +487,7 @@
         "title": "CHARGEX - Charging Animation",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -513,7 +513,7 @@
         "title": "NFTX - NFT Collection Creator",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Create your own NFT Collections from your images or create your own CryptoPunks."
         ],
@@ -539,7 +539,7 @@
         "title": "WOORDS - Words Game",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -565,7 +565,7 @@
         "title": "AVE - Private Period Tracker",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "A tracker in which you can record your periods and get data on the days of ovulation, fertility, chance of getting pregnant."
         ],
@@ -591,7 +591,7 @@
         "title": "WorkoutNode",
         "subtitle": "Fitness Website",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -616,7 +616,7 @@
         "title": "NextShow - Your TV Shows",
         "subtitle": "Track Your Favorite TV Shows",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Are you tired of constantly checking multiple streaming services to see if there's a new episode of your favorite TV show? Our app makes it easy to stay up-to-date on all your favorite shows. With NextShow, you can select the shows you want to follow, and we'll notify you as soon as a new episode becomes available on any streaming service. No more missed episodes or wasted time checking different apps. Download NextShow now and never miss an episode again."
         ],
@@ -642,7 +642,7 @@
         "title": "ExpenseHub",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Simple, convenient and minimalist expense tracker."
         ],
@@ -668,7 +668,7 @@
         "title": "Cyber Roulette Casino",
         "subtitle": "Cyberpunk Style",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Play unusual roulette with a completely new design in Cyberpunk style! Good luck!"
         ],
@@ -692,7 +692,7 @@
         "title": "Lucky Diamonds",
         "subtitle": "Cyberpunk Style",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Try your luck. Match 3 cyber diamonds in a row - get the Jackpot!"
         ],
@@ -718,7 +718,7 @@
         "title": "Cyber Blackjack",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -744,7 +744,7 @@
         "title": "4Levels Up",
         "subtitle": "Rise Up First!",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Rules of the game:",
             "On his turn, the player performs two actions: he moves one of his two characters to any adjacent cell of the field and completes construction, placing one of the levels on the cell next to him.",
@@ -775,7 +775,7 @@
         "title": "Margin Trading and Forex Pip",
         "subtitle": "Leverage and pip calculator",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Convenient data calculation for margin trading with leverage.",
             "Forex Pip Calculator."
@@ -802,7 +802,7 @@
         "title": "Cross Route Tracker",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "- Quickly save the route the first time you explore it.",
             "- Follow a saved route.",
@@ -830,7 +830,7 @@
         "title": "CryptoBull - Cryptocurrencies",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Multifunctional application for managing your cryptocurrencies and mining.",
             "- Cryptocurrencies.",
@@ -860,7 +860,7 @@
         "title": "Poker Dealer and Assistant",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "The application shows when, who should place a bet and which one. As well as replacing and believes the players chips."
         ],
@@ -886,7 +886,7 @@
         "title": "Tempus - Pomodoro Timer",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -912,7 +912,7 @@
         "title": "Party Star - XMAS Party Game",
         "subtitle": "Let's Play!",
         "promoText": "Merry Christmas and a Happy New Year to everyone!",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "In this game, you will have access to various categories in which you and your friends will have to complete tasks, answer questions and do some other actions."
         ],
@@ -937,7 +937,7 @@
         "title": "Run Santa Run! - XMAS Game",
         "subtitle": "",
         "promoText": "Merry Christmas and a Happy New Year to everyone!",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Collect as many gifts as possible with Santa constantly accelerating in a hurry!"
         ],
@@ -961,7 +961,7 @@
         "title": "FitHub - Fitness Workout Guide",
         "subtitle": "Your personal trainer",
         "promoText": "Your personal trainer for the price of a cup of coffee! No subscriptions or in-app purchases!",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "All muscle groups. Large list of exercises. Detailed complete description of the implementation. Tips, Tricks, Recommendations."
         ],
@@ -987,7 +987,7 @@
         "title": "Postflix",
         "subtitle": "Creating posts and stories",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Functions:",
             "- Add different layers (frames, effects) to your photos.",
@@ -1016,7 +1016,7 @@
         "title": "Yatzy - Dice Poker Game",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "You play Yatzy with five dices. The game consists of thirteen turns. The goal is to score as many points as possible in all the required categories altogether. All categories in the list must be filled.",
             "The game has a Leaderboard - you can compare your score with other players."
@@ -1043,7 +1043,7 @@
         "title": "DROPS - Water Balance",
         "subtitle": "Tracker and Reminders",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "- Water consumption tracker.",
             "- Reminders.",
@@ -1072,7 +1072,7 @@
         "title": "TetraBlocks Tower",
         "subtitle": "To the Moon. And Higher.",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Stack up the blocks as high as you can! Compete for the best score in the world!"
         ],
@@ -1098,7 +1098,7 @@
         "title": "Evil Wasp",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Collect One Color Honeycombs in Groups or Rows over 3 and Get points for their Destruction."
         ],
@@ -1122,7 +1122,7 @@
         "title": "Poker - Texas Holdem",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -1145,7 +1145,7 @@
         "title": "Catch Letter - Word Game",
         "subtitle": "Exercise Your Brain",
         "promoText": "Improve your Memory and Test your Speedy Spelling Skills with the Catch Letter Word App!",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Collect the Word in 60 seconds.",
             "For the collected Word you get Points. The number of points is equal to the number of Letters in the Word.",
@@ -1176,7 +1176,7 @@
         "title": "Home Workouts - Be Fit",
         "subtitle": "Home Workouts Programs",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Training programs designed specifically for home workouts - no equipment needed!",
             "Detailed descriptions and instructions for each exercise to ensure proper form",
@@ -1205,7 +1205,7 @@
         "title": "Texas Hold'em Poker - Casino Game (Gold Edition)",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Texas Hold'em Poker."
         ],
@@ -1228,7 +1228,7 @@
         "title": "Falling Bubbles Puzzle Match-3 Game",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Collect bubbles in groups of the same colors so that they burst and do not fall.",
             "You will find an exciting and at the same time simple game in which you have to shoot and thus collect bubbles into a group of the same color. If in a group of 3 or more bubbles with the same color, they burst and you are awarded points. The larger the group, the more points. A new line of bubbles is added periodically. Do not let the bubbles accumulate on the playing field and fall below the red line. Good game!"
@@ -1252,7 +1252,7 @@
         "title": "DriveBalls - Tap Tap Game",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "A simple but exciting Tap Tap game in which you have to drive the ball forward, avoiding obstacles and collecting targets."
         ],
@@ -1275,7 +1275,7 @@
         "title": "DeepAtmos - Relax and Calm",
         "subtitle": "Sounds for Relaxation and Calm",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Find inner balance and peace with your beautiful self in DeepAtmos.",
             "Enjoy relaxing scenes:",
@@ -1308,7 +1308,7 @@
         "title": "Destroy Blocks Puzzle Match-3 Game",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Destroy blocks by collecting 3 or more blocks together.",
             "Your task is to crush the blocks until they drop below the line. Blocks crumble code near 3 or more identical blocks. The more blocks you destroy at a time, the more points you get. Use a pickaxe to aim."
@@ -1332,7 +1332,7 @@
         "title": "FWE Fitness Workouts Exercises",
         "subtitle": "Workout at home everyday",
         "promoText": "Improve your form and achieve your goals in 30 days! Start today to see results and get in shape!",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Improve your form and achieve your goals in 30 days! Start today to see results and get in shape! Lose weight with minimal effort, you will see improvements in your form in 30 days.",
             "Functional training diary. A guide to all basic exercises. Native user-friendly interface.",
@@ -1367,7 +1367,7 @@
         "title": "StrikeBalls - Shoot balls",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -1393,7 +1393,7 @@
         "title": "Truth Or Dare Fun Party Game",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -1419,7 +1419,7 @@
         "title": "Bloody Answers Stickers",
         "subtitle": "Answers in a bloody style.",
         "promoText": "Halloween is coming. Add some \"horror\" to your posts!",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Short popular messages and answers in a bloody style.",
             "Stickers:",
@@ -1477,7 +1477,7 @@
         "title": "Gym Assistant Fitness Workouts",
         "subtitle": "Training diary, exercise guide",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "With a simple user-friendly design, Gym Assistant makes it easy to record your workouts, monitor progress, view your weight and reps history in exercises. If you have just started to train recently, you can always see the information on how to do the exercise correctly. And if you already have experience in training, you will be able to find something new, interesting tips and tricks.",
             "Features",
@@ -1512,7 +1512,7 @@
         "title": "XMAS ABC - Christmas alphabet",
         "subtitle": "Write Christmas trees",
         "promoText": "Make Christmas communication brighter!",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "The usual text messages are diverse, but they look boring. You can use stickers, but what they can say is not always in the sticker pack. With this sticker pack you can create any short text messages combining stickers into words.",
             "Merry Christmas and Happy New Year!"
@@ -1539,7 +1539,7 @@
         "title": "Santa SP - stickers with Santa",
         "subtitle": "Funny Santa.",
         "promoText": "Add Christmas and New Year's mood to our correspondence. 16 high-quality stickers with Santa..",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Christmas and New Year stickers with a funny Santa!"
         ],
@@ -1565,7 +1565,7 @@
         "title": "RexFit",
         "subtitle": "Workouts. Routines. Exercises.",
         "promoText": "Description of exercises and training diary. What will help you train properly.",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "To achieve new results, it is important to do the exercises correctly. And increase the number of sets and weight. But how to remember all these repetitions and weights when the exercises are too much? Record your results! This will help not only to streamline the training process, but also motivate you. In the training diary, you can see how many sets you have made and how much weight you have in your last workout. And do one more!) So you will progress and become better and better.",
             "And if you are not sure or do not know how to do the exercise correctly, you can see its description.",
@@ -1591,7 +1591,7 @@
         "title": "Summer SP",
         "subtitle": "Summer stickers",
         "promoText": "16 high-quality stickers.",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Summer stickers"
         ],
@@ -1615,7 +1615,7 @@
         "title": "Onion SP emoji stickers",
         "subtitle": "Funny stickers with onions.",
         "promoText": "16 high-quality stickers.",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Funny stickers with onions will help you in communication. Why words if there are stickers)"
         ],
@@ -1641,7 +1641,7 @@
         "title": "Pears SP emoji stickers",
         "subtitle": "Stickers with ripe pears.",
         "promoText": "16 high-quality stickers.",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Funny stickers with pears will help you in communication. Why words if there are stickers)"
         ],
@@ -1667,7 +1667,7 @@
         "title": "Corn SP emoji stickers",
         "subtitle": "Stickers with sweet corn.",
         "promoText": "16 high-quality stickers.",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Funny stickers with corn will help you in communication. Why words if there are stickers)"
         ],
@@ -1693,7 +1693,7 @@
         "title": "Ice cream SP emoji stickers",
         "subtitle": "Stickers with tasty ice cream.",
         "promoText": "16 high-quality stickers.",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Funny stickers with ice cream will help you in communication. Why words if there are stickers)"
         ],
@@ -1719,7 +1719,7 @@
         "title": "IN LOVE - stickers with love messages",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Add colors to your text messages. Surprise your boyfriend. Well, or just find the right words. These stickers look like standard bubbles with text, but instead of a gray bubble, the one to whom you send it will receive a love message in a pink bubble! It will look unusual and romantic."
         ],
@@ -1743,7 +1743,7 @@
         "title": "Girls SP emoji stickers",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Girls are different. Cheerful. Very angry. Thoughtful. In love. And why write words, if there are stickers. Express yourself! Install and use!",
             "And if there is a free minute, leave your feedback (thank you in advance)."
@@ -1770,7 +1770,7 @@
         "title": "Boys SP emoji - iMessage Sticker Packs",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Guys are different. Cheerful. Very angry. Thoughtful. In love. And why write words if there are stickers. Express yourself! iMessage Sticker Packs for you. Install and use!",
             "And if there is a free minute, leave your feedback (thank you in advance)."
@@ -1797,7 +1797,7 @@
         "title": "",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Colorful and fun puzzle game in which you have to collect berries, vegetables, fruit, buns.",
             "The game is about Four in a row, meaning you have to line up four identical berries, vegetables, fruits or buns to get points. But be careful! If you only get three in a row you get minus points.",
@@ -1826,7 +1826,7 @@
         "title": "Ghosts SP emoji",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Sticker pack for iMessage with funny ghosts."
         ],
@@ -1851,7 +1851,7 @@
         "title": "Apples SP emoji",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Stickers for iMessage with merry ripe apples.",
             "Hello! We are merry ripe apples. And we will help you express your emotions :)",
@@ -1876,7 +1876,7 @@
         "title": "Rash Down",
         "subtitle": "",
         "promoText": "Download now the new football rugby arcade game !",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Touch the screen and slide to avoid the obstacles !",
             "Pick as many money as you can !",
@@ -1905,7 +1905,7 @@
         "title": "Strawberry SP emoji",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Stickers for iMessage with sweet strawberries emoji.",
             "No words to express emotions? The strawberries will help you!",
@@ -1933,7 +1933,7 @@
         "title": "Memes Sticker Pack",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Memes - a way to replace a whole page of clever and carefully chosen words of one small picture.",
             "Like a Boss",
@@ -1964,7 +1964,7 @@
         "title": "VoiceAdvisor",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Commands for Siri",
             "- 35 categories",
@@ -1992,7 +1992,7 @@
         "title": "PokAdvisor - guide for Pokemon GO and Pokedex",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
@@ -2016,7 +2016,7 @@
         "title": "FitAdvisor - your fitness instructor, guide to exercises and workout in the gym",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Do the exercises correctly. The most popular and effective exercises for training. The perfect guide for anyone who loves fitness and bodybuilding. Your personal trainer in your pocket!",
             "- More than 100 exercises",
@@ -2051,7 +2051,7 @@
         "title": "Guide for Pokemon GO",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             "Guide for Pokemon GO - Guide to the Universe Pokemon. Be the best catcher! Personality 18 types of Pokemon with their detailed description.",
             "Create a guide only launched in the near future will be added:",
@@ -2107,7 +2107,7 @@
         "title": "",
         "subtitle": "",
         "promoText": "",
-        "metaDescription": "",
+        "shortDescription": "",
         "fullDescription": [
             ""
         ],
