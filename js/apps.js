@@ -1,6 +1,10 @@
 async function loadApps() {
     const response = await fetch("../data/apps-metadata-public.json");
-    const apps = await response.json();
+    const allApps = await response.json();
+    
+    // Фильтруем приложения, исключая те, у которых type === "App Bundle"
+    const apps = allApps.filter(app => app.type !== "App Bundle");
+    
     const container = document.querySelector(".app-list-container");
     
     // Проверяем, использует ли пользователь темный режим

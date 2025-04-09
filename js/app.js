@@ -135,8 +135,225 @@ function updateUI(app) {
     document.getElementById("app-subtitle").textContent = app.subtitle;
 
     document.getElementById("app-description").innerHTML = app.fullDescription
-    .map(p => p ? (p.startsWith('- ') ? `<li>${p.substring(2)}</li>` : `<p>${p}</p>`) : '<br>')
-    .join('');
+    .map(p => {
+        if (!p) return '<br>';
+      
+        if (p.startsWith(' ')) { // Если строка начинается с - (дефис и пробел) — она преобразуется в HTML-элемент <li>...</li>.
+          const listItem = p.substring(2);
+          return `<li>${listItem}</li>`;
+        }
+      
+        return `<p>${p}</p>`;
+      })
+      .join('');      
+
+    // Загрузка галереи скриншотов
+    const screenshotsContainer = document.getElementById("screenshots-container");
+    screenshotsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением скриншотов
+    
+    // Определяем, какие скриншоты нужно отображать
+    // Если в JSON определен массив screenshots, используем его,
+    // иначе используем стандартные номера (1, 2, 3)
+    let screenshotsToShow = app.screenshots || [1, 2, 3];
+    
+    // Если в массиве screenshots указан 0 или массив пустой, показываем текст "Screenshots Missing"
+    if (screenshotsToShow.length === 0 || (screenshotsToShow.length === 1 && screenshotsToShow[0] === 0)) {
+        const missingContainer = document.createElement("div");
+        missingContainer.className = "screenshots-missing";
+        missingContainer.textContent = "Screenshots Missing";
+        screenshotsContainer.appendChild(missingContainer);
+    } else {
+        // Определяем максимальное количество скриншотов для отображения (3 для десктопа, 2 для мобильного)
+        const isPortrait = window.matchMedia('(orientation: portrait)').matches;
+        const maxScreenshots = isPortrait ? 2 : 3;
+        
+        // Ограничиваем количество скриншотов в зависимости от устройства
+        screenshotsToShow = screenshotsToShow.slice(0, maxScreenshots);
+        
+        // Получаем тип устройства и его соотношение сторон
+        const deviceModel = app.screenshotProduct || "iPhone 16 Pro Max"; // По умолчанию iPhone 16 Pro Max
+        const aspectRatio = DEVICE_ASPECT_RATIOS[deviceModel] || "1530 / 3036";
+        const cornerRadius = DEVICE_CORNER_RADIUS[deviceModel] || "0%";
+        
+        // Получаем настройки для размещения скриншота в устройстве
+        const screenshotConfig = DEVICE_SCREENSHOT_CONFIG[deviceModel] || 
+            DEVICE_SCREENSHOT_CONFIG["iPhone 16 Pro Max"]; // Используем значения по умолчанию
+        
+        // Загружаем рамку устройства заранее
+        function createScreenshotElement(screenNumber, index) {
+            // Список типов скриншотов, для которых не нужно отображать рамку устройства
+            const noBezelScreenshotTypes = [
+                "Screenshots Missing",
+                "Slide 16/9",
+                "Website Screenshot 1440/950",
+                "App Store Screenshot 2160/3840",
+                "App Store Screenshot 1176/2088",
+                "App Store Screenshot 510/1012",
+                "App Store Screenshot 495/994",
+                "App Store Screenshot 460/996",
+                "App Store Screenshot 392/696",
+                "Screenshot 1728/2304",
+                "Screenshot 1176/2088",
+                "Google Pixel 1",
+                "Screenshot 576/1024",
+                "Screenshot 174/310"
+            ];
+            
+            // Список типов скриншотов без рамки, но с применением скругления
+            const noBezelWithRadiusTypes = [
+                "Slide 16/9",
+                "Website Screenshot 1440/950",
+                "App Store Screenshot 460/996",
+                "App Store Screenshot 392/696",
+            ];
+            
+            // Проверяем, нужно ли отображать рамку устройства
+            const shouldShowBezel = !noBezelScreenshotTypes.includes(deviceModel);
+            
+            // Получаем имя файла устройства из маппинга или генерируем его
+            const bezelFileName = DEVICE_BEZEL_FILES[deviceModel] || 
+                deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
+            
+            // Используем Cloudinary для получения рамки устройства
+            const bezelUrl = shouldShowBezel ? getDeviceBezelUrl(deviceModel) : '';
+            
+            // Запасной вариант рамки устройства из Cloudinary
+            const fallbackBezelUrl = shouldShowBezel ? getDeviceBezelUrl('iPhone 16 Pro Max') : '';
+            
+            // Создаем основной контейнер для скриншота
+            const screenshotContainer = document.createElement("div");
+            screenshotContainer.className = "screenshot-container";
+            screenshotContainer.setAttribute("data-device", deviceModel);
+            
+            
+            // Создаем элемент для скриншота
+            const screenshotItem = document.createElement("div");
+            screenshotItem.className = "screenshot-item";
+            
+            // Для скриншотов без рамки: применяем особые стили
+            if (!shouldShowBezel) {
+                // Для скриншотов без рамки просто используем соотношение самого скриншота
+                // и не применяем трансформации позиционирования
+                screenshotItem.style.width = "100%";
+                screenshotItem.style.transform = "none";
+            } else {
+                // Применяем соотношение сторон из маппинга устройств
+                screenshotItem.style.aspectRatio = aspectRatio;
+                
+                // Применяем настройки размещения скриншота в устройстве
+                screenshotItem.style.width = screenshotConfig.width;
+                screenshotItem.style.transform = `translateY(${screenshotConfig.offsetY}) translateX(${screenshotConfig.offsetX})`;
+            }
+            
+            // Создаем рамку устройства только если она нужна
+            let deviceBezel = null;
+            if (shouldShowBezel) {
+                // Сначала создаем и добавляем рамку устройства (она должна загрузиться первой)
+                deviceBezel = document.createElement("div");
+                deviceBezel.className = "device-bezel";
+                
+                const bezelImg = new Image();
+                bezelImg.className = "device-bezel-image";
+                bezelImg.alt = `${deviceModel} Frame`;
+                bezelImg.src = bezelUrl;
+                
+                // Обработчик ошибки для рамки устройства
+                bezelImg.onerror = function() {
+                    // Пробуем загрузить стандартную рамку iPhone 16 Pro Max как запасной вариант
+                    if (deviceModel !== "iPhone 16 Pro Max") {
+                        this.src = fallbackBezelUrl;
+                        
+                        // Если и стандартная рамка не загрузилась, скрываем элемент рамки
+                        this.onerror = function() {
+                            deviceBezel.style.display = 'none';
+                        };
+                    } else {
+                        // Если не удалось загрузить стандартную рамку, скрываем элемент
+                        deviceBezel.style.display = 'none';
+                    }
+                };
+                
+                deviceBezel.appendChild(bezelImg);
+            }
+            
+            // Настраиваем соотношение сторон для скриншотов без рамки
+            if (!shouldShowBezel) {
+                // Используем соотношение сторон из маппинга DEVICE_ASPECT_RATIOS
+                screenshotItem.style.aspectRatio = aspectRatio;
+            }
+            
+            // Теперь создаем и добавляем скриншот
+            const screenshotImg = new Image();
+            screenshotImg.className = 'screenshot-image';
+            screenshotImg.alt = `Screenshot ${screenNumber} of the app`;
+            
+            // Для скриншотов применяем разные правила скругления углов
+            if (noBezelWithRadiusTypes.includes(deviceModel)) {
+                // Для скриншотов без рамки, но со скруглением
+                screenshotImg.style.borderRadius = DEVICE_CORNER_RADIUS[deviceModel] || "0";
+            } else {
+                // Для других типов: скругление только с рамкой
+                screenshotImg.style.borderRadius = shouldShowBezel ? cornerRadius : "0";
+            }
+            
+            // Загружаем скриншот с учетом темного режима
+            const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+            screenshotImg.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
+            
+            // Обработчик ошибки для скриншота
+            screenshotImg.onerror = function() {
+                // Если темная версия не загрузилась, пробуем светлую
+                if (prefersDarkMode) {
+                    this.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', false);
+                    this.onerror = function() {
+                        screenshotContainer.style.display = 'none'; // Скрываем весь контейнер, если оба варианта не загружаются
+                    };
+                } else {
+                    screenshotContainer.style.display = 'none'; // Скрываем контейнер, если изображение не загружается
+                }
+            };
+            
+            // Обработчик успешной загрузки скриншота
+            screenshotImg.onload = function() {
+                this.style.opacity = '1'; // Показываем скриншот когда он загрузился
+            };
+            
+            // Собираем структуру
+            screenshotItem.appendChild(screenshotImg);
+            if (shouldShowBezel) {
+                screenshotContainer.appendChild(deviceBezel);
+            }
+            screenshotContainer.appendChild(screenshotItem);
+            
+            return screenshotContainer;
+        }
+        
+        // Создаем все скриншоты и добавляем их в контейнер
+        screenshotsToShow.forEach((screenNumber, index) => {
+            const screenshotElement = createScreenshotElement(screenNumber, index);
+            screenshotsContainer.appendChild(screenshotElement);
+        });
+    }
+    
+    // Проверяем статус приложения - показываем badges и footer только для приложений со статусом "availableForSale"
+    const badgesContainer = document.querySelector(".badges");
+    const footerContainer = document.querySelector(".footer-links");
+    
+    // Определяем, нужно ли отображать бейджи и футер
+    const shouldShowBadgesAndFooter = app.status === "availableForSale";
+    
+    // Показываем или скрываем контейнеры
+    badgesContainer.style.display = shouldShowBadgesAndFooter ? "block" : "none";
+    footerContainer.style.display = shouldShowBadgesAndFooter ? "flex" : "none";
+    
+    // Устанавливаем email в футере и обновляем ссылку на Privacy Policy независимо от статуса
+    document.getElementById("email-link").href = `mailto:${app.email}`;
+    document.getElementById("privacy-link").href = `app-privacy.html?id=${app.id}`;
+    
+    // Если не нужно показывать бейджи, то прекращаем обработку
+    if (!shouldShowBadgesAndFooter) {
+        return;
+    }
 
     // Управление отображением бейджей App Store и Google Play
     const appStoreContainer = document.getElementById("app-store-link");
@@ -197,201 +414,6 @@ function updateUI(app) {
     } else {
         phContainer.style.display = "none";
     }
-    
-    // Загрузка галереи скриншотов
-    const screenshotsContainer = document.getElementById("screenshots-container");
-    screenshotsContainer.innerHTML = ''; // Очищаем контейнер перед добавлением скриншотов
-    
-    // Определяем, какие скриншоты нужно отображать
-    // Если в JSON определен массив screenshots, используем его,
-    // иначе используем стандартные номера (1, 2, 3)
-    let screenshotsToShow = app.screenshots || [1, 2, 3];
-    
-    // Если в массиве screenshots указан 0 или массив пустой, показываем текст "Screenshots Missing"
-    if (screenshotsToShow.length === 0 || (screenshotsToShow.length === 1 && screenshotsToShow[0] === 0)) {
-        const missingContainer = document.createElement("div");
-        missingContainer.className = "screenshots-missing";
-        missingContainer.textContent = "Screenshots Missing";
-        screenshotsContainer.appendChild(missingContainer);
-        return; // Прекращаем выполнение функции, так как скриншотов нет
-    }
-    
-    // Определяем максимальное количество скриншотов для отображения (3 для десктопа, 2 для мобильного)
-    const isPortrait = window.matchMedia('(orientation: portrait)').matches;
-    const maxScreenshots = isPortrait ? 2 : 3;
-    
-    // Ограничиваем количество скриншотов в зависимости от устройства
-    screenshotsToShow = screenshotsToShow.slice(0, maxScreenshots);
-    
-    // Получаем тип устройства и его соотношение сторон
-    const deviceModel = app.screenshotProduct || "iPhone 16 Pro Max"; // По умолчанию iPhone 16 Pro Max
-    const aspectRatio = DEVICE_ASPECT_RATIOS[deviceModel] || "1530 / 3036";
-    const cornerRadius = DEVICE_CORNER_RADIUS[deviceModel] || "0%";
-    
-    // Получаем настройки для размещения скриншота в устройстве
-    const screenshotConfig = DEVICE_SCREENSHOT_CONFIG[deviceModel] || 
-        DEVICE_SCREENSHOT_CONFIG["iPhone 16 Pro Max"]; // Используем значения по умолчанию
-    
-    // Загружаем рамку устройства заранее
-    function createScreenshotElement(screenNumber, index) {
-        // Список типов скриншотов, для которых не нужно отображать рамку устройства
-        const noBezelScreenshotTypes = [
-            "Screenshots Missing",
-            "Slide 16/9",
-            "Website Screenshot 1440/950",
-            "App Store Screenshot 2160/3840",
-            "App Store Screenshot 1176/2088",
-            "App Store Screenshot 510/1012",
-            "App Store Screenshot 495/994",
-            "App Store Screenshot 460/996",
-            "App Store Screenshot 392/696",
-            "Screenshot 1728/2304",
-            "Screenshot 1176/2088",
-            "Google Pixel 1",
-            "Screenshot 576/1024",
-            "Screenshot 174/310"
-        ];
-        
-        // Список типов скриншотов без рамки, но с применением скругления
-        const noBezelWithRadiusTypes = [
-            "Slide 16/9",
-            "Website Screenshot 1440/950",
-            "App Store Screenshot 460/996",
-            "App Store Screenshot 392/696",
-        ];
-        
-        // Проверяем, нужно ли отображать рамку устройства
-        const shouldShowBezel = !noBezelScreenshotTypes.includes(deviceModel);
-        
-        // Получаем имя файла устройства из маппинга или генерируем его
-        const bezelFileName = DEVICE_BEZEL_FILES[deviceModel] || 
-            deviceModel.toLowerCase().replace(/ /g, '-') + '-natural-titanium-portrait';
-        
-        // Используем Cloudinary для получения рамки устройства
-        const bezelUrl = shouldShowBezel ? getDeviceBezelUrl(deviceModel) : '';
-        
-        // Запасной вариант рамки устройства из Cloudinary
-        const fallbackBezelUrl = shouldShowBezel ? getDeviceBezelUrl('iPhone 16 Pro Max') : '';
-        
-        // Создаем основной контейнер для скриншота
-        const screenshotContainer = document.createElement("div");
-        screenshotContainer.className = "screenshot-container";
-        screenshotContainer.setAttribute("data-device", deviceModel);
-        
-        
-        // Создаем элемент для скриншота
-        const screenshotItem = document.createElement("div");
-        screenshotItem.className = "screenshot-item";
-        
-        // Для скриншотов без рамки: применяем особые стили
-        if (!shouldShowBezel) {
-            // Для скриншотов без рамки просто используем соотношение самого скриншота
-            // и не применяем трансформации позиционирования
-            screenshotItem.style.width = "100%";
-            screenshotItem.style.transform = "none";
-        } else {
-            // Применяем соотношение сторон из маппинга устройств
-            screenshotItem.style.aspectRatio = aspectRatio;
-            
-            // Применяем настройки размещения скриншота в устройстве
-            screenshotItem.style.width = screenshotConfig.width;
-            screenshotItem.style.transform = `translateY(${screenshotConfig.offsetY}) translateX(${screenshotConfig.offsetX})`;
-        }
-        
-        // Создаем рамку устройства только если она нужна
-        let deviceBezel = null;
-        if (shouldShowBezel) {
-            // Сначала создаем и добавляем рамку устройства (она должна загрузиться первой)
-            deviceBezel = document.createElement("div");
-            deviceBezel.className = "device-bezel";
-            
-            const bezelImg = new Image();
-            bezelImg.className = "device-bezel-image";
-            bezelImg.alt = `${deviceModel} Frame`;
-            bezelImg.src = bezelUrl;
-            
-            // Обработчик ошибки для рамки устройства
-            bezelImg.onerror = function() {
-                // Пробуем загрузить стандартную рамку iPhone 16 Pro Max как запасной вариант
-                if (deviceModel !== "iPhone 16 Pro Max") {
-                    this.src = fallbackBezelUrl;
-                    
-                    // Если и стандартная рамка не загрузилась, скрываем элемент рамки
-                    this.onerror = function() {
-                        deviceBezel.style.display = 'none';
-                    };
-                } else {
-                    // Если не удалось загрузить стандартную рамку, скрываем элемент
-                    deviceBezel.style.display = 'none';
-                }
-            };
-            
-            deviceBezel.appendChild(bezelImg);
-        }
-        
-        // Настраиваем соотношение сторон для скриншотов без рамки
-        if (!shouldShowBezel) {
-            // Используем соотношение сторон из маппинга DEVICE_ASPECT_RATIOS
-            screenshotItem.style.aspectRatio = aspectRatio;
-        }
-        
-        // Теперь создаем и добавляем скриншот
-        const screenshotImg = new Image();
-        screenshotImg.className = 'screenshot-image';
-        screenshotImg.alt = `Screenshot ${screenNumber} of the app`;
-        
-        // Для скриншотов применяем разные правила скругления углов
-        if (noBezelWithRadiusTypes.includes(deviceModel)) {
-            // Для скриншотов без рамки, но со скруглением
-            screenshotImg.style.borderRadius = DEVICE_CORNER_RADIUS[deviceModel] || "0";
-        } else {
-            // Для других типов: скругление только с рамкой
-            screenshotImg.style.borderRadius = shouldShowBezel ? cornerRadius : "0";
-        }
-        
-        // Загружаем скриншот с учетом темного режима
-        const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-        screenshotImg.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', prefersDarkMode);
-        
-        // Обработчик ошибки для скриншота
-        screenshotImg.onerror = function() {
-            // Если темная версия не загрузилась, пробуем светлую
-            if (prefersDarkMode) {
-                this.src = getCloudinaryImageUrl(app.id, `app-screen-${screenNumber}`, 'png', false);
-                this.onerror = function() {
-                    screenshotContainer.style.display = 'none'; // Скрываем весь контейнер, если оба варианта не загружаются
-                };
-            } else {
-                screenshotContainer.style.display = 'none'; // Скрываем контейнер, если изображение не загружается
-            }
-        };
-        
-        // Обработчик успешной загрузки скриншота
-        screenshotImg.onload = function() {
-            this.style.opacity = '1'; // Показываем скриншот когда он загрузился
-        };
-        
-        // Собираем структуру
-        screenshotItem.appendChild(screenshotImg);
-        if (shouldShowBezel) {
-            screenshotContainer.appendChild(deviceBezel);
-        }
-        screenshotContainer.appendChild(screenshotItem);
-        
-        return screenshotContainer;
-    }
-    
-    // Создаем все скриншоты и добавляем их в контейнер
-    screenshotsToShow.forEach((screenNumber, index) => {
-        const screenshotElement = createScreenshotElement(screenNumber, index);
-        screenshotsContainer.appendChild(screenshotElement);
-    });
-    
-    // Устанавливаем email в футере
-    document.getElementById("email-link").href = `mailto:${app.email}`;
-    
-    // Обновляем ссылку на страницу Privacy Policy
-    document.getElementById("privacy-link").href = `app-privacy.html?id=${app.id}`;
 }
 
 // Вызов функции загрузки при загрузке страницы
