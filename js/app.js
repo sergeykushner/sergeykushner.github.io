@@ -215,7 +215,9 @@ function updateUI(app) {
             "App Store Screenshot 392/696",
             "Screenshot 1728/2304",
             "Screenshot 1176/2088",
-            "Google Pixel 1"
+            "Google Pixel 1",
+            "Screenshot 576/1024",
+            "Screenshot 174/310"
         ];
         
         // Список типов скриншотов без рамки, но с применением скругления
