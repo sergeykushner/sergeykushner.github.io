@@ -138,17 +138,49 @@ function updateUI(app) {
     .map(p => p ? (p.startsWith('- ') ? `<li>${p.substring(2)}</li>` : `<p>${p}</p>`) : '<br>')
     .join('');
 
-    document.getElementById("app-store-link").href = `https://itunes.apple.com/us/app/id${app.appStoreId}`;
+    // Управление отображением бейджей App Store и Google Play
+    const appStoreContainer = document.getElementById("app-store-link");
     
-    // Выбираем бейдж App Store из Cloudinary в зависимости от темного режима
-    const appStoreBadgeUrl = getAppStoreBadgeUrl(prefersDarkMode);
-    document.querySelector("#app-store-link img").src = appStoreBadgeUrl;
+    // Обработка бейджа App Store
+    if (app.appStoreId && app.appStoreId.trim() !== '') {
+        appStoreContainer.href = `https://itunes.apple.com/us/app/id${app.appStoreId}`;
+        
+        // Выбираем бейдж App Store из Cloudinary в зависимости от темного режима
+        const appStoreBadgeUrl = getAppStoreBadgeUrl(prefersDarkMode);
+        document.querySelector("#app-store-link img").src = appStoreBadgeUrl;
+        
+        // Добавляем обработчик ошибки для бейджа
+        document.querySelector("#app-store-link img").onerror = function() {
+            this.src = getAppStoreBadgeUrl(false);
+            this.onerror = null; // Предотвращаем бесконечный цикл
+        };
+        
+        appStoreContainer.style.display = "inline-block";
+    } else {
+        // Если appStoreId отсутствует или пустой, скрываем бейдж
+        appStoreContainer.style.display = "none";
+    }
     
-    // Добавляем обработчик ошибки для бейджа, чтобы использовать светлую версию, если темная не найдена
-    document.querySelector("#app-store-link img").onerror = function() {
-        this.src = getAppStoreBadgeUrl(false);
-        this.onerror = null; // Предотвращаем бесконечный цикл
-    };
+    // Обработка бейджа Google Play
+    const googlePlayContainer = document.getElementById("google-play-link");
+    if (app.googlePlayId && app.googlePlayId.trim() !== '') {
+        googlePlayContainer.href = `https://play.google.com/store/apps/details?id=${app.googlePlayId}`;
+        
+        // Устанавливаем бейдж Google Play
+        const googlePlayBadgeUrl = getGooglePlayBadgeUrl();
+        document.querySelector("#google-play-link img").src = googlePlayBadgeUrl;
+        
+        // Добавляем обработчик ошибки для бейджа
+        document.querySelector("#google-play-link img").onerror = function() {
+            googlePlayContainer.style.display = "none";
+            this.onerror = null;
+        };
+        
+        googlePlayContainer.style.display = "inline-block";
+    } else {
+        // Если googlePlayId отсутствует или пустой, скрываем бейдж
+        googlePlayContainer.style.display = "none";
+    }
     
     // Контейнер для Product Hunt бейджа
     const phContainer = document.getElementById("product-hunt-container");

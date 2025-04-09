@@ -2,7 +2,7 @@
 const CLOUDINARY_CLOUD_NAME = 'dh1nrzlvo';
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
 const CLOUDINARY_ROOT_FOLDER = 'website'; // Добавляем корневую папку
-const ASSET_VERSION = 'v3'; // Новая константа версионирования
+const ASSET_VERSION = 'v5'; // Новая константа версионирования
 
 /**
  * Генерирует URL для изображения из Cloudinary
@@ -50,6 +50,15 @@ function getAppStoreBadgeUrl(isDarkMode = false) {
 }
 
 /**
+ * Получает URL для бейджа Google Play
+ * @returns {string} URL бейджа Google Play
+ */
+function getGooglePlayBadgeUrl() {
+    const badgeName = 'get-it-on-google-play-badge-web-color-english';
+    return `${CLOUDINARY_BASE_URL}/image/upload/${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/badges/${badgeName}`;
+}
+
+/**
  * Получает URL для рамки устройства из Cloudinary
  * @param {string} deviceModel - Модель устройства (например, 'iPhone 16 Pro Max')
  * @returns {string} URL рамки устройства
@@ -80,6 +89,7 @@ if (typeof window !== 'undefined') {
     window.getAppStoreBadgeUrl = getAppStoreBadgeUrl;
     window.getShareImageUrl = getShareImageUrl;
     window.getDeviceBezelUrl = getDeviceBezelUrl;
+    window.getGooglePlayBadgeUrl = getGooglePlayBadgeUrl;
 }
 
 // Экспортируем функции для Node.js
@@ -89,6 +99,7 @@ if (typeof module !== 'undefined' && module.exports) {
         getAppStoreBadgeUrl,
         getShareImageUrl,
         getDeviceBezelUrl,
+        getGooglePlayBadgeUrl,
         CLOUDINARY_ROOT_FOLDER,
         CLOUDINARY_CLOUD_NAME,
         CLOUDINARY_BASE_URL
