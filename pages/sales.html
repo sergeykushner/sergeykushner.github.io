@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sales, Proceeds, Units</title>
+    <link rel="stylesheet" href="../css/main.css?v=2.0" />
+    <link rel="stylesheet" href="../css/sales.css?v=1.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-EEM4PWGR89');
+    </script>
+</head>
+
+<body>
+    <header>
+        <h1>Sales. Proceeds. Units.</h1>
+    </header>
+
+    <main>
+        <div class="sales-container">
+            <div class="total-section">
+                <h2>Total</h2>
+                <div class="stats-grid">
+                    <div class="stats-card" id="app-store-stats">
+                        <h3>App Store</h3>
+                        <div class="stats-row">Sales: <span id="app-store-sales">0</span></div>
+                        <div class="stats-row">Proceeds: <span id="app-store-proceeds">0</span></div>
+                        <div class="stats-row">Units: <span id="app-store-units">0</span></div>
+                    </div>
+                    <div class="stats-card" id="flippa-stats">
+                        <h3>Flippa</h3>
+                        <div class="stats-row">Sales: <span id="flippa-sales">0</span></div>
+                        <div class="stats-row">Proceeds: <span id="flippa-proceeds">0</span></div>
+                        <div class="stats-row">Units: <span id="flippa-units">0</span></div>
+                    </div>
+                    <div class="stats-card" id="total-stats">
+                        <h3>App Store + Flippa</h3>
+                        <div class="stats-row">Sales: <span id="total-sales">0</span></div>
+                        <div class="stats-row">Proceeds: <span id="total-proceeds">0</span></div>
+                        <div class="stats-row">Units: <span id="total-units">0</span></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="chart-section">
+                <h2>Sales Chart</h2>
+                <div class="chart-legend">
+                    <div class="legend-item">
+                        <span class="legend-color app-store-segment"></span>
+                        <span class="legend-label">App Store Proceeds (teal)</span>
+                    </div>
+                    <div class="legend-item">
+                        <span class="legend-color flippa-segment"></span>
+                        <span class="legend-label">Flippa Net Revenue (green)</span>
+                    </div>
+                </div>
+                <div id="sales-chart-container">
+                    <!-- Chart will be inserted here by JavaScript -->
+                </div>
+                <div class="chart-explanation">
+                    <p>Формула для зеленой части: salePrice - (listingFee + successFee)</p>
+                    <p>Формула для бирюзовой части: appStoreProceeds</p>
+                    <p>Общая высота столбца: суммарная выручка от приложения</p>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <a href="../index.html" class="btn-link">Home</a>
+        <a href="apps.html" class="btn-link">Apps</a>
+    </footer>
+
+    <script src="../js/sales.js"></script>
+</body>
+
+</html> 
