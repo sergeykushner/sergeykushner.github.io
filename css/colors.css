@@ -1,45 +1,45 @@
 :root {
-    --body-background-color: #F0F4F8;
-    --text-primary-color: #1A202C;
-    --text-secondary-color: #718096;
-    --divider-color: #CBD5E0;
+    --body-background-color: white;
 
-    --btn-background-color: #4299E1;
-    --btn-background-color-hover: #3182CE;
-    --btn-text-color: #FFFFFF;
+    --text-primary-color: black;
+    --text-secondary-color: gray;
 
-    /* Стили для иконок */
-    --app-icon-border-color: rgba(0, 0, 0, 0.1);
-    --app-icon-gradient-top: rgba(255, 255, 255, 0);
-    --app-icon-gradient-bottom: rgba(0, 0, 0, 0.05);
+    --link-color: rgb(0 122 255);
+    --link-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
 
-    /* Стили для карточек */
-    --card-background-color: #FFFFFF;
+    --btn-background-color: rgb(0 122 255);
+    --btn-background-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
 
-    /* Стили для диаграммы на странице продаж */
-    --app-store-segment-color: #4299E1;
-    --flippa-segment-color: #48BB78;
+    --btn-background-color-hover: rgb(0 122 255 / 80%);
+    --btn-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 0.8);
+
+    --btn-text-color: white;
+
+    --app-icon-border-color: rgb(0 0 0 / 5%);
+
+    --divider-color: rgb(0 0 0 / 15%);
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: dark) {   
     :root {
-        --body-background-color: #1A202C;
-        --text-primary-color: #F7FAFC;
-        --text-secondary-color: #A0AEC0;
-        --divider-color: #4A5568;
+        --body-background-color: black;
+        --text-primary-color: white;
+        --text-secondary-color: gray;
 
-        --btn-background-color: #2B6CB0;
-        --btn-background-color-hover: #2C5282;
-        --btn-text-color: #F7FAFC;
+        --link-color: rgb(10 132 255);
+        --link-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
 
-        --app-icon-border-color: rgba(255, 255, 255, 0.1);
-        --app-icon-gradient-top: rgba(255, 255, 255, 0);
-        --app-icon-gradient-bottom: rgba(255, 255, 255, 0.05);
+        --btn-background-color: rgb(10 132 255);
+        --btn-background-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
 
-        --card-background-color: #2D3748;
+        --btn-background-color-hover: rgb(0 102 204 / 80%);
+        --btn-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 0.8);
 
-        /* Стили для диаграммы на странице продаж в темной теме */
-        --app-store-segment-color: #3182CE;
-        --flippa-segment-color: #38A169;
+        --app-icon-border-color: black;
+
+        --divider-color: rgb(255 255 255 / 25%);
+
+        --app-icon-gradient-top: #313131;
+        --app-icon-gradient-bottom: #151515;
     }
 }

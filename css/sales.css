@@ -1,13 +1,31 @@
+:root {
+    /* Стили для карточек */
+    --card-background-color: rgba(128, 128, 128, 0.092);
+
+    /* Стили для диаграммы на странице продаж */
+    --app-store-segment-color: #4299E1;
+    --flippa-segment-color: #48BB78;
+}
+
+@media (prefers-color-scheme: dark) {
+    :root {
+        --card-background-color: #2D3748;
+
+        /* Стили для диаграммы на странице продаж в темной теме */
+        --app-store-segment-color: #3182CE;
+        --flippa-segment-color: #38A169;
+    }
+}
+
 /* Стили для страницы Sales */
 
 .sales-container {
     max-width: 1200px;
     margin: 0 auto;
-    padding: var(--spacing-large);
 }
 
 .total-section, .chart-section {
-    margin-bottom: var(--spacing-ultra-large);
+    margin: var(--spacing-large) 0;
 }
 
 .stats-grid {
@@ -18,17 +36,17 @@
 }
 
 .stats-card {
-    background-color: var(--card-background-color);
     border-radius: var(--corner-radius);
-    padding: var(--spacing-large);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    padding: var(--spacing-small) var(--spacing-medium);
+    border-width: 1px;
+    border-style: solid;
+    border-color: var(--divider-color);
 }
 
 .stats-row {
     display: flex;
     justify-content: space-between;
     margin: var(--spacing-medium) 0;
-    font-size: 1.1rem;
 }
 
 .stats-row span {
@@ -52,24 +70,21 @@
 .legend-color {
     width: 20px;
     height: 20px;
-    border-radius: 4px;
+    border-radius: 5px;
 }
 
-.chart-explanation {
-    margin-top: var(--spacing-large);
-    color: var(--text-secondary-color);
-    font-size: 0.9rem;
-    text-align: center;
+.chart-container {
+    overflow-x: auto;
+    width: 100%;
 }
 
 #sales-chart-container {
     width: 100%;
+    min-width: 1000px; /* Минимальная ширина для прокрутки на мобильных */
     height: 400px;
-    margin-top: var(--spacing-large);
     background-color: var(--card-background-color);
     border-radius: var(--corner-radius);
     padding: var(--spacing-large);
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
 
 .chart-bar {
@@ -83,7 +98,7 @@
     top: -25px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     white-space: nowrap;
     color: var(--text-secondary-color);
 }
@@ -93,7 +108,7 @@
     bottom: -25px;
     left: 50%;
     transform: translateX(-50%);
-    font-size: 0.8rem;
+    font-size: 0.75rem;
     color: var(--text-secondary-color);
 }
 
@@ -112,11 +127,17 @@
 
 .bar-icon {
     position: absolute;
-    top: -40px;
+    top: -50px;
     left: 50%;
     transform: translateX(-50%);
-    width: 24px;
-    height: 24px;
+}
+
+.bar-icon img {
+    width: 25px;
+    height: 25px;
+    border-radius: 22%;
+    border: 1px solid var(--app-icon-border-color);
+    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
 }
 
 /* Адаптивность для мобильных устройств */
@@ -133,5 +154,10 @@
         flex-direction: column;
         align-items: center;
         gap: var(--spacing-small);
+    }
+    
+    .bar-icon img {
+        width: 24px;
+        height: 24px;
     }
 } 

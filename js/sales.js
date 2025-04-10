@@ -75,8 +75,8 @@ async function loadSalesData() {
             flippaSales, flippaProceeds, flippaUnits
         );
 
-        // Строим график
-        buildSalesChart(chartData.slice(0, 15)); // Отображаем топ-15 приложений
+        // Строим график со всеми приложениями (убираем ограничение 15)
+        buildSalesChart(chartData);
     } catch (error) {
         console.error("Ошибка при загрузке или обработке данных:", error);
     }
@@ -129,6 +129,9 @@ function buildSalesChart(data) {
     const chartContainer = document.getElementById("sales-chart-container");
     chartContainer.innerHTML = "";
     
+    // Проверяем, использует ли пользователь темный режим
+    const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
     // Получаем CSS переменные для цветов сегментов
     const appStoreColor = getComputedStyle(document.documentElement).getPropertyValue('--app-store-segment-color') || '#4299E1';
     const flippaColor = getComputedStyle(document.documentElement).getPropertyValue('--flippa-segment-color') || '#48BB78';
@@ -136,25 +139,57 @@ function buildSalesChart(data) {
     // Находим максимальное значение для масштабирования
     const maxValue = Math.max(...data.map(item => item.total));
     
+    // Устанавливаем ширину столбца в зависимости от количества приложений
+    const barWidth = data.length > 30 ? 20 : 30; // Уменьшаем ширину, если приложений много
+    
+    // Устанавливаем ширину контейнера графика в зависимости от количества элементов
+    const containerWidth = data.length * (barWidth + 20); // 20px для отступов между столбцами
+    
     // Создаем контейнер для баров
     const barsContainer = document.createElement("div");
     barsContainer.style.display = "flex";
     barsContainer.style.alignItems = "flex-end";
-    barsContainer.style.justifyContent = "space-between";
+    barsContainer.style.justifyContent = "flex-start"; // Изменяем на flex-start для лучшего отображения
     barsContainer.style.height = "100%";
     barsContainer.style.paddingBottom = "30px"; // Место для подписей
+    barsContainer.style.width = `${containerWidth}px`; // Устанавливаем ширину контейнера
     
     // Создаем бары для каждого приложения
     data.forEach(app => {
         // Создаем контейнер для бара
         const barContainer = document.createElement("div");
         barContainer.className = "chart-bar";
+        barContainer.style.marginRight = "15px"; // Фиксированный отступ справа
+        
+        // Добавляем иконку приложения
+        const iconContainer = document.createElement("div");
+        iconContainer.className = "bar-icon";
+        
+        // Создаем элемент изображения
+        const iconImage = document.createElement("img");
+        
+        // Получаем URL иконки из Cloudinary
+        const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
+        iconImage.src = iconUrl;
+        iconImage.alt = app.displayName || app.id;
+        
+        // Обработчик ошибок для загрузки светлой версии, если темная недоступна
+        iconImage.onerror = function() {
+            if (this.getAttribute('data-tried-light') !== 'true') {
+                this.setAttribute('data-tried-light', 'true');
+                this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
+            }
+        };
+        
+        iconContainer.appendChild(iconImage);
+        barContainer.appendChild(iconContainer);
         
         // Создаем сегмент для выручки App Store
         if (app.appStoreProceeds > 0) {
             const appStoreSegment = document.createElement("div");
             appStoreSegment.className = "bar-segment app-store-segment";
             appStoreSegment.style.backgroundColor = appStoreColor;
+            appStoreSegment.style.width = `${barWidth}px`; // Устанавливаем ширину сегмента
             const height = (app.appStoreProceeds / maxValue) * 300; // Максимальная высота 300px
             appStoreSegment.style.height = `${height}px`;
             barContainer.appendChild(appStoreSegment);
@@ -165,6 +200,7 @@ function buildSalesChart(data) {
             const flippaSegment = document.createElement("div");
             flippaSegment.className = "bar-segment flippa-segment";
             flippaSegment.style.backgroundColor = flippaColor;
+            flippaSegment.style.width = `${barWidth}px`; // Устанавливаем ширину сегмента
             const height = (app.flippaProceeds / maxValue) * 300; // Максимальная высота 300px
             flippaSegment.style.height = `${height}px`;
             barContainer.appendChild(flippaSegment);
@@ -174,6 +210,9 @@ function buildSalesChart(data) {
         const label = document.createElement("div");
         label.className = "bar-label";
         label.textContent = app.displayName;
+        label.style.maxWidth = `${barWidth * 3}px`; // Ограничиваем ширину метки
+        label.style.overflow = "hidden";
+        label.style.textOverflow = "ellipsis";
         barContainer.appendChild(label);
         
         // Добавляем значение
