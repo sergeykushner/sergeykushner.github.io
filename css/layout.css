@@ -183,6 +183,20 @@ li,
     display: flex;
     justify-content: center;
     gap: var(--spacing-small);
+    margin-top: var(--spacing-large);
+}
+
+.filter-checkbox {
+    padding: var(--spacing-large);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: var(--spacing-small);
+    cursor: pointer;
+}
+
+.filter-checkbox input {
+    cursor: pointer;
 }
 
 .divider {

@@ -5,7 +5,7 @@
         "platform": [
             "iOS"
         ],
-        "status": "availableForSale",
+        "status": "sold",
         "displayName": "Capsula",
         "title": "Capsula - Digital Time Capsule",
         "subtitle": "Add and lock text and images",
@@ -24,7 +24,7 @@
             "Get Capsula today and start preserving your memories for the future!"
         ],
         "appStoreId": "6740265085",
-        "googlePlayId": "x",
+        "googlePlayId": "",
         "screenshots": [
             1,
             2,
@@ -1863,7 +1863,7 @@
         ],
         "status": "sold",
         "displayName": "Garden Crash",
-        "title": "",
+        "title": "Garden Crash",
         "subtitle": "",
         "promoText": "",
         "shortDescription": "",

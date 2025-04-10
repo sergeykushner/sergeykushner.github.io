@@ -35,7 +35,8 @@ const DEVICE_ASPECT_RATIOS = {
     "App Store Screenshot 1176/2088": "1176 / 2088",
     "Screenshot 1728/2304": "1728 / 2304",
     "App Store Screenshot 495/994": "495 / 994",
-    "Website Screenshot 1440/950": "1440 / 950"
+    "Website Screenshot 1440/950": "1440 / 950",
+    "Screenshot 1728/2304": "1728 / 2304"
     // Другие устройства можно добавить по мере необходимости
 };
 
