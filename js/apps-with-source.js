@@ -50,7 +50,7 @@ async function loadApps() {
                allowedAppIds.includes(app.id);
     });
     
-    const container = document.querySelector(".app-list-container");
+    const container = document.querySelector(".apps-grid-container");
     
     // Проверяем, использует ли пользователь темный режим
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;

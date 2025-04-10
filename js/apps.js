@@ -5,7 +5,7 @@ async function loadApps() {
     // Фильтруем приложения, исключая те, у которых type === "App Bundle"
     const apps = allApps.filter(app => app.type !== "App Bundle");
     
-    const container = document.querySelector(".app-list-container");
+    const container = document.querySelector(".apps-grid-container");
     
     // Проверяем, использует ли пользователь темный режим
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;

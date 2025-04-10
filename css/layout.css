@@ -1,21 +1,22 @@
 :root {
---spacing-large: 2rem;
---spacing-medium:1rem;
---spacing-small:0.5rem;
+    --spacing-large: 2rem;
+    --spacing-medium: 1rem;
+    --spacing-small: 0.5rem;
 
---border-width-bold: 1px;
---border-width-medium: 0.5px;
---border-width-thin: 0.25px;
+    --border-width-bold: 1px;
+    --border-width-medium: 0.5px;
+    --border-width-thin: 0.25px;
 
---corner-radius: 10px;
+    --corner-radius: 10px;
 
---icon-size-landscape: 70px;
---icon-size-portrait: 60px;
+    --icon-size-landscape: 75px;
+    --icon-size-portrait: 60px;
 
---badge-height-landscape: 50px;
---badge-height-portrait: 50px;
+    --badge-height-landscape: 50px;
+    --badge-height-portrait: 50px;
 }
 
+/* Base Styles */
 body {
     background-color: var(--body-background-color);
     margin: var(--spacing-large) auto;
@@ -23,67 +24,14 @@ body {
     font-family: system-ui;
 }
 
-p {
-    color: var(--primary-text-color);
-}
-
-h1 {
-    color: var(--primary-text-color);
-    font-weight: 700; /* bold */
-}
-
-h2 {
-    color: var(--primary-text-color);
-    font-weight: 600;
-}
-
-h3 {
-    color: var(--primary-text-color);
-    font-weight: 500;
-}
-
-.app-container h3,
-.app-privacy-container h3 {
-    color: var(--secondary-text-color);
-}
-
-h4 {
-    color: var(--primary-text-color);
-    font-weight: 400; /* normal */
-}
-
-a {
-    color: var(--link-color);
-    /*text-decoration: none;*/
-}
-
-.footer-links a,
-a.apps-app-link {
-    text-decoration: none;
-}
-
-.app-item a {
-    color: var(--primary-text-color);
-}
-
-.app-description p, li,
-.app-privacy-content-section {
-    text-align: start;
-}
-
-.apps-app-title {
-    margin: var(--spacing-small);
-}
-
+/* Components */
 .btn-link {
     display: inline-block;
     padding: 0.75rem 1.25rem;
     background-color: var(--btn-background-color);
     color: var(--btn-text-color);
-    
     text-align: center;
     text-decoration: none;
-    
     border-radius: 9999px;
     transition: background-color 0.3s ease;
 }
@@ -94,14 +42,37 @@ a.apps-app-link {
 
 .apps-app-icon,
 .app-icon img {
-    aspect-ratio: 1 / 1; 
+    aspect-ratio: 1 / 1;
     border-width: 1px;
     border-style: solid;
-    border-color: var(--app-icon-border-color); 
-    border-radius: 22%; 
+    border-color: var(--app-icon-border-color);
+    border-radius: 22%;
     background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
 }
 
+/* Links Styling */
+.footer-links a,
+a.apps-app-link {
+    text-decoration: none;
+}
+
+/* Layout & Structure */
+.app-description p,
+li,
+.app-privacy-content-section {
+    text-align: start;
+}
+
+.app-item {
+    border-width: var(--border-width-medium);
+    border-style: solid;
+    border-color: var(--divider-color);
+    border-radius: var(--corner-radius);
+}
+
+.apps-app-title {
+    margin: var(--spacing-small);
+}
 
 .screenshots-gallery {
     display: flex;
@@ -160,7 +131,7 @@ a.apps-app-link {
     width: 100%;
     border-width: var(--border-width-bold);
     border-style: dashed;
-    border-color: var(--divider-color); 
+    border-color: var(--divider-color);
     color: var(--secondary-text-color);
     padding: var(--spacing-large) 0;
     border-radius: var(--corner-radius);
@@ -185,38 +156,35 @@ a.apps-app-link {
 
 .home-main {
     display: flex;
-    justify-content: center; /* по горизонтали */
-    align-items: center;     /* по вертикали */
-    height: 75vh;           /* высота на весь экран */
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
     text-align: center;
-  }
+}
 
 .home-links {
     display: flex;
     flex-direction: column;
-    gap: var(--spacing-large); 
+    gap: var(--spacing-large);
 }
 
 .footer-links {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-small); 
+    gap: var(--spacing-small);
 }
 
 .divider {
     color: var(--divider-color);
-    border: var(--border-width-medium); 
+    border: var(--border-width-medium);
     border-style: solid;
 }
 
-.app-list-container {
+.apps-grid-container {
     display: grid;
 }
 
-.app-item {
-    /*border: 1px solid var(--divider-color);*/
-}
-
+/* Media Queries */
 @media (orientation: landscape) {
     .apps-app-icon,
     .app-icon img {
@@ -232,13 +200,12 @@ a.apps-app-link {
         gap: var(--spacing-large);
     }
 
-    .app-list-container {
+    .apps-grid-container {
         max-width: 1200px;
         margin-left: auto;
         margin-right: auto;
         grid-template-columns: repeat(7, 1fr);
-        /*grid-template-columns: repeat(auto-fill, minmax(75px, 1fr));*/
-        gap: 30px;
+        gap: var(--spacing-medium)
     }
 
     .app-container,
@@ -252,7 +219,7 @@ a.apps-app-link {
         line-height: 1.5;
     }
 
-    .app-list-container p {
+    .apps-grid-container p {
         font-size: 14px;
     }
 }
@@ -266,7 +233,7 @@ a.apps-app-link {
         width: auto;
         height: var(--icon-size-portrait);
     }
-    
+
     .app-icon img {
         display: none;
     }
@@ -282,15 +249,15 @@ a.apps-app-link {
 
     .screenshots-gallery {
         gap: 20px;
-        flex-wrap: wrap; /* В мобильном виде разрешаем перенос */
+        flex-wrap: wrap;
     }
 
-    .app-list-container {
-        grid-template-columns: repeat(4, 1fr); 
+    .apps-grid-container {
+        grid-template-columns: repeat(4, 1fr);
         gap: 20px;
     }
 
-    .app-list-container p {
+    .apps-grid-container p {
         font-size: 12px;
     }
 }

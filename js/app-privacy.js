@@ -18,7 +18,7 @@ async function loadPrivacyData() {
     
     // Update content
     document.getElementById("app-privacy-title").textContent = `${app.displayName} Privacy Policy`;
-    document.getElementById("app-privacy-updated").textContent = `Updated ${app.privacyUpdatedDate}`;
+    document.getElementById("app-privacy-updated-date").textContent = `Updated ${app.privacyUpdatedDate}`;
     document.getElementById("app-name").textContent = app.displayName;
     document.getElementById("email-link").href = `mailto:${app.email}`;
     document.getElementById("email-link").textContent = "email me";
