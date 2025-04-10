@@ -1,29 +1,29 @@
 /* Typography */
 p {
-    color: var(--primary-text-color);
+    color: var(--text-primary-color);
 }
 
 h1 {
-    color: var(--primary-text-color);
+    color: var(--text-primary-color);
     font-weight: 700; /* bold */
 }
 
 h2 {
-    color: var(--primary-text-color);
+    color: var(--text-primary-color);
     font-weight: 600;
 }
 
 h3 {
-    color: var(--primary-text-color);
+    color: var(--text-primary-color);
     font-weight: 500;
 }
 
 .secondary-text {
-    color: var(--secondary-text-color);
+    color: var(--text-secondary-color);
 }
 
 h4 {
-    color: var(--primary-text-color);
+    color: var(--text-primary-color);
     font-weight: 400; /* normal */
 }
 

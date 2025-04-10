@@ -1,24 +1,42 @@
 :root {
     --body-background-color: white;
-    --primary-text-color: black;
-    --secondary-text-color: gray;
-    --link-color: rgb(0 122 255); /* color(display-p3 0.039216 0.517647 1.000000 / 1.000000); */
+
+    --text-primary-color: black;
+    --text-secondary-color: gray;
+
+    --link-color: rgb(0 122 255);
+    --link-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+
     --btn-background-color: rgb(0 122 255);
+    --btn-background-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+
     --btn-background-color-hover: rgb(0 122 255 / 80%);
+    --btn-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 0.8);
+
     --btn-text-color: white;
+
     --app-icon-border-color: rgb(0 0 0 / 5%);
+
     --divider-color: rgb(0 0 0 / 15%);
 }
 
 @media (prefers-color-scheme: dark) {   
     :root {
         --body-background-color: black;
-        --primary-text-color: white;
-        --secondary-text-color: gray;
+        --text-primary-color: white;
+        --text-secondary-color: gray;
+
         --link-color: rgb(10 132 255);
+        --link-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+
         --btn-background-color: rgb(10 132 255);
-        --btn-background-color-hover: rgb(0 102 204);
+        --btn-background-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+
+        --btn-background-color-hover: rgb(0 102 204 / 80%);
+        --btn-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 0.8);
+
         --app-icon-border-color: black;
+
         --divider-color: rgb(255 255 255 / 25%);
 
         --app-icon-gradient-top: #313131;

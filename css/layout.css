@@ -1,8 +1,10 @@
 :root {
+    --spacing-ultra-large: 4rem;
     --spacing-large: 2rem;
     --spacing-medium: 1rem;
     --spacing-small: 0.5rem;
-
+    --spacing-ultra-small: 0.25rem;
+    
     --border-width-bold: 1px;
     --border-width-medium: 0.5px;
     --border-width-thin: 0.25px;
@@ -51,9 +53,20 @@ body {
 }
 
 /* Links Styling */
+a,
 .footer-links a,
-a.apps-app-link {
+.apps-app-link a {
     text-decoration: none;
+}
+
+.btn-link:hover,
+.apps-app-link a:hover {
+    text-decoration: none;
+}
+
+a:hover,
+.footer-links a:hover {
+    text-decoration: underline;
 }
 
 /* Layout & Structure */
@@ -64,10 +77,8 @@ li,
 }
 
 .app-item {
-    border-width: var(--border-width-medium);
-    border-style: solid;
-    border-color: var(--divider-color);
-    border-radius: var(--corner-radius);
+    /*border-style: solid;*/
+    padding-bottom: var(--spacing-medium);
 }
 
 .apps-app-title {
@@ -132,7 +143,7 @@ li,
     border-width: var(--border-width-bold);
     border-style: dashed;
     border-color: var(--divider-color);
-    color: var(--secondary-text-color);
+    color: var(--text-secondary-color);
     padding: var(--spacing-large) 0;
     border-radius: var(--corner-radius);
 }
@@ -201,11 +212,11 @@ li,
     }
 
     .apps-grid-container {
-        max-width: 1200px;
+        max-width: 1250px;
         margin-left: auto;
         margin-right: auto;
         grid-template-columns: repeat(7, 1fr);
-        gap: var(--spacing-medium)
+        gap: var(--spacing-small)
     }
 
     .app-container,
@@ -213,14 +224,6 @@ li,
         max-width: 800px;
         margin-left: auto;
         margin-right: auto;
-    }
-
-    p {
-        line-height: 1.5;
-    }
-
-    .apps-grid-container p {
-        font-size: 14px;
     }
 }
 
@@ -254,10 +257,5 @@ li,
 
     .apps-grid-container {
         grid-template-columns: repeat(4, 1fr);
-        gap: 20px;
-    }
-
-    .apps-grid-container p {
-        font-size: 12px;
     }
 }

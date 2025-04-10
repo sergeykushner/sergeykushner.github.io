@@ -28,14 +28,16 @@ async function loadApps() {
         const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
 
         appDiv.innerHTML = `
-            <a href="app.html?id=${app.id}" class="apps-app-link">
-                <img src="${iconUrl}" class="apps-app-icon" alt="${app.title}" 
-                     onerror="if(this.getAttribute('data-tried-light') !== 'true') { 
-                         this.setAttribute('data-tried-light', 'true'); 
-                         this.src='${getCloudinaryImageUrl(app.id, 'app-icon', 'png', false)}'; 
-                     }">
-                <p class="apps-app-title">${app.displayName}</p>
-            </a>
+            <div class="apps-app-link">
+                <a href="app.html?id=${app.id}">
+                    <img src="${iconUrl}" class="apps-app-icon" alt="${app.title}" 
+                         onerror="if(this.getAttribute('data-tried-light') !== 'true') { 
+                             this.setAttribute('data-tried-light', 'true'); 
+                             this.src='${getCloudinaryImageUrl(app.id, 'app-icon', 'png', false)}'; 
+                         }">
+                    <p class="apps-app-title">${app.displayName}</p>
+                </a>
+            </div>
         `;
         container.appendChild(appDiv);
     });
