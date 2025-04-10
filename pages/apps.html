@@ -1,22 +1,37 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Apps</title>
     <link rel="stylesheet" href="../css/main.css?v=2.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-EEM4PWGR89');
+    </script>
 </head>
+
 <body>
     <div class="apps-grid-container"></div>
-    
+
     <footer>
         <label class="filter-checkbox secondary-text">
-            <input type="checkbox" id="show-allowed-only" >
+            <input type="checkbox" id="show-allowed-only">
             Show only apps that have source code
         </label>
     </footer>
-    
+
     <script src="../js/cloudinary.js"></script>
     <script src="../js/apps.js"></script>
 </body>
+
 </html>

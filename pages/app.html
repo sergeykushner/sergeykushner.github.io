@@ -1,29 +1,42 @@
 <!DOCTYPE html>
 <html lang="en" prefix="og: http://ogp.me/ns#">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="description" content="" id="meta-description" />
-        <meta name="apple-mobile-web-app-title" content="" id="meta-app-title" />
-        <meta name="apple-mobile-web-app-capable" content="yes" />
-        <meta name="apple-itunes-app" content="" id="meta-app-store" />
-        
-        <!-- Open Graph Meta Tags -->
-        <meta property="og:url" content="" id="meta-og-url" />
-        <meta property="og:type" content="website" />
-        <meta property="og:site_name" content="" id="meta-og-site-name" />
-        <meta property="og:title" content="" id="meta-og-title" />
-        <meta property="og:description" content="" id="meta-og-description" />
-        <meta property="og:image" content="" id="meta-og-image" />
-        <meta property="og:image:alt" content="App Icon" />
-        
-        <title id="page-title"></title>
-        
-        <link rel="stylesheet" href="../css/main.css?v=2.0" />
-    </head>
-    
-    <body>
-        <div class="app-container">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" id="meta-description" />
+    <meta name="apple-mobile-web-app-title" content="" id="meta-app-title" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-itunes-app" content="" id="meta-app-store" />
+
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:url" content="" id="meta-og-url" />
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="" id="meta-og-site-name" />
+    <meta property="og:title" content="" id="meta-og-title" />
+    <meta property="og:description" content="" id="meta-og-description" />
+    <meta property="og:image" content="" id="meta-og-image" />
+    <meta property="og:image:alt" content="App Icon" />
+
+    <title id="page-title"></title>
+
+    <link rel="stylesheet" href="../css/main.css?v=2.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'G-EEM4PWGR89');
+    </script>
+</head>
+
+<body>
+    <div class="app-container">
         <div>
             <picture class="app-icon">
                 <img src="" alt="App Icon" id="app-icon" />
@@ -34,7 +47,7 @@
         <div id="screenshots-container" class="screenshots-gallery">
             <!-- Скриншоты будут добавлены динамически из JS -->
         </div>
-        
+
         <div class="app-description" id="app-description">
             <!-- Контент будет добавлен динамически из JS -->
         </div>
@@ -52,13 +65,15 @@
         <footer class="footer-links">
             <a href="app-privacy.html" id="privacy-link" title="Privacy Policy">Privacy Policy</a>
             <div class="divider"></div>
-            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" title="Terms of Use (EULA)" target="_blank">Terms of Use</a>
+            <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" title="Terms of Use (EULA)"
+                target="_blank">Terms of Use</a>
             <div class="divider"></div>
             <a href="" id="email-link" title="Email">Email</a>
         </footer>
-        
+
         <script src="../js/cloudinary.js"></script>
         <script src="../js/app.js"></script>
-        </div>
-    </body>
+    </div>
+</body>
+
 </html>
