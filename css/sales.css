@@ -89,7 +89,7 @@
 
 .chart-bar {
     display: inline-block;
-    margin: 0 var(--spacing-medium);
+    margin: var(--spacing-medium);
     position: relative;
 }
 
@@ -127,7 +127,7 @@
 
 .bar-icon {
     position: absolute;
-    top: -50px;
+    top: -60px;
     left: 50%;
     transform: translateX(-50%);
 }
