@@ -52,7 +52,7 @@
 .stats-card {
     /*background-color: var(--card-background-color);*/
     border-radius: var(--corner-radius);
-    border: var(--border-width-medium);
+    border: var(--border-width-bold);
     border-style: solid;
     border-color: var(--divider-color);
     padding: 0 var(--spacing-large);
@@ -98,7 +98,7 @@
 .sales-chart-container {
     margin-top: var(--spacing-large);
     /*background-color: var(--card-background-color);*/
-    border: var(--border-width-medium);
+    border: var(--border-width-bold);
     border-style: solid;
     border-color: var(--divider-color);
     border-radius: var(--corner-radius);
