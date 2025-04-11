@@ -132,11 +132,12 @@
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: var(--text-secondary-color);
+    color: var(--text-primary-color);
 }
 
 /* Стили для значения */
 .bar-value {
+    max-width: 100px;
     margin-left: var(--spacing-medium);
     text-align: left;
     /*font-weight: bold;*/
@@ -144,6 +145,7 @@
 
 /* Контейнер для дат */
 .dates-container {
+    width: 130px;
     display: flex;
     flex-direction: column;
     margin-left: var(--spacing-medium);
@@ -209,9 +211,6 @@
     height: var(--icon-size-ultra-small);
     border-radius: var(--icon-corner-radius);
     background-color: var(--app-bundle-placeholder-color);
-    border: var(--border-width-medium);
-    border-style: solid;
-    border-color: var(--divider-color);
 }
 
 /* Адаптивность для мобильных устройств */

@@ -31,6 +31,10 @@ a {
     color: var(--link-color);
 }
 
+.date-item {
+    font-size: 0.75rem; /* 12px */
+}
+
 /* Media Queries */
 @media (orientation: landscape) {
     p {
@@ -43,8 +47,7 @@ a {
 }
 
 @media (orientation: portrait) {
-    .apps-grid-container p,
-    .date-item {
+    .apps-grid-container p {
         font-size: 0.75rem; /* 12px */
     }
 }
