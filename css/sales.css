@@ -75,8 +75,7 @@
     width: 100%;
 }
 
-#sales-chart-container {
-    width: 100%;
+.sales-chart-container {
     margin-top: var(--spacing-large);
     /*background-color: var(--card-background-color);*/
     border: var(--border-width-medium);
