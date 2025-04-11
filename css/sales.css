@@ -8,12 +8,12 @@
 /* Стили для контейнера с ошибкой */
 .error-container {
     max-width: 1200px;
-    margin: 0 auto var(--spacing-large);
-    text-align: center;
     padding: var(--spacing-large);
-    border: var(--border-width-medium);
-    border-style: solid;
-    border-color: var(--divider-color);
+    margin: var(--spacing-large) auto;
+    background-color: var(--card-background-color);
+    /*border-width: var(--border-width-bold);
+    border-style: dashed;
+    border-color: var(--divider-color);*/
     border-radius: var(--corner-radius);
 }
 
@@ -102,7 +102,8 @@
     border-style: solid;
     border-color: var(--divider-color);
     border-radius: var(--corner-radius);
-    padding: var(--spacing-large);
+    padding-inline: var(--spacing-large);
+    padding-top: var(--spacing-medium);
 }
 
 /* Контейнер для баров */
@@ -136,8 +137,7 @@
 
 /* Стили для значения */
 .bar-value {
-    margin-left: var(--spacing-large);
-    width: 80px;
+    margin-left: var(--spacing-medium);
     text-align: left;
     /*font-weight: bold;*/
 }
@@ -146,7 +146,7 @@
 .dates-container {
     display: flex;
     flex-direction: column;
-    width: 140px;
+    margin-left: var(--spacing-medium);
 }
 
 /* Стили для элементов дат */
@@ -216,7 +216,12 @@
 }
 
 /* Адаптивность для мобильных устройств */
-@media (max-width: 768px) {
+@media (orientation: portrait) {
+    .sales-chart-container {
+        padding-inline: var(--spacing-medium);
+        padding-top: var(--spacing-medium);
+    }
+
     .stats-grid {
         grid-template-columns: 1fr;
     }
@@ -225,19 +230,6 @@
         flex-direction: column;
         align-items: center;
         gap: var(--spacing-small);
-    }
-    
-    .bar-icon img, .app-bundle-placeholder {
-        width: 24px;
-        height: 24px;
-    }
-    
-    .bar-label {
-        width: 100px;
-    }
-    
-    .bar-value {
-        width: 60px;
     }
     
     .dates-container {

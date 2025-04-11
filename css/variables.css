@@ -2,7 +2,7 @@
     /* Цвета: светлая тема (sRGB fallback) */
     /* CSS Color Names Sorted by Lightness and Hue http://davidbau.com/colors/ */
     --body-background-color: white;
-    --card-background-color: snow;
+    --card-background-color: mistyrose;
   
     --text-primary-color: black;
     --text-secondary-color: gray;
@@ -61,7 +61,7 @@
   @media (prefers-color-scheme: dark) {
     :root {
       --body-background-color: black;
-      --card-background-color: #2D3748;
+      --card-background-color: mistyrose
   
       --text-primary-color: white;
       --text-secondary-color: gray;
