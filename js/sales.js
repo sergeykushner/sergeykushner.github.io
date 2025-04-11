@@ -13,11 +13,19 @@ async function loadSalesData() {
         let flippaProceeds = 0;
         let flippaUnits = 0;
 
+        // Счетчик общего количества приложений (исключая App Bundle и Template)
+        let totalAppsCount = 0;
+
         // Массив для данных графика
         const chartData = [];
 
         // Обрабатываем каждое приложение
         apps.forEach(app => {
+            // Подсчитываем общее количество приложений (исключая App Bundle и Template)
+            if (app.type !== "App Bundle" && app.type !== "Template") {
+                totalAppsCount++;
+            }
+
             // Данные App Store
             if (app.appStoreUnits) {
                 appStoreUnits += app.appStoreUnits;
@@ -68,10 +76,14 @@ async function loadSalesData() {
                     flippaProceeds: flippaNet,
                     total: appProceeds + flippaNet,
                     releaseDate: app.releaseDate || "",
+                    saleDate: app.saleDate || "",
                     type: app.type || "App" // Добавляем тип приложения
                 });
             }
         });
+
+        // Обновляем счетчик приложений в интерфейсе
+        document.querySelector("#apps-count span").textContent = totalAppsCount;
 
         // Сортируем данные графика по дате релиза (от новых к старым)
         chartData.sort((a, b) => {
@@ -147,7 +159,7 @@ function updateStatsDisplay(
     document.getElementById("app-store-proceeds").textContent = formatMoney(appStoreProceeds);
     document.getElementById("app-store-units").textContent = formatUnits(appStoreUnits);
 
-    // Flippa статистика - количество проданных приложений
+    // Flippa статистика - количество проданных приложений на площадке Flippa
     document.getElementById("flippa-sales").textContent = formatMoney(flippaSales);
     document.getElementById("flippa-proceeds").textContent = formatMoney(flippaProceeds);
     document.getElementById("flippa-units").textContent = formatUnits(flippaUnits);
@@ -155,7 +167,6 @@ function updateStatsDisplay(
     // Общая статистика - не показываем общие Units
     document.getElementById("total-sales").textContent = formatMoney(appStoreSales + flippaSales);
     document.getElementById("total-proceeds").textContent = formatMoney(appStoreProceeds + flippaProceeds);
-    // document.getElementById("total-units").textContent = formatUnits(appStoreUnits + flippaUnits);
 }
 
 // Функция построения графика
@@ -249,25 +260,51 @@ function buildSalesChart(data) {
         value.textContent = `$${Math.round(app.total)}`;
         barContainer.appendChild(value);
         
+        // Контейнер для дат
+        const datesContainer = document.createElement("div");
+        datesContainer.className = "dates-container";
+        
         // Добавляем дату релиза
         if (app.releaseDate) {
-            const dateElement = document.createElement("div");
-            dateElement.className = "release-date";
+            const releaseDateElement = document.createElement("div");
+            releaseDateElement.className = "date-item release-date";
             
             // Форматируем дату для отображения
-            let formattedDate = app.releaseDate;
+            let formattedReleaseDate = app.releaseDate;
             try {
                 const date = new Date(app.releaseDate);
                 if (!isNaN(date.getTime())) {
-                    formattedDate = date.toLocaleDateString();
+                    formattedReleaseDate = date.toLocaleDateString();
                 }
             } catch (e) {
                 // Если формат даты некорректный, оставляем как есть
             }
             
-            dateElement.textContent = formattedDate;
-            barContainer.appendChild(dateElement);
+            releaseDateElement.textContent = `Release: ${formattedReleaseDate}`;
+            datesContainer.appendChild(releaseDateElement);
         }
+        
+        // Добавляем дату продажи
+        if (app.saleDate) {
+            const saleDateElement = document.createElement("div");
+            saleDateElement.className = "date-item sale-date";
+            
+            // Форматируем дату для отображения
+            let formattedSaleDate = app.saleDate;
+            try {
+                const date = new Date(app.saleDate);
+                if (!isNaN(date.getTime())) {
+                    formattedSaleDate = date.toLocaleDateString();
+                }
+            } catch (e) {
+                // Если формат даты некорректный, оставляем как есть
+            }
+            
+            saleDateElement.textContent = `Sale: ${formattedSaleDate}`;
+            datesContainer.appendChild(saleDateElement);
+        }
+        
+        barContainer.appendChild(datesContainer);
         
         // Добавляем строку в контейнер
         barsContainer.appendChild(barContainer);

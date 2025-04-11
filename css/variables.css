@@ -1,0 +1,98 @@
+:root {
+    /* Цвета: светлая тема (sRGB fallback) */
+    /* CSS Color Names Sorted by Lightness and Hue http://davidbau.com/colors/ */
+    --body-background-color: white;
+    --card-background-color: snow;
+  
+    --text-primary-color: black;
+    --text-secondary-color: gray;
+  
+    --link-color: rgb(0 122 255);
+    --btn-background-color: rgb(0 122 255);
+    --btn-background-color-hover: rgb(0 122 255 / 80%);
+    --btn-text-color: white;
+  
+    --app-store-segment-color: rgb(50 173 230); /*iOS System Cyan*/
+    --flippa-segment-color: rgb(52 199 89); /*iOS System Green*/
+    --app-bundle-placeholder-color: gray;
+  
+    --app-icon-border-color: rgb(0 0 0 / 5%);
+    --divider-color: rgb(0 0 0 / 15%);
+  
+    /* Радиусы */
+    --corner-radius: 10px;
+    --icon-corner-radius: 22%;
+  
+    /* Размеры иконок */
+    --icon-size-landscape: 75px;
+    --icon-size-portrait: 60px;
+    --icon-size-ultra-small: 20px;
+  
+    /* Высота бейджей */
+    --badge-height-landscape: 50px;
+    --badge-height-portrait: 50px;
+  
+    /* Отступы */
+    --spacing-ultra-large: 4rem;
+    --spacing-large: 2rem;
+    --spacing-medium: 1rem;
+    --spacing-small: 0.5rem;
+    --spacing-ultra-small: 0.25rem;
+  
+    /* Границы */
+    --border-width-bold: 1px;
+    --border-width-medium: 0.5px;
+    --border-width-thin: 0.25px;
+  }
+  
+  /* 💡 Расширенные цвета (display-p3) */
+  @supports (color: color(display-p3 1 1 1)) {
+    :root {
+      --link-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+      --btn-background-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+      --btn-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 0.8);
+
+      --app-store-segment-color: color(display-p3 0.196078 0.678431 0.901961 / 1.000000); /*iOS System Cyan*/
+      --flippa-segment-color: color(display-p3 0.203922 0.780392 0.349020 / 1.000000); /*iOS System Green*/
+    }
+  }
+  
+  /* 🌙 Тёмная тема: sRGB */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --body-background-color: black;
+      --card-background-color: #2D3748;
+  
+      --text-primary-color: white;
+      --text-secondary-color: gray;
+  
+      --link-color: rgb(10 132 255);
+      --btn-background-color: rgb(10 132 255);
+      --btn-background-color-hover: rgb(0 102 204 / 80%);
+  
+      --app-store-segment-color: rgb(100 210 255); /*iOS System Cyan*/
+      --flippa-segment-color: rgb(48 209 88); /*iOS System Green*/
+      --app-bundle-placeholder-color: gray;
+  
+      --app-icon-border-color: black;
+      --divider-color: rgb(255 255 255 / 25%);
+  
+      --app-icon-gradient-top: #313131;
+      --app-icon-gradient-bottom: #151515;
+    }
+  }
+  
+  /* 🌙 Тёмная тема + p3 */
+  @media (prefers-color-scheme: dark) {
+    @supports (color: color(display-p3 1 1 1)) {
+      :root {
+        --link-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+        --btn-background-color: color(display-p3 0.039216 0.517647 1.000000 / 1.000000);
+        --btn-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 0.8);
+
+        --app-store-segment-color: color(display-p3 0.392157 0.823529 1.000000 / 1.000000);
+        --flippa-segment-color: color(display-p3 0.188235 0.819608 0.345098 / 1.000000);
+      }
+    }
+  }
+  

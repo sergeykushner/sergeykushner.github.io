@@ -38,12 +38,12 @@ a {
     }
 
     .apps-grid-container p {
-        font-size: 14px;
+        font-size: 0.875rem; /* 14px */
     }
 }
 
 @media (orientation: portrait) {
     .apps-grid-container p {
-        font-size: 12px;
+        font-size: 0.75rem; /* 12px */
     }
 }
