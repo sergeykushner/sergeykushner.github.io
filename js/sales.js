@@ -4,117 +4,164 @@ async function loadSalesData() {
         // Загружаем данные из JSON файла
         const response = await fetch("../data/apps-metadata.json");
         const apps = await response.json();
-
-        // Инициализируем переменные для подсчета
-        let appStoreSales = 0;
-        let appStoreProceeds = 0;
-        let appStoreUnits = 0;
-        let flippaSales = 0;
-        let flippaProceeds = 0;
-        let flippaUnits = 0;
-
-        // Счетчик общего количества приложений (исключая App Bundle и Template)
-        let totalAppsCount = 0;
-
-        // Массив для данных графика
-        const chartData = [];
-
-        // Обрабатываем каждое приложение
-        apps.forEach(app => {
-            // Подсчитываем общее количество приложений (исключая App Bundle и Template)
-            if (app.type !== "App Bundle" && app.type !== "Template") {
-                totalAppsCount++;
-            }
-
-            // Данные App Store
-            if (app.appStoreUnits) {
-                appStoreUnits += app.appStoreUnits;
-            }
-            
-            if (app.appStoreSales) {
-                appStoreSales += app.appStoreSales;
-            }
-            
-            if (app.appStoreProceeds) {
-                appStoreProceeds += app.appStoreProceeds;
-            }
-
-            // Данные Flippa
-            if (app.salePrice) {
-                let totalFees = 0;
-                
-                // Расчет комиссий
-                if (app.listingFee && Array.isArray(app.listingFee)) {
-                    totalFees = app.listingFee.reduce((sum, fee) => sum + fee, 0);
-                }
-                
-                // Проверяем successFee на число или строку и обрабатываем соответственно
-                if (app.successFee !== undefined && app.successFee !== null) {
-                    // Преобразуем в число для обеспечения правильного расчета
-                    const successFeeValue = parseFloat(app.successFee);
-                    if (!isNaN(successFeeValue)) {
-                        totalFees += successFeeValue;
-                    }
-                }
-                
-                flippaSales += app.salePrice;
-                flippaProceeds += (app.salePrice - totalFees);
-                flippaUnits++; // Каждая продажа на Flippa считается как 1 единица
-            }
-
-            // Добавляем данные в массив для графика, если есть продажи
-            if ((app.appStoreSales || app.salePrice) && app.id) {
-                const appProceeds = app.appStoreProceeds || 0;
-                const salePrice = app.salePrice || 0;
-                const totalFees = calculateTotalFees(app);
-                const flippaNet = salePrice > 0 ? salePrice - totalFees : 0;
-                
-                chartData.push({
-                    id: app.id,
-                    displayName: app.displayName || app.id,
-                    appStoreProceeds: appProceeds,
-                    flippaProceeds: flippaNet,
-                    total: appProceeds + flippaNet,
-                    releaseDate: app.releaseDate || "",
-                    saleDate: app.saleDate || "",
-                    type: app.type || "App" // Добавляем тип приложения
-                });
-            }
-        });
-
-        // Обновляем счетчик приложений в интерфейсе
-        document.querySelector("#apps-count span").textContent = totalAppsCount;
-
-        // Сортируем данные графика по дате релиза (от новых к старым)
-        chartData.sort((a, b) => {
-            // Создаем объекты Date из строк
-            const dateA = new Date(a.releaseDate);
-            const dateB = new Date(b.releaseDate);
-            
-            // Проверяем, валидны ли даты
-            const isValidDateA = !isNaN(dateA.getTime());
-            const isValidDateB = !isNaN(dateB.getTime());
-            
-            // Обрабатываем случаи невалидных дат
-            if (!isValidDateA && !isValidDateB) return 0;
-            if (!isValidDateA) return 1;
-            if (!isValidDateB) return -1;
-            
-            // Сортируем от новых к старым
-            return dateB - dateA;
-        });
-
-        // Обновляем данные в интерфейсе
-        updateStatsDisplay(
-            appStoreSales, appStoreProceeds, appStoreUnits,
-            flippaSales, flippaProceeds, flippaUnits
-        );
-
-        // Строим график со всеми приложениями
-        buildSalesChart(chartData);
+        
+        // Скрываем контейнер с ошибкой, если он был показан
+        document.getElementById("error-container").style.display = "none";
+        
+        // Обрабатываем данные
+        processAppsData(apps);
     } catch (error) {
-        console.error("Ошибка при загрузке или обработке данных:", error);
+        console.error("Ошибка при загрузке данных:", error);
+        
+        // Показываем контейнер с ошибкой
+        const errorContainer = document.getElementById("error-container");
+        errorContainer.style.display = "block";
+        
+        // Настраиваем обработчик загрузки файла
+        const fileInput = document.getElementById("manual-file-upload");
+        fileInput.value = ""; // Сбрасываем предыдущий выбранный файл
+        
+        // Очищаем старый обработчик события, если он был
+        const newFileInput = fileInput.cloneNode(true);
+        fileInput.parentNode.replaceChild(newFileInput, fileInput);
+        
+        // Добавляем новый обработчик события
+        newFileInput.addEventListener("change", function(event) {
+            const file = event.target.files[0];
+            if (file) {
+                const reader = new FileReader();
+                reader.onload = function(e) {
+                    try {
+                        const apps = JSON.parse(e.target.result);
+                        // Скрываем контейнер с ошибкой
+                        errorContainer.style.display = "none";
+                        // Обрабатываем данные
+                        processAppsData(apps);
+                    } catch (parseError) {
+                        console.error("Ошибка при обработке файла:", parseError);
+                        document.getElementById("error-message").textContent = 
+                            "Некорректный формат файла. Пожалуйста, загрузите правильный JSON файл.";
+                    }
+                };
+                reader.readAsText(file);
+            }
+        });
+        
+        // Очищаем контейнер с графиком
+        const chartContainer = document.getElementById("sales-chart-container");
+        chartContainer.innerHTML = "";
     }
+}
+
+// Функция обработки данных приложений
+function processAppsData(apps) {
+    // Инициализируем переменные для подсчета
+    let appStoreSales = 0;
+    let appStoreProceeds = 0;
+    let appStoreUnits = 0;
+    let flippaSales = 0;
+    let flippaProceeds = 0;
+    let flippaUnits = 0;
+
+    // Счетчик общего количества приложений (исключая App Bundle и Template)
+    let totalAppsCount = 0;
+
+    // Массив для данных графика
+    const chartData = [];
+
+    // Обрабатываем каждое приложение
+    apps.forEach(app => {
+        // Подсчитываем общее количество приложений (исключая App Bundle и Template)
+        if (app.type !== "App Bundle" && app.type !== "Template") {
+            totalAppsCount++;
+        }
+
+        // Данные App Store
+        if (app.appStoreUnits) {
+            appStoreUnits += app.appStoreUnits;
+        }
+        
+        if (app.appStoreSales) {
+            appStoreSales += app.appStoreSales;
+        }
+        
+        if (app.appStoreProceeds) {
+            appStoreProceeds += app.appStoreProceeds;
+        }
+
+        // Данные Flippa
+        if (app.salePrice) {
+            let totalFees = 0;
+            
+            // Расчет комиссий
+            if (app.listingFee && Array.isArray(app.listingFee)) {
+                totalFees = app.listingFee.reduce((sum, fee) => sum + fee, 0);
+            }
+            
+            // Проверяем successFee на число или строку и обрабатываем соответственно
+            if (app.successFee !== undefined && app.successFee !== null) {
+                // Преобразуем в число для обеспечения правильного расчета
+                const successFeeValue = parseFloat(app.successFee);
+                if (!isNaN(successFeeValue)) {
+                    totalFees += successFeeValue;
+                }
+            }
+            
+            flippaSales += app.salePrice;
+            flippaProceeds += (app.salePrice - totalFees);
+            flippaUnits++; // Каждая продажа на Flippa считается как 1 единица
+        }
+
+        // Добавляем данные в массив для графика, если есть продажи
+        if ((app.appStoreSales || app.salePrice) && app.id) {
+            const appProceeds = app.appStoreProceeds || 0;
+            const salePrice = app.salePrice || 0;
+            const totalFees = calculateTotalFees(app);
+            const flippaNet = salePrice > 0 ? salePrice - totalFees : 0;
+            
+            chartData.push({
+                id: app.id,
+                displayName: app.displayName || app.id,
+                appStoreProceeds: appProceeds,
+                flippaProceeds: flippaNet,
+                total: appProceeds + flippaNet,
+                releaseDate: app.releaseDate || "",
+                saleDate: app.saleDate || "",
+                type: app.type || "App" // Добавляем тип приложения
+            });
+        }
+    });
+
+    // Обновляем счетчик приложений в интерфейсе
+    document.querySelector("#apps-count span").textContent = totalAppsCount;
+
+    // Сортируем данные графика по дате релиза (от новых к старым)
+    chartData.sort((a, b) => {
+        // Создаем объекты Date из строк
+        const dateA = new Date(a.releaseDate);
+        const dateB = new Date(b.releaseDate);
+        
+        // Проверяем, валидны ли даты
+        const isValidDateA = !isNaN(dateA.getTime());
+        const isValidDateB = !isNaN(dateB.getTime());
+        
+        // Обрабатываем случаи невалидных дат
+        if (!isValidDateA && !isValidDateB) return 0;
+        if (!isValidDateA) return 1;
+        if (!isValidDateB) return -1;
+        
+        // Сортируем от новых к старым
+        return dateB - dateA;
+    });
+
+    // Обновляем данные в интерфейсе
+    updateStatsDisplay(
+        appStoreSales, appStoreProceeds, appStoreUnits,
+        flippaSales, flippaProceeds, flippaUnits
+    );
+
+    // Строим график со всеми приложениями
+    buildSalesChart(chartData);
 }
 
 // Функция расчета общих комиссий
@@ -274,7 +321,7 @@ function buildSalesChart(data) {
             try {
                 const date = new Date(app.releaseDate);
                 if (!isNaN(date.getTime())) {
-                    formattedReleaseDate = date.toLocaleDateString();
+                    formattedReleaseDate = date.toISOString().split('T')[0]; // Формат yyyy-mm-dd
                 }
             } catch (e) {
                 // Если формат даты некорректный, оставляем как есть
@@ -294,7 +341,7 @@ function buildSalesChart(data) {
             try {
                 const date = new Date(app.saleDate);
                 if (!isNaN(date.getTime())) {
-                    formattedSaleDate = date.toLocaleDateString();
+                    formattedSaleDate = date.toISOString().split('T')[0]; // Формат yyyy-mm-dd
                 }
             } catch (e) {
                 // Если формат даты некорректный, оставляем как есть

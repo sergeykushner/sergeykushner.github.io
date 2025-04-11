@@ -27,6 +27,10 @@
     </header>
 
     <main>
+        <div id="error-container" class="error-container" style="display: none;">
+            <p id="error-message">Не удалось загрузить данные. Пожалуйста, загрузите файл apps-metadata.json вручную:</p>
+            <input type="file" id="manual-file-upload" accept=".json">
+        </div>
         <div class="sales-container">
             <div class="total-section">
                 <h2 id="apps-count" class="total-apps-count">Total <span>0</span> Apps</h2>

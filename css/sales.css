@@ -5,6 +5,26 @@
     margin: 0 auto;
 }
 
+/* Стили для контейнера с ошибкой */
+.error-container {
+    max-width: 1200px;
+    margin: 0 auto var(--spacing-large);
+    text-align: center;
+    padding: var(--spacing-large);
+    border: var(--border-width-medium);
+    border-style: solid;
+    border-color: var(--divider-color);
+    border-radius: var(--corner-radius);
+}
+
+.error-container p {
+    color: var(--text-primary-color);
+}
+
+.error-container input {
+    color: var(--text-primary-color);
+}
+
 .total-section,
 .chart-section {
     margin-bottom: var(--spacing-ultra-large);
