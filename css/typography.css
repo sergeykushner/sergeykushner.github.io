@@ -43,7 +43,8 @@ a {
 }
 
 @media (orientation: portrait) {
-    .apps-grid-container p {
+    .apps-grid-container p,
+    .date-item {
         font-size: 0.75rem; /* 12px */
     }
 }

@@ -153,7 +153,6 @@
 .date-item {
     text-align: left;
     color: var(--text-secondary-color);
-    font-size: 0.75rem;
     margin-bottom: var(--spacing-ultra-small);
 }
 
