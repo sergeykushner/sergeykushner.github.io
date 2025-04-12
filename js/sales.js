@@ -66,6 +66,9 @@ function processAppsData(apps) {
     // Счетчик общего количества приложений (исключая App Bundle и Template)
     let totalAppsCount = 0;
 
+    // Объект для подсчета типов приложений
+    const appTypeCounter = {};
+
     // Массив для данных графика
     const chartData = [];
 
@@ -134,6 +137,23 @@ function processAppsData(apps) {
 
     // Обновляем счетчик приложений в интерфейсе
     document.querySelector("#apps-count span").textContent = totalAppsCount;
+
+    // Создаем строку с деталями по типам приложений
+    let appTypesDetails = "";
+    const typesArray = Object.entries(appTypeCounter);
+
+    if (typesArray.length > 0) {
+        const totalTypes = typesArray.reduce((sum, [_, count]) => sum + count, 0);
+        appTypesDetails = typesArray
+            .map(([type, count]) => `${count} ${type}`)
+            .join(" | ");
+
+        // Обновляем строку с деталями типов приложений
+        const appTypesElement = document.getElementById("app-types-details");
+        if (appTypesElement) {
+            appTypesElement.textContent = appTypesDetails;
+        }
+    }
 
     // Сортируем данные графика по дате релиза (от новых к старым)
     chartData.sort((a, b) => {

@@ -8,13 +8,13 @@
 /* Стили для контейнера с ошибкой */
 .error-container {
     max-width: 1200px;
-    padding: var(--spacing-large);
-    margin: var(--spacing-large) auto;
+    padding: var(--space-l);
+    margin: var(--space-l) auto;
     background-color: var(--card-background-color);
     /*border-width: var(--border-width-bold);
     border-style: dashed;
     border-color: var(--divider-color);*/
-    border-radius: var(--corner-radius);
+    border-radius: var(--border-radius-m);
 }
 
 .error-container p {
@@ -27,14 +27,22 @@
 
 .total-section,
 .chart-section {
-    margin-bottom: var(--spacing-ultra-large);
+    margin-bottom: var(--space-xxl);
 }
 
 /* Стиль для счетчика общего количества приложений */
 .total-apps-count {
     text-align: center;
-    margin-top: var(--spacing-medium);
-    margin-bottom: var(--spacing-medium);
+    margin-top: var(--space-m);
+    margin-bottom: var(--space-m);
+}
+
+.app-types-details {
+    text-align: center;
+    margin-top: var(--space-xs);
+    margin-bottom: var(--space-m);
+    color: var(--text-secondary-color);
+    font-size: 0.9em;
 }
 
 /*.total-apps-count span {
@@ -45,24 +53,24 @@
 .stats-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: var(--spacing-large);
-    margin-top: var(--spacing-large);
+    gap: var(--space-l);
+    margin-top: var(--space-l);
 }
 
 .stats-card {
     /*background-color: var(--card-background-color);*/
-    border-radius: var(--corner-radius);
+    border-radius: var(--border-radius-m);
     border: var(--border-width-bold);
     border-style: solid;
     border-color: var(--divider-color);
-    padding: 0 var(--spacing-large);
+    padding: 0 var(--space-l);
     /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
 }
 
 .stats-row {
     display: flex;
     justify-content: space-between;
-    margin: var(--spacing-medium) 0;
+    margin: var(--space-m) 0;
     color: var(--text-primary-color);
 }
 
@@ -74,21 +82,21 @@
 .chart-legend {
     display: flex;
     justify-content: center;
-    gap: var(--spacing-large);
-    margin: var(--spacing-medium) 0;
+    gap: var(--space-l);
+    margin: var(--space-m) 0;
     color: var(--text-secondary-color);
 }
 
 .legend-item {
     display: flex;
     align-items: center;
-    gap: var(--spacing-small);
+    gap: var(--space-s);
 }
 
 .legend-color {
-    width: var(--icon-size-ultra-small);
-    height: var(--icon-size-ultra-small);
-    border-radius: var(--icon-corner-radius);
+    width: var(--bar-height);
+    height: var(--bar-height);
+    border-radius: var(--icon-border-radius);
 }
 
 .chart-container {
@@ -96,14 +104,15 @@
 }
 
 .sales-chart-container {
-    margin-top: var(--spacing-large);
+    margin-top: var(--space-l);
     /*background-color: var(--card-background-color);*/
     border: var(--border-width-bold);
     border-style: solid;
     border-color: var(--divider-color);
-    border-radius: var(--corner-radius);
-    padding-inline: var(--spacing-large);
-    padding-top: var(--spacing-medium);
+    border-radius: var(--border-radius-m);
+    padding-inline: var(--space-l);
+    padding-top: var(--space-l);
+    padding-bottom: var(--space-m);
 }
 
 /* Контейнер для баров */
@@ -119,7 +128,7 @@
     display: flex;
     align-items: center;
     width: 100%;
-    margin-bottom: var(--spacing-medium);
+    margin-bottom: var(--space-m);
     position: relative;
 }
 
@@ -127,7 +136,7 @@
 .bar-label {
     position: relative;
     width: 100px;
-    margin-right: var(--spacing-medium);
+    margin-right: var(--space-m);
     text-align: left;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -138,8 +147,9 @@
 /* Стили для значения */
 .bar-value {
     max-width: 100px;
-    margin-left: var(--spacing-medium);
+    margin-left: var(--space-m);
     text-align: left;
+    color: var(--text-primary-color);
     /*font-weight: bold;*/
 }
 
@@ -148,14 +158,14 @@
     width: 130px;
     display: flex;
     flex-direction: column;
-    margin-left: var(--spacing-medium);
+    margin-left: var(--space-m);
 }
 
 /* Стили для элементов дат */
 .date-item {
     text-align: left;
     color: var(--text-secondary-color);
-    margin-bottom: var(--spacing-ultra-small);
+    margin-bottom: var(--space-xs);
 }
 
 /* Стили для даты релиза */
@@ -171,14 +181,14 @@
 /* Контейнер для сегментов баров */
 .bars-wrapper {
     display: flex;
-    height: var(--icon-size-ultra-small);
+    height: var(--bar-height);
     flex: 1;
 }
 
 /* Сегменты баров */
 .bar-segment {
     display: inline-block;
-    height: var(--icon-size-ultra-small);
+    height: var(--bar-height);
 }
 
 .app-store-segment {
@@ -196,9 +206,9 @@
 }
 
 .bar-icon img {
-    width: var(--icon-size-ultra-small);
-    height: var(--icon-size-ultra-small);
-    border-radius: var(--icon-corner-radius);
+    width: var(--icon-size-s);
+    height: var(--icon-size-s);
+    border-radius: var(--icon-border-radius);
     border: var(--border-width-medium);
     border-style: solid;
     border-color: var(--divider-color);
@@ -207,30 +217,30 @@
 
 /* Заглушка для App Bundle */
 .app-bundle-placeholder {
-    width: var(--icon-size-ultra-small);
-    height: var(--icon-size-ultra-small);
-    border-radius: var(--icon-corner-radius);
+    width: var(--icon-size-s);
+    height: var(--icon-size-s);
+    border-radius: var(--icon-border-radius);
     background-color: var(--app-bundle-placeholder-color);
+}
+
+.dates-container {
+    display: none;
 }
 
 /* Адаптивность для мобильных устройств */
 @media (orientation: portrait) {
     .sales-chart-container {
-        padding-inline: var(--spacing-medium);
-        padding-top: var(--spacing-medium);
+        padding-inline: var(--space-m);
+        padding-top: var(--space-m);
     }
 
     .stats-grid {
         grid-template-columns: 1fr;
     }
-    
+
     .chart-legend {
         flex-direction: column;
         align-items: center;
-        gap: var(--spacing-small);
+        gap: var(--space-s);
     }
-    
-    .dates-container {
-        display: none;
-    }
-} 
+}
