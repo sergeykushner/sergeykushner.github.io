@@ -33,6 +33,11 @@ a {
     color: var(--link-color);
 }
 
+.app-types-details,
+.legend-item {
+    font-size: 0.875rem;
+}
+
 .date-item {
     /* 10px */
     font-size: 0.625rem;

@@ -605,7 +605,7 @@
         "id": "workout-node",
         "type": "Website",
         "platform": [
-            "iOS"
+            "Web"
         ],
         "status": "sold",
         "displayName": "WorkoutNode",

@@ -79,6 +79,11 @@ function processAppsData(apps) {
             totalAppsCount++;
         }
 
+        // Подсчитываем типы приложений
+        if (app.type) {
+            appTypeCounter[app.type] = (appTypeCounter[app.type] || 0) + 1;
+        }
+
         // Данные App Store
         if (app.appStoreUnits) {
             appStoreUnits += app.appStoreUnits;
@@ -140,13 +145,43 @@ function processAppsData(apps) {
 
     // Создаем строку с деталями по типам приложений
     let appTypesDetails = "";
-    const typesArray = Object.entries(appTypeCounter);
+
+    // Создаем копию объекта счетчика, исключая App Bundle и Template
+    const filteredCounter = {};
+    for (const [type, count] of Object.entries(appTypeCounter)) {
+        if (type !== "App Bundle" && type !== "Template") {
+            filteredCounter[type] = count;
+        }
+    }
+
+    const typesArray = Object.entries(filteredCounter);
+
+    // Посчитаем платформы для типа "App"
+    const platformCounter = {};
+    if (filteredCounter["App"]) {
+        apps.forEach(app => {
+            if (app.type === "App" && app.platform) {
+                platformCounter[app.platform] = (platformCounter[app.platform] || 0) + 1;
+            }
+        });
+    }
 
     if (typesArray.length > 0) {
-        const totalTypes = typesArray.reduce((sum, [_, count]) => sum + count, 0);
         appTypesDetails = typesArray
-            .map(([type, count]) => `${count} ${type}`)
-            .join(" | ");
+            .map(([type, count]) => {
+                // Если это тип "App", добавим информацию о платформах
+                if (type === "App" && Object.keys(platformCounter).length > 0) {
+                    // Фильтруем платформы, исключая комбинированные (содержащие запятую)
+                    const filteredPlatforms = Object.entries(platformCounter)
+                        .filter(([platform, _]) => !platform.includes(","))
+                        .map(([platform, platformCount]) => `${platform}: ${platformCount}`)
+                        .join(", ");
+
+                    return `${count} Apps (${filteredPlatforms})`;
+                }
+                return `${count} ${type}`;
+            })
+            .join(". ");
 
         // Обновляем строку с деталями типов приложений
         const appTypesElement = document.getElementById("app-types-details");
@@ -382,4 +417,4 @@ function buildSalesChart(data) {
 }
 
 // Вызываем функцию загрузки данных при загрузке страницы
-document.addEventListener("DOMContentLoaded", loadSalesData); 
+document.addEventListener("DOMContentLoaded", loadSalesData);

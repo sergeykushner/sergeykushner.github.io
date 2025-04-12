@@ -26,23 +26,22 @@
 }
 
 .total-section,
-.chart-section {
-    margin-bottom: var(--space-xxl);
+.chart-section {}
+
+.total-section {
+    margin-bottom: var(--space-xl);
 }
 
 /* Стиль для счетчика общего количества приложений */
 .total-apps-count {
     text-align: center;
-    margin-top: var(--space-m);
-    margin-bottom: var(--space-m);
+    margin-bottom: var(--space-s);
 }
 
 .app-types-details {
     text-align: center;
-    margin-top: var(--space-xs);
-    margin-bottom: var(--space-m);
     color: var(--text-secondary-color);
-    font-size: 0.9em;
+    margin-bottom: var(--space-xl);
 }
 
 /*.total-apps-count span {
@@ -54,7 +53,6 @@
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-l);
-    margin-top: var(--space-l);
 }
 
 .stats-card {
@@ -63,7 +61,7 @@
     border: var(--border-width-bold);
     border-style: solid;
     border-color: var(--divider-color);
-    padding: 0 var(--space-l);
+    padding: 0 var(--space-m);
     /*box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);*/
 }
 
@@ -83,8 +81,8 @@
     display: flex;
     justify-content: center;
     gap: var(--space-l);
-    margin: var(--space-m) 0;
     color: var(--text-secondary-color);
+    margin-bottom: var(--space-xl);
 }
 
 .legend-item {
@@ -104,15 +102,14 @@
 }
 
 .sales-chart-container {
-    margin-top: var(--space-l);
     /*background-color: var(--card-background-color);*/
-    border: var(--border-width-bold);
+    /*border: var(--border-width-bold);
     border-style: solid;
     border-color: var(--divider-color);
     border-radius: var(--border-radius-m);
     padding-inline: var(--space-l);
     padding-top: var(--space-l);
-    padding-bottom: var(--space-m);
+    padding-bottom: var(--space-m);*/
 }
 
 /* Контейнер для баров */
