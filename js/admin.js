@@ -38,7 +38,7 @@ async function main() {
 
     try {
         console.log('=== Административный скрипт ===');
-        
+
         // Выводим главное меню
         const { operation } = await inquirer.prompt([
             {
@@ -57,7 +57,7 @@ async function main() {
                 ]
             }
         ]);
-        
+
         switch (operation) {
             case 'Загрузка изображений приложений на Cloudinary':
                 await uploadAppImagesImproved();
@@ -85,7 +85,7 @@ async function main() {
                 process.exit(0);
                 break;
         }
-        
+
         // После выполнения операции возвращаемся в главное меню
         await main();
     } catch (error) {
@@ -100,7 +100,7 @@ async function main() {
 async function processCommandLineArgs() {
     const args = process.argv.slice(2);
     const command = args[0].toLowerCase();
-    
+
     try {
         switch (command) {
             case 'bezels':
@@ -172,12 +172,12 @@ function showHelp() {
  */
 async function uploadBadges() {
     console.log('Загрузка бейджей на Cloudinary...');
-    
+
     if (!await fs.exists(badgesDir)) {
         console.error('Директория с бейджами не найдена');
         return;
     }
-    
+
     const { confirm } = await inquirer.prompt([
         {
             type: 'confirm',
@@ -186,14 +186,14 @@ async function uploadBadges() {
             default: false
         }
     ]);
-    
+
     if (!confirm) {
         console.log('Операция отменена');
         return;
     }
-    
+
     const success = await cloudinaryManager.uploadBadges(badgesDir);
-    
+
     if (success) {
         console.log('Бейджи успешно загружены');
     } else {
@@ -207,16 +207,16 @@ async function uploadBadges() {
  */
 async function uploadBezels(option) {
     console.log('Загрузка рамок устройств на Cloudinary...');
-    
+
     if (!await fs.exists(bezelsDir)) {
         console.error('Директория с рамками устройств не найдена');
         return;
     }
-    
+
     // Если option уже передан через командную строку, используем его
     let uploadMode = UPLOAD_MODES.ALL; // По умолчанию - все
     let specificFile = null;
-    
+
     if (!option) {
         // Получаем опции загрузки через интерактивное меню
         const { mode } = await inquirer.prompt([
@@ -231,10 +231,10 @@ async function uploadBezels(option) {
                 ]
             }
         ]);
-        
+
         option = mode;
     }
-    
+
     if (option === 'all') {
         const { confirm } = await inquirer.prompt([
             {
@@ -244,7 +244,7 @@ async function uploadBezels(option) {
                 default: false
             }
         ]);
-        
+
         if (!confirm) {
             console.log('Операция отменена');
             return;
@@ -253,15 +253,15 @@ async function uploadBezels(option) {
         // Получаем список файлов с рамками
         const files = await fs.readdir(bezelsDir);
         const imageFiles = cloudinaryManager.filterImageFiles(files);
-        
+
         if (imageFiles.length === 0) {
             console.error('В директории нет файлов с рамками устройств');
             return;
         }
-        
+
         // Сортируем файлы по имени
         imageFiles.sort();
-        
+
         const { selectedFile } = await inquirer.prompt([
             {
                 type: 'list',
@@ -270,7 +270,7 @@ async function uploadBezels(option) {
                 choices: imageFiles
             }
         ]);
-        
+
         specificFile = selectedFile;
         uploadMode = UPLOAD_MODES.SPECIFIC;
     } else if (option === 'new') {
@@ -279,16 +279,16 @@ async function uploadBezels(option) {
         // Считаем, что передано имя файла или часть имени
         const files = await fs.readdir(bezelsDir);
         const imageFiles = cloudinaryManager.filterImageFiles(files);
-        
-        const matchingFiles = imageFiles.filter(file => 
+
+        const matchingFiles = imageFiles.filter(file =>
             file.toLowerCase().includes(option.toLowerCase())
         );
-        
+
         if (matchingFiles.length === 0) {
             console.error(`Файл с именем, содержащим "${option}", не найден`);
             return;
         }
-        
+
         if (matchingFiles.length > 1) {
             console.log(`Найдено несколько файлов, содержащих "${option}":`);
             matchingFiles.forEach((file, index) => {
@@ -296,11 +296,11 @@ async function uploadBezels(option) {
             });
             console.log('Будет загружен первый файл из списка');
         }
-        
+
         specificFile = matchingFiles[0];
         uploadMode = UPLOAD_MODES.SPECIFIC;
     }
-    
+
     const count = await cloudinaryManager.uploadDeviceBezels(bezelsDir, uploadMode, specificFile);
     console.log(`Загрузка рамок устройств завершена. Загружено: ${count}`);
 }
@@ -310,15 +310,15 @@ async function uploadBezels(option) {
  */
 async function uploadAppImagesImproved() {
     console.log('Загрузка изображений приложений на Cloudinary...');
-    
+
     // Получаем список папок приложений
     const appFolders = await cloudinaryManager.getAppDirectories(appsDir);
-    
+
     if (appFolders.length === 0) {
         console.error('Нет доступных приложений');
         return;
     }
-    
+
     // Предлагаем выбрать конкретное приложение или все приложения
     const { appSelectionMode } = await inquirer.prompt([
         {
@@ -332,13 +332,13 @@ async function uploadAppImagesImproved() {
             ]
         }
     ]);
-    
+
     // Проверяем, выбрана ли опция возврата в главное меню
     if (appSelectionMode === 'back') {
         console.log('Возврат в главное меню...');
         return;
     }
-    
+
     if (appSelectionMode === 'all') {
         const { confirmAll } = await inquirer.prompt([
             {
@@ -348,28 +348,28 @@ async function uploadAppImagesImproved() {
                 default: false
             }
         ]);
-        
+
         if (!confirmAll) {
             console.log('Операция отменена');
             return;
         }
-        
+
         // Загрузка всех приложений
         console.log(`Запуск загрузки для ${appFolders.length} приложений...`);
-        
+
         const results = {
             success: 0,
             failed: 0,
             skipped: 0,
             details: {}
         };
-        
+
         for (const appId of appFolders) {
             console.log(`\n📱 Загрузка приложения: ${appId}`);
-            
+
             try {
                 const result = await cloudinaryManager.smartUploadAppAssets(appId, appsDir, true);
-                
+
                 if (result.errors && result.errors.length > 0) {
                     console.warn(`⚠️ Загрузка приложения ${appId} выполнена с ошибками`);
                     results.details[appId] = 'partial';
@@ -385,7 +385,7 @@ async function uploadAppImagesImproved() {
                 results.failed++;
             }
         }
-        
+
         console.log('\n====== Итоги загрузки всех приложений ======');
         console.log(`✅ Успешно загружено: ${results.success}`);
         console.log(`⚠️ Загружено с ошибками: ${results.failed}`);
@@ -401,13 +401,13 @@ async function uploadAppImagesImproved() {
                 choices: [...appFolders, '⬅️ Вернуться в главное меню']
             }
         ]);
-        
+
         // Проверяем, выбрана ли опция возврата в главное меню
         if (selectedApp === '⬅️ Вернуться в главное меню') {
             console.log('Возврат в главное меню...');
             return;
         }
-        
+
         const { confirm } = await inquirer.prompt([
             {
                 type: 'confirm',
@@ -416,14 +416,14 @@ async function uploadAppImagesImproved() {
                 default: true
             }
         ]);
-        
+
         if (!confirm) {
             console.log('Операция отменена');
             return;
         }
-        
+
         console.log(`Запуск загрузки для приложения ${selectedApp}...`);
-        
+
         try {
             await cloudinaryManager.smartUploadAppAssets(selectedApp, appsDir, true);
             console.log('\nЗагрузка изображений завершена!');
@@ -438,15 +438,15 @@ async function uploadAppImagesImproved() {
  */
 async function invalidateCache() {
     console.log('Инвалидация кэша изображений в Cloudinary...');
-    
+
     // Получаем список папок
     const folders = await listCloudinaryFolders();
-    
+
     if (folders.length === 0) {
         console.error('Не удалось получить список папок');
         return;
     }
-    
+
     // Выбираем папку для инвалидации
     const { selectedFolder } = await inquirer.prompt([
         {
@@ -462,13 +462,13 @@ async function invalidateCache() {
             ]
         }
     ]);
-    
+
     // Если выбран вариант возврата, возвращаемся в главное меню
     if (selectedFolder === 'back') {
         console.log('Возврат в главное меню...');
         return;
     }
-    
+
     const { confirm } = await inquirer.prompt([
         {
             type: 'confirm',
@@ -477,12 +477,12 @@ async function invalidateCache() {
             default: false
         }
     ]);
-    
+
     if (!confirm) {
         console.log('Операция отменена');
         return;
     }
-    
+
     const count = await invalidateByFolder(selectedFolder);
     console.log(`Инвалидация кэша завершена. Обработано ${count} ресурсов.`);
 }
@@ -495,18 +495,18 @@ async function listCloudinaryFolders() {
     try {
         // Получаем список корневых папок
         const rootResult = await cloudinary.api.root_folders();
-        
+
         // Ищем нашу основную папку сайта
         const websiteFolder = rootResult.folders.find(folder => folder.path === cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
-        
+
         if (!websiteFolder) {
             console.error(`Папка ${cloudinaryManager.CLOUDINARY_ROOT_FOLDER} не найдена в Cloudinary`);
             return [];
         }
-        
+
         // Получаем список подпапок внутри основной папки
         const subFoldersResult = await cloudinary.api.sub_folders(cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
-        
+
         return [
             { path: 'all', name: 'Все папки' },
             { path: cloudinaryManager.CLOUDINARY_ROOT_FOLDER, name: 'Корневая папка' },
@@ -527,16 +527,16 @@ async function invalidateByFolder(folderPath) {
     try {
         // Если выбраны все папки, используем корневую папку сайта
         const prefix = folderPath === 'all' ? cloudinaryManager.CLOUDINARY_ROOT_FOLDER : folderPath;
-        
+
         console.log(`Начинаю инвалидацию ресурсов в папке: ${prefix}`);
-        
+
         // Получаем список ресурсов в папке
         const resources = await cloudinary.api.resources({
             type: 'upload',
             prefix: prefix,
             max_results: 500
         });
-        
+
         // Инвалидируем каждый ресурс
         let invalidated = 0;
         for (const resource of resources.resources) {
@@ -551,7 +551,7 @@ async function invalidateByFolder(folderPath) {
                 console.error(`Ошибка при инвалидации ${resource.public_id}:`, err);
             }
         }
-        
+
         console.log(`Инвалидировано ${invalidated} из ${resources.resources.length} ресурсов в папке ${prefix}`);
         return invalidated;
     } catch (error) {
@@ -565,7 +565,7 @@ async function invalidateByFolder(folderPath) {
  */
 async function uploadAllAssets() {
     console.log('Перезагрузка всех изображений из папки assets...');
-    
+
     const { confirm } = await inquirer.prompt([
         {
             type: 'confirm',
@@ -574,31 +574,31 @@ async function uploadAllAssets() {
             default: false
         }
     ]);
-    
+
     if (!confirm) {
         console.log('Операция отменена');
         return;
     }
-    
+
     // Создаем основную папку website, если она еще не существует
     await cloudinaryManager.createFolder(cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
 
     // Загружаем бейджи
     console.log('\n=== Загрузка бейджей ===');
     await cloudinaryManager.uploadBadges(badgesDir, true);
-    
+
     // Загружаем рамки устройств
     console.log('\n=== Загрузка рамок устройств ===');
     await cloudinaryManager.uploadDeviceBezels(bezelsDir, UPLOAD_MODES.ALL);
-    
+
     // Получаем список всех папок приложений
     console.log('\n=== Загрузка ресурсов приложений ===');
     try {
         // Получаем список директорий приложений
         const appDirs = await cloudinaryManager.getAppDirectories(appsDir);
-        
+
         console.log(`Найдено ${appDirs.length} папок с приложениями`);
-        
+
         // Для каждого приложения загружаем ассеты
         for (const appFolder of appDirs) {
             console.log(`\nПерезагрузка ассетов для приложения ${appFolder}...`);
@@ -609,7 +609,7 @@ async function uploadAllAssets() {
                 console.log(`✅ Загрузка приложения ${appFolder} успешно завершена: ${result.success} файлов`);
             }
         }
-        
+
         console.log('\nВсе изображения успешно перезагружены!');
     } catch (error) {
         console.error('Произошла ошибка при перезагрузке изображений:', error);
@@ -622,21 +622,21 @@ async function uploadAllAssets() {
  */
 async function uploadSmartAppAssets(appId) {
     console.log(`Умная загрузка ресурсов для приложения ${appId}...`);
-    
+
     const appPath = path.join(appsDir, appId);
-    
+
     if (!await fs.exists(appPath)) {
         console.error(`Директория приложения не найдена: ${appPath}`);
         return;
     }
-    
+
     try {
         const result = await cloudinaryManager.smartUploadAppAssets(appId, appsDir, true);
-        
+
         console.log(`\n=== Итоги загрузки для ${appId} ===`);
         console.log(`✅ Успешно загружено файлов: ${result.success}`);
         console.log(`❌ Ошибок загрузки: ${result.failed}`);
-        
+
         if (result.errors && result.errors.length > 0) {
             console.error('\nСписок ошибок:');
             result.errors.forEach((error, index) => {
@@ -655,7 +655,7 @@ async function updatePublicJson() {
     try {
         console.log('Запуск генерации публичной версии apps-metadata.json...');
         const success = await jsonUtils.updatePublicJson();
-        
+
         if (success) {
             console.log('Публичная версия JSON успешно обновлена!');
         } else {
@@ -688,7 +688,7 @@ async function updateAssetVersion() {
         const nextVersion = `v${nextVersionNumber}`;
 
         console.log(`Текущая версия: ${currentVersion}`);
-        
+
         const { newVersion } = await inquirer.prompt([
             {
                 type: 'input',
@@ -718,7 +718,7 @@ async function updateAssetVersion() {
 
         // Обновляем файл cloudinary-manager.js
         const newManagerContent = managerContent.replace(
-            /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/, 
+            /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/,
             `const ASSET_VERSION = '${newVersion}'`
         );
         await fs.writeFile(cloudinaryManagerPath, newManagerContent, 'utf-8');
@@ -727,7 +727,7 @@ async function updateAssetVersion() {
         // Обновляем файл cloudinary.js
         const cloudinaryContent = await fs.readFile(cloudinaryPath, 'utf-8');
         const newCloudinaryContent = cloudinaryContent.replace(
-            /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/, 
+            /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/,
             `const ASSET_VERSION = '${newVersion}'`
         );
         await fs.writeFile(cloudinaryPath, newCloudinaryContent, 'utf-8');

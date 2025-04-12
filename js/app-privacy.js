@@ -1,11 +1,11 @@
 async function loadPrivacyData() {
     const urlParams = new URLSearchParams(window.location.search);
     const appId = urlParams.get("id");
-    
+
     const response = await fetch("../data/apps-metadata-public.json");
     const apps = await response.json();
     const app = apps.find(a => a.id === appId);
-    
+
     if (!app) {
         document.body.innerHTML = "<h2>App not found</h2>";
         return;
@@ -15,7 +15,7 @@ async function loadPrivacyData() {
     document.title = `${app.title} - Privacy Policy`;
     document.getElementById("meta-description").setAttribute("content", `Privacy Policy for the ${app.title} app.`);
     document.getElementById("canonical-link").setAttribute("href", `https://sergeykushner.github.io/pages/app-privacy.html?id=${app.id}`);
-    
+
     // Update content
     document.getElementById("app-privacy-title").textContent = `${app.displayName} Privacy Policy`;
     document.getElementById("app-privacy-updated-date").textContent = `Updated ${app.privacyUpdatedDate}`;

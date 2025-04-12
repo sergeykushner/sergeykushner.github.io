@@ -11,7 +11,7 @@ const path = require('path');
 async function updatePublicJson() {
     try {
         console.log('Создание публичной версии apps-metadata.json...');
-        
+
         // Пути к файлам
         const sourceFilePath = path.join(__dirname, '../data/apps-metadata.json');
         const targetFilePath = path.join(__dirname, '../data/apps-metadata-public.json');
@@ -39,24 +39,24 @@ async function updatePublicJson() {
 
         // Читаем исходный файл
         const appsData = JSON.parse(await fs.readFile(sourceFilePath, 'utf8'));
-        
+
         // Создаем копию без приватных ключей
         const cleanedApps = appsData.map(app => {
             const cleanApp = { ...app };
-            
+
             keysToRemove.forEach(key => {
                 if (key in cleanApp) {
                     delete cleanApp[key];
                 }
             });
-            
+
             return cleanApp;
         });
-        
+
         // Записываем в новый файл
         const jsonData = JSON.stringify(cleanedApps, null, 4);
         await fs.writeFile(targetFilePath, jsonData, 'utf8');
-        
+
         console.log(`Публичная версия успешно создана: ${targetFilePath}`);
         return true;
     } catch (error) {

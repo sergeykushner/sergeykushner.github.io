@@ -4,33 +4,33 @@ async function loadSalesData() {
         // Загружаем данные из JSON файла
         const response = await fetch("../data/apps-metadata.json");
         const apps = await response.json();
-        
+
         // Скрываем контейнер с ошибкой, если он был показан
         document.getElementById("error-container").style.display = "none";
-        
+
         // Обрабатываем данные
         processAppsData(apps);
     } catch (error) {
         console.error("Ошибка при загрузке данных:", error);
-        
+
         // Показываем контейнер с ошибкой
         const errorContainer = document.getElementById("error-container");
         errorContainer.style.display = "block";
-        
+
         // Настраиваем обработчик загрузки файла
         const fileInput = document.getElementById("manual-file-upload");
         fileInput.value = ""; // Сбрасываем предыдущий выбранный файл
-        
+
         // Очищаем старый обработчик события, если он был
         const newFileInput = fileInput.cloneNode(true);
         fileInput.parentNode.replaceChild(newFileInput, fileInput);
-        
+
         // Добавляем новый обработчик события
-        newFileInput.addEventListener("change", function(event) {
+        newFileInput.addEventListener("change", function (event) {
             const file = event.target.files[0];
             if (file) {
                 const reader = new FileReader();
-                reader.onload = function(e) {
+                reader.onload = function (e) {
                     try {
                         const apps = JSON.parse(e.target.result);
                         // Скрываем контейнер с ошибкой
@@ -39,14 +39,14 @@ async function loadSalesData() {
                         processAppsData(apps);
                     } catch (parseError) {
                         console.error("Ошибка при обработке файла:", parseError);
-                        document.getElementById("error-message").textContent = 
+                        document.getElementById("error-message").textContent =
                             "Некорректный формат файла. Пожалуйста, загрузите правильный JSON файл.";
                     }
                 };
                 reader.readAsText(file);
             }
         });
-        
+
         // Очищаем контейнер с графиком
         const chartContainer = document.getElementById("sales-chart-container");
         chartContainer.innerHTML = "";
@@ -80,11 +80,11 @@ function processAppsData(apps) {
         if (app.appStoreUnits) {
             appStoreUnits += app.appStoreUnits;
         }
-        
+
         if (app.appStoreSales) {
             appStoreSales += app.appStoreSales;
         }
-        
+
         if (app.appStoreProceeds) {
             appStoreProceeds += app.appStoreProceeds;
         }
@@ -92,12 +92,12 @@ function processAppsData(apps) {
         // Данные Flippa
         if (app.salePrice) {
             let totalFees = 0;
-            
+
             // Расчет комиссий
             if (app.listingFee && Array.isArray(app.listingFee)) {
                 totalFees = app.listingFee.reduce((sum, fee) => sum + fee, 0);
             }
-            
+
             // Проверяем successFee на число или строку и обрабатываем соответственно
             if (app.successFee !== undefined && app.successFee !== null) {
                 // Преобразуем в число для обеспечения правильного расчета
@@ -106,7 +106,7 @@ function processAppsData(apps) {
                     totalFees += successFeeValue;
                 }
             }
-            
+
             flippaSales += app.salePrice;
             flippaProceeds += (app.salePrice - totalFees);
             flippaUnits++; // Каждая продажа на Flippa считается как 1 единица
@@ -118,7 +118,7 @@ function processAppsData(apps) {
             const salePrice = app.salePrice || 0;
             const totalFees = calculateTotalFees(app);
             const flippaNet = salePrice > 0 ? salePrice - totalFees : 0;
-            
+
             chartData.push({
                 id: app.id,
                 displayName: app.displayName || app.id,
@@ -140,16 +140,16 @@ function processAppsData(apps) {
         // Создаем объекты Date из строк
         const dateA = new Date(a.releaseDate);
         const dateB = new Date(b.releaseDate);
-        
+
         // Проверяем, валидны ли даты
         const isValidDateA = !isNaN(dateA.getTime());
         const isValidDateB = !isNaN(dateB.getTime());
-        
+
         // Обрабатываем случаи невалидных дат
         if (!isValidDateA && !isValidDateB) return 0;
         if (!isValidDateA) return 1;
         if (!isValidDateB) return -1;
-        
+
         // Сортируем от новых к старым
         return dateB - dateA;
     });
@@ -167,11 +167,11 @@ function processAppsData(apps) {
 // Функция расчета общих комиссий
 function calculateTotalFees(app) {
     let totalFees = 0;
-    
+
     if (app.listingFee && Array.isArray(app.listingFee)) {
         totalFees = app.listingFee.reduce((sum, fee) => sum + fee, 0);
     }
-    
+
     // Проверяем successFee на число или строку и обрабатываем соответственно
     if (app.successFee !== undefined && app.successFee !== null) {
         // Преобразуем в число для обеспечения правильного расчета
@@ -180,7 +180,7 @@ function calculateTotalFees(app) {
             totalFees += successFeeValue;
         }
     }
-    
+
     return totalFees;
 }
 
@@ -220,34 +220,34 @@ function updateStatsDisplay(
 function buildSalesChart(data) {
     const chartContainer = document.getElementById("sales-chart-container");
     chartContainer.innerHTML = "";
-    
+
     // Проверяем, использует ли пользователь темный режим
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-    
+
     // Получаем CSS переменные для цветов сегментов
     const appStoreColor = getComputedStyle(document.documentElement).getPropertyValue('--app-store-segment-color') || '#4299E1';
     const flippaColor = getComputedStyle(document.documentElement).getPropertyValue('--flippa-segment-color') || '#48BB78';
-    
+
     // Находим максимальное значение для масштабирования
     const maxValue = Math.max(...data.map(item => item.total));
-    
+
     // Создаем контейнер для баров
     const barsContainer = document.createElement("div");
     barsContainer.className = "bars-container";
-    
+
     // Создаем бары для каждого приложения
     data.forEach(app => {
         // Создаем контейнер для строки
         const barContainer = document.createElement("div");
         barContainer.className = "chart-row";
-        
+
         // Добавляем иконку приложения
         const iconContainer = document.createElement("div");
         iconContainer.className = "bar-icon";
-        
+
         // Создаем элемент изображения
         const iconImage = document.createElement("img");
-        
+
         // Проверяем тип приложения и устанавливаем заглушку для App Bundle
         if (app.type === "App Bundle") {
             // Для App Bundle используем заглушку (серый квадрат)
@@ -257,30 +257,30 @@ function buildSalesChart(data) {
             const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
             iconImage.src = iconUrl;
             iconImage.alt = app.displayName || app.id;
-            
+
             // Обработчик ошибок для загрузки светлой версии, если темная недоступна
-            iconImage.onerror = function() {
+            iconImage.onerror = function () {
                 if (this.getAttribute('data-tried-light') !== 'true') {
                     this.setAttribute('data-tried-light', 'true');
                     this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
                 }
             };
-            
+
             iconContainer.appendChild(iconImage);
         }
-        
+
         barContainer.appendChild(iconContainer);
-        
+
         // Добавляем название приложения
         const label = document.createElement("div");
         label.className = "bar-label";
         label.textContent = app.displayName;
         barContainer.appendChild(label);
-        
+
         // Создаем контейнер для баров
         const barsWrapper = document.createElement("div");
         barsWrapper.className = "bars-wrapper";
-        
+
         // Создаем сегмент для выручки Flippa (сначала Flippa потом App Store)
         if (app.flippaProceeds > 0) {
             const flippaSegment = document.createElement("div");
@@ -289,7 +289,7 @@ function buildSalesChart(data) {
             flippaSegment.style.width = `${widthPercent}%`;
             barsWrapper.appendChild(flippaSegment);
         }
-        
+
         // Создаем сегмент для выручки App Store
         if (app.appStoreProceeds > 0) {
             const appStoreSegment = document.createElement("div");
@@ -298,24 +298,24 @@ function buildSalesChart(data) {
             appStoreSegment.style.width = `${widthPercent}%`;
             barsWrapper.appendChild(appStoreSegment);
         }
-        
+
         barContainer.appendChild(barsWrapper);
-        
+
         // Добавляем значение
         const value = document.createElement("div");
         value.className = "bar-value";
         value.textContent = `$${Math.round(app.total)}`;
         barContainer.appendChild(value);
-        
+
         // Контейнер для дат
         const datesContainer = document.createElement("div");
         datesContainer.className = "dates-container";
-        
+
         // Добавляем дату релиза
         if (app.releaseDate) {
             const releaseDateElement = document.createElement("div");
             releaseDateElement.className = "date-item release-date";
-            
+
             // Форматируем дату для отображения
             let formattedReleaseDate = app.releaseDate;
             try {
@@ -326,16 +326,16 @@ function buildSalesChart(data) {
             } catch (e) {
                 // Если формат даты некорректный, оставляем как есть
             }
-            
+
             releaseDateElement.textContent = `Release: ${formattedReleaseDate}`;
             datesContainer.appendChild(releaseDateElement);
         }
-        
+
         // Добавляем дату продажи
         if (app.saleDate) {
             const saleDateElement = document.createElement("div");
             saleDateElement.className = "date-item sale-date";
-            
+
             // Форматируем дату для отображения
             let formattedSaleDate = app.saleDate;
             try {
@@ -346,17 +346,17 @@ function buildSalesChart(data) {
             } catch (e) {
                 // Если формат даты некорректный, оставляем как есть
             }
-            
+
             saleDateElement.textContent = `Sale: ${formattedSaleDate}`;
             datesContainer.appendChild(saleDateElement);
         }
-        
+
         barContainer.appendChild(datesContainer);
-        
+
         // Добавляем строку в контейнер
         barsContainer.appendChild(barContainer);
     });
-    
+
     // Добавляем контейнер с барами в контейнер графика
     chartContainer.appendChild(barsContainer);
 }
