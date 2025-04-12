@@ -177,16 +177,16 @@ function processAppsData(apps) {
                         .map(([platform, platformCount]) => `${platform}: ${platformCount}`)
                         .join(", ");
 
-                    return `${count} Apps (${filteredPlatforms})`;
+                    return `<span class='type-background'>${count} Apps (${filteredPlatforms})</span>`;
                 }
-                return `${count} ${type}`;
+                return `<span class='type-background'>${count} ${type}</span>`;
             })
-            .join(". ");
+            .join(" ");
 
         // Обновляем строку с деталями типов приложений
         const appTypesElement = document.getElementById("app-types-details");
         if (appTypesElement) {
-            appTypesElement.textContent = appTypesDetails;
+            appTypesElement.innerHTML = appTypesDetails;
         }
     }
 
@@ -356,11 +356,11 @@ function buildSalesChart(data) {
 
         barContainer.appendChild(barsWrapper);
 
-        // Добавляем значение
+        // Добавляем значение внутри контейнера бара
         const value = document.createElement("div");
         value.className = "bar-value";
         value.textContent = `$${Math.round(app.total)}`;
-        barContainer.appendChild(value);
+        barsWrapper.appendChild(value);
 
         // Контейнер для дат
         const datesContainer = document.createElement("div");
