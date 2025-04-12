@@ -44,7 +44,7 @@
     margin: var(--space-l) 0;
 }
 
-.type-background {
+.app-type-item {
     background-color: var(--card-background-color);
     padding: var(--space-s);
     border-radius: var(--border-radius-s);

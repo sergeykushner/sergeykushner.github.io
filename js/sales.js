@@ -177,9 +177,9 @@ function processAppsData(apps) {
                         .map(([platform, platformCount]) => `${platform}: ${platformCount}`)
                         .join(", ");
 
-                    return `<span class='type-background'>${count} Apps (${filteredPlatforms})</span>`;
+                    return `<span class='app-type-item'>${count} Apps (${filteredPlatforms})</span>`;
                 }
-                return `<span class='type-background'>${count} ${type}</span>`;
+                return `<span class='app-type-item'>${count} ${type}</span>`;
             })
             .join(" ");
 
