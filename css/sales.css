@@ -14,16 +14,11 @@
 
 /* Стили для контейнера с ошибкой */
 .error-container {
-    max-width: 1200px;
-    margin: var(--space-xl) auto;
+    max-width: 800px;
+    margin: var(--space-l) auto;
     padding: var(--space-l) 0;
     background-color: var(--card-background-color);
     border-radius: var(--border-radius-m);
-}
-
-.error-container p {
-    padding: var(--space-m);
-    color: var(--text-primary-color);
 }
 
 .error-container input {
