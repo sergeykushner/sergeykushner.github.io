@@ -167,28 +167,49 @@ function processAppsData(apps) {
     }
 
     if (typesArray.length > 0) {
-        appTypesDetails = typesArray
-            .map(([type, count]) => {
-                // Если это тип "App", добавим информацию о платформах
-                if (type === "App" && Object.keys(platformCounter).length > 0) {
-                    // Фильтруем платформы, исключая комбинированные (содержащие запятую)
-                    const filteredPlatforms = Object.entries(platformCounter)
-                        .filter(([platform, _]) => !platform.includes(","))
-                        .map(([platform, platformCount]) => `${platform}: ${platformCount}`)
-                        .join(", ");
-
-                    return `<span class='app-type-item'>${count} Apps (${filteredPlatforms})</span>`;
-                }
-                return `<span class='app-type-item'>${count} ${type}</span>`;
-            })
-            .join(" ");
-
-        // Обновляем строку с деталями типов приложений
+        const items = [];
+    
+        typesArray.forEach(([type, count]) => {
+            if (type === "App" && Object.keys(platformCounter).length > 0) {
+                const totalApps = count;
+                const iosCount = platformCounter["iOS"] || 0;
+                const androidCount = platformCounter["Android"] || 0;
+    
+                items.push(`
+                    <span class='app-type-item'>
+                        <span class='app-type-title'>Total Apps</span>
+                        <span class='app-type-value'>${totalApps}</span>
+                    </span>
+                `);
+                items.push(`
+                    <span class='app-type-item'>
+                        <span class='app-type-title'>iOS</span>
+                        <span class='app-type-value'>${iosCount}</span>
+                    </span>
+                `);
+                items.push(`
+                    <span class='app-type-item'>
+                        <span class='app-type-title'>Android</span>
+                        <span class='app-type-value'>${androidCount}</span>
+                    </span>
+                `);
+            } else {
+                items.push(`
+                    <span class='app-type-item'>
+                        <span class='app-type-title'>${type}</span>
+                        <span class='app-type-value'>${count}</span>
+                    </span>
+                `);
+            }
+        });
+    
         const appTypesElement = document.getElementById("app-types-details");
         if (appTypesElement) {
-            appTypesElement.innerHTML = appTypesDetails;
+            appTypesElement.innerHTML = items.join(" ");
         }
     }
+    
+    
 
     // Сортируем данные графика по дате релиза (от новых к старым)
     chartData.sort((a, b) => {

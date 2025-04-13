@@ -37,17 +37,27 @@
 
 .app-types-details {
     display: flex;
-    justify-content: space-between;
-    gap: var(--space-m);
+    flex-wrap: wrap;
     justify-content: center;
+    gap: var(--space-m);
     text-align: center;
     margin: var(--space-l) 0;
 }
 
 .app-type-item {
-    background-color: var(--card-background-color);
-    padding: var(--space-s);
-    border-radius: var(--border-radius-s);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: var(--space-s) var(--space-m);
+    border-radius: var(--border-radius-m);
+    border: var(--border-width-bold);
+    border-style: solid;
+    border-color: var(--divider-color);
+}
+
+.app-type-title {
+    margin-bottom: var(--space-s);
 }
 
 /*.total-apps-count span {
@@ -232,6 +242,11 @@
 
 /* Адаптивность для мобильных устройств */
 @media (orientation: portrait) {
+    .app-type-item {
+        min-width: 20%; 
+        flex-grow: 1;
+    }
+
     .sales-chart-container {
         padding-inline: var(--space-m);
         padding-top: var(--space-m);
