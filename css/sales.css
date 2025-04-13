@@ -39,7 +39,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: var(--space-m);
+    gap: var(--space-l);
     text-align: center;
     margin: var(--space-l) 0;
 }
@@ -243,7 +243,7 @@
 /* Адаптивность для мобильных устройств */
 @media (orientation: portrait) {
     .app-type-item {
-        min-width: 20%; 
+        min-width: 10%; 
         flex-grow: 1;
     }
 
