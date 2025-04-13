@@ -75,7 +75,7 @@ function processAppsData(apps) {
     // Обрабатываем каждое приложение
     apps.forEach(app => {
         // Подсчитываем общее количество приложений (исключая App Bundle и Template)
-        if (app.type !== "App Bundle" && app.type !== "Template") {
+        if (app.type !== "App Bundle" && app.type !== "") {
             totalAppsCount++;
         }
 
@@ -149,7 +149,7 @@ function processAppsData(apps) {
     // Создаем копию объекта счетчика, исключая App Bundle и Template
     const filteredCounter = {};
     for (const [type, count] of Object.entries(appTypeCounter)) {
-        if (type !== "App Bundle" && type !== "Template") {
+        if (type !== "App Bundle" && type !== "") {
             filteredCounter[type] = count;
         }
     }
@@ -158,10 +158,30 @@ function processAppsData(apps) {
 
     // Посчитаем платформы для типа "App"
     const platformCounter = {};
+    // Счетчик для приложений, которые есть и на iOS, и на Android
+    let crossPlatformCount = 0;
+    
     if (filteredCounter["App"]) {
         apps.forEach(app => {
             if (app.type === "App" && app.platform) {
-                platformCounter[app.platform] = (platformCounter[app.platform] || 0) + 1;
+                // Проверяем, является ли platform массивом
+                if (Array.isArray(app.platform)) {
+                    // Проверяем, есть ли в массиве и iOS, и Android
+                    const hasIOS = app.platform.includes("iOS");
+                    const hasAndroid = app.platform.includes("Android");
+                    
+                    if (hasIOS && hasAndroid) {
+                        crossPlatformCount++;
+                    }
+                    
+                    // Если это массив, увеличиваем счетчик для каждой платформы в массиве
+                    app.platform.forEach(platform => {
+                        platformCounter[platform] = (platformCounter[platform] || 0) + 1;
+                    });
+                } else {
+                    // Если это строка, обрабатываем как раньше
+                    platformCounter[app.platform] = (platformCounter[app.platform] || 0) + 1;
+                }
             }
         });
     }
@@ -191,6 +211,12 @@ function processAppsData(apps) {
                     <span class='app-type-item'>
                         <span class='app-type-title'>Android</span>
                         <span class='app-type-value'>${androidCount}</span>
+                    </span>
+                `);
+                items.push(`
+                    <span class='app-type-item'>
+                        <span class='app-type-title'>iOS+Android</span>
+                        <span class='app-type-value'>${crossPlatformCount}</span>
                     </span>
                 `);
             } else {
