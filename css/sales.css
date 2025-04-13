@@ -30,6 +30,10 @@
     margin-bottom: var(--space-xl);
 }
 
+.apps-count-section {
+    margin: var(--space-l) 0;
+}
+
 /* Стиль для счетчика общего количества приложений */
 .total-apps-count {
     text-align: center;
@@ -243,7 +247,7 @@
 /* Адаптивность для мобильных устройств */
 @media (orientation: portrait) {
     .app-type-item {
-        min-width: 10%; 
+        min-width: 10%;
         flex-grow: 1;
     }
 
