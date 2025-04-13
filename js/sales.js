@@ -122,8 +122,24 @@ function processAppsData(apps) {
         salesStats.flippa.sales, salesStats.flippa.proceeds, salesStats.flippa.units
     );
     
-    // Сортируем данные для графика по общей сумме (по убыванию)
-    chartData.sort((a, b) => b.total - a.total);
+    // Сортируем данные графика по дате релиза (от новых к старым)
+    chartData.sort((a, b) => {
+        // Создаем объекты Date из строк
+        const dateA = new Date(a.releaseDate);
+        const dateB = new Date(b.releaseDate);
+
+        // Проверяем, валидны ли даты
+        const isValidDateA = !isNaN(dateA.getTime());
+        const isValidDateB = !isNaN(dateB.getTime());
+
+        // Обрабатываем случаи невалидных дат
+        if (!isValidDateA && !isValidDateB) return 0;
+        if (!isValidDateA) return 1;
+        if (!isValidDateB) return -1;
+
+        // Сортируем от новых к старым
+        return dateB - dateA;
+    });
     
     // Строим график продаж
     buildSalesChart(chartData);
