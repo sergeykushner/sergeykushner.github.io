@@ -1,5 +1,6 @@
 /* Стили для страницы Sales */
 
+/* Основные контейнеры */
 .units-and-sales-container {
     max-width: 800px;
     margin: 0 auto;
@@ -12,7 +13,14 @@
     border-radius: var(--border-radius-m);
 }
 
-/* Стили для контейнера с ошибкой */
+.sales-container {
+    margin-top: var(--space-l);
+    background-color: var(--card-background-color);
+    padding: var(--space-m);
+    border-radius: var(--border-radius-m);
+}
+
+/* Контейнер с ошибкой */
 .error-container {
     max-width: 800px;
     margin: var(--space-l) auto;
@@ -25,6 +33,7 @@
     color: var(--text-primary-color);
 }
 
+/* Типы приложений */
 .app-types-details {
     margin-top: var(--space-l);
     display: flex;
@@ -40,9 +49,6 @@
     text-align: center;
     padding: var(--space-s) var(--space-m);
     border-radius: var(--border-radius-s);
-    /*border: var(--border-width-bold);
-    border-style: solid;
-    border-color: var(--divider-color);*/
     background-color: var(--card-secondary-background-color);
 }
 
@@ -51,13 +57,7 @@
     margin-top: 0;
 }
 
-.sales-container {
-    margin-top: var(--space-l);
-    background-color: var(--card-background-color);
-    padding: var(--space-m);
-    border-radius: var(--border-radius-m);
-}
-
+/* Статистика продаж */
 .stats-grid {
     margin-top: var(--space-l);
     display: grid;
@@ -67,9 +67,6 @@
 
 .stats-card {
     border-radius: var(--border-radius-s);
-    /*border: var(--border-width-bold);
-    border-style: solid;
-    border-color: var(--divider-color);*/
     background-color: var(--card-secondary-background-color);
     padding: 0 var(--space-m);
 }
@@ -81,7 +78,7 @@
     color: var(--text-primary-color);
 }
 
-/* Стили для легенды графика */
+/* Легенда графика */
 .chart-legend {
     display: flex;
     justify-content: center;
@@ -103,15 +100,12 @@
     border-radius: var(--icon-border-radius);
 }
 
-.chart-container {
-    width: 100%;
-}
-
+/* Контейнеры графика */
+.chart-container,
 .sales-chart-container {
     width: 100%;
 }
 
-/* Контейнер для баров */
 .bars-container {
     display: flex;
     flex-direction: column;
@@ -119,7 +113,7 @@
     width: 100%;
 }
 
-/* Стили для строк графика */
+/* Строки графика */
 .chart-row {
     display: flex;
     align-items: center;
@@ -128,7 +122,7 @@
     position: relative;
 }
 
-/* Стили для названия приложения */
+/* Название приложения */
 .bar-label {
     position: relative;
     width: 100px;
@@ -140,16 +134,15 @@
     color: var(--text-primary-color);
 }
 
-/* Стили для значения */
+/* Значение */
 .bar-value {
     max-width: 100px;
     margin-left: var(--space-m);
     text-align: left;
     color: var(--text-primary-color);
-    /*font-weight: bold;*/
 }
 
-/* Контейнер для дат */
+/* Даты */
 .dates-container {
     width: 130px;
     display: flex;
@@ -157,31 +150,27 @@
     margin-left: var(--space-m);
 }
 
-/* Стили для элементов дат */
 .date-item {
     text-align: left;
     color: var(--text-secondary-color);
     margin-bottom: var(--space-xs);
 }
 
-/* Стили для даты релиза */
 .release-date {
     color: var(--app-store-segment-color);
 }
 
-/* Стили для даты продажи */
 .sale-date {
     color: var(--flippa-segment-color);
 }
 
-/* Контейнер для сегментов баров */
+/* Сегменты баров */
 .bars-wrapper {
     display: flex;
     height: var(--bar-height);
     flex: 1;
 }
 
-/* Сегменты баров */
 .bar-segment {
     display: inline-block;
     height: var(--bar-height);
@@ -195,7 +184,7 @@
     background-color: var(--flippa-segment-color);
 }
 
-/* Стили для иконок */
+/* Иконки */
 .bar-icon {
     position: relative;
     margin-right: 10px;
