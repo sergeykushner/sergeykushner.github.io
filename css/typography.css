@@ -3,6 +3,10 @@ p {
     color: var(--text-primary-color);
 }
 
+span {
+    color: var(--text-primary-color);
+}
+
 h1 {
     color: var(--text-primary-color);
     /* bold */

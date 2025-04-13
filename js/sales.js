@@ -160,7 +160,7 @@ function processAppsData(apps) {
     const platformCounter = {};
     // Счетчик для приложений, которые есть и на iOS, и на Android
     let crossPlatformCount = 0;
-    
+
     if (filteredCounter["App"]) {
         apps.forEach(app => {
             if (app.type === "App" && app.platform) {
@@ -169,11 +169,11 @@ function processAppsData(apps) {
                     // Проверяем, есть ли в массиве и iOS, и Android
                     const hasIOS = app.platform.includes("iOS");
                     const hasAndroid = app.platform.includes("Android");
-                    
+
                     if (hasIOS && hasAndroid) {
                         crossPlatformCount++;
                     }
-                    
+
                     // Если это массив, увеличиваем счетчик для каждой платформы в массиве
                     app.platform.forEach(platform => {
                         platformCounter[platform] = (platformCounter[platform] || 0) + 1;
@@ -186,56 +186,45 @@ function processAppsData(apps) {
         });
     }
 
+    // Обновляем значения в существующих HTML-элементах
     if (typesArray.length > 0) {
-        const items = [];
-    
+        // Сначала обрабатываем специальные типы
+        let appCount = 0;
+        let stickersCount = 0;
+        let websiteCount = 0;
+
+        // Подсчитываем количество по каждому типу
         typesArray.forEach(([type, count]) => {
-            if (type === "App" && Object.keys(platformCounter).length > 0) {
-                const totalApps = count;
-                const iosCount = platformCounter["iOS"] || 0;
-                const androidCount = platformCounter["Android"] || 0;
-    
-                items.push(`
-                    <span class='app-type-item'>
-                        <span class='app-type-title'>Total Apps</span>
-                        <span class='app-type-value'>${totalApps}</span>
-                    </span>
-                `);
-                items.push(`
-                    <span class='app-type-item'>
-                        <span class='app-type-title'>iOS</span>
-                        <span class='app-type-value'>${iosCount}</span>
-                    </span>
-                `);
-                items.push(`
-                    <span class='app-type-item'>
-                        <span class='app-type-title'>Android</span>
-                        <span class='app-type-value'>${androidCount}</span>
-                    </span>
-                `);
-                items.push(`
-                    <span class='app-type-item'>
-                        <span class='app-type-title'>iOS+Android</span>
-                        <span class='app-type-value'>${crossPlatformCount}</span>
-                    </span>
-                `);
-            } else {
-                items.push(`
-                    <span class='app-type-item'>
-                        <span class='app-type-title'>${type}</span>
-                        <span class='app-type-value'>${count}</span>
-                    </span>
-                `);
+            switch (type) {
+                case "App":
+                    appCount = count;
+                    break;
+                case "iMessage Stickers":
+                    stickersCount = count;
+                    break;
+                case "Website":
+                    websiteCount = count;
+                    break;
             }
         });
-    
-        const appTypesElement = document.getElementById("app-types-details");
-        if (appTypesElement) {
-            appTypesElement.innerHTML = items.join(" ");
+
+        // Обновляем значения для типа "App"
+        if (appCount > 0 && Object.keys(platformCounter).length > 0) {
+            const iosCount = platformCounter["iOS"] || 0;
+            const androidCount = platformCounter["Android"] || 0;
+
+            document.getElementById("total-apps-count").textContent = appCount;
+            document.getElementById("ios-count").textContent = iosCount;
+            document.getElementById("android-count").textContent = androidCount;
+            document.getElementById("cross-platform-count").textContent = crossPlatformCount;
         }
+
+        // Обновляем значения для других типов
+        document.getElementById("stickers-count").textContent = stickersCount;
+        document.getElementById("website-count").textContent = websiteCount;
     }
-    
-    
+
+
 
     // Сортируем данные графика по дате релиза (от новых к старым)
     chartData.sort((a, b) => {

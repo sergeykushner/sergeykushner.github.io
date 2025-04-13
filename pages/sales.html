@@ -32,12 +32,46 @@
             </p>
             <input type="file" id="manual-file-upload" accept=".json">
         </div>
-        <div class="sales-container">
-            <div class="total-section">
-                <div class="apps-count-section">
-                    <h2 id="apps-count" class="total-apps-count"><span>0</span> Projects</h2>
-                    <div id="app-types-details" class="app-types-details"></div>
+        <div class="units-and-sales-container">
+            <div class="units-container">
+                <h2 id="apps-count"><span>0</span> Projects</h2>
+                <div id="app-types-details" class="app-types-details">
+                    <!-- Блоки для типа "App" -->
+                    <span class='app-type-item'>
+                        <h3 class='app-type-title'>iOS</h3>
+                        <span id="ios-count" class='app-type-value'>0</span>
+                    </span>
+                    <span class='app-type-item'>
+                        <h3 class='app-type-title'>Android</h3>
+                        <span id="android-count" class='app-type-value'>0</span>
+                    </span>
+                    <span class='app-type-item'>
+                        <h3 class='app-type-title'>iOS + Android</h3>
+                        <span id="cross-platform-count" class='app-type-value'>0</span>
+                    </span>
+
+                    <!-- Блок для типа "iMessage Stickers" -->
+                    <span class='app-type-item'>
+                        <h3 class='app-type-title'>iMessage Stickers</h3>
+                        <span id="stickers-count" class='app-type-value'>0</span>
+                    </span>
+
+                    <!-- Блок для типа "Website" -->
+                    <span class='app-type-item'>
+                        <h3 class='app-type-title'>Website</h3>
+                        <span id="website-count" class='app-type-value'>0</span>
+                    </span>
+
+                    <!-- Блок для типа "Total Apps" -->
+                    <span class='app-type-item'>
+                        <h3 class='app-type-title'>Total Apps</h3>
+                        <span id="total-apps-count" class='app-type-value'>0</span>
+                    </span>
+
                 </div>
+            </div>
+            <div class="sales-container">
+                <h2>Sales</h2>
                 <div class="stats-grid">
                     <div class="stats-card" id="app-store-stats">
                         <h3>App Store</h3>
@@ -60,7 +94,6 @@
             </div>
 
             <div class="chart-section">
-                <h2>Sales Chart</h2>
                 <div class="chart-legend">
                     <div class="legend-item">
                         <span class="legend-color app-store-segment"></span>
