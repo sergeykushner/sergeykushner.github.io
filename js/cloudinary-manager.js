@@ -415,7 +415,7 @@ async function smartUploadAppAssets(appId, appsDir, cleanExisting = true, option
 
             // Загружаем файл напрямую с указанием папки
             try {
-                const result = await cloudinary.uploader.upload(filePath, {
+                const uploadResult = await cloudinary.uploader.upload(filePath, {
                     public_id: fileName,
                     ...uploadOptions
                 });
