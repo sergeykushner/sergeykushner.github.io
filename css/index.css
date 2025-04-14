@@ -1,0 +1,13 @@
+.home-page {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 75vh;
+    text-align: center;
+}
+
+.home-links {
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-l);
+}

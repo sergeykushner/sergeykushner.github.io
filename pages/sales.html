@@ -6,7 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sales, Proceeds, Units</title>
     <link rel="stylesheet" href="../css/main.css?v=2.0" />
-    <link rel="stylesheet" href="../css/sales.css?v=1.0" />
 
     <!-- Google tag (gtag.js) -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
@@ -26,13 +25,13 @@
         <h1>Sales. Proceeds. Units.</h1>
     </header>
     <main>
-        <div id="error-container" class="error-container" style="display: none;">
-            <p id="error-message">
-                Data loading failed. Please manually upload the apps-metadata.json file
-            </p>
-            <input type="file" id="manual-file-upload" accept=".json">
-        </div>
         <div class="units-and-sales-container">
+            <div id="error-container" class="error-container" style="display: none;">
+                <p id="error-message">
+                    Data loading failed. Please manually upload the apps-metadata.json file
+                </p>
+                <input type="file" id="manual-file-upload" accept=".json">
+            </div>
             <div class="units-container">
                 <h2 id="apps-count"><span>0</span> Projects</h2>
                 <div id="app-types-details" class="app-types-details">

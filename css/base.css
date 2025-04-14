@@ -1,0 +1,12 @@
+body {
+    background-color: var(--body-background-color);
+    margin: var(--space-l) auto;
+    text-align: center;
+    font-family: system-ui;
+}
+
+@media (orientation: portrait) {
+    body {
+        margin-inline: 20px;
+    }
+}

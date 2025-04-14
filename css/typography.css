@@ -1,31 +1,31 @@
-/* Typography */
-p {
+/* ============================
+   ✍️ Типографика (основные теги)
+=============================== */
+
+p,
+span,
+h1,
+h2,
+h3,
+h4 {
     color: var(--text-primary-color);
 }
 
-span {
-    color: var(--text-primary-color);
-}
-
+/* --- bold --- */
 h1 {
-    color: var(--text-primary-color);
-    /* bold */
     font-weight: 700;
 }
 
 h2 {
-    color: var(--text-primary-color);
     font-weight: 600;
 }
 
 h3 {
-    color: var(--text-primary-color);
     font-weight: 500;
 }
 
+/* --- normal --- */
 h4 {
-    color: var(--text-primary-color);
-    /* normal */
     font-weight: 400;
 }
 
@@ -33,7 +33,28 @@ a {
     color: var(--link-color);
 }
 
-.secondary-text {
+a,
+.footer-links a,
+.apps-app-link a {
+    text-decoration: none;
+}
+
+.apps-app-link a:hover {
+    text-decoration: none;
+}
+
+a:hover,
+.footer-links a:hover {
+    text-decoration: underline;
+}
+
+/* ============================
+   🎨 Контекстные элементы текста
+=============================== */
+
+.apps-footer label,
+.app-container h3,
+.app-privacy-main-container h3 {
     color: var(--text-secondary-color);
 }
 
@@ -42,26 +63,29 @@ a {
     font-weight: 400;
 }
 
+/* --- 10px --- */
 .chart-date-item {
-    /* 10px */
     font-size: 0.625rem;
 }
 
-/* Media Queries */
+/* ============================
+   📱 Медиазапросы
+=============================== */
+
 @media (orientation: landscape) {
     p {
         line-height: 1.5;
     }
 
+    /* --- 14px --- */
     .apps-grid-container p {
-        /* 14px */
         font-size: 0.875rem;
     }
 }
 
+/* --- 12px --- */
 @media (orientation: portrait) {
     .apps-grid-container p {
-        /* 12px */
         font-size: 0.75rem;
     }
 }

@@ -1,0 +1,22 @@
+.btn-link {
+    display: inline-block;
+    padding: 0.75rem 1.25rem;
+    background-color: var(--btn-blue-background-color);
+    color: var(--btn-text-color);
+    text-align: center;
+    text-decoration: none;
+    border-radius: 9999px;
+    transition: background-color 0.3s ease;
+}
+
+.btn-link:hover {
+    background-color: var(--btn-blue-background-color-hover);
+    text-decoration: none;
+}
+
+
+.divider {
+    color: var(--divider-color);
+    border: var(--border-width-medium);
+    border-style: solid;
+}
