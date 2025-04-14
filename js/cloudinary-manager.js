@@ -23,7 +23,7 @@ const CLOUDINARY_ROOT_FOLDER = 'website';
  */
 const CLOUDINARY_CLOUD_NAME = process.env.CLOUDINARY_CLOUD_NAME;
 const CLOUDINARY_BASE_URL = `https://res.cloudinary.com/${CLOUDINARY_CLOUD_NAME}`;
-const ASSET_VERSION = 'v3'; // Новая константа версионирования
+const ASSET_VERSION = 'v4'; // Новая константа версионирования
 
 /**
  * Фильтрация файлов изображений из списка файлов
