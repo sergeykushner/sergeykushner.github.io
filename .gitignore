@@ -11,8 +11,10 @@ Thumbs.db
 # VSCode
 # .vscode/
 
-# Приватные данные
+# Private apps metadata
 data/apps-metadata.json 
+
+# Assets
 assets/
 assets.zip
 
