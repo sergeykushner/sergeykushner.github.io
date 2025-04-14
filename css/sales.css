@@ -130,6 +130,8 @@
     text-overflow: ellipsis;
     white-space: nowrap;
     color: var(--text-primary-color);
+    display: flex;
+    align-items: center;
 }
 
 .chart-bar-value {
@@ -137,12 +139,14 @@
     margin-left: var(--space-m);
     text-align: left;
     color: var(--text-primary-color);
+    white-space: nowrap;
 }
 
 .chart-bars-wrapper {
     display: flex;
     height: var(--bar-height);
     flex: 1;
+    align-items: center;
 }
 
 .bar-segment {
@@ -159,14 +163,19 @@
 }
 
 .chart-bar-app-icon {
+    position: relative;
     margin-right: var(--space-m);
+    display: flex;
+    align-items: center;
+    justify-content: center;
 }
 
 .chart-bar-app-icon img,
 .chart-app-bundle-placeholder {
     width: var(--icon-size-s);
     height: var(--icon-size-s);
-    position: relative;
+    vertical-align: middle;
+    object-fit: contain;
 }
 
 .chart-dates-container {
