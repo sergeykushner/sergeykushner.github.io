@@ -21,17 +21,14 @@
     border-style: solid;
 }
 
-.apps-app-icon,
+.apps-page-app-icon,
 .app-page-app-icon,
-.chart-bar-icon img {
+.chart-bar-app-icon img,
+.chart-app-bundle-placeholder {
     aspect-ratio: 1 / 1;
     border-style: solid;
     border-color: var(--app-icon-border-color);
     border-radius: var(--border-radius-icon);
-    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
-}
-
-.apps-app-icon,
-.app-page-app-icon {
     border-width: var(--border-width-bold);
+    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
 }

@@ -74,7 +74,7 @@ async function loadApps() {
 
             // Получаем элементы внутри клонированного шаблона
             const link = appNode.querySelector('a');
-            const img = appNode.querySelector('.apps-app-icon');
+            const img = appNode.querySelector('.apps-page-app-icon');
             const title = appNode.querySelector('.apps-app-title');
 
             // Заполняем элементы данными
@@ -130,7 +130,7 @@ async function loadApps() {
 
     // Настраиваем наблюдение за скроллом для обновления изображений
     window.addEventListener('scroll', function () {
-        const appIcons = document.querySelectorAll('.apps-app-icon');
+        const appIcons = document.querySelectorAll('.apps-page-app-icon');
         appIcons.forEach(img => {
             // Проверяем, видно ли изображение
             const rect = img.getBoundingClientRect();

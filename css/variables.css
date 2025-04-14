@@ -20,6 +20,12 @@
   /* --- iOS System Green --- */
   --chart-flippa-segment-color: rgb(52 199 89);
 
+  --app-icon-border-color: rgb(0 0 0 / 5%);
+  --divider-color: rgb(0 0 0 / 15%);
+
+  --app-icon-gradient-top: rgba(245 245 250);
+  --app-icon-gradient-bottom: rgba(245 245 250);
+
   --content-max-width-xxs: 720px;
   --content-max-width-xs: 840px;
   --content-max-width-s: 960px;
@@ -27,9 +33,6 @@
   --content-max-width-l: 1200px;
   --content-max-width-xl: 1320px;
   --content-max-width-xxl: 1440px;
-
-  --app-icon-border-color: rgb(0 0 0 / 5%);
-  --divider-color: rgb(0 0 0 / 15%);
 
   /* --- Радиусы --- */
   --border-radius-m: 1rem;

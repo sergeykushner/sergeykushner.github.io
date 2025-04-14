@@ -2,7 +2,6 @@
     text-align: start;
 }
 
-/* Media Queries */
 @media (orientation: landscape) {
     .app-privacy-main-container {
         max-width: var(--content-max-width-xs);

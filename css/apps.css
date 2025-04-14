@@ -19,25 +19,23 @@
     display: grid;
 }
 
-/* Media Queries */
 @media (orientation: landscape) {
-    .apps-app-icon {
-        width: auto;
+    .apps-page-app-icon {
+        width: var(--icon-size-l);
         height: var(--icon-size-l);
     }
 
     .apps-grid-container {
         max-width: var(--content-max-width-m);
-        margin-left: auto;
-        margin-right: auto;
+        margin-inline: auto;
         grid-template-columns: repeat(7, 1fr);
         gap: var(--space-s)
     }
 }
 
 @media (orientation: portrait) {
-    .apps-app-icon {
-        width: auto;
+    .apps-page-app-icon {
+        width: var(--icon-size-m);
         height: var(--icon-size-m);
     }
 
