@@ -41,8 +41,10 @@
 
   /* --- Размеры иконок --- */
   --icon-size-l: 4rem;
-  --icon-size-m: 3.75rem;
-  --icon-size-s: 2rem;
+  --icon-size-m: 3.5rem;
+  --icon-size-s: 3rem;
+  --icon-size-xs: 2.5rem;
+  --icon-size-xxs: 2rem;
 
   /* --- Высота бейджей --- */
   --badge-height-landscape: 3rem;

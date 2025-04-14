@@ -1,12 +1,10 @@
 .apps-grid-container {
-    max-width: var(--content-max-width-l);
+    display: grid;
     margin-inline: auto;
-    grid-template-columns: repeat(7, 1fr);
-    /*gap: var(--space-s)*/
 }
 
 .apps-app-title {
-    margin: var(--space-s);
+    margin-bottom: 0;
 }
 
 .filter-checkbox {
@@ -22,11 +20,13 @@
     cursor: pointer;
 }
 
-.apps-grid-container {
-    display: grid;
-}
-
 @media (orientation: landscape) {
+    .apps-grid-container {
+        max-width: var(--content-max-width-l);
+        grid-template-columns: repeat(7, 1fr);
+        gap: var(--space-l)
+    }
+
     .apps-page-app-icon {
         width: var(--icon-size-l);
         height: var(--icon-size-l);
@@ -34,12 +34,13 @@
 }
 
 @media (orientation: portrait) {
+    .apps-grid-container {
+        grid-template-columns: repeat(4, 1fr);
+        gap: var(--space-m)
+    }
+
     .apps-page-app-icon {
         width: var(--icon-size-m);
         height: var(--icon-size-m);
-    }
-
-    .apps-grid-container {
-        grid-template-columns: repeat(4, 1fr);
     }
 }

@@ -172,8 +172,8 @@
 
 .chart-bar-app-icon img,
 .chart-app-bundle-placeholder {
-    width: var(--icon-size-s);
-    height: var(--icon-size-s);
+    width: var(--icon-size-xxs);
+    height: var(--icon-size-xxs);
     vertical-align: middle;
     object-fit: contain;
 }
