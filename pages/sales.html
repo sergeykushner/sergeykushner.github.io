@@ -25,7 +25,7 @@
         <h1>Sales. Proceeds. Units.</h1>
     </header>
     <main>
-        <div class="units-and-sales-container">
+        <div class="units-and-sales-main-container">
             <div id="error-container" class="error-container" style="display: none;">
                 <p id="error-message">
                     Data loading failed. Please manually upload the apps-metadata.json file
@@ -105,8 +105,26 @@
                 </div>
                 <div class="chart-container">
                     <div id="chart-sales-container" class="chart-sales-container">
-                        <!-- Chart will be inserted here by JavaScript -->
+                        <!-- Шаблон будет использоваться в JavaScript -->
                     </div>
+
+                    <!-- Шаблон для графика (вне контейнера chart-sales-container) -->
+                    <template id="chartRowTemplate">
+                        <div class="chart-row">
+                            <div class="chart-bar-icon">
+                                <img alt="App Icon">
+                            </div>
+                            <div class="chart-bar-label"></div>
+                            <div class="chart-bars-wrapper">
+                                <!-- Сегменты графика будут добавлены через JavaScript -->
+                                <div class="chart-bar-value"></div>
+                            </div>
+                            <div class="chart-dates-container">
+                                <div class="chart-date-item chart-release-date"></div>
+                                <div class="chart-date-item chart-sale-date"></div>
+                            </div>
+                        </div>
+                    </template>
                 </div>
             </div>
         </div>

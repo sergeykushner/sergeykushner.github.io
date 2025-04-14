@@ -53,7 +53,7 @@ a:hover,
 =============================== */
 
 .apps-footer label,
-.app-container h3,
+.app-page-main-container h3,
 .app-privacy-main-container h3 {
     color: var(--text-secondary-color);
 }

@@ -1,10 +1,6 @@
-.app-icon img {
-    aspect-ratio: 1 / 1;
-    border-width: var(--border-width-bold);
-    border-style: solid;
-    border-color: var(--app-icon-border-color);
-    border-radius: var(--border-radius-icon);
-    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
+.app-page-main-container {
+    max-width: var(--content-max-width-xs);
+    margin-inline: auto;
 }
 
 /* Layout & Structure */
@@ -106,8 +102,8 @@ li {
 
 /* Media Queries */
 @media (orientation: landscape) {
-    .app-icon img {
-        width: auto;
+    .app-page-app-icon {
+        width: var(--icon-size-l);
         height: var(--icon-size-l);
     }
 
@@ -118,16 +114,10 @@ li {
     .screenshots-gallery {
         gap: var(--space-l);
     }
-
-    .app-container {
-        max-width: var(--content-max-width-xs);
-        margin-left: auto;
-        margin-right: auto;
-    }
 }
 
 @media (orientation: portrait) {
-    .app-icon img {
+    .app-page-app-icon {
         display: none;
     }
 

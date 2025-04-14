@@ -346,37 +346,48 @@ function buildSalesChart(data) {
     const chartContainer = document.getElementById("chart-sales-container");
     chartContainer.innerHTML = "";
 
+    // Получаем шаблон строки графика
+    const rowTemplate = document.getElementById("chartRowTemplate");
+
+    // Если шаблон не найден, выводим ошибку и прекращаем выполнение
+    if (!rowTemplate) {
+        console.error("Chart row template not found!");
+        return;
+    }
+
     // Проверяем, использует ли пользователь темный режим
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
-
-    // Получаем CSS переменные для цветов сегментов
-    const appStoreColor = getComputedStyle(document.documentElement).getPropertyValue('--chart-app-store-segment-color') || '#4299E1';
-    const flippaColor = getComputedStyle(document.documentElement).getPropertyValue('--chart-flippa-segment-color') || '#48BB78';
 
     // Находим максимальное значение для масштабирования
     const maxValue = Math.max(...data.map(item => item.total));
 
-    // Создаем контейнер для баров
+    // Создаем контейнер для всех строк графика
     const barsContainer = document.createElement("div");
     barsContainer.className = "chart-bars-container";
+    chartContainer.appendChild(barsContainer);
 
     // Создаем бары для каждого приложения
     data.forEach(app => {
-        // Создаем контейнер для строки
-        const barContainer = document.createElement("div");
-        barContainer.className = "chart-row";
+        // Клонируем шаблон строки
+        const barContainer = rowTemplate.content.cloneNode(true).querySelector(".chart-row");
 
-        // Добавляем иконку приложения
-        const iconContainer = document.createElement("div");
-        iconContainer.className = "chart-bar-icon";
+        // Получаем элементы строки
+        const iconContainer = barContainer.querySelector(".chart-bar-icon");
+        const iconImage = iconContainer.querySelector("img");
+        const label = barContainer.querySelector(".chart-bar-label");
+        const barsWrapper = barContainer.querySelector(".chart-bars-wrapper");
+        const value = barContainer.querySelector(".chart-bar-value");
+        const datesContainer = barContainer.querySelector(".chart-dates-container");
+        const releaseDate = barContainer.querySelector(".chart-release-date");
+        const saleDate = barContainer.querySelector(".chart-sale-date");
 
-        // Создаем элемент изображения
-        const iconImage = document.createElement("img");
+        // Заполняем данными
 
         // Проверяем тип приложения и устанавливаем заглушку для App Bundle
         if (app.type === "App Bundle") {
             // Для App Bundle используем заглушку (серый квадрат)
             iconContainer.classList.add("chart-app-bundle-placeholder");
+            iconImage.remove(); // Удаляем изображение
         } else {
             // Для обычных приложений загружаем иконку из Cloudinary
             const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
@@ -390,21 +401,13 @@ function buildSalesChart(data) {
                     this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
                 }
             };
-
-            iconContainer.appendChild(iconImage);
         }
 
-        barContainer.appendChild(iconContainer);
-
-        // Добавляем название приложения
-        const label = document.createElement("div");
-        label.className = "chart-bar-label";
+        // Имя приложения
         label.textContent = app.displayName;
-        barContainer.appendChild(label);
 
-        // Создаем контейнер для баров
-        const barsWrapper = document.createElement("div");
-        barsWrapper.className = "chart-bars-wrapper";
+        // Очищаем barsWrapper перед добавлением сегментов (сохраняя значение)
+        const barValue = value;
 
         // Создаем сегмент для выручки Flippa (сначала Flippa потом App Store)
         if (app.flippaProceeds > 0) {
@@ -412,7 +415,8 @@ function buildSalesChart(data) {
             flippaSegment.className = "bar-segment chart-flippa-segment";
             const widthPercent = (app.flippaProceeds / maxValue) * 100;
             flippaSegment.style.width = `${widthPercent}%`;
-            barsWrapper.appendChild(flippaSegment);
+            // Вставляем перед значением
+            barsWrapper.insertBefore(flippaSegment, barValue);
         }
 
         // Создаем сегмент для выручки App Store
@@ -421,26 +425,15 @@ function buildSalesChart(data) {
             appStoreSegment.className = "bar-segment chart-app-store-segment";
             const widthPercent = (app.appStoreProceeds / maxValue) * 100;
             appStoreSegment.style.width = `${widthPercent}%`;
-            barsWrapper.appendChild(appStoreSegment);
+            // Вставляем перед значением
+            barsWrapper.insertBefore(appStoreSegment, barValue);
         }
 
-        barContainer.appendChild(barsWrapper);
+        // Устанавливаем значение
+        barValue.textContent = `$${Math.round(app.total)}`;
 
-        // Добавляем значение внутри контейнера бара
-        const value = document.createElement("div");
-        value.className = "chart-bar-value";
-        value.textContent = `$${Math.round(app.total)}`;
-        barsWrapper.appendChild(value);
-
-        // Контейнер для дат
-        const datesContainer = document.createElement("div");
-        datesContainer.className = "chart-dates-container";
-
-        // Добавляем дату релиза
+        // Обрабатываем даты
         if (app.releaseDate) {
-            const releaseDateElement = document.createElement("div");
-            releaseDateElement.className = "chart-date-item chart-release-date";
-
             // Форматируем дату для отображения
             let formattedReleaseDate = app.releaseDate;
             try {
@@ -452,15 +445,12 @@ function buildSalesChart(data) {
                 // Если формат даты некорректный, оставляем как есть
             }
 
-            releaseDateElement.textContent = `Release: ${formattedReleaseDate}`;
-            datesContainer.appendChild(releaseDateElement);
+            releaseDate.textContent = `Release: ${formattedReleaseDate}`;
+        } else {
+            releaseDate.remove();
         }
 
-        // Добавляем дату продажи
         if (app.saleDate) {
-            const saleDateElement = document.createElement("div");
-            saleDateElement.className = "chart-date-item chart-sale-date";
-
             // Форматируем дату для отображения
             let formattedSaleDate = app.saleDate;
             try {
@@ -472,18 +462,14 @@ function buildSalesChart(data) {
                 // Если формат даты некорректный, оставляем как есть
             }
 
-            saleDateElement.textContent = `Sale: ${formattedSaleDate}`;
-            datesContainer.appendChild(saleDateElement);
+            saleDate.textContent = `Sale: ${formattedSaleDate}`;
+        } else {
+            saleDate.remove();
         }
-
-        barContainer.appendChild(datesContainer);
 
         // Добавляем строку в контейнер
         barsContainer.appendChild(barContainer);
     });
-
-    // Добавляем контейнер с барами в контейнер графика
-    chartContainer.appendChild(barsContainer);
 }
 
 // Вызываем функцию загрузки данных при загрузке страницы

@@ -20,3 +20,18 @@
     border: var(--border-width-medium);
     border-style: solid;
 }
+
+.apps-app-icon,
+.app-page-app-icon,
+.chart-bar-icon img {
+    aspect-ratio: 1 / 1;
+    border-style: solid;
+    border-color: var(--app-icon-border-color);
+    border-radius: var(--border-radius-icon);
+    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
+}
+
+.apps-app-icon,
+.app-page-app-icon {
+    border-width: var(--border-width-bold);
+}

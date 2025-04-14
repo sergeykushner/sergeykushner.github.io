@@ -21,7 +21,21 @@
 </head>
 
 <body>
-    <main class="apps-grid-container"></main>
+    <main>
+        <div class="apps-grid-container" id="appsContainer">
+            <!-- Шаблон для карточки приложения -->
+            <template id="appTemplate">
+                <div class="app-item">
+                    <div class="apps-app-link">
+                        <a href="" data-href="app.html?id=">
+                            <img class="apps-app-icon" alt="">
+                            <p class="apps-app-title"></p>
+                        </a>
+                    </div>
+                </div>
+            </template>
+        </div>
+    </main>
 
     <footer class="apps-footer">
         <label class="filter-checkbox">

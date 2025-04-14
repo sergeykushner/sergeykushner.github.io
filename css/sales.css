@@ -2,9 +2,9 @@
    🧱 Базовая структура страницы
 =============================== */
 
-.units-and-sales-container {
+.units-and-sales-main-container {
     max-width: var(--content-max-width-xs);
-    margin: 0 auto;
+    margin-inline: auto;
 }
 
 .units-container,
@@ -109,6 +109,17 @@
     width: var(--bar-height);
     height: var(--bar-height);
     border-radius: var(--border-radius-icon);
+    display: inline-block;
+}
+
+.chart-legend-color,
+.chart-app-store-segment {
+    background-color: var(--chart-app-store-segment-color);
+}
+
+.chart-legend-color,
+.chart-flippa-segment {
+    background-color: var(--chart-flippa-segment-color);
 }
 
 /* --- Контейнеры --- */
@@ -172,19 +183,12 @@
 }
 
 /* --- Иконки --- */
-.chart-bar-icon {
-    position: relative;
-    margin-right: var(--space-m);
-}
-
 .chart-bar-icon img {
     width: var(--icon-size-s);
     height: var(--icon-size-s);
-    border-radius: var(--border-radius-icon);
-    border: var(--border-width-medium);
-    border-style: solid;
-    border-color: var(--divider-color);
-    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
+    position: relative;
+    margin-right: var(--space-m);
+    border-width: var(--border-width-medium);
 }
 
 /* --- Placeholder для App Bundle --- */

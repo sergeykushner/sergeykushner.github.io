@@ -1,12 +1,3 @@
-.apps-app-icon {
-    aspect-ratio: 1 / 1;
-    border-width: var(--border-width-bold);
-    border-style: solid;
-    border-color: var(--app-icon-border-color);
-    border-radius: var(--border-radius-icon);
-    background: linear-gradient(to bottom, var(--app-icon-gradient-top), var(--app-icon-gradient-bottom));
-}
-
 .apps-app-title {
     margin: var(--space-s);
 }

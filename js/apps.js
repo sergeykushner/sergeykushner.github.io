@@ -46,7 +46,9 @@ async function loadApps() {
     // Фильтруем приложения, исключая те, у которых type === "App Bundle"
     let apps = allApps.filter(app => app.type !== "App Bundle");
 
+    // Получаем ссылки на DOM-элементы
     const container = document.querySelector(".apps-grid-container");
+    const template = document.getElementById("appTemplate");
 
     // Проверяем, использует ли пользователь темный режим
     const prefersDarkMode = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
@@ -61,31 +63,39 @@ async function loadApps() {
         });
     }
 
-    // Функция для отображения приложений
+    // Функция для отображения приложений с использованием шаблона
     function renderApps(appsToRender) {
         // Очищаем контейнер перед добавлением приложений
         container.innerHTML = '';
 
         appsToRender.forEach(app => {
-            const appDiv = document.createElement("div");
-            appDiv.className = "app-item";
+            // Клонируем шаблон для каждого приложения
+            const appNode = template.content.cloneNode(true);
+
+            // Получаем элементы внутри клонированного шаблона
+            const link = appNode.querySelector('a');
+            const img = appNode.querySelector('.apps-app-icon');
+            const title = appNode.querySelector('.apps-app-title');
+
+            // Заполняем элементы данными
+            link.href = `app.html?id=${app.id}`;
+            title.textContent = app.displayName;
 
             // Получаем URL иконки из Cloudinary с учетом темного режима
             const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
+            img.src = iconUrl;
+            img.alt = app.title || app.displayName;
 
-            appDiv.innerHTML = `
-                <div class="apps-app-link">
-                    <a href="app.html?id=${app.id}">
-                        <img src="${iconUrl}" class="apps-app-icon" alt="${app.title}" 
-                             onerror="if(this.getAttribute('data-tried-light') !== 'true') { 
-                                 this.setAttribute('data-tried-light', 'true'); 
-                                 this.src='${getCloudinaryImageUrl(app.id, 'app-icon', 'png', false)}'; 
-                             }">
-                        <p class="apps-app-title">${app.displayName}</p>
-                    </a>
-                </div>
-            `;
-            container.appendChild(appDiv);
+            // Добавляем обработчик ошибки загрузки для запасного варианта
+            img.onerror = function () {
+                if (this.getAttribute('data-tried-light') !== 'true') {
+                    this.setAttribute('data-tried-light', 'true');
+                    this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
+                }
+            };
+
+            // Добавляем карточку в контейнер
+            container.appendChild(appNode);
         });
     }
 

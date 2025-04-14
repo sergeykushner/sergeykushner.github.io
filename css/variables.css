@@ -45,6 +45,9 @@
   --badge-height-landscape: 3rem;
   --badge-height-portrait: 3rem;
 
+  /* --- Высота полосок диаграммы --- */
+  --bar-height: 1rem;
+
   /* --- Отступы --- */
   --space-xxl: 4rem;
   --space-xl: 3rem;
