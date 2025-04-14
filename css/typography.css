@@ -23,10 +23,6 @@ h3 {
     font-weight: 500;
 }
 
-.secondary-text {
-    color: var(--text-secondary-color);
-}
-
 h4 {
     color: var(--text-primary-color);
     /* normal */
@@ -37,7 +33,16 @@ a {
     color: var(--link-color);
 }
 
-.date-item {
+.secondary-text {
+    color: var(--text-secondary-color);
+}
+
+.app-type-title {
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+.chart-date-item {
     /* 10px */
     font-size: 0.625rem;
 }

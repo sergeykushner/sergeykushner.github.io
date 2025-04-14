@@ -7,7 +7,7 @@
         ],
         "status": "availableForSale",
         "displayName": "Capsula",
-        "title": "Capsula - Digital Time Capsule",
+        "title": "Capsula - Digital Time Capsule!!",
         "subtitle": "Add and lock text and images",
         "promoText": "Lock your content.",
         "shortDescription": "Capsula is an app that allows users to create and store digital capsules of text and photos, which can be opened on a specific date in the future.",
@@ -63,7 +63,7 @@
         "googlePlayId": "",
         "screenshots": [
             1,
-            2,
+            3,
             4
         ],
         "screenshotProduct": "iPhone 15 Pro Max",
@@ -2162,7 +2162,7 @@
         "displayName": "Tasty SP",
         "title": "Tasty emoji stickers",
         "appStoreId": "1248248229",
-        "releaseDate": "0001-01-01"
+        "releaseDate": "2017-04-07"
     },
     {
         "id": "boys-girls-sp",
@@ -2174,7 +2174,7 @@
         "displayName": "Boys + Girls SP",
         "title": "Boys + Girls emoji stickers",
         "appStoreId": "1247890110",
-        "releaseDate": "0001-01-01"
+        "releaseDate": "2017-04-29"
     },
     {
         "id": "xmas-pack",
@@ -2186,13 +2186,13 @@
         "displayName": "XMAS Pack",
         "title": "XMAS Pack - Christmas and New Year stickers",
         "appStoreId": "1444431397",
-        "releaseDate": "0001-01-01"
+        "releaseDate": "2017-12-14"
     },
     {
-        "id": "",
-        "type": "App",
+        "id": "template-app",
+        "type": "",
         "platform": [
-            "iOS"
+            ""
         ],
         "status": "",
         "displayName": "",

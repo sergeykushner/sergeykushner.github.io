@@ -2,7 +2,7 @@
 
 /* Основные контейнеры */
 .units-and-sales-container {
-    max-width: 800px;
+    max-width: var(--content-max-width-xs);
     margin: 0 auto;
 }
 
@@ -22,7 +22,7 @@
 
 /* Контейнер с ошибкой */
 .error-container {
-    max-width: 800px;
+    max-width: var(--content-max-width-m);
     margin: var(--space-l) auto;
     padding: var(--space-l) 0;
     background-color: var(--card-background-color);
@@ -58,20 +58,20 @@
 }
 
 /* Статистика продаж */
-.stats-grid {
+.sales-stats-grid {
     margin-top: var(--space-l);
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: var(--space-m);
 }
 
-.stats-card {
+.sales-stats-card {
     border-radius: var(--border-radius-s);
     background-color: var(--card-secondary-background-color);
     padding: 0 var(--space-m);
 }
 
-.stats-row {
+.sales-stats-row {
     display: flex;
     justify-content: space-between;
     margin: var(--space-m) 0;
@@ -88,25 +88,25 @@
     margin-bottom: var(--space-xxl);
 }
 
-.legend-item {
+.chart-legend-item {
     display: flex;
     align-items: center;
     gap: var(--space-s);
 }
 
-.legend-color {
+.chart-legend-color {
     width: var(--bar-height);
     height: var(--bar-height);
-    border-radius: var(--icon-border-radius);
+    border-radius: var(--border-radius-icon);
 }
 
 /* Контейнеры графика */
 .chart-container,
-.sales-chart-container {
+.chart-sales-container {
     width: 100%;
 }
 
-.bars-container {
+.chart-bars-container {
     display: flex;
     flex-direction: column;
     align-items: flex-start;
@@ -123,7 +123,7 @@
 }
 
 /* Название приложения */
-.bar-label {
+.chart-bar-label {
     position: relative;
     width: 100px;
     margin-right: var(--space-m);
@@ -135,7 +135,7 @@
 }
 
 /* Значение */
-.bar-value {
+.chart-bar-value {
     max-width: 100px;
     margin-left: var(--space-m);
     text-align: left;
@@ -143,29 +143,29 @@
 }
 
 /* Даты */
-.dates-container {
+.chart-dates-container {
     width: 130px;
     display: flex;
     flex-direction: column;
     margin-left: var(--space-m);
 }
 
-.date-item {
+.chart-date-item {
     text-align: left;
     color: var(--text-secondary-color);
     margin-bottom: var(--space-xs);
 }
 
-.release-date {
-    color: var(--app-store-segment-color);
+.chart-release-date {
+    color: var(--chart-app-store-segment-color);
 }
 
-.sale-date {
-    color: var(--flippa-segment-color);
+.chart-sale-date {
+    color: var(--chart-flippa-segment-color);
 }
 
 /* Сегменты баров */
-.bars-wrapper {
+.chart-bars-wrapper {
     display: flex;
     height: var(--bar-height);
     flex: 1;
@@ -176,24 +176,24 @@
     height: var(--bar-height);
 }
 
-.app-store-segment {
-    background-color: var(--app-store-segment-color);
+.chart-app-store-segment {
+    background-color: var(--chart-app-store-segment-color);
 }
 
-.flippa-segment {
-    background-color: var(--flippa-segment-color);
+.chart-flippa-segment {
+    background-color: var(--chart-flippa-segment-color);
 }
 
 /* Иконки */
-.bar-icon {
+.chart-bar-icon {
     position: relative;
     margin-right: 10px;
 }
 
-.bar-icon img {
+.chart-bar-icon img {
     width: var(--icon-size-s);
     height: var(--icon-size-s);
-    border-radius: var(--icon-border-radius);
+    border-radius: var(--border-radius-icon);
     border: var(--border-width-medium);
     border-style: solid;
     border-color: var(--divider-color);
@@ -201,14 +201,17 @@
 }
 
 /* Заглушка для App Bundle */
-.app-bundle-placeholder {
+.chart-app-bundle-placeholder {
     width: var(--icon-size-s);
     height: var(--icon-size-s);
-    border-radius: var(--icon-border-radius);
-    background-color: var(--app-bundle-placeholder-color);
+    border-radius: var(--border-radius-icon);
+    border: var(--border-width-medium);
+    border-style: solid;
+    border-color: var(--divider-color);
+    background-color: var(--card-background-color);
 }
 
-.dates-container {
+.chart-dates-container {
     display: none;
 }
 
@@ -218,7 +221,7 @@
 
 /* Адаптивность для мобильных устройств */
 @media (orientation: portrait) {
-    .stats-grid {
+    .sales-stats-grid {
         grid-template-columns: 1fr;
     }
 }
