@@ -1,3 +1,10 @@
+.apps-grid-container {
+    max-width: var(--content-max-width-l);
+    margin-inline: auto;
+    grid-template-columns: repeat(7, 1fr);
+    /*gap: var(--space-s)*/
+}
+
 .apps-app-title {
     margin: var(--space-s);
 }
@@ -23,13 +30,6 @@
     .apps-page-app-icon {
         width: var(--icon-size-l);
         height: var(--icon-size-l);
-    }
-
-    .apps-grid-container {
-        max-width: var(--content-max-width-m);
-        margin-inline: auto;
-        grid-template-columns: repeat(7, 1fr);
-        gap: var(--space-s)
     }
 }
 
