@@ -45,7 +45,7 @@ async function main() {
     }
 
     try {
-        console.log('=== Административный скрипт ===');
+        console.log('\n✨ Административный скрипт ✨\n');
 
         // Выводим главное меню
         const { operation } = await inquirer.prompt([
@@ -76,16 +76,16 @@ async function main() {
             case 'Загрузка рамок устройств на Cloudinary':
                 await uploadBezels();
                 break;
-            case 'Инвалидировать кэш изображений в Cloudinary':
+            case 'Инвалидация кэша изображений в Cloudinary':
                 await invalidateCache();
                 break;
-            case 'Перезагрузить все изображения из assets на Cloudinary':
+            case 'Перезагрузка всех изображений из assets на Cloudinary':
                 await uploadAllAssets();
                 break;
-            case 'Обновить публичный JSON':
+            case 'Обновление публичного JSON':
                 await updatePublicJson();
                 break;
-            case 'Обновить версию ассетов':
+            case 'Обновление версии ассетов':
                 await updateAssetVersion();
                 break;
             case 'Выход':
@@ -400,11 +400,11 @@ async function uploadAppImagesImproved() {
             }
         }
 
-        console.log('\n====== Итоги загрузки всех приложений ======');
+        console.log('\n📊 Итоги загрузки всех приложений 📊');
         console.log(`✅ Успешно загружено: ${results.success}`);
         console.log(`⚠️ Загружено с ошибками: ${results.failed}`);
         console.log(`⏭️ Пропущено: ${results.skipped}`);
-        console.log('=========================================');
+        console.log('-----------------------------------------');
     } else {
         // Выбираем приложение или возвращаемся назад
         const { selectedApp } = await inquirer.prompt([
@@ -598,15 +598,15 @@ async function uploadAllAssets() {
     await cloudinaryManager.createFolder(cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
 
     // Загружаем бейджи
-    console.log('\n=== Загрузка бейджей ===');
+    console.log('\n🏷️ Загрузка бейджей...');
     await cloudinaryManager.uploadBadges(badgesDir, true);
 
     // Загружаем рамки устройств
-    console.log('\n=== Загрузка рамок устройств ===');
+    console.log('\n🖼️ Загрузка рамок устройств...');
     await cloudinaryManager.uploadDeviceBezels(bezelsDir, UPLOAD_MODES.ALL);
 
     // Получаем список всех папок приложений
-    console.log('\n=== Загрузка ресурсов приложений ===');
+    console.log('\n📱 Загрузка ресурсов приложений...');
     try {
         // Получаем список директорий приложений
         const appDirs = await cloudinaryManager.getAppDirectories(appsDir);
@@ -647,7 +647,7 @@ async function uploadSmartAppAssets(appId) {
     try {
         const result = await cloudinaryManager.smartUploadAppAssets(appId, appsDir, true);
 
-        console.log(`\n=== Итоги загрузки для ${appId} ===`);
+        console.log(`\n📊 Итоги загрузки для ${appId} 📊`);
         console.log(`✅ Успешно загружено файлов: ${result.success}`);
         console.log(`❌ Ошибок загрузки: ${result.failed}`);
 
@@ -685,15 +685,29 @@ async function updatePublicJson() {
  */
 async function updateAssetVersion() {
     try {
-        console.log('Обновление версии ассетов...');
+        console.log('🔄 Обновление версии ассетов...');
+
+        // Проверяем существование файлов
+        if (!await fs.pathExists(cloudinaryManagerPath)) {
+            console.error(`❌ Файл ${cloudinaryManagerPath} не найден`);
+            return false;
+        }
+
+        if (!await fs.pathExists(cloudinaryPath)) {
+            console.error(`❌ Файл ${cloudinaryPath} не найден`);
+            return false;
+        }
 
         // Читаем текущую версию из cloudinary-manager.js
         const managerContent = await fs.readFile(cloudinaryManagerPath, 'utf-8');
+
+        // Ищем версию с помощью регулярного выражения
         const versionMatch = managerContent.match(/const\s+ASSET_VERSION\s*=\s*['"](v\d+)['"]/);
 
         if (!versionMatch || !versionMatch[1]) {
-            console.error('Не удалось определить текущую версию ассетов в cloudinary-manager.js');
-            return;
+            console.error('❌ Не удалось определить текущую версию ассетов в cloudinary-manager.js');
+            console.log('Формат должен быть: const ASSET_VERSION = \'vX\', где X - число');
+            return false;
         }
 
         const currentVersion = versionMatch[1];
@@ -701,7 +715,7 @@ async function updateAssetVersion() {
         const nextVersionNumber = currentVersionNumber + 1;
         const nextVersion = `v${nextVersionNumber}`;
 
-        console.log(`Текущая версия: ${currentVersion}`);
+        console.log(`📌 Текущая версия: ${currentVersion}`);
 
         const { newVersion } = await inquirer.prompt([
             {
@@ -726,31 +740,85 @@ async function updateAssetVersion() {
         ]);
 
         if (!confirm) {
-            console.log('Операция отменена');
-            return;
+            console.log('⏹️ Операция отменена');
+            return false;
         }
 
         // Обновляем файл cloudinary-manager.js
-        const newManagerContent = managerContent.replace(
-            /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/,
-            `const ASSET_VERSION = '${newVersion}'`
-        );
-        await fs.writeFile(cloudinaryManagerPath, newManagerContent, 'utf-8');
-        console.log(`Файл ${path.basename(cloudinaryManagerPath)} обновлен до версии ${newVersion}`);
+        try {
+            let newManagerContent = managerContent;
+
+            // Пробуем заменить версию в правильном формате
+            const managerReplaced = newManagerContent.replace(
+                /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/g,
+                `const ASSET_VERSION = '${newVersion}'`
+            );
+
+            // Проверяем, была ли выполнена замена
+            if (managerReplaced === managerContent) {
+                console.warn('⚠️ Замена в cloudinary-manager.js не выполнена. Пробуем альтернативный метод...');
+
+                // Альтернативный метод замены (запасной вариант)
+                const lines = managerContent.split('\n');
+                for (let i = 0; i < lines.length; i++) {
+                    if (lines[i].includes('ASSET_VERSION') && lines[i].includes('=')) {
+                        lines[i] = `const ASSET_VERSION = '${newVersion}'; // Обновлено ${new Date().toISOString()}`;
+                        break;
+                    }
+                }
+                newManagerContent = lines.join('\n');
+            } else {
+                newManagerContent = managerReplaced;
+            }
+
+            await fs.writeFile(cloudinaryManagerPath, newManagerContent, 'utf-8');
+            console.log(`✅ Файл ${path.basename(cloudinaryManagerPath)} обновлен до версии ${newVersion}`);
+        } catch (err) {
+            console.error(`❌ Ошибка при обновлении файла ${path.basename(cloudinaryManagerPath)}:`, err);
+            return false;
+        }
 
         // Обновляем файл cloudinary.js
-        const cloudinaryContent = await fs.readFile(cloudinaryPath, 'utf-8');
-        const newCloudinaryContent = cloudinaryContent.replace(
-            /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/,
-            `const ASSET_VERSION = '${newVersion}'`
-        );
-        await fs.writeFile(cloudinaryPath, newCloudinaryContent, 'utf-8');
-        console.log(`Файл ${path.basename(cloudinaryPath)} обновлен до версии ${newVersion}`);
+        try {
+            const cloudinaryContent = await fs.readFile(cloudinaryPath, 'utf-8');
 
-        console.log('Версия ассетов успешно обновлена!');
+            let newCloudinaryContent = cloudinaryContent;
 
+            // Пробуем заменить версию в правильном формате
+            const cloudinaryReplaced = newCloudinaryContent.replace(
+                /const\s+ASSET_VERSION\s*=\s*['"]v\d+['"]/g,
+                `const ASSET_VERSION = '${newVersion}'`
+            );
+
+            // Проверяем, была ли выполнена замена
+            if (cloudinaryReplaced === cloudinaryContent) {
+                console.warn('⚠️ Замена в cloudinary.js не выполнена. Пробуем альтернативный метод...');
+
+                // Альтернативный метод замены (запасной вариант)
+                const lines = cloudinaryContent.split('\n');
+                for (let i = 0; i < lines.length; i++) {
+                    if (lines[i].includes('ASSET_VERSION') && lines[i].includes('=')) {
+                        lines[i] = `const ASSET_VERSION = '${newVersion}'; // Обновлено ${new Date().toISOString()}`;
+                        break;
+                    }
+                }
+                newCloudinaryContent = lines.join('\n');
+            } else {
+                newCloudinaryContent = cloudinaryReplaced;
+            }
+
+            await fs.writeFile(cloudinaryPath, newCloudinaryContent, 'utf-8');
+            console.log(`✅ Файл ${path.basename(cloudinaryPath)} обновлен до версии ${newVersion}`);
+        } catch (err) {
+            console.error(`❌ Ошибка при обновлении файла ${path.basename(cloudinaryPath)}:`, err);
+            return false;
+        }
+
+        console.log('🎉 Версия ассетов успешно обновлена!');
+        return true;
     } catch (error) {
-        console.error('Ошибка при обновлении версии ассетов:', error);
+        console.error('❌ Ошибка при обновлении версии ассетов:', error);
+        return false;
     }
 }
 
