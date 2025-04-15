@@ -54,13 +54,13 @@ async function main() {
                 name: 'operation',
                 message: 'Выберите операцию:',
                 choices: [
+                    'Обновление публичного JSON',
                     'Загрузка изображений приложений на Cloudinary',
-                    'Загрузить бейджи на Cloudinary',
-                    'Загрузить рамки устройств на Cloudinary',
-                    'Инвалидировать кэш изображений в Cloudinary',
-                    'Перезагрузить все изображения из assets на Cloudinary',
-                    'Обновить публичный JSON',
-                    'Обновить версию ассетов',
+                    'Загрузка бейджей на Cloudinary',
+                    'Загрузка рамок устройств на Cloudinary',
+                    'Инвалидация кэша изображений в Cloudinary',
+                    'Перезагрузка всех изображений из assets на Cloudinary',
+                    'Обновление версии ассетов',
                     'Выход'
                 ]
             }
@@ -70,10 +70,10 @@ async function main() {
             case 'Загрузка изображений приложений на Cloudinary':
                 await uploadAppImagesImproved();
                 break;
-            case 'Загрузить бейджи на Cloudinary':
+            case 'Загрузка бейджей на Cloudinary':
                 await uploadBadges();
                 break;
-            case 'Загрузить рамки устройств на Cloudinary':
+            case 'Загрузка рамок устройств на Cloudinary':
                 await uploadBezels();
                 break;
             case 'Инвалидировать кэш изображений в Cloudinary':
@@ -234,12 +234,19 @@ async function uploadBezels(option) {
                 choices: [
                     { name: 'Загрузить все рамки (перезаписать существующие)', value: 'all' },
                     { name: 'Загрузить конкретную рамку', value: 'specific' },
-                    { name: 'Загрузить только новые рамки', value: 'new' }
+                    { name: 'Загрузить только новые рамки', value: 'new' },
+                    { name: '⬅️ Вернуться в главное меню', value: 'back' }
                 ]
             }
         ]);
 
         option = mode;
+    }
+
+    // Проверяем, выбрана ли опция возврата в главное меню
+    if (option === 'back') {
+        console.log('Возврат в главное меню...');
+        return;
     }
 
     if (option === 'all') {
