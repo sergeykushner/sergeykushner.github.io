@@ -61,8 +61,6 @@ async function main() {
                     'Перезагрузить все изображения из assets на Cloudinary',
                     'Обновить публичный JSON',
                     'Обновить версию ассетов',
-                    'Форматировать CSS файлы через Stylelint',
-                    'Установить npm-check-updates глобально',
                     'Выход'
                 ]
             }
@@ -90,16 +88,9 @@ async function main() {
             case 'Обновить версию ассетов':
                 await updateAssetVersion();
                 break;
-            case 'Форматировать CSS файлы через Stylelint':
-                await formatCssFiles();
-                break;
-            case 'Установить npm-check-updates глобально':
-                await installNpmCheckUpdates();
-                break;
             case 'Выход':
                 console.log('Выход из скрипта');
                 process.exit(0);
-                break;
         }
 
         // После выполнения операции возвращаемся в главное меню
@@ -138,12 +129,6 @@ async function processCommandLineArgs() {
                 break;
             case 'update-json':
                 await updatePublicJson();
-                break;
-            case 'format-css':
-                await formatCssFiles();
-                break;
-            case 'install-ncu':
-                await installNpmCheckUpdates();
                 break;
             case 'help':
             case '--help':
@@ -184,10 +169,6 @@ function showHelp() {
   badges                         Загрузить все бейджи
 
   update-json                    Обновить публичный JSON
-
-  format-css                     Форматировать CSS файлы через Stylelint
-
-  install-ncu                    Установить npm-check-updates глобально
 
   help                           Показать эту справку
     `);
@@ -763,70 +744,6 @@ async function updateAssetVersion() {
 
     } catch (error) {
         console.error('Ошибка при обновлении версии ассетов:', error);
-    }
-}
-
-/**
- * Форматирование CSS файлов через Stylelint
- */
-async function formatCssFiles() {
-    try {
-        console.log('Запуск форматирования CSS файлов через Stylelint...');
-
-        // Выполняем команду форматирования
-        exec('npx stylelint \'**/*.css\' --fix', (error, stdout, stderr) => {
-            if (error) {
-                console.error('Ошибка при форматировании CSS файлов:', error);
-                console.error(stderr);
-                return;
-            }
-
-            console.log('Форматирование CSS файлов успешно завершено!');
-            if (stdout) {
-                console.log('Вывод команды:', stdout);
-            }
-        });
-    } catch (error) {
-        console.error('Произошла ошибка при форматировании CSS файлов:', error);
-    }
-}
-
-/**
- * Установка npm-check-updates глобально
- */
-async function installNpmCheckUpdates() {
-    try {
-        console.log('Установка npm-check-updates глобально...');
-
-        const { confirm } = await inquirer.prompt([
-            {
-                type: 'confirm',
-                name: 'confirm',
-                message: 'Установить npm-check-updates глобально?',
-                default: true
-            }
-        ]);
-
-        if (!confirm) {
-            console.log('Операция отменена');
-            return;
-        }
-
-        // Выполняем команду установки
-        exec('npm install -g npm-check-updates', (error, stdout, stderr) => {
-            if (error) {
-                console.error('Ошибка при установке npm-check-updates:', error);
-                console.error(stderr);
-                return;
-            }
-
-            console.log('npm-check-updates успешно установлен глобально!');
-            if (stdout) {
-                console.log('Вывод команды:', stdout);
-            }
-        });
-    } catch (error) {
-        console.error('Произошла ошибка при установке npm-check-updates:', error);
     }
 }
 
