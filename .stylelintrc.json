@@ -7,6 +7,7 @@
         "stylelint-order"
     ],
     "rules": {
+        "number-max-precision": null,
         "order/properties-order": [
             [
                 "position",
@@ -20,17 +21,36 @@
                 "justify-content",
                 "align-items",
                 "flex-wrap",
+                "grid-template-columns",
+                "grid-template-rows",
+                "grid-area",
                 "width",
+                "min-width",
+                "max-width",
                 "height",
+                "min-height",
+                "max-height",
                 "margin",
                 "padding",
                 "background",
+                "background-color",
+                "background-image",
                 "color",
-                "font-size",
-                "text-align",
-                "object-fit",
+                "border",
+                "border-radius",
+                "box-shadow",
                 "opacity",
-                "transition"
+                "font",
+                "font-size",
+                "font-weight",
+                "line-height",
+                "text-align",
+                "text-transform",
+                "letter-spacing",
+                "white-space",
+                "object-fit",
+                "transition",
+                "animation"
             ],
             {
                 "unspecified": "bottomAlphabetical"
