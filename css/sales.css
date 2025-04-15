@@ -142,8 +142,9 @@
 .chart-bar-label {
     position: relative;
     display: flex;
+    flex-shrink: 0;
     align-items: center;
-    width: 100px;
+    width: 8rem;
     margin-right: var(--space-m);
     overflow: hidden;
     text-overflow: ellipsis;
@@ -153,10 +154,11 @@
 }
 
 .chart-bar-value {
-    max-width: 100px;
-    margin-left: var(--space-m);
+    flex-shrink: 0;
+    width: 4.5rem;
+    margin-right: var(--space-m);
     color: var(--text-primary-color);
-    text-align: left;
+    text-align: center;
     white-space: nowrap;
 }
 
@@ -164,12 +166,13 @@
     display: flex;
     flex: 1;
     align-items: center;
+    min-width: 0;
     height: var(--bar-height);
 }
 
 .bar-segment {
     display: inline-block;
-    height: var(--bar-height);
+    height: 100%;
 }
 
 .chart-app-store-segment {

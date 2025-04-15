@@ -495,31 +495,35 @@ function buildSalesChart(data) {
         // Имя приложения
         label.textContent = app.displayName;
 
-        // Очищаем barsWrapper перед добавлением сегментов (сохраняя значение)
-        const barValue = value;
+        // Очищаем barsWrapper перед добавлением сегментов
+        barsWrapper.innerHTML = ''; // Очистка
 
-        // Создаем сегмент для выручки Flippa (сначала Flippa потом App Store)
-        if (app.flippaProceeds > 0) {
-            const flippaSegment = document.createElement("div");
-            flippaSegment.className = "bar-segment chart-flippa-segment";
-            const widthPercent = (app.flippaProceeds / maxValue) * 100;
-            flippaSegment.style.width = `${widthPercent}%`;
-            // Вставляем перед значением
-            barsWrapper.insertBefore(flippaSegment, barValue);
+        // Добавляем сегменты, если есть доход, рассчитывая их ширину относительно maxValue
+        if (app.total > 0) {
+            // Создаем сегмент для выручки Flippa
+            if (app.flippaProceeds > 0) {
+                const flippaSegment = document.createElement("div");
+                flippaSegment.className = "bar-segment chart-flippa-segment";
+                // Ширина сегмента как процент от максимального значения *всего* графика
+                const flippaWidthPercent = (app.flippaProceeds / maxValue) * 100;
+                flippaSegment.style.width = `${flippaWidthPercent}%`;
+                barsWrapper.appendChild(flippaSegment); // Добавляем в обертку
+            }
+
+            // Создаем сегмент для выручки App Store
+            if (app.appStoreProceeds > 0) {
+                const appStoreSegment = document.createElement("div");
+                appStoreSegment.className = "bar-segment chart-app-store-segment";
+                // Ширина сегмента как процент от максимального значения *всего* графика
+                const appStoreWidthPercent = (app.appStoreProceeds / maxValue) * 100;
+                appStoreSegment.style.width = `${appStoreWidthPercent}%`;
+                barsWrapper.appendChild(appStoreSegment); // Добавляем в обертку
+            }
         }
+        // Если доход 0, обертка останется пустой и займет доступное пространство благодаря flex: 1
 
-        // Создаем сегмент для выручки App Store
-        if (app.appStoreProceeds > 0) {
-            const appStoreSegment = document.createElement("div");
-            appStoreSegment.className = "bar-segment chart-app-store-segment";
-            const widthPercent = (app.appStoreProceeds / maxValue) * 100;
-            appStoreSegment.style.width = `${widthPercent}%`;
-            // Вставляем перед значением
-            barsWrapper.insertBefore(appStoreSegment, barValue);
-        }
-
-        // Устанавливаем значение
-        barValue.textContent = `$${Math.round(app.total)}`;
+        // Устанавливаем текстовое значение дохода (вне обертки бара)
+        value.textContent = `$${Math.round(app.total)}`;
 
         // Добавляем строку в контейнер
         barsContainer.appendChild(barContainer);
