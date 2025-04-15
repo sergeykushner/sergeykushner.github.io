@@ -1,7 +1,7 @@
 {
   "name": "website",
   "version": "1.0.0",
-  "description": "Personal website with Cloudinary integration",
+  "description": "Website",
   "main": "js/app.js",
   "scripts": {
     "admin": "node js/admin.js",

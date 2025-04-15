@@ -47,7 +47,7 @@ async function loadApps() {
     let apps = allApps.filter(app => app.type !== "App Bundle");
 
     // Получаем ссылки на DOM-элементы
-    const container = document.querySelector(".apps-grid-container");
+    const container = document.querySelector(".apps-page-main-grid-container");
     const template = document.getElementById("appTemplate");
 
     // Проверяем, использует ли пользователь темный режим
@@ -75,7 +75,7 @@ async function loadApps() {
             // Получаем элементы внутри клонированного шаблона
             const link = appNode.querySelector('a');
             const img = appNode.querySelector('.apps-page-app-icon');
-            const title = appNode.querySelector('.apps-app-title');
+            const title = appNode.querySelector('.apps-page-app-title');
 
             // Заполняем элементы данными
             link.href = `app.html?id=${app.id}`;

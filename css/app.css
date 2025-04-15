@@ -1,136 +1,136 @@
 .app-page-main-container {
-    max-width: var(--content-max-width-xs);
-    margin-inline: auto;
+  margin-inline: auto;
+  max-width: var(--content-max-width-xs);
 }
 
 .app-description p,
 li {
-    text-align: start;
+  text-align: start;
 }
 
-.app-item {
-    padding-bottom: var(--space-m);
+.apps-page-app-item {
+  padding-bottom: var(--space-m);
 }
 
 .screenshots-gallery {
-    display: flex;
-    width: 100%;
-    justify-content: center;
-    align-items: center;
-    flex-wrap: nowrap;
-    padding: var(--space-l) 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: nowrap;
+  width: 100%;
+  padding: var(--space-l) 0;
 }
 
 .screenshot-container {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex: 1;
 }
 
 .screenshot-item {
-    position: relative;
-    z-index: 0;
-    width: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  position: relative;
+  z-index: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
 }
 
 .screenshot-image {
-    width: 100%;
-    height: auto;
-    opacity: 0;
-    transition: opacity 0.3s ease-in-out;
-    object-fit: contain;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
 }
 
 .device-bezel {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    z-index: 1;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  height: 100%;
 }
 
 .device-bezel-image {
-    width: 100%;
-    height: auto;
-    object-fit: contain;
-    opacity: 1;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  opacity: 1;
 }
 
 .screenshots-missing {
-    width: 100%;
-    border-width: var(--border-width-bold);
-    border-style: dashed;
-    border-color: var(--divider-color);
-    color: var(--text-secondary-color);
-    padding: var(--space-l) 0;
-    border-radius: var(--border-radius-m);
+  width: 100%;
+  padding: var(--space-l) 0;
+  color: var(--text-secondary-color);
+  border-color: var(--divider-color);
+  border-radius: var(--border-radius-m);
+  border-style: dashed;
+  border-width: var(--border-width-bold);
 }
 
 .badges-container {
-    margin: var(--space-l) 0;
+  margin: var(--space-l) 0;
 }
 
 .badges {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-l);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-l);
 }
 
 #app-store-link img,
 #google-play-link img,
 #product-hunt-container img {
-    display: block;
-    margin: 0 auto;
+  display: block;
+  margin: 0 auto;
 }
 
 .footer-links {
-    display: flex;
-    justify-content: center;
-    gap: var(--space-s);
-    margin-top: var(--space-l);
+  display: flex;
+  justify-content: center;
+  gap: var(--space-s);
+  margin-top: var(--space-l);
 }
 
 /* Media Queries */
 @media (orientation: landscape) {
-    .app-page-app-icon {
-        width: var(--icon-size-l);
-        height: var(--icon-size-l);
-    }
+  .app-page-app-icon {
+    width: var(--icon-size-l);
+    height: var(--icon-size-l);
+  }
 
-    .badges img {
-        height: var(--badge-height-landscape);
-    }
+  .badges img {
+    height: var(--badge-height-landscape);
+  }
 
-    .screenshots-gallery {
-        gap: var(--space-l);
-    }
+  .screenshots-gallery {
+    gap: var(--space-l);
+  }
 }
 
 @media (orientation: portrait) {
-    .app-page-app-icon {
-        display: none;
-    }
+  .app-page-app-icon {
+    display: none;
+  }
 
-    .badges img {
-        height: var(--badge-height-portrait);
-    }
+  .badges img {
+    height: var(--badge-height-portrait);
+  }
 
-    .badges {
-        flex-direction: column;
-        gap: var(--space-l);
-    }
+  .badges {
+    flex-direction: column;
+    gap: var(--space-l);
+  }
 
-    .screenshots-gallery {
-        gap: 20px;
-        flex-wrap: wrap;
-    }
+  .screenshots-gallery {
+    flex-wrap: wrap;
+    gap: 20px;
+  }
 }

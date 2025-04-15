@@ -4,76 +4,76 @@ h1,
 h2,
 h3,
 h4 {
-    color: var(--text-primary-color);
+  color: var(--text-primary-color);
 }
 
 /* --- bold --- */
 h1 {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 h2 {
-    font-weight: 600;
+  font-weight: 600;
 }
 
 h3 {
-    font-weight: 500;
+  font-weight: 500;
 }
 
 /* --- normal --- */
 h4 {
-    font-weight: 400;
+  font-weight: 400;
 }
 
 a {
-    color: var(--link-color);
+  color: var(--link-color);
 }
 
 a,
 .footer-links a,
-.apps-app-link a {
-    text-decoration: none;
+.apps-page-app-link a {
+  text-decoration: none;
 }
 
-.apps-app-link a:hover {
-    text-decoration: none;
+.apps-page-app-link a:hover {
+  text-decoration: none;
 }
 
 a:hover,
 .footer-links a:hover {
-    text-decoration: underline;
+  text-decoration: underline;
 }
 
-.apps-footer label,
+.apps-page-footer label,
 .app-page-main-container h3,
 .app-privacy-main-container h3 {
-    color: var(--text-secondary-color);
+  color: var(--text-secondary-color);
 }
 
 .app-type-title {
-    font-size: 1rem;
-    font-weight: 400;
+  font-size: 1rem;
+  font-weight: 400;
 }
 
 /* --- 10px --- */
 .chart-date-item {
-    font-size: 0.625rem;
+  font-size: 0.625rem;
 }
 
 @media (orientation: landscape) {
-    p {
-        line-height: 1.5;
-    }
+  p {
+    line-height: 1.5;
+  }
 
-    /* --- 14px --- */
-    .apps-grid-container p {
-        font-size: 0.875rem;
-    }
+  /* --- 14px --- */
+  .apps-page-main-grid-container p {
+    font-size: 0.875rem;
+  }
 }
 
 /* --- 12px --- */
 @media (orientation: portrait) {
-    .apps-grid-container p {
-        font-size: 0.75rem;
-    }
+  .apps-page-main-grid-container p {
+    font-size: 0.75rem;
+  }
 }

@@ -1,6 +1,6 @@
 {
     "recommendations": [
         "nickdemayo.vscode-json-editor",
-        "yandeu.five-server"
+        "ritwickdey.LiveServer"
     ]
 }

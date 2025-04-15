@@ -1,13 +1,13 @@
 .units-and-sales-main-container {
-    max-width: var(--content-max-width-xs);
     margin-inline: auto;
+    max-width: var(--content-max-width-xs);
 }
 
 .units-container,
 .sales-container {
     margin: var(--space-l) 0;
-    background-color: var(--card-background-color);
     padding: var(--space-m);
+    background-color: var(--card-background-color);
     border-radius: var(--border-radius-m);
 }
 
@@ -26,21 +26,21 @@
 }
 
 .app-types-details {
-    margin-top: var(--space-l);
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
+    flex-wrap: wrap;
     gap: var(--space-m);
+    margin-top: var(--space-l);
 }
 
 .app-type-item {
     display: flex;
     flex-direction: column;
     align-items: center;
-    text-align: center;
     padding: var(--space-s) var(--space-m);
-    border-radius: var(--border-radius-s);
+    text-align: center;
     background-color: var(--card-secondary-background-color);
+    border-radius: var(--border-radius-s);
     flex-grow: 1;
 }
 
@@ -50,16 +50,16 @@
 }
 
 .sales-stats-grid {
-    margin-top: var(--space-l);
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
     gap: var(--space-m);
+    grid-template-columns: repeat(3, 1fr);
+    margin-top: var(--space-l);
 }
 
 .sales-stats-card {
-    border-radius: var(--border-radius-s);
-    background-color: var(--card-secondary-background-color);
     padding: 0 var(--space-m);
+    background-color: var(--card-secondary-background-color);
+    border-radius: var(--border-radius-s);
 }
 
 .sales-stats-row {
@@ -72,10 +72,10 @@
 .chart-legend {
     display: flex;
     justify-content: center;
-    gap: var(--space-l);
     color: var(--text-secondary-color);
-    margin-top: var(--space-xxl);
+    gap: var(--space-l);
     margin-bottom: var(--space-xxl);
+    margin-top: var(--space-xxl);
 }
 
 .chart-legend-item {
@@ -85,10 +85,10 @@
 }
 
 .chart-legend-color {
+    display: inline-block;
     width: var(--bar-height);
     height: var(--bar-height);
     border-radius: var(--border-radius-icon);
-    display: inline-block;
 }
 
 .chart-legend-color,
@@ -114,39 +114,39 @@
 }
 
 .chart-row {
+    position: relative;
     display: flex;
     align-items: center;
     width: 100%;
     margin-bottom: var(--space-m);
-    position: relative;
 }
 
 .chart-bar-label {
     position: relative;
+    display: flex;
+    align-items: center;
     width: 100px;
-    margin-right: var(--space-m);
+    color: var(--text-primary-color);
     text-align: left;
+    margin-right: var(--space-m);
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
-    color: var(--text-primary-color);
-    display: flex;
-    align-items: center;
 }
 
 .chart-bar-value {
-    max-width: 100px;
-    margin-left: var(--space-m);
-    text-align: left;
     color: var(--text-primary-color);
+    text-align: left;
+    margin-left: var(--space-m);
+    max-width: 100px;
     white-space: nowrap;
 }
 
 .chart-bars-wrapper {
     display: flex;
+    align-items: center;
     height: var(--bar-height);
     flex: 1;
-    align-items: center;
 }
 
 .bar-segment {
@@ -164,30 +164,30 @@
 
 .chart-bar-app-icon {
     position: relative;
-    margin-right: var(--space-m);
     display: flex;
-    align-items: center;
     justify-content: center;
+    align-items: center;
+    margin-right: var(--space-m);
 }
 
 .chart-bar-app-icon img,
 .chart-app-bundle-placeholder {
     width: var(--icon-size-xxs);
     height: var(--icon-size-xxs);
-    vertical-align: middle;
     object-fit: contain;
+    vertical-align: middle;
 }
 
 .chart-dates-container {
     display: none;
-    width: 130px;
     flex-direction: column;
+    width: 130px;
     margin-left: var(--space-m);
 }
 
 .chart-date-item {
-    text-align: left;
     color: var(--text-secondary-color);
+    text-align: left;
     margin-bottom: var(--space-xs);
 }
 

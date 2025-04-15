@@ -1,10 +1,10 @@
 .app-privacy-content-section {
-    text-align: start;
+  text-align: start;
 }
 
 @media (orientation: landscape) {
-    .app-privacy-main-container {
-        max-width: var(--content-max-width-xs);
-        margin-inline: auto;
-    }
+  .app-privacy-main-container {
+    margin-inline: auto;
+    max-width: var(--content-max-width-xs);
+  }
 }

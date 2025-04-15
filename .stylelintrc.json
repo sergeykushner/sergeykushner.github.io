@@ -1,0 +1,40 @@
+{
+    "extends": [
+        "stylelint-config-standard",
+        "stylelint-config-recommended-scss"
+    ],
+    "plugins": [
+        "stylelint-order"
+    ],
+    "rules": {
+        "order/properties-order": [
+            [
+                "position",
+                "top",
+                "right",
+                "bottom",
+                "left",
+                "z-index",
+                "display",
+                "flex-direction",
+                "justify-content",
+                "align-items",
+                "flex-wrap",
+                "width",
+                "height",
+                "margin",
+                "padding",
+                "background",
+                "color",
+                "font-size",
+                "text-align",
+                "object-fit",
+                "opacity",
+                "transition"
+            ],
+            {
+                "unspecified": "bottomAlphabetical"
+            }
+        ]
+    }
+}
