@@ -22,9 +22,9 @@
 
 @media (orientation: landscape) {
   .apps-page-main-grid-container {
-    gap: var(--space-l);
     grid-template-columns: repeat(7, 1fr);
     max-width: var(--content-max-width-l);
+    gap: var(--space-l);
   }
 
   .apps-page-app-icon {
@@ -35,8 +35,8 @@
 
 @media (orientation: portrait) {
   .apps-page-main-grid-container {
-    gap: var(--space-m);
     grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-m);
   }
 
   .apps-page-app-icon {

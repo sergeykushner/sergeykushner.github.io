@@ -1,11 +1,11 @@
 .btn-link {
   display: inline-block;
   padding: 0.75rem 1.25rem;
+  background-color: var(--btn-blue-background-color);
   color: var(--btn-text-color);
+  border-radius: 9999px;
   text-align: center;
   transition: background-color 0.3s ease;
-  background-color: var(--btn-blue-background-color);
-  border-radius: 9999px;
   text-decoration: none;
 }
 
@@ -29,9 +29,9 @@
     var(--app-icon-gradient-top),
     var(--app-icon-gradient-bottom)
   );
+  border-radius: var(--border-radius-icon);
   aspect-ratio: 1 / 1;
   border-color: var(--app-icon-border-color);
-  border-radius: var(--border-radius-icon);
   border-style: solid;
   border-width: var(--border-width-bold);
 }

@@ -1,6 +1,6 @@
 .units-and-sales-main-container {
-    margin-inline: auto;
     max-width: var(--content-max-width-xs);
+    margin-inline: auto;
 }
 
 .units-container,
@@ -38,9 +38,9 @@
     flex-direction: column;
     align-items: center;
     padding: var(--space-s) var(--space-m);
-    text-align: center;
     background-color: var(--card-secondary-background-color);
     border-radius: var(--border-radius-s);
+    text-align: center;
     flex-grow: 1;
 }
 
@@ -51,8 +51,8 @@
 
 .sales-stats-grid {
     display: grid;
-    gap: var(--space-m);
     grid-template-columns: repeat(3, 1fr);
+    gap: var(--space-m);
     margin-top: var(--space-l);
 }
 
@@ -128,18 +128,18 @@
     width: 100px;
     color: var(--text-primary-color);
     text-align: left;
+    white-space: nowrap;
     margin-right: var(--space-m);
     overflow: hidden;
     text-overflow: ellipsis;
-    white-space: nowrap;
 }
 
 .chart-bar-value {
+    max-width: 100px;
     color: var(--text-primary-color);
     text-align: left;
-    margin-left: var(--space-m);
-    max-width: 100px;
     white-space: nowrap;
+    margin-left: var(--space-m);
 }
 
 .chart-bars-wrapper {

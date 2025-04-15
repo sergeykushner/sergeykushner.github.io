@@ -1,0 +1,13 @@
+{
+    "window.commandCenter": 1,
+    "workbench.colorTheme": "Visual Studio Dark",
+    "editor.formatOnSave": true,
+    "files.autoSave": "afterDelay",
+    "editor.codeActionsOnSave": {
+        "source.fixAll.stylelint": "explicit"
+    },
+    "stylelint.validate": [
+        "css",
+        "scss"
+    ]
+}
