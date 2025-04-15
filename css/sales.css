@@ -5,8 +5,8 @@
 
 .units-container,
 .sales-container {
-    margin: var(--space-l) 0;
     padding: var(--space-m);
+    margin: var(--space-l) 0;
     background-color: var(--card-background-color);
     border-radius: var(--border-radius-m);
 }
@@ -27,26 +27,26 @@
 
 .app-types-details {
     display: flex;
-    justify-content: center;
     flex-wrap: wrap;
     gap: var(--space-m);
+    justify-content: center;
     margin-top: var(--space-l);
 }
 
 .app-type-item {
     display: flex;
+    flex-grow: 1;
     flex-direction: column;
     align-items: center;
     padding: var(--space-s) var(--space-m);
+    text-align: center;
     background-color: var(--card-secondary-background-color);
     border-radius: var(--border-radius-s);
-    text-align: center;
-    flex-grow: 1;
 }
 
 .app-type-title {
-    margin-bottom: var(--space-s);
     margin-top: 0;
+    margin-bottom: var(--space-s);
 }
 
 .sales-stats-grid {
@@ -71,17 +71,17 @@
 
 .chart-legend {
     display: flex;
-    justify-content: center;
-    color: var(--text-secondary-color);
     gap: var(--space-l);
-    margin-bottom: var(--space-xxl);
+    justify-content: center;
     margin-top: var(--space-xxl);
+    margin-bottom: var(--space-xxl);
+    color: var(--text-secondary-color);
 }
 
 .chart-legend-item {
     display: flex;
-    align-items: center;
     gap: var(--space-s);
+    align-items: center;
 }
 
 .chart-legend-color {
@@ -126,27 +126,27 @@
     display: flex;
     align-items: center;
     width: 100px;
-    color: var(--text-primary-color);
-    text-align: left;
-    white-space: nowrap;
     margin-right: var(--space-m);
     overflow: hidden;
     text-overflow: ellipsis;
+    color: var(--text-primary-color);
+    text-align: left;
+    white-space: nowrap;
 }
 
 .chart-bar-value {
     max-width: 100px;
+    margin-left: var(--space-m);
     color: var(--text-primary-color);
     text-align: left;
     white-space: nowrap;
-    margin-left: var(--space-m);
 }
 
 .chart-bars-wrapper {
     display: flex;
+    flex: 1;
     align-items: center;
     height: var(--bar-height);
-    flex: 1;
 }
 
 .bar-segment {
@@ -165,8 +165,8 @@
 .chart-bar-app-icon {
     position: relative;
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
     margin-right: var(--space-m);
 }
 
@@ -174,8 +174,8 @@
 .chart-app-bundle-placeholder {
     width: var(--icon-size-xxs);
     height: var(--icon-size-xxs);
-    object-fit: contain;
     vertical-align: middle;
+    object-fit: contain;
 }
 
 .chart-dates-container {
@@ -186,9 +186,9 @@
 }
 
 .chart-date-item {
+    margin-bottom: var(--space-xs);
     color: var(--text-secondary-color);
     text-align: left;
-    margin-bottom: var(--space-xs);
 }
 
 .chart-release-date {

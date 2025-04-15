@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "Website",
   "main": "js/app.js",
+  "type": "module",
   "scripts": {
     "admin": "node js/admin.js",
     "upload-all": "node js/admin.js all",
@@ -20,9 +21,15 @@
   "author": "Sergey Kushner",
   "license": "MIT",
   "dependencies": {
-    "cloudinary": "^1.41.0",
-    "dotenv": "^16.3.1",
-    "fs-extra": "^11.1.1",
-    "inquirer": "^8.2.5"
+    "cloudinary": "^2.6.0",
+    "dotenv": "^16.5.0",
+    "fs-extra": "^11.3.0",
+    "inquirer": "^12.5.2"
+  },
+  "devDependencies": {
+    "flat-cache": "^6.1.8",
+    "stylelint": "^16.18.0",
+    "stylelint-config-recess-order": "^6.0.0",
+    "stylelint-order": "^6.0.4"
   }
 }

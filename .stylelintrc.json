@@ -1,60 +1,8 @@
 {
     "extends": [
-        "stylelint-config-standard",
-        "stylelint-config-recommended-scss"
+        "stylelint-config-recess-order"
     ],
     "plugins": [
         "stylelint-order"
-    ],
-    "rules": {
-        "number-max-precision": null,
-        "order/properties-order": [
-            [
-                "position",
-                "top",
-                "right",
-                "bottom",
-                "left",
-                "z-index",
-                "display",
-                "flex-direction",
-                "justify-content",
-                "align-items",
-                "flex-wrap",
-                "grid-template-columns",
-                "grid-template-rows",
-                "grid-area",
-                "width",
-                "min-width",
-                "max-width",
-                "height",
-                "min-height",
-                "max-height",
-                "margin",
-                "padding",
-                "background",
-                "background-color",
-                "background-image",
-                "color",
-                "border",
-                "border-radius",
-                "box-shadow",
-                "opacity",
-                "font",
-                "font-size",
-                "font-weight",
-                "line-height",
-                "text-align",
-                "text-transform",
-                "letter-spacing",
-                "white-space",
-                "object-fit",
-                "transition",
-                "animation"
-            ],
-            {
-                "unspecified": "bottomAlphabetical"
-            }
-        ]
-    }
+    ]
 }

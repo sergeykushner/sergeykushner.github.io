@@ -1,17 +1,17 @@
 .btn-link {
   display: inline-block;
   padding: 0.75rem 1.25rem;
-  background-color: var(--btn-blue-background-color);
   color: var(--btn-text-color);
-  border-radius: 9999px;
   text-align: center;
-  transition: background-color 0.3s ease;
   text-decoration: none;
+  background-color: var(--btn-blue-background-color);
+  border-radius: 9999px;
+  transition: background-color 0.3s ease;
 }
 
 .btn-link:hover {
-  background-color: var(--btn-blue-background-color-hover);
   text-decoration: none;
+  background-color: var(--btn-blue-background-color-hover);
 }
 
 .divider {
@@ -24,14 +24,14 @@
 .app-page-app-icon,
 .chart-bar-app-icon img,
 .chart-app-bundle-placeholder {
+  aspect-ratio: 1 / 1;
   background: linear-gradient(
     to bottom,
     var(--app-icon-gradient-top),
     var(--app-icon-gradient-bottom)
   );
-  border-radius: var(--border-radius-icon);
-  aspect-ratio: 1 / 1;
   border-color: var(--app-icon-border-color);
   border-style: solid;
   border-width: var(--border-width-bold);
+  border-radius: var(--border-radius-icon);
 }

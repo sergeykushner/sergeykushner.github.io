@@ -9,11 +9,11 @@
 
 .apps-page-filter-checkbox {
   display: flex;
-  justify-content: center;
+  gap: var(--space-s);
   align-items: center;
+  justify-content: center;
   padding: var(--space-l);
   cursor: pointer;
-  gap: var(--space-s);
 }
 
 .apps-page-filter-checkbox input {
@@ -23,8 +23,8 @@
 @media (orientation: landscape) {
   .apps-page-main-grid-container {
     grid-template-columns: repeat(7, 1fr);
-    max-width: var(--content-max-width-l);
     gap: var(--space-l);
+    max-width: var(--content-max-width-l);
   }
 
   .apps-page-app-icon {

@@ -1,7 +1,15 @@
-const cloudinary = require('cloudinary').v2;
-const fs = require('fs-extra');
-const path = require('path');
-require('dotenv').config({ path: path.join(__dirname, '../.env') });
+import { v2 as cloudinary } from 'cloudinary';
+import fs from 'fs-extra';
+import path from 'path';
+import dotenv from 'dotenv';
+import { fileURLToPath } from 'url';
+
+// Получаем __dirname для ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
+// Загружаем переменные окружения
+dotenv.config({ path: path.join(__dirname, '../.env') });
 
 // Конфигурация Cloudinary
 cloudinary.config({
@@ -588,7 +596,7 @@ if (typeof window !== 'undefined') {
     window.getDeviceBezelUrl = getDeviceBezelUrl;
 }
 
-module.exports = {
+export {
     CLOUDINARY_ROOT_FOLDER,
     CLOUDINARY_CLOUD_NAME,
     CLOUDINARY_BASE_URL,

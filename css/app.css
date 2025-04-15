@@ -14,9 +14,9 @@ li {
 
 .screenshots-gallery {
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
   width: 100%;
   padding: var(--space-l) 0;
 }
@@ -24,25 +24,25 @@ li {
 .screenshot-container {
   position: relative;
   display: flex;
-  justify-content: center;
-  align-items: center;
   flex: 1;
+  align-items: center;
+  justify-content: center;
 }
 
 .screenshot-item {
   position: relative;
   z-index: 0;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
 }
 
 .screenshot-image {
   width: 100%;
   height: auto;
-  opacity: 0;
   object-fit: contain;
+  opacity: 0;
   transition: opacity 0.3s ease-in-out;
 }
 
@@ -52,8 +52,8 @@ li {
   left: 0;
   z-index: 1;
   display: flex;
-  justify-content: center;
   align-items: center;
+  justify-content: center;
   width: 100%;
   height: 100%;
 }
@@ -61,18 +61,18 @@ li {
 .device-bezel-image {
   width: 100%;
   height: auto;
-  opacity: 1;
   object-fit: contain;
+  opacity: 1;
 }
 
 .screenshots-missing {
   width: 100%;
   padding: var(--space-l) 0;
   color: var(--text-secondary-color);
-  border-radius: var(--border-radius-m);
   border-color: var(--divider-color);
   border-style: dashed;
   border-width: var(--border-width-bold);
+  border-radius: var(--border-radius-m);
 }
 
 .badges-container {
@@ -81,8 +81,8 @@ li {
 
 .badges {
   display: flex;
-  justify-content: center;
   gap: var(--space-l);
+  justify-content: center;
 }
 
 #app-store-link img,
@@ -94,8 +94,8 @@ li {
 
 .footer-links {
   display: flex;
-  justify-content: center;
   gap: var(--space-s);
+  justify-content: center;
   margin-top: var(--space-l);
 }
 

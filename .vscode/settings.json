@@ -1,11 +1,21 @@
 {
-    "window.commandCenter": 1,
     "workbench.colorTheme": "Visual Studio Dark",
     "editor.formatOnSave": true,
     "files.autoSave": "afterDelay",
-    "editor.codeActionsOnSave": {
-        "source.fixAll.stylelint": "explicit"
+    // Автофикс stylelint при сохранении только для css и scss
+    "[css]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": "explicit"
+        },
+        "editor.formatOnSave": true
     },
+    "[scss]": {
+        "editor.codeActionsOnSave": {
+            "source.fixAll.stylelint": "explicit"
+        },
+        "editor.formatOnSave": true
+    },
+    // Поддержка stylelint
     "stylelint.validate": [
         "css",
         "scss"

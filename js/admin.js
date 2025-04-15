@@ -2,13 +2,21 @@
  * Административный скрипт для управления приложением
  */
 
-const inquirer = require('inquirer');
-const fs = require('fs-extra');
-const path = require('path');
-const cloudinary = require('cloudinary').v2;
-const cloudinaryManager = require('./cloudinary-manager');
-const jsonUtils = require('./json-utils');
-const { exec } = require('child_process');
+import inquirer from 'inquirer';
+import fs from 'fs-extra';
+import path from 'path';
+import { fileURLToPath } from 'url';
+import { dirname } from 'path';
+import { exec } from 'child_process';
+import cloudinary from 'cloudinary';
+
+// Настройка для ES модулей
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = dirname(__filename);
+
+// Импортируем локальные модули
+import * as cloudinaryManager from './cloudinary-manager.js';
+import * as jsonUtils from './json-utils.js';
 
 // Пути к директориям с ресурсами
 const appsDir = path.join(__dirname, '../assets/apps');
@@ -53,6 +61,8 @@ async function main() {
                     'Перезагрузить все изображения из assets на Cloudinary',
                     'Обновить публичный JSON',
                     'Обновить версию ассетов',
+                    'Форматировать CSS файлы через Stylelint',
+                    'Установить npm-check-updates глобально',
                     'Выход'
                 ]
             }
@@ -79,6 +89,12 @@ async function main() {
                 break;
             case 'Обновить версию ассетов':
                 await updateAssetVersion();
+                break;
+            case 'Форматировать CSS файлы через Stylelint':
+                await formatCssFiles();
+                break;
+            case 'Установить npm-check-updates глобально':
+                await installNpmCheckUpdates();
                 break;
             case 'Выход':
                 console.log('Выход из скрипта');
@@ -123,6 +139,12 @@ async function processCommandLineArgs() {
             case 'update-json':
                 await updatePublicJson();
                 break;
+            case 'format-css':
+                await formatCssFiles();
+                break;
+            case 'install-ncu':
+                await installNpmCheckUpdates();
+                break;
             case 'help':
             case '--help':
             case '-h':
@@ -162,6 +184,10 @@ function showHelp() {
   badges                         Загрузить все бейджи
 
   update-json                    Обновить публичный JSON
+
+  format-css                     Форматировать CSS файлы через Stylelint
+
+  install-ncu                    Установить npm-check-updates глобально
 
   help                           Показать эту справку
     `);
@@ -494,7 +520,7 @@ async function invalidateCache() {
 async function listCloudinaryFolders() {
     try {
         // Получаем список корневых папок
-        const rootResult = await cloudinary.api.root_folders();
+        const rootResult = await cloudinary.v2.api.root_folders();
 
         // Ищем нашу основную папку сайта
         const websiteFolder = rootResult.folders.find(folder => folder.path === cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
@@ -505,7 +531,7 @@ async function listCloudinaryFolders() {
         }
 
         // Получаем список подпапок внутри основной папки
-        const subFoldersResult = await cloudinary.api.sub_folders(cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
+        const subFoldersResult = await cloudinary.v2.api.sub_folders(cloudinaryManager.CLOUDINARY_ROOT_FOLDER);
 
         return [
             { path: 'all', name: 'Все папки' },
@@ -531,7 +557,7 @@ async function invalidateByFolder(folderPath) {
         console.log(`Начинаю инвалидацию ресурсов в папке: ${prefix}`);
 
         // Получаем список ресурсов в папке
-        const resources = await cloudinary.api.resources({
+        const resources = await cloudinary.v2.api.resources({
             type: 'upload',
             prefix: prefix,
             max_results: 500
@@ -541,7 +567,7 @@ async function invalidateByFolder(folderPath) {
         let invalidated = 0;
         for (const resource of resources.resources) {
             try {
-                await cloudinary.uploader.explicit(resource.public_id, {
+                await cloudinary.v2.uploader.explicit(resource.public_id, {
                     type: 'upload',
                     invalidate: true
                 });
@@ -737,6 +763,70 @@ async function updateAssetVersion() {
 
     } catch (error) {
         console.error('Ошибка при обновлении версии ассетов:', error);
+    }
+}
+
+/**
+ * Форматирование CSS файлов через Stylelint
+ */
+async function formatCssFiles() {
+    try {
+        console.log('Запуск форматирования CSS файлов через Stylelint...');
+
+        // Выполняем команду форматирования
+        exec('npx stylelint \'**/*.css\' --fix', (error, stdout, stderr) => {
+            if (error) {
+                console.error('Ошибка при форматировании CSS файлов:', error);
+                console.error(stderr);
+                return;
+            }
+
+            console.log('Форматирование CSS файлов успешно завершено!');
+            if (stdout) {
+                console.log('Вывод команды:', stdout);
+            }
+        });
+    } catch (error) {
+        console.error('Произошла ошибка при форматировании CSS файлов:', error);
+    }
+}
+
+/**
+ * Установка npm-check-updates глобально
+ */
+async function installNpmCheckUpdates() {
+    try {
+        console.log('Установка npm-check-updates глобально...');
+
+        const { confirm } = await inquirer.prompt([
+            {
+                type: 'confirm',
+                name: 'confirm',
+                message: 'Установить npm-check-updates глобально?',
+                default: true
+            }
+        ]);
+
+        if (!confirm) {
+            console.log('Операция отменена');
+            return;
+        }
+
+        // Выполняем команду установки
+        exec('npm install -g npm-check-updates', (error, stdout, stderr) => {
+            if (error) {
+                console.error('Ошибка при установке npm-check-updates:', error);
+                console.error(stderr);
+                return;
+            }
+
+            console.log('npm-check-updates успешно установлен глобально!');
+            if (stdout) {
+                console.log('Вывод команды:', stdout);
+            }
+        });
+    } catch (error) {
+        console.error('Произошла ошибка при установке npm-check-updates:', error);
     }
 }
 

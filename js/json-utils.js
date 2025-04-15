@@ -1,8 +1,13 @@
 /**
  * Утилиты для работы с JSON файлами
  */
-const fs = require('fs-extra');
-const path = require('path');
+import fs from 'fs-extra';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+// Получаем __dirname для ES Modules
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
 
 /**
  * Обновление публичного JSON с метаданными приложений
@@ -65,6 +70,6 @@ async function updatePublicJson() {
     }
 }
 
-module.exports = {
+export {
     updatePublicJson
 }; 
