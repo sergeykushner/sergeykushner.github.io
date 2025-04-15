@@ -35,33 +35,33 @@
                 <div id="app-types-details" class="app-types-details">
                     <!-- Блоки для типа "App" -->
                     <span class='app-type-item'>
-                        <h3 class='app-type-title'>iOS</h3>
+                        <h4>iOS</h4>
                         <span id="ios-count" class='app-type-value'>0</span>
                     </span>
                     <span class='app-type-item'>
-                        <h3 class='app-type-title'>Android</h3>
+                        <h4>Android</h4>
                         <span id="android-count" class='app-type-value'>0</span>
                     </span>
                     <span class='app-type-item'>
-                        <h3 class='app-type-title'>iOS + Android</h3>
+                        <h4>iOS + Android</h4>
                         <span id="cross-platform-count" class='app-type-value'>0</span>
                     </span>
 
                     <!-- Блок для типа "iMessage Stickers" -->
                     <span class='app-type-item'>
-                        <h3 class='app-type-title'>iMessage Stickers</h3>
+                        <h4>iMessage Stickers</h4>
                         <span id="stickers-count" class='app-type-value'>0</span>
                     </span>
 
                     <!-- Блок для типа "Website" -->
                     <span class='app-type-item'>
-                        <h3 class='app-type-title'>Website</h3>
+                        <h4>Website</h4>
                         <span id="website-count" class='app-type-value'>0</span>
                     </span>
 
                     <!-- Блок для типа "Total Apps" -->
                     <span class='app-type-item'>
-                        <h3 class='app-type-title'>Total Apps</h3>
+                        <h4>Total Apps</h4>
                         <span id="total-apps-count" class='app-type-value'>0</span>
                     </span>
 
@@ -101,6 +101,25 @@
                         <span class="chart-legend-label">Flippa Net Revenue</span>
                     </div>
                 </div>
+
+                <div class="chart-sort-controls">
+                    <!-- <span class="sort-label">Sort by:</span> -->
+                    <div class="sort-options">
+                        <label class="sort-option">
+                            <input type="radio" name="chart-sort" value="release-date" checked>
+                            <span>Release Date</span>
+                        </label>
+                        <label class="sort-option">
+                            <input type="radio" name="chart-sort" value="sale-date">
+                            <span>Sale Date</span>
+                        </label>
+                        <label class="sort-option">
+                            <input type="radio" name="chart-sort" value="revenue">
+                            <span>Revenue</span>
+                        </label>
+                    </div>
+                </div>
+
                 <div class="chart-container">
                     <div id="chart-sales-container" class="chart-sales-container">
                         <!-- Шаблон будет использоваться в JavaScript -->
@@ -116,10 +135,6 @@
                             <div class="chart-bars-wrapper">
                                 <!-- Сегменты графика будут добавлены через JavaScript -->
                                 <div class="chart-bar-value"></div>
-                            </div>
-                            <div class="chart-dates-container">
-                                <div class="chart-date-item chart-release-date"></div>
-                                <div class="chart-date-item chart-sale-date"></div>
                             </div>
                         </div>
                     </template>

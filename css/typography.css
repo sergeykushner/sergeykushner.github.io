@@ -1,28 +1,37 @@
 p,
 span,
+label,
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5,
+h6 {
   color: var(--text-primary-color);
 }
 
-/* --- bold --- */
 h1 {
-  font-weight: 700;
+  font-weight: 700; /* bold */
 }
 
 h2 {
-  font-weight: 600;
+  font-weight: 600; /* semibold */
 }
 
 h3 {
-  font-weight: 500;
+  font-weight: 500; /* medium */
 }
 
-/* --- normal --- */
 h4 {
-  font-weight: 400;
+  font-weight: 400; /* normal */
+}
+
+h5 {
+  font-weight: 300; /* light */
+}
+
+h6 {
+  font-weight: 200; /* extra light */
 }
 
 a {
@@ -30,7 +39,7 @@ a {
 }
 
 a,
-.footer-links a,
+.app-page-footer-links a,
 .apps-page-app-link a {
   text-decoration: none;
 }
@@ -40,7 +49,7 @@ a,
 }
 
 a:hover,
-.footer-links a:hover {
+.app-page-footer-links a:hover {
   text-decoration: underline;
 }
 
@@ -50,30 +59,18 @@ a:hover,
   color: var(--text-secondary-color);
 }
 
-.app-type-title {
-  font-size: 1rem;
-  font-weight: 400;
-}
-
-/* --- 10px --- */
-.chart-date-item {
-  font-size: 0.625rem;
-}
-
 @media (orientation: landscape) {
   p {
     line-height: 1.5;
   }
 
-  /* --- 14px --- */
   .apps-page-main-grid-container p {
-    font-size: 0.875rem;
+    font-size: 0.875rem; /* 14px */
   }
 }
 
-/* --- 12px --- */
 @media (orientation: portrait) {
   .apps-page-main-grid-container p {
-    font-size: 0.75rem;
+    font-size: 0.75rem; /* 12px */
   }
 }

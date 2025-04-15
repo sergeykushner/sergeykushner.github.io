@@ -37,16 +37,10 @@
     display: flex;
     flex-grow: 1;
     flex-direction: column;
-    align-items: center;
-    padding: var(--space-s) var(--space-m);
-    text-align: center;
+    padding-inline: var(--space-l);
+    padding-bottom: var(--space-m);
     background-color: var(--card-secondary-background-color);
     border-radius: var(--border-radius-s);
-}
-
-.app-type-title {
-    margin-top: 0;
-    margin-bottom: var(--space-s);
 }
 
 .sales-stats-grid {
@@ -57,7 +51,11 @@
 }
 
 .sales-stats-card {
-    padding: 0 var(--space-m);
+    display: flex;
+    flex-direction: column;
+    gap: var(--space-m);
+    padding-inline: var(--space-l);
+    padding-bottom: var(--space-m);
     background-color: var(--card-secondary-background-color);
     border-radius: var(--border-radius-s);
 }
@@ -65,16 +63,15 @@
 .sales-stats-row {
     display: flex;
     justify-content: space-between;
-    margin: var(--space-m) 0;
     color: var(--text-primary-color);
 }
 
 .chart-legend {
     display: flex;
-    gap: var(--space-l);
+    gap: var(--space-m);
     justify-content: center;
     margin-top: var(--space-xxl);
-    margin-bottom: var(--space-xxl);
+    margin-bottom: var(--space-l);
     color: var(--text-secondary-color);
 }
 
@@ -99,6 +96,27 @@
 .chart-legend-color,
 .chart-flippa-segment {
     background-color: var(--chart-flippa-segment-color);
+}
+
+.chart-sort-controls {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: var(--space-xl);
+}
+
+.sort-options {
+    display: flex;
+    flex-wrap: wrap;
+    gap: var(--space-m);
+    justify-content: center;
+}
+
+.sort-option {
+    display: inline-flex;
+    gap: var(--space-s);
+    align-items: center;
+    cursor: pointer;
 }
 
 .chart-container,
@@ -176,27 +194,6 @@
     height: var(--icon-size-xxs);
     vertical-align: middle;
     object-fit: contain;
-}
-
-.chart-dates-container {
-    display: none;
-    flex-direction: column;
-    width: 130px;
-    margin-left: var(--space-m);
-}
-
-.chart-date-item {
-    margin-bottom: var(--space-xs);
-    color: var(--text-secondary-color);
-    text-align: left;
-}
-
-.chart-release-date {
-    color: var(--chart-app-store-segment-color);
-}
-
-.chart-sale-date {
-    color: var(--chart-flippa-segment-color);
 }
 
 @media (orientation: portrait) {

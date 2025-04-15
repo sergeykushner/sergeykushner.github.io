@@ -68,6 +68,111 @@ function handleFileUpload(event) {
     reader.readAsText(file);
 }
 
+// Глобальная переменная для хранения данных графика
+let globalChartData = [];
+
+// Ключ для хранения типа сортировки в localStorage
+const SORT_TYPE_KEY = 'sales_chart_sort_type';
+
+/**
+ * Сохраняет выбранный тип сортировки в localStorage
+ * @param {string} sortType - Тип сортировки
+ */
+function saveSortTypePreference(sortType) {
+    try {
+        localStorage.setItem(SORT_TYPE_KEY, sortType);
+    } catch (e) {
+        console.warn('Не удалось сохранить настройку сортировки:', e);
+    }
+}
+
+/**
+ * Восстанавливает сохраненный тип сортировки из localStorage
+ * @returns {string} Тип сортировки или значение по умолчанию
+ */
+function getSavedSortType() {
+    try {
+        const savedType = localStorage.getItem(SORT_TYPE_KEY);
+        return savedType || 'release-date'; // По умолчанию сортировка по дате релиза
+    } catch (e) {
+        console.warn('Не удалось получить сохраненную настройку сортировки:', e);
+        return 'release-date';
+    }
+}
+
+/**
+ * Применяет выбранную сортировку к данным графика и обновляет график
+ * @param {string} sortType - Тип сортировки ('revenue', 'release-date' или 'sale-date')
+ * @param {Array} data - Массив данных для графика
+ */
+function applySortToChartData(sortType, data = globalChartData) {
+    if (!data || data.length === 0) return;
+
+    // Сохраняем выбранный тип сортировки
+    saveSortTypePreference(sortType);
+
+    let sortedData = [...data]; // Создаем копию данных
+
+    switch (sortType) {
+        case 'revenue':
+            // Сортировка по общему доходу (от большего к меньшему)
+            sortedData.sort((a, b) => b.total - a.total);
+            break;
+
+        case 'release-date':
+            // Сортировка по дате релиза (от новых к старым)
+            sortedData.sort((a, b) => {
+                // Создаем объекты Date из строк
+                const dateA = new Date(a.releaseDate);
+                const dateB = new Date(b.releaseDate);
+
+                // Проверяем валидность дат
+                const isValidDateA = !isNaN(dateA.getTime());
+                const isValidDateB = !isNaN(dateB.getTime());
+
+                // Если обе даты невалидны, не меняем порядок
+                if (!isValidDateA && !isValidDateB) return 0;
+                // Невалидные даты отправляем в конец
+                if (!isValidDateA) return 1;
+                if (!isValidDateB) return -1;
+
+                // Сортируем от новых к старым
+                return dateB - dateA;
+            });
+            break;
+
+        case 'sale-date':
+            // Сортировка по дате продажи (от новых к старым)
+            sortedData.sort((a, b) => {
+                // Создаем объекты Date из строк
+                const dateA = new Date(a.saleDate);
+                const dateB = new Date(b.saleDate);
+
+                // Проверяем валидность дат
+                const isValidDateA = !isNaN(dateA.getTime());
+                const isValidDateB = !isNaN(dateB.getTime());
+
+                // Приложения без даты продажи отправляем в конец
+                if (!a.saleDate && !b.saleDate) return 0;
+                if (!a.saleDate) return 1;
+                if (!b.saleDate) return -1;
+
+                // Если обе даты невалидны, не меняем порядок
+                if (!isValidDateA && !isValidDateB) return 0;
+                // Невалидные даты отправляем в конец
+                if (!isValidDateA) return 1;
+                if (!isValidDateB) return -1;
+
+                // Сортируем от новых к старым
+                return dateB - dateA;
+            });
+            break;
+    }
+
+    // Перестраиваем график с отсортированными данными
+    buildSalesChart(sortedData);
+}
+
 /**
  * Обрабатывает данные приложений, подсчитывает статистику и строит график
  * @param {Array} apps - Массив данных о приложениях
@@ -122,27 +227,14 @@ function processAppsData(apps) {
         salesStats.flippa.sales, salesStats.flippa.proceeds, salesStats.flippa.units
     );
 
-    // Сортируем данные графика по дате релиза (от новых к старым)
-    chartData.sort((a, b) => {
-        // Создаем объекты Date из строк
-        const dateA = new Date(a.releaseDate);
-        const dateB = new Date(b.releaseDate);
+    // Сохраняем данные в глобальной переменной для доступа из других функций
+    globalChartData = chartData;
 
-        // Проверяем, валидны ли даты
-        const isValidDateA = !isNaN(dateA.getTime());
-        const isValidDateB = !isNaN(dateB.getTime());
+    // Получаем сохраненный тип сортировки
+    const savedSortType = getSavedSortType();
 
-        // Обрабатываем случаи невалидных дат
-        if (!isValidDateA && !isValidDateB) return 0;
-        if (!isValidDateA) return 1;
-        if (!isValidDateB) return -1;
-
-        // Сортируем от новых к старым
-        return dateB - dateA;
-    });
-
-    // Строим график продаж
-    buildSalesChart(chartData);
+    // Применяем сортировку к данным графика
+    applySortToChartData(savedSortType);
 }
 
 /**
@@ -377,9 +469,6 @@ function buildSalesChart(data) {
         const label = barContainer.querySelector(".chart-bar-label");
         const barsWrapper = barContainer.querySelector(".chart-bars-wrapper");
         const value = barContainer.querySelector(".chart-bar-value");
-        const datesContainer = barContainer.querySelector(".chart-dates-container");
-        const releaseDate = barContainer.querySelector(".chart-release-date");
-        const saleDate = barContainer.querySelector(".chart-sale-date");
 
         // Заполняем данными
 
@@ -432,45 +521,29 @@ function buildSalesChart(data) {
         // Устанавливаем значение
         barValue.textContent = `$${Math.round(app.total)}`;
 
-        // Обрабатываем даты
-        if (app.releaseDate) {
-            // Форматируем дату для отображения
-            let formattedReleaseDate = app.releaseDate;
-            try {
-                const date = new Date(app.releaseDate);
-                if (!isNaN(date.getTime())) {
-                    formattedReleaseDate = date.toISOString().split('T')[0]; // Формат yyyy-mm-dd
-                }
-            } catch (e) {
-                // Если формат даты некорректный, оставляем как есть
-            }
-
-            releaseDate.textContent = `Release: ${formattedReleaseDate}`;
-        } else {
-            releaseDate.remove();
-        }
-
-        if (app.saleDate) {
-            // Форматируем дату для отображения
-            let formattedSaleDate = app.saleDate;
-            try {
-                const date = new Date(app.saleDate);
-                if (!isNaN(date.getTime())) {
-                    formattedSaleDate = date.toISOString().split('T')[0]; // Формат yyyy-mm-dd
-                }
-            } catch (e) {
-                // Если формат даты некорректный, оставляем как есть
-            }
-
-            saleDate.textContent = `Sale: ${formattedSaleDate}`;
-        } else {
-            saleDate.remove();
-        }
-
         // Добавляем строку в контейнер
         barsContainer.appendChild(barContainer);
     });
 }
 
 // Вызываем функцию загрузки данных при загрузке страницы
-document.addEventListener("DOMContentLoaded", loadSalesData);
+document.addEventListener("DOMContentLoaded", function () {
+    // Восстанавливаем сохраненную настройку сортировки
+    const savedSortType = getSavedSortType();
+
+    // Устанавливаем соответствующую радио-кнопку
+    const sortRadio = document.querySelector(`input[name="chart-sort"][value="${savedSortType}"]`);
+    if (sortRadio) {
+        sortRadio.checked = true;
+    }
+
+    loadSalesData();
+
+    // Добавляем обработчики событий для радио-кнопок сортировки
+    const sortOptions = document.querySelectorAll('input[name="chart-sort"]');
+    sortOptions.forEach(option => {
+        option.addEventListener('change', function () {
+            applySortToChartData(this.value);
+        });
+    });
+});

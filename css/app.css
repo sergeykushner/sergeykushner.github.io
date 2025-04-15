@@ -92,7 +92,7 @@ li {
   margin: 0 auto;
 }
 
-.footer-links {
+.app-page-footer-links {
   display: flex;
   gap: var(--space-s);
   justify-content: center;
