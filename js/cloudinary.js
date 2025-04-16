@@ -28,15 +28,6 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
 }
 
 /**
- * Получает URL для шэринг-изображения приложения
- * @param {string} appId - ID приложения
- * @returns {string} URL изображения для шэринга
- */
-function getShareImageUrl(appId) {
-    return `${CLOUDINARY_BASE_URL}/image/upload/${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share`;
-}
-
-/**
  * Получает URL для бейджа App Store
  * @param {boolean} isDarkMode - Флаг темного режима
  * @returns {string} URL бейджа App Store
@@ -87,7 +78,6 @@ function getDeviceBezelUrl(deviceModel) {
 if (typeof window !== 'undefined') {
     window.getCloudinaryImageUrl = getCloudinaryImageUrl;
     window.getAppStoreBadgeUrl = getAppStoreBadgeUrl;
-    window.getShareImageUrl = getShareImageUrl;
     window.getDeviceBezelUrl = getDeviceBezelUrl;
     window.getGooglePlayBadgeUrl = getGooglePlayBadgeUrl;
 }
@@ -97,7 +87,6 @@ if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         getCloudinaryImageUrl,
         getAppStoreBadgeUrl,
-        getShareImageUrl,
         getDeviceBezelUrl,
         getGooglePlayBadgeUrl,
         CLOUDINARY_ROOT_FOLDER,

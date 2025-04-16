@@ -132,14 +132,6 @@ async function processCommandLineArgs() {
                 }
                 await uploadSingleAppImage(args[1], args[2]);
                 break;
-            case 'share':
-                if (args.length < 2) {
-                    console.error('Не указан ID приложения');
-                    showHelp();
-                    return;
-                }
-                await uploadShareImage(args[1]);
-                break;
             case 'badges':
                 await uploadBadges();
                 break;
@@ -184,9 +176,6 @@ function showHelp() {
   
   image <app-id> <image-file>   Загрузка одного конкретного изображения для приложения
                                (image-file - имя файла в директории приложения)
-  
-  share <app-id>                Загрузка изображения share.png для Open Graph (если файл существует)
-                               (изображение должно быть размером не менее 1200x630px)
   
   bezels [all|new|<имя файла>]   Загрузить рамки устройств 
                                  (all - все, new - только новые, <имя файла> - конкретный файл)
@@ -982,53 +971,6 @@ async function uploadSingleAppImage(appId, imageName) {
         }
     } catch (error) {
         console.error(`Ошибка при загрузке изображения ${imageName}:`, error);
-        return false;
-    }
-}
-
-/**
- * Загрузка специального изображения share.png для Open Graph
- * @param {string} appId - ID приложения
- * @returns {Promise<boolean>} Успешность загрузки
- */
-async function uploadShareImage(appId) {
-    console.log(`Загрузка share-изображения для Open Graph для приложения ${appId}...`);
-
-    const appSourceDir = path.join(appsDir, appId);
-
-    if (!await fs.exists(appSourceDir)) {
-        console.error(`Директория приложения не найдена: ${appSourceDir}`);
-        return false;
-    }
-
-    // Проверяем наличие файла share.png
-    const shareFilePath = path.join(appSourceDir, 'share.png');
-
-    if (!await fs.exists(shareFilePath)) {
-        console.error(`Файл share.png не найден в директории приложения: ${appSourceDir}`);
-        console.log(`Для корректного отображения Open Graph создайте файл share.png размером не менее 1200x630px`);
-        return false;
-    }
-
-    try {
-        const appDestFolder = `${cloudinaryManager.CLOUDINARY_ROOT_FOLDER}/apps/${appId}`;
-
-        // Создаем папку для приложения, если ее нет
-        await cloudinaryManager.createFolder(appDestFolder);
-
-        // Загружаем файл
-        const result = await cloudinaryManager.uploadFile(shareFilePath, `${appDestFolder}/share`);
-
-        if (result) {
-            console.log(`✅ Share-изображение успешно загружено для приложения ${appId}`);
-            console.log(`URL: ${result.secure_url}`);
-            return true;
-        } else {
-            console.error(`❌ Ошибка при загрузке share-изображения`);
-            return false;
-        }
-    } catch (error) {
-        console.error(`Ошибка при загрузке share-изображения:`, error);
         return false;
     }
 }
