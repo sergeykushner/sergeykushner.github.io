@@ -1,16 +1,14 @@
-.btn-link {
+.link-button {
   display: inline-block;
   padding: 0.75rem 1.25rem;
   color: var(--btn-text-color);
   text-align: center;
-  text-decoration: none;
   background-color: var(--btn-blue-background-color);
   border-radius: 9999px;
   transition: background-color 0.3s ease;
 }
 
-.btn-link:hover {
-  text-decoration: none;
+.link-button:hover {
   background-color: var(--btn-blue-background-color-hover);
 }
 
@@ -20,15 +18,15 @@
   border-style: solid;
 }
 
-.apps-page-app-icon,
-.app-page-app-icon,
-.chart-bar-app-icon img,
-.chart-app-bundle-placeholder {
+.app-icon-apps-page,
+.app-icon-app-page,
+.app-icon-chart-bar img,
+.app-icon-chart-bar-bundle {
   aspect-ratio: 1 / 1;
   background: linear-gradient(
     to bottom,
-    var(--app-icon-gradient-top),
-    var(--app-icon-gradient-bottom)
+    var(--app-icon-gradient-top-color),
+    var(--app-icon-gradient-bottom-color)
   );
   border-color: var(--app-icon-border-color);
   border-style: solid;

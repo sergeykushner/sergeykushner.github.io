@@ -338,7 +338,7 @@ function updateUI(app) {
 
     // Проверяем статус приложения - показываем badges и footer только для приложений со статусом "availableForSale"
     const badgesContainer = document.querySelector(".badges-container");
-    const footerContainer = document.querySelector(".app-page-footer-links");
+    const footerContainer = document.querySelector(".link-footer-app-page");
 
     // Определяем, нужно ли отображать бейджи и футер
     const shouldShowBadgesAndFooter = app.status === "availableForSale";

@@ -2,7 +2,7 @@ body {
   margin: var(--space-l) auto;
   font-family: system-ui;
   text-align: center;
-  background-color: var(--body-background-color);
+  background-color: var(--body-primary-background-color);
 }
 
 @media (orientation: portrait) {

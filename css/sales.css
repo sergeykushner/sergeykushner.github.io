@@ -7,7 +7,7 @@
 .sales-container {
     padding: var(--space-m);
     margin: var(--space-l) 0;
-    background-color: var(--card-background-color);
+    background-color: var(--card-primary-background-color);
     border-radius: var(--border-radius-m);
 }
 
@@ -17,7 +17,7 @@
 
 .error-container {
     padding: var(--space-l) var(--space-m);
-    background-color: var(--card-background-color);
+    background-color: var(--card-primary-background-color);
     border-radius: var(--border-radius-m);
 }
 
@@ -193,7 +193,7 @@
     background-color: var(--chart-flippa-segment-color);
 }
 
-.chart-bar-app-icon {
+.app-icon-chart-bar {
     position: relative;
     display: flex;
     align-items: center;
@@ -201,8 +201,8 @@
     margin-right: var(--space-m);
 }
 
-.chart-bar-app-icon img,
-.chart-app-bundle-placeholder {
+.app-icon-chart-bar img,
+.app-icon-chart-bar-bundle {
     width: var(--icon-size-xxs);
     height: var(--icon-size-xxs);
     vertical-align: middle;

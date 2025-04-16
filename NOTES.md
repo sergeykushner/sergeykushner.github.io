@@ -11,3 +11,7 @@
    ```bash
    node js/admin.js
    ```
+
+## CSS Color Names Sorted by Lightness and Hue
+
+http://davidbau.com/colors/

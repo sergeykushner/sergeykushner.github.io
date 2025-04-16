@@ -1,28 +1,38 @@
 :root {
   /* Цвета: светлая тема (sRGB fallback) */
 
-  /* CSS Color Names Sorted by Lightness and Hue http://davidbau.com/colors/ */
-  --body-background-color: white;
-  --card-background-color: rgb(245 245 250);
+  /* --- Основной фон --- */
+  --body-primary-background-color: white;
+
+  /* --- Карточки --- */
+  --card-primary-background-color: rgb(245 245 250);
   --card-secondary-background-color: white;
+
+  /* --- Текст --- */
   --text-primary-color: black;
   --text-secondary-color: gray;
 
-  /* --- iOS System Blue --- */
-  --link-color: rgb(0 122 255);
-  --btn-blue-background-color: rgb(0 122 255);
-  --btn-blue-background-color-hover: rgb(0 122 255 / 80%);
+  /* --- Ссылки --- */
+  --link-color: rgb(0 122 255); /* iOS System Blue */
+
+  /* --- Кнопки --- */
+  --btn-blue-background-color: rgb(0 122 255); /* iOS System Blue */
+  --btn-blue-background-color-hover: rgb(0 122 255 / 80%); /* iOS System Blue 80% */
   --btn-text-color: white;
 
-  /* --- iOS System Cyan --- */
-  --chart-app-store-segment-color: rgb(50 173 230);
-
-  /* --- iOS System Green --- */
-  --chart-flippa-segment-color: rgb(52 199 89);
-  --app-icon-border-color: rgb(0 0 0 / 5%);
+  /* --- Разделитель --- */
   --divider-color: rgb(0 0 0 / 15%);
-  --app-icon-gradient-top: rgb(245 245 250);
-  --app-icon-gradient-bottom: rgb(245 245 250);
+
+  /* --- Иконки --- */
+  --app-icon-border-color: rgb(0 0 0 / 5%);
+  --app-icon-gradient-top-color: rgb(245 245 250);
+  --app-icon-gradient-bottom-color: rgb(245 245 250);
+
+  /* --- Графики --- */
+  --chart-app-store-segment-color: rgb(50 173 230); /* iOS System Cyan */
+  --chart-flippa-segment-color: rgb(52 199 89); /* iOS System Green */
+
+  /* --- Максимальная ширина контента --- */
   --content-max-width-xxs: 720px;
   --content-max-width-xs: 840px;
   --content-max-width-s: 960px;
@@ -31,6 +41,15 @@
   --content-max-width-xl: 1320px;
   --content-max-width-xxl: 1440px;
 
+  /* --- Отступы --- */
+  --space-xxl: 4rem;
+  --space-xl: 3rem;
+  --space-l: 2rem;
+  --space-m: 1rem;
+  --space-s: 0.5rem;
+  --space-xs: 0.25rem;
+  --space-xxs: 0.125rem;
+
   /* --- Радиусы --- */
   --border-radius-m: 1rem;
   --border-radius-s: 0.5rem;
@@ -38,8 +57,8 @@
   --border-radius-icon: 22%;
 
   /* --- Размеры иконок --- */
-  --icon-size-l: 4rem;
-  --icon-size-m: 3.5rem;
+  --icon-size-l: 5rem;
+  --icon-size-m: 4rem;
   --icon-size-s: 3rem;
   --icon-size-xs: 2.5rem;
   --icon-size-xxs: 2rem;
@@ -51,15 +70,6 @@
   /* --- Высота полосок диаграммы --- */
   --bar-height: 1rem;
 
-  /* --- Отступы --- */
-  --space-xxl: 4rem;
-  --space-xl: 3rem;
-  --space-l: 2rem;
-  --space-m: 1rem;
-  --space-s: 0.5rem;
-  --space-xs: 0.25rem;
-  --space-xxs: 0.125rem;
-
   /* --- Границы --- */
   --border-width-bold: 1px;
   --border-width-medium: 0.5px;
@@ -70,41 +80,31 @@
 @supports (color: color(display-p3 1 1 1)) {
   :root {
     /* --- iOS System Blue --- */
-    --link-color: color(display-p3 0.039216 0.517647 1.000000 / 100%);
-    --btn-blue-background-color: color(display-p3 0.039216 0.517647 1.000000 / 100%);
-    --btn-blue-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 80%);
-
-    /* --- iOS System Cyan --- */
-    --chart-app-store-segment-color: color(display-p3 0.196078 0.678431 0.901961 / 100%);
-
-    /* --- iOS System Green --- */
-    --chart-flippa-segment-color: color(display-p3 0.203922 0.780392 0.349020 / 100%);
+    --link-color: color(display-p3 0.039216 0.517647 1.000000 / 100%); /* iOS System Blue */
+    --btn-blue-background-color: color(display-p3 0.039216 0.517647 1.000000 / 100%); /* iOS System Blue */
+    --btn-blue-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 80%); /* iOS System Blue 80% */
+    --chart-app-store-segment-color: color(display-p3 0.196078 0.678431 0.901961 / 100%); /* iOS System Cyan */
+    --chart-flippa-segment-color: color(display-p3 0.203922 0.780392 0.349020 / 100%); /* iOS System Green */
   }
 }
 
 /* 🌙 Тёмная тема: sRGB */
 @media (prefers-color-scheme: dark) {
   :root {
-    --body-background-color: black;
-    --card-background-color: rgb(30 30 30);
+    --body-primary-background-color: black;
+    --card-primary-background-color: rgb(30 30 30);
     --card-secondary-background-color: rgb(45 45 45);
     --text-primary-color: white;
     --text-secondary-color: gray;
-
-    /* --- iOS System Blue --- */
-    --link-color: rgb(10 132 255);
-    --btn-blue-background-color: rgb(10 132 255);
-    --btn-blue-background-color-hover: rgb(0 102 204 / 80%);
-
-    /* --- iOS System Cyan --- */
-    --chart-app-store-segment-color: rgb(100 210 255);
-
-    /* --- iOS System Green --- */
-    --chart-flippa-segment-color: rgb(48 209 88);
-    --app-icon-border-color: black;
+    --link-color: rgb(10 132 255); /* iOS System Blue */
+    --btn-blue-background-color: rgb(10 132 255); /* iOS System Blue */
+    --btn-blue-background-color-hover: rgb(0 102 204 / 80%); /* iOS System Blue 80% */
     --divider-color: rgb(255 255 255 / 25%);
-    --app-icon-gradient-top: #313131;
-    --app-icon-gradient-bottom: #151515;
+    --app-icon-border-color: black;
+    --app-icon-gradient-top-color: rgb(49 49 49);
+    --app-icon-gradient-bottom-color: rgb(21 21 21);
+    --chart-app-store-segment-color: rgb(100 210 255); /* iOS System Cyan */
+    --chart-flippa-segment-color: rgb(48 209 88); /* iOS System Green */
   }
 }
 
@@ -112,16 +112,11 @@
 @media (prefers-color-scheme: dark) {
   @supports (color: color(display-p3 1 1 1)) {
     :root {
-      /* --- iOS System Blue --- */
-      --link-color: color(display-p3 0.039216 0.517647 1.000000 / 100%);
-      --btn-blue-background-color: color(display-p3 0.039216 0.517647 1.000000 / 100%);
-      --btn-blue-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 80%);
-
-      /* --- iOS System Cyan --- */
-      --chart-app-store-segment-color: color(display-p3 0.392157 0.823529 1.000000 / 100%);
-
-      /* --- iOS System Green --- */
-      --chart-flippa-segment-color: color(display-p3 0.188235 0.819608 0.345098 / 100%);
+      --link-color: color(display-p3 0.039216 0.517647 1.000000 / 100%); /* iOS System Blue */
+      --btn-blue-background-color: color(display-p3 0.039216 0.517647 1.000000 / 100%); /* iOS System Blue */
+      --btn-blue-background-color-hover: color(display-p3 0.039216 0.517647 1.000000 / 80%); /* iOS System Blue 80% */
+      --chart-app-store-segment-color: color(display-p3 0.392157 0.823529 1.000000 / 100%); /* iOS System Cyan */
+      --chart-flippa-segment-color: color(display-p3 0.188235 0.819608 0.345098 / 100%); /* iOS System Green */
     }
   }
 }

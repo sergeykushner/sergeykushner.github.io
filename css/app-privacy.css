@@ -3,7 +3,7 @@
 }
 
 @media (orientation: landscape) {
-  .app-privacy-main-container {
+  .main-container-app-privacy {
     max-width: var(--content-max-width-xs);
     margin-inline: auto;
   }

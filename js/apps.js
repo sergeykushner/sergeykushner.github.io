@@ -47,7 +47,7 @@ async function loadApps() {
     let apps = allApps.filter(app => app.type !== "App Bundle");
 
     // Получаем ссылки на DOM-элементы
-    const container = document.querySelector(".apps-page-main-grid-container");
+    const container = document.querySelector(".main-grid-container-apps-page");
     const template = document.getElementById("appTemplate");
 
     // Проверяем, использует ли пользователь темный режим
@@ -74,7 +74,7 @@ async function loadApps() {
 
             // Получаем элементы внутри клонированного шаблона
             const link = appNode.querySelector('a');
-            const img = appNode.querySelector('.apps-page-app-icon');
+            const img = appNode.querySelector('.app-icon-apps-page');
             const title = appNode.querySelector('.apps-page-app-title');
 
             // Заполняем элементы данными
@@ -130,7 +130,7 @@ async function loadApps() {
 
     // Настраиваем наблюдение за скроллом для обновления изображений
     window.addEventListener('scroll', function () {
-        const appIcons = document.querySelectorAll('.apps-page-app-icon');
+        const appIcons = document.querySelectorAll('.app-icon-apps-page');
         appIcons.forEach(img => {
             // Проверяем, видно ли изображение
             const rect = img.getBoundingClientRect();

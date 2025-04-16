@@ -1,4 +1,4 @@
-.app-page-main-container {
+.main-container-app-page {
   max-width: var(--content-max-width-xs);
   margin-inline: auto;
 }
@@ -92,7 +92,7 @@ li {
   margin: 0 auto;
 }
 
-.app-page-footer-links {
+.link-footer-app-page {
   display: flex;
   gap: var(--space-s);
   justify-content: center;
@@ -101,7 +101,7 @@ li {
 
 /* Media Queries */
 @media (orientation: landscape) {
-  .app-page-app-icon {
+  .app-icon-app-page {
     width: var(--icon-size-l);
     height: var(--icon-size-l);
   }
@@ -116,7 +116,7 @@ li {
 }
 
 @media (orientation: portrait) {
-  .app-page-app-icon {
+  .app-icon-app-page {
     display: none;
   }
 

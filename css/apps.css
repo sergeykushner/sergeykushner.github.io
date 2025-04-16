@@ -1,9 +1,10 @@
-.apps-page-main-grid-container {
+.main-grid-container-apps-page {
   display: grid;
   margin-inline: auto;
 }
 
 .apps-page-app-title {
+  margin-top: var(--space-s);
   margin-bottom: 0;
 }
 
@@ -21,25 +22,25 @@
 }
 
 @media (orientation: landscape) {
-  .apps-page-main-grid-container {
+  .main-grid-container-apps-page {
     grid-template-columns: repeat(7, 1fr);
-    gap: var(--space-l);
+    gap: var(--space-m);
     max-width: var(--content-max-width-l);
   }
 
-  .apps-page-app-icon {
+  .app-icon-apps-page {
     width: var(--icon-size-l);
     height: var(--icon-size-l);
   }
 }
 
 @media (orientation: portrait) {
-  .apps-page-main-grid-container {
+  .main-grid-container-apps-page {
     grid-template-columns: repeat(4, 1fr);
     gap: var(--space-m);
   }
 
-  .apps-page-app-icon {
+  .app-icon-apps-page {
     width: var(--icon-size-m);
     height: var(--icon-size-m);
   }

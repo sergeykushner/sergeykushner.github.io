@@ -464,7 +464,7 @@ function buildSalesChart(data) {
         const barContainer = rowTemplate.content.cloneNode(true).querySelector(".chart-row");
 
         // Получаем элементы строки
-        const iconContainer = barContainer.querySelector(".chart-bar-app-icon");
+        const iconContainer = barContainer.querySelector(".app-icon-chart-bar");
         const iconImage = iconContainer.querySelector("img");
         const label = barContainer.querySelector(".chart-bar-label");
         const barsWrapper = barContainer.querySelector(".chart-bars-wrapper");
@@ -475,7 +475,7 @@ function buildSalesChart(data) {
         // Проверяем тип приложения и устанавливаем заглушку для App Bundle
         if (app.type === "App Bundle") {
             // Для App Bundle используем заглушку
-            iconContainer.classList.add("chart-app-bundle-placeholder");
+            iconContainer.classList.add("app-icon-chart-bar-bundle");
             iconImage.remove(); // Удаляем изображение
         } else {
             // Для обычных приложений загружаем иконку из Cloudinary
