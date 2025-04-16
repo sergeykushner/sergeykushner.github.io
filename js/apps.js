@@ -149,5 +149,7 @@ async function loadApps() {
     }, { passive: true });
 }
 
-// Вызываем функцию загрузки при загрузке страницы
-loadApps();
+// Заменяем прямой вызов функции на обработчик DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function () {
+    loadApps();
+});
