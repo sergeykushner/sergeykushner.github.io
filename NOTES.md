@@ -15,3 +15,10 @@
 ## CSS Color Names Sorted by Lightness and Hue
 
 http://davidbau.com/colors/
+
+## Полный откат на один коммит назад (жёстко, с удалением):
+
+```bash
+git reset --hard HEAD~1
+git push origin main --force
+```
