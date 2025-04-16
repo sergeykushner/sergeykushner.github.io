@@ -114,25 +114,6 @@ function updateMetaTags(app) {
 
     // Получаем текущий URL страницы
     const pageUrl = window.location.href;
-
-    // Получаем URL изображения для шаринга
-    const shareImageUrl = getShareImageUrl(app.id);
-
-    // Заполняем Open Graph мета-теги
-    document.getElementById('meta-og-url').setAttribute("content", pageUrl);
-    document.getElementById('meta-og-type').setAttribute("content", "website");
-    document.getElementById('meta-og-site-name').setAttribute("content", app.displayName || app.title);
-    document.getElementById('meta-og-title').setAttribute("content", app.title);
-    document.getElementById('meta-og-description').setAttribute("content", app.shortDescription || app.fullDescription[0] || app.title);
-    document.getElementById('meta-og-image').setAttribute("content", shareImageUrl);
-    document.getElementById('meta-og-image-alt').setAttribute("content", `${app.title} - ${app.subtitle || 'Application'}`);
-
-    // Заполняем Twitter Card мета-теги
-    document.getElementById('meta-twitter-card').setAttribute("content", "summary_large_image");
-    document.getElementById('meta-twitter-title').setAttribute("content", app.title);
-    document.getElementById('meta-twitter-description').setAttribute("content", app.shortDescription || app.fullDescription[0] || app.title);
-    document.getElementById('meta-twitter-image').setAttribute("content", shareImageUrl);
-    document.getElementById('meta-twitter-image-alt').setAttribute("content", `${app.title} - ${app.subtitle || 'Application'}`);
 }
 
 function updateUI(app) {
@@ -434,5 +415,7 @@ function updateUI(app) {
     }
 }
 
-// Вызов функции загрузки при загрузке страницы
-loadAppDetail();
+// Удаляем прямой вызов loadAppDetail() в конце файла и заменяем его на обработчик DOMContentLoaded
+document.addEventListener('DOMContentLoaded', function () {
+    loadAppDetail();
+});

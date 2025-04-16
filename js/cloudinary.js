@@ -28,18 +28,6 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
 }
 
 /**
- * Получает URL для изображения share.jpg из Cloudinary
- * @param {string} appId - ID приложения
- * @returns {string} URL изображения для шаринга
- */
-function getShareImageUrl(appId) {
-    // Предполагаем, что изображение для шаринга называется 'share' и имеет расширение jpg
-    // Для изображения шаринга используем трансформации для оптимального размера
-    const transformations = 'w_1200,h_630,c_fill/';
-    return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/share`;
-}
-
-/**
  * Получает URL для бейджа App Store
  * @param {boolean} isDarkMode - Флаг темного режима
  * @returns {string} URL бейджа App Store
@@ -92,7 +80,6 @@ if (typeof window !== 'undefined') {
     window.getAppStoreBadgeUrl = getAppStoreBadgeUrl;
     window.getDeviceBezelUrl = getDeviceBezelUrl;
     window.getGooglePlayBadgeUrl = getGooglePlayBadgeUrl;
-    window.getShareImageUrl = getShareImageUrl;
 }
 
 // Экспортируем функции для Node.js
@@ -102,7 +89,6 @@ if (typeof module !== 'undefined' && module.exports) {
         getAppStoreBadgeUrl,
         getDeviceBezelUrl,
         getGooglePlayBadgeUrl,
-        getShareImageUrl,
         CLOUDINARY_ROOT_FOLDER,
         CLOUDINARY_CLOUD_NAME,
         CLOUDINARY_BASE_URL
