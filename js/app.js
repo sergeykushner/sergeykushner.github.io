@@ -100,37 +100,56 @@ if (typeof window !== 'undefined') {
 }
 
 function updateMetaTags(app) {
+    // Основные мета-теги
     document.title = app.title;
-    document.querySelector('meta[name="description"]').setAttribute("content", app.shortDescription);
+    document.querySelector('meta[name="description"]').setAttribute("content", app.shortDescription || app.fullDescription[0] || app.title);
 
-    // Обновляем Open Graph мета-теги через id
-    document.getElementById('meta-og-title').setAttribute("content", app.title);
-    document.getElementById('meta-og-description').setAttribute("content", app.shortDescription);
-    document.getElementById('meta-og-site-name').setAttribute("content", "Sergey Kushner");
+    // Формируем базовые данные для мета-тегов
+    const title = app.title;
+    const description = app.shortDescription || app.fullDescription[0] || app.title;
+    const siteName = app.displayName || "App Store";
     const appUrl = `https://sergeykushner.github.io/pages/app.html?id=${app.id}`;
+
+    // Обновляем Open Graph мета-теги
+    document.getElementById('meta-og-title').setAttribute("content", title);
+    document.getElementById('meta-og-description').setAttribute("content", description);
+    document.getElementById('meta-og-site-name').setAttribute("content", siteName);
     document.getElementById('meta-og-url').setAttribute('content', appUrl);
 
-    // Установка мета-тега для Smart App Banner
-    document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=${window.location.href}`);
+    // Обновляем Twitter Card мета-теги
+    document.getElementById('meta-twitter-title').setAttribute("content", title);
+    document.getElementById('meta-twitter-description').setAttribute("content", description);
 
-    // Используем Cloudinary для изображения шеринга
-    // Сначала пробуем использовать специальное изображение "share", если оно существует
+    // Установка мета-тега для Smart App Banner
+    if (app.appStoreId) {
+        document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=${window.location.href}`);
+    }
+
+    // Сначала пытаемся установить иконку приложения (это работает всегда)
+    const iconShareUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false)
+        .replace('/w_128,h_128,c_fill/', '/w_1200,h_1200,c_fill/');
+    document.getElementById('meta-og-image').setAttribute('content', iconShareUrl);
+    document.getElementById('meta-twitter-image').setAttribute('content', iconShareUrl);
+
+    // Затем пробуем использовать специальное изображение "share", если оно существует
     const shareImageUrl = getShareImageUrl(app.id);
 
-    // Создаем изображение для проверки существования share-изображения
+    // Проверяем, существует ли share-изображение
     const shareImg = new Image();
-    shareImg.src = shareImageUrl;
 
-    // Устанавливаем обработчик ошибки, чтобы использовать иконку приложения как запасной вариант
-    shareImg.onerror = function () {
-        // Если изображение для шеринга не найдено, используем иконку приложения с большим размером
-        const iconShareUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false)
-            .replace('/w_128,h_128,c_fill/', '/w_1200,h_1200,c_fill/');
-        document.getElementById('meta-og-image').setAttribute('content', iconShareUrl);
+    // При успешной загрузке используем это изображение
+    shareImg.onload = function () {
+        document.getElementById('meta-og-image').setAttribute('content', shareImageUrl);
+        document.getElementById('meta-twitter-image').setAttribute('content', shareImageUrl);
     };
 
-    // Устанавливаем первоначальное значение (будет заменено, если изображение не существует)
-    document.getElementById('meta-og-image').setAttribute('content', shareImageUrl);
+    // При ошибке загрузки оставляем иконку приложения, которую мы уже установили
+    shareImg.onerror = function () {
+        console.log('Share image not found, using app icon instead');
+    };
+
+    // Запускаем загрузку для проверки
+    shareImg.src = shareImageUrl;
 
     // Устанавливаем apple-mobile-web-app-title
     document.querySelector('meta[name="apple-mobile-web-app-title"]').setAttribute("content", app.title);
