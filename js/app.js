@@ -102,16 +102,34 @@ if (typeof window !== 'undefined') {
 function updateMetaTags(app) {
     document.title = app.title;
     document.querySelector('meta[name="description"]').setAttribute("content", app.shortDescription);
-    document.querySelector('meta[property="og:title"]').setAttribute("content", app.title);
-    document.querySelector('meta[property="og:description"]').setAttribute("content", app.shortDescription);
+
+    // Обновляем Open Graph мета-теги через id
+    document.getElementById('meta-og-title').setAttribute("content", app.title);
+    document.getElementById('meta-og-description').setAttribute("content", app.shortDescription);
+    document.getElementById('meta-og-site-name').setAttribute("content", "Sergey Kushner");
     const appUrl = `https://sergeykushner.github.io/pages/app.html?id=${app.id}`;
     document.getElementById('meta-og-url').setAttribute('content', appUrl);
 
     // Установка мета-тега для Smart App Banner
     document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=${window.location.href}`);
 
-    // Используем Cloudinary для изображения шаринга
+    // Используем Cloudinary для изображения шеринга
+    // Сначала пробуем использовать специальное изображение "share", если оно существует
     const shareImageUrl = getShareImageUrl(app.id);
+
+    // Создаем изображение для проверки существования share-изображения
+    const shareImg = new Image();
+    shareImg.src = shareImageUrl;
+
+    // Устанавливаем обработчик ошибки, чтобы использовать иконку приложения как запасной вариант
+    shareImg.onerror = function () {
+        // Если изображение для шеринга не найдено, используем иконку приложения с большим размером
+        const iconShareUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false)
+            .replace('/w_128,h_128,c_fill/', '/w_1200,h_1200,c_fill/');
+        document.getElementById('meta-og-image').setAttribute('content', iconShareUrl);
+    };
+
+    // Устанавливаем первоначальное значение (будет заменено, если изображение не существует)
     document.getElementById('meta-og-image').setAttribute('content', shareImageUrl);
 
     // Устанавливаем apple-mobile-web-app-title

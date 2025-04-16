@@ -617,5 +617,6 @@ export {
     getCloudinaryImageUrl,
     getAppStoreBadgeUrl,
     getShareImageUrl,
-    getDeviceBezelUrl
+    getDeviceBezelUrl,
+    IMAGE_EXTENSIONS
 };
