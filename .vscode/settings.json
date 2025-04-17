@@ -1,9 +1,14 @@
 {
+    "workbench.activityBar.orientation": "vertical",
     "workbench.colorTheme": "Default Dark Modern",
-    "editor.formatOnSave": true,
+    "workbench.preferredDarkColorTheme": "Default Dark Modern",
+    "workbench.preferredLightColorTheme": "Default Light Modern",
+    "window.autoDetectColorScheme": true,
     "files.autoSave": "afterDelay",
-    // Автофикс stylelint при сохранении только для css и scss
+    "files.autoSaveDelay": 1000,
+    "editor.formatOnSave": true,
     "[css]": {
+        "editor.defaultFormatter": "stylelint.vscode-stylelint",
         "editor.codeActionsOnSave": {
             "source.fixAll.stylelint": "explicit"
         },
@@ -15,7 +20,6 @@
         },
         "editor.formatOnSave": true
     },
-    // Поддержка stylelint
     "stylelint.validate": [
         "css",
         "scss"
