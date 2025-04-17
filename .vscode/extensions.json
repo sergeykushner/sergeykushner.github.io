@@ -1,7 +1,7 @@
 {
     "recommendations": [
-        "nickdemayo.vscode-json-editor",
         "ritwickdey.LiveServer",
+        "nickdemayo.vscode-json-editor",
         "stylelint.vscode-stylelint"
     ]
 }
