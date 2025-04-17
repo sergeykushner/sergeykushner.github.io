@@ -1,13 +1,16 @@
+/* --- Основной контейнер сетки для страницы приложений --- */
 .main-grid-container-apps-page {
   display: grid;
   margin-inline: auto;
 }
 
+/* --- Заголовок карточки приложения --- */
 .apps-page-app-title {
   margin-top: var(--space-s);
   margin-bottom: 0;
 }
 
+/* --- Чекбокс фильтрации приложений в футере --- */
 .apps-page-filter-checkbox {
   display: flex;
   gap: var(--space-s);
@@ -21,6 +24,7 @@
   cursor: pointer;
 }
 
+/* --- Ландшафтная ориентация: сетка и размер иконок --- */
 @media (orientation: landscape) {
   .main-grid-container-apps-page {
     grid-template-columns: repeat(7, 1fr);
@@ -34,6 +38,7 @@
   }
 }
 
+/* --- Портретная ориентация: сетка и размер иконок --- */
 @media (orientation: portrait) {
   .main-grid-container-apps-page {
     grid-template-columns: repeat(4, 1fr);

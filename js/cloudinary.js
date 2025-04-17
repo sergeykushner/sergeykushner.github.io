@@ -75,6 +75,7 @@ function getDeviceBezelUrl(deviceModel) {
 }
 
 // Экспортируем функции для использования в браузере
+// (window.* используется в клиентских скриптах)
 if (typeof window !== 'undefined') {
     window.getCloudinaryImageUrl = getCloudinaryImageUrl;
     window.getAppStoreBadgeUrl = getAppStoreBadgeUrl;
@@ -82,7 +83,7 @@ if (typeof window !== 'undefined') {
     window.getGooglePlayBadgeUrl = getGooglePlayBadgeUrl;
 }
 
-// Экспортируем функции для Node.js
+// Экспортируем функции для Node.js (используется в серверных/админских скриптах)
 if (typeof module !== 'undefined' && module.exports) {
     module.exports = {
         getCloudinaryImageUrl,

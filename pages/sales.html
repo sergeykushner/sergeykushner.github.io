@@ -11,10 +11,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-EEM4PWGR89');
     </script>
@@ -24,7 +21,8 @@
 </head>
 
 <body>
-    <main>
+    <!-- Основной контейнер страницы продаж -->
+    <main aria-label="Sales. Proceeds. Units.">
         <h1>Sales. Proceeds. Units.</h1>
         <div class="units-and-sales-main-container">
             <div id="error-container" class="error-container" style="display: none;">
@@ -33,6 +31,7 @@
                 </p>
                 <input type="file" id="manual-file-upload" accept=".json">
             </div>
+            <!-- Блок с количеством приложений по типам -->
             <div class="units-container">
                 <h2 id="apps-count"><span>0</span> Projects</h2>
                 <div id="app-types-details" class="app-types-details">
@@ -49,27 +48,24 @@
                         <h4>iOS + Android</h4>
                         <span id="cross-platform-count" class='app-type-value'>0</span>
                     </span>
-
                     <!-- Блок для типа "iMessage Stickers" -->
                     <span class='app-type-item'>
                         <h4>iMessage Stickers</h4>
                         <span id="stickers-count" class='app-type-value'>0</span>
                     </span>
-
                     <!-- Блок для типа "Website" -->
                     <span class='app-type-item'>
                         <h4>Website</h4>
                         <span id="website-count" class='app-type-value'>0</span>
                     </span>
-
                     <!-- Блок для типа "Total Apps" -->
                     <span class='app-type-item'>
                         <h4>Total Apps</h4>
                         <span id="total-apps-count" class='app-type-value'>0</span>
                     </span>
-
                 </div>
             </div>
+            <!-- Блок с продажами по площадкам -->
             <div class="sales-container">
                 <h2>Sales</h2>
                 <div class="sales-stats-grid">
@@ -92,7 +88,7 @@
                     </div>
                 </div>
             </div>
-
+            <!-- Блок с графиком и сортировкой -->
             <div class="chart-section">
                 <div class="chart-legend">
                     <div class="chart-legend-item">
@@ -104,7 +100,6 @@
                         <span class="chart-legend-label">Flippa Net Revenue</span>
                     </div>
                 </div>
-
                 <div class="chart-sort-controls">
                     <!-- <span class="sort-label">Sort by:</span> -->
                     <div class="sort-options">
@@ -122,12 +117,10 @@
                         </label>
                     </div>
                 </div>
-
                 <div class="chart-container">
                     <div id="chart-sales-container" class="chart-sales-container">
                         <!-- Шаблон будет использоваться в JavaScript -->
                     </div>
-
                     <!-- Шаблон для графика (вне контейнера chart-sales-container) -->
                     <template id="chartRowTemplate">
                         <div class="chart-row">

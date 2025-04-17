@@ -11,10 +11,7 @@
     <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
     <script>
         window.dataLayer = window.dataLayer || [];
-
-        function gtag() {
-            dataLayer.push(arguments);
-        }
+        function gtag() { dataLayer.push(arguments); }
         gtag('js', new Date());
         gtag('config', 'G-EEM4PWGR89');
     </script>
@@ -24,13 +21,14 @@
 </head>
 
 <body>
-    <main class="main-grid-container-apps-page" id="appsContainer">
-        <!-- Шаблон для карточки приложения -->
+    <!-- Основной контейнер сетки приложений -->
+    <main class="main-grid-container-apps-page" id="appsContainer" aria-label="Apps list">
+        <!-- Шаблон для карточки приложения (используется в js/apps.js) -->
         <template id="appTemplate">
             <div class="apps-page-app-item">
                 <div class="link-app-title-apps-page">
-                    <a href="" data-href="app.html?id=">
-                        <img class="app-icon-apps-page" alt="">
+                    <a href="" data-href="app.html?id=" aria-label="Open app">
+                        <img class="app-icon-apps-page" alt="" aria-hidden="false">
                         <p class="apps-page-app-title"></p>
                     </a>
                 </div>
@@ -38,9 +36,10 @@
         </template>
     </main>
 
+    <!-- Футер с чекбоксом фильтрации приложений -->
     <footer class="footer-apps-page">
-        <label class="apps-page-filter-checkbox">
-            <input type="checkbox" id="show-allowed-only">
+        <label class="apps-page-filter-checkbox" for="show-allowed-only">
+            <input type="checkbox" id="show-allowed-only" aria-checked="false">
             The source code is not lost
         </label>
     </footer>

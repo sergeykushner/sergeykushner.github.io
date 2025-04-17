@@ -68,15 +68,41 @@ function handleFileUpload(event) {
     reader.readAsText(file);
 }
 
-// Глобальная переменная для хранения данных графика
-let globalChartData = [];
+// --- Глобальные переменные и утилиты ---
 
-// Ключ для хранения типа сортировки в localStorage
+/**
+ * Ключ для хранения типа сортировки в localStorage
+ */
 const SORT_TYPE_KEY = 'sales_chart_sort_type';
 
 /**
+ * Глобальная переменная для хранения данных графика
+ */
+let globalChartData = [];
+
+/**
+ * Форматирует денежное значение с разделителями
+ * @param {number} num
+ * @returns {string}
+ */
+const formatMoney = (num) => {
+    if (num === null || num === undefined) return '0';
+    return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+/**
+ * Форматирует количество (целое число с разделителями)
+ * @param {number} num
+ * @returns {string}
+ */
+const formatUnits = (num) => {
+    if (num === null || num === undefined) return '0';
+    return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+};
+
+/**
  * Сохраняет выбранный тип сортировки в localStorage
- * @param {string} sortType - Тип сортировки
+ * @param {string} sortType
  */
 function saveSortTypePreference(sortType) {
     try {
@@ -88,22 +114,24 @@ function saveSortTypePreference(sortType) {
 
 /**
  * Восстанавливает сохраненный тип сортировки из localStorage
- * @returns {string} Тип сортировки или значение по умолчанию
+ * @returns {string}
  */
 function getSavedSortType() {
     try {
         const savedType = localStorage.getItem(SORT_TYPE_KEY);
-        return savedType || 'release-date'; // По умолчанию сортировка по дате релиза
+        return savedType || 'release-date';
     } catch (e) {
         console.warn('Не удалось получить сохраненную настройку сортировки:', e);
         return 'release-date';
     }
 }
 
+// --- Основные функции ---
+
 /**
  * Применяет выбранную сортировку к данным графика и обновляет график
- * @param {string} sortType - Тип сортировки ('revenue', 'release-date' или 'sale-date')
- * @param {Array} data - Массив данных для графика
+ * @param {string} sortType
+ * @param {Array} data
  */
 function applySortToChartData(sortType, data = globalChartData) {
     if (!data || data.length === 0) return;
@@ -381,7 +409,11 @@ function processAppTypesInfo(appTypeCounter, apps) {
     }
 }
 
-// Функция расчета общих комиссий
+/**
+ * Функция расчета общих комиссий
+ * @param {Object} app
+ * @returns {number}
+ */
 function calculateTotalFees(app) {
     let totalFees = 0;
 
@@ -401,39 +433,27 @@ function calculateTotalFees(app) {
     return totalFees;
 }
 
-// Функция обновления отображения статистики
+/**
+ * Функция обновления отображения статистики
+ */
 function updateStatsDisplay(
     appStoreSales, appStoreProceeds, appStoreUnits,
     flippaSales, flippaProceeds, flippaUnits
 ) {
-    // Форматирование чисел для денежных значений (с десятичными знаками)
-    const formatMoney = (num) => {
-        if (num === null || num === undefined) return 0;
-        return num.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    };
-
-    // Форматирование чисел для количества (без десятичных знаков)
-    const formatUnits = (num) => {
-        if (num === null || num === undefined) return 0;
-        return Math.round(num).toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-    };
-
-    // App Store статистика
     document.getElementById("sales-app-store").textContent = formatMoney(appStoreSales);
     document.getElementById("sales-proceeds-app-store").textContent = formatMoney(appStoreProceeds);
     document.getElementById("sales-units-app-store").textContent = formatUnits(appStoreUnits);
-
-    // Flippa статистика - количество проданных приложений на площадке Flippa
     document.getElementById("sales-flippa").textContent = formatMoney(flippaSales);
     document.getElementById("sales-proceeds-flippa").textContent = formatMoney(flippaProceeds);
     document.getElementById("sales-units-flippa").textContent = formatUnits(flippaUnits);
-
-    // Общая статистика - не показываем общие Units
     document.getElementById("sales-total").textContent = formatMoney(appStoreSales + flippaSales);
     document.getElementById("sales-proceeds-total").textContent = formatMoney(appStoreProceeds + flippaProceeds);
 }
 
-// Функция построения графика
+/**
+ * Функция построения графика
+ * @param {Array} data
+ */
 function buildSalesChart(data) {
     const chartContainer = document.getElementById("chart-sales-container");
     chartContainer.innerHTML = "";
