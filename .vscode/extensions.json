@@ -1,6 +1,7 @@
 {
     "recommendations": [
         "ms-vscode.live-server",
+        "github.vscode-pull-request-github",
         "ritwickdey.LiveServer",
         "nickdemayo.vscode-json-editor",
         "stylelint.vscode-stylelint"

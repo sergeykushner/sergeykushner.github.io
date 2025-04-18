@@ -11,17 +11,23 @@
         "editor.defaultFormatter": "stylelint.vscode-stylelint",
         "editor.codeActionsOnSave": {
             "source.fixAll.stylelint": "explicit"
-        },
-        "editor.formatOnSave": true
+        }
     },
     "[scss]": {
         "editor.codeActionsOnSave": {
             "source.fixAll.stylelint": "explicit"
-        },
-        "editor.formatOnSave": true
+        }
     },
     "stylelint.validate": [
         "css",
         "scss"
+    ],
+    "githubIssues.createIssueTriggers": [
+        "TODO",
+        "todo",
+        "BUG",
+        "FIXME",
+        "ISSUE",
+        "HACK"
     ]
 }
