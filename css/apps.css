@@ -50,3 +50,8 @@
     height: var(--icon-size-m);
   }
 }
+
+/* --- Скрытие футера до загрузки страницы --- */
+.footer-apps-page--hidden {
+  display: none;
+}

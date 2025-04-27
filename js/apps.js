@@ -149,6 +149,11 @@ async function loadApps() {
             }
         });
     }, { passive: true });
+    // Показываем футер после загрузки и рендера
+    const footer = document.querySelector('.footer-apps-page');
+    if (footer) {
+        footer.classList.remove('footer-apps-page--hidden');
+    }
 }
 
 // Инициализация после загрузки DOM
