@@ -122,15 +122,22 @@ async function loadApps() {
         });
     }
     // Восстанавливаем состояние чекбокса из localStorage
-    const checkbox = document.getElementById('show-allowed-only');
-    const savedState = localStorage.getItem('showAllowedOnly');
-    checkbox.checked = savedState === 'true';
-    updateAppsView(apps, container, template, prefersDarkMode);
+    // const checkbox = document.getElementById('show-allowed-only');
+    // const savedState = localStorage.getItem('showAllowedOnly');
+    // checkbox.checked = savedState === 'true';
+    // updateAppsView(apps, container, template, prefersDarkMode);
     // Обработчик события изменения состояния чекбокса
-    checkbox.addEventListener('change', function () {
-        localStorage.setItem('showAllowedOnly', this.checked);
-        updateAppsView(apps, container, template, prefersDarkMode);
-    });
+    // checkbox.addEventListener('change', function () {
+    //     localStorage.setItem('showAllowedOnly', this.checked);
+    //     updateAppsView(apps, container, template, prefersDarkMode);
+    // });
+    // Показываем футер после загрузки и рендера
+    // const footer = document.querySelector('.footer-apps-page');
+    // if (footer) {
+    //     footer.classList.remove('footer-apps-page--hidden');
+    // }
+    // Просто показываем все приложения без фильтрации
+    renderApps(apps, container, template, prefersDarkMode);
     // Настраиваем наблюдение за скроллом для обновления изображений
     window.addEventListener('scroll', function () {
         const appIcons = document.querySelectorAll('.app-icon-apps-page');
@@ -149,11 +156,6 @@ async function loadApps() {
             }
         });
     }, { passive: true });
-    // Показываем футер после загрузки и рендера
-    const footer = document.querySelector('.footer-apps-page');
-    if (footer) {
-        footer.classList.remove('footer-apps-page--hidden');
-    }
 }
 
 // Инициализация после загрузки DOM
