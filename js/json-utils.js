@@ -29,6 +29,7 @@ async function updatePublicJson() {
             "appStoreProceeds",
             'saleDate',
             'salePrice',
+            'salePriceSource',
             'listingFee',
             'successFee',
             'flippaLink',
