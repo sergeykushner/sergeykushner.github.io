@@ -2,12 +2,13 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  height: 75vh;
-  text-align: center;
+  /* --- height: 80vh; --- */
 }
 
 .home-links-container {
   display: flex;
   flex-direction: column;
-  gap: var(--space-l);
+  gap: var(--space-m);
+  margin-top: var(--space-l);
+  margin-bottom: var(--space-l);
 }
