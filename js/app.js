@@ -40,6 +40,11 @@ const SCREENSHOT_CORNER_RADIUS = {
  * Настройки размещения скриншота внутри рамки устройства
  */
 const DEVICE_SCREENSHOT_CONFIG = {
+    "iPhone 17 Pro Max": {
+        width: "90%",
+        offsetY: "0.1%",
+        offsetX: "0%"
+    },
     "iPhone 16 Pro Max": {
         width: "90%",
         offsetY: "0.1%",
