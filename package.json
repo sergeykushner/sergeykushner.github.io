@@ -6,6 +6,7 @@
   "type": "module",
   "scripts": {
     "admin": "node js/admin.js",
+    "dev": "node js/dev-server.js",
     "upload-all": "node js/admin.js all",
     "upload-app": "node js/admin.js app",
     "upload-bezels": "node js/admin.js bezels",
