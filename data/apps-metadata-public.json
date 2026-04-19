@@ -1,5 +1,42 @@
 [
     {
+        "id": "cocktails",
+        "type": "App",
+        "platform": [
+            "iOS"
+        ],
+        "status": "availableForSale",
+        "displayName": "Coctails",
+        "title": "Cocktails - Bar Recipes App",
+        "subtitle": "Mix Drinks with Confidence",
+        "promoText": "Discover cocktail recipes, explore ingredients, and build a home bar you’ll love.",
+        "shortDescription": "From timeless classics to modern mixes, Cocktails helps you find the right drink for any mood or occasion.",
+        "fullDescription": [
+            "Cocktails helps you find the right drink for any mood or occasion, from timeless classics to modern mixes.",
+            "Key Features:",
+            "- Discover cocktails based on the ingredients you already have.",
+            "- Browse a beautifully organized collection of classic and modern recipes.",
+            "- View ingredients at a glance and follow clear step-by-step instructions.",
+            "- Save your favorite drinks for quick access anytime.",
+            "- Get inspired and build your personal home bar.",
+            "The app is designed to make choosing and mixing drinks simple and enjoyable. Whether you're planning a dinner, hosting friends, or just experimenting at home, Cocktails helps you quickly find what you can make and what to try next.",
+            "With a clean, intuitive interface, you can explore recipes, check ingredients, and discover new combinations without effort. Everything is organized to help you move from idea to drink in seconds.",
+            "Elegant, practical, and made for everyday use, Cocktails brings great drinks and home bar inspiration together in one place.",
+            "Get Cocktails today and start mixing with confidence!"
+        ],
+        "appStoreId": "6762517424",
+        "googlePlayId": "",
+        "screenshots": [
+            4,
+            5,
+            2
+        ],
+        "screenshotProduct": "iPhone 17 Pro Max",
+        "email": "-@icloud.com",
+        "privacyUpdatedDate": "2026-04-19",
+        "releaseDate": "0000-00-00"
+    },
+    {
         "id": "time-capsule",
         "type": "App",
         "platform": [

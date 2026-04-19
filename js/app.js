@@ -3,6 +3,7 @@
  * Соотношения сторон для скриншотов разных устройств
  */
 const SCREENSHOT_ASPECT_RATIOS = {
+    "iPhone 17 Pro Max": "1320 / 2868",
     "iPhone 16 Pro Max": "1320 / 2868",
     "iPhone 15 Pro Max": "1290 / 2796",
     "Google Pixel 1": "1212 / 2457",
@@ -59,6 +60,7 @@ const DEVICE_SCREENSHOT_CONFIG = {
  * Маппинг моделей устройств и файлов рамок
  */
 const DEVICE_BEZEL_FILES = {
+    "iPhone 17 Pro Max": "iphone-17-pro-max-silver-portrait",
     "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max - Landscape": "iphone-15-pro-max-natural-titanium-landscape"

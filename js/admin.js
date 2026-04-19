@@ -4,6 +4,7 @@
 
 import inquirer from 'inquirer';
 import fs from 'fs-extra';
+import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
@@ -22,7 +23,7 @@ import * as jsonUtils from './json-utils.js';
 const { CLOUDINARY_ROOT_FOLDER, IMAGE_EXTENSIONS, filterImageFiles } = cloudinaryManager;
 
 // Пути к директориям с ресурсами
-const appsDir = path.join(__dirname, '../assets/apps');
+const DEFAULT_APPS_DIR = path.join(__dirname, '../assets/apps');
 const badgesDir = path.join(__dirname, '../assets/badges');
 const bezelsDir = path.join(__dirname, '../assets/product-bezels');
 
@@ -36,6 +37,93 @@ const UPLOAD_MODES = {
     SPECIFIC: 1,   // Загрузить конкретный файл
     NEW_ONLY: 2    // Загрузить только новые файлы
 };
+
+function normalizeDirPath(dirPath) {
+    if (!dirPath) {
+        return null;
+    }
+
+    if (dirPath === '~') {
+        return os.homedir();
+    }
+
+    if (dirPath.startsWith('~/')) {
+        return path.join(os.homedir(), dirPath.slice(2));
+    }
+
+    return path.resolve(dirPath);
+}
+
+async function pathExistsAndIsDirectory(dirPath) {
+    if (!dirPath || !await fs.pathExists(dirPath)) {
+        return false;
+    }
+
+    const stats = await fs.stat(dirPath);
+    return stats.isDirectory();
+}
+
+async function promptForAppsDir(initialValue = '') {
+    const { customAppsDir } = await inquirer.prompt([
+        {
+            type: 'input',
+            name: 'customAppsDir',
+            message: 'Укажите путь к директории apps:',
+            default: initialValue,
+            validate: async (input) => {
+                const normalizedPath = normalizeDirPath(input);
+
+                if (!normalizedPath) {
+                    return 'Путь не должен быть пустым';
+                }
+
+                if (!await fs.pathExists(normalizedPath)) {
+                    return `Директория не найдена: ${normalizedPath}`;
+                }
+
+                const stats = await fs.stat(normalizedPath);
+                if (!stats.isDirectory()) {
+                    return `Это не директория: ${normalizedPath}`;
+                }
+
+                return true;
+            }
+        }
+    ]);
+
+    return normalizeDirPath(customAppsDir);
+}
+
+async function resolveAppsDir(preferredDir = null, { interactive = false } = {}) {
+    const configuredDir = normalizeDirPath(process.env.APP_ASSETS_DIR);
+    const candidates = [
+        normalizeDirPath(preferredDir),
+        configuredDir,
+        DEFAULT_APPS_DIR
+    ].filter(Boolean);
+
+    const checked = new Set();
+
+    for (const candidate of candidates) {
+        if (checked.has(candidate)) {
+            continue;
+        }
+
+        checked.add(candidate);
+
+        if (await pathExistsAndIsDirectory(candidate)) {
+            return candidate;
+        }
+    }
+
+    if (!interactive) {
+        return null;
+    }
+
+    console.warn('Стандартная директория apps не найдена. Можно указать внешний путь.');
+
+    return promptForAppsDir(preferredDir || configuredDir || DEFAULT_APPS_DIR);
+}
 
 /**
  * Точка входа в административный скрипт
@@ -122,7 +210,7 @@ async function processCommandLineArgs() {
                     showHelp();
                     return;
                 }
-                await uploadSmartAppAssets(args[1]);
+                await uploadSmartAppAssets(args[1], args[2]);
                 break;
             case 'image':
                 if (args.length < 3) {
@@ -130,13 +218,13 @@ async function processCommandLineArgs() {
                     showHelp();
                     return;
                 }
-                await uploadSingleAppImage(args[1], args[2]);
+                await uploadSingleAppImage(args[1], args[2], args[3]);
                 break;
             case 'badges':
                 await uploadBadges();
                 break;
             case 'all':
-                await uploadAllAssets();
+                await uploadAllAssets(args[1]);
                 break;
             case 'update-json':
                 await updatePublicJson();
@@ -171,11 +259,15 @@ function showHelp() {
   all                           Перезагрузить все изображения из assets на Cloudinary
                                (бейджи, рамки устройств, все приложения)
   
-  app <app-id>                  Загрузка всех изображений приложения
+  app <app-id> [apps-dir]       Загрузка всех изображений приложения
                                (обнаруживает скриншоты в любом месте, поддерживает структуру папок)
   
-  image <app-id> <image-file>   Загрузка одного конкретного изображения для приложения
+  image <app-id> <image-file> [apps-dir]
+                               Загрузка одного конкретного изображения для приложения
                                (image-file - имя файла в директории приложения)
+
+  APP_ASSETS_DIR=/path/to/apps npm run admin
+                               Запуск интерактивного режима с внешней директорией apps
   
   bezels [all|new|<имя файла>]   Загрузить рамки устройств 
                                  (all - все, new - только новые, <имя файла> - конкретный файл)
@@ -338,6 +430,15 @@ async function uploadBezels(option) {
  */
 async function uploadAppImagesImproved() {
     console.log('Загрузка изображений приложений на Cloudinary...');
+
+    const appsDir = await resolveAppsDir(null, { interactive: true });
+
+    if (!appsDir) {
+        console.error('Директория apps не найдена');
+        return;
+    }
+
+    console.log(`Используется директория приложений: ${appsDir}`);
 
     // Получаем список папок приложений
     const appFolders = await cloudinaryManager.getAppDirectories(appsDir);
@@ -685,7 +786,7 @@ async function invalidateByFolder(folderPath) {
 /**
  * Загрузка всех ресурсов из папки assets
  */
-async function uploadAllAssets() {
+async function uploadAllAssets(customAppsDir = null) {
     console.log('Перезагрузка всех изображений из папки assets...');
 
     const { confirm } = await inquirer.prompt([
@@ -716,6 +817,15 @@ async function uploadAllAssets() {
     // Получаем список всех папок приложений
     console.log('\n📱 Загрузка ресурсов приложений...');
     try {
+        const appsDir = await resolveAppsDir(customAppsDir, { interactive: true });
+
+        if (!appsDir) {
+            console.error('Директория apps не найдена');
+            return;
+        }
+
+        console.log(`Используется директория приложений: ${appsDir}`);
+
         // Получаем список директорий приложений
         const appDirs = await cloudinaryManager.getAppDirectories(appsDir);
 
@@ -742,8 +852,15 @@ async function uploadAllAssets() {
  * Загрузка ресурсов для конкретного приложения
  * @param {string} appId - ID приложения
  */
-async function uploadSmartAppAssets(appId) {
+async function uploadSmartAppAssets(appId, customAppsDir = null) {
     console.log(`Умная загрузка ресурсов для приложения ${appId}...`);
+
+    const appsDir = await resolveAppsDir(customAppsDir);
+
+    if (!appsDir) {
+        console.error('Директория apps не найдена. Передайте путь аргументом или задайте APP_ASSETS_DIR');
+        return;
+    }
 
     const appPath = path.join(appsDir, appId);
 
@@ -935,8 +1052,15 @@ async function updateAssetVersion() {
  * @param {string} appId - ID приложения
  * @param {string} imageName - Имя файла изображения
  */
-async function uploadSingleAppImage(appId, imageName) {
+async function uploadSingleAppImage(appId, imageName, customAppsDir = null) {
     console.log(`Загрузка изображения ${imageName} для приложения ${appId}...`);
+
+    const appsDir = await resolveAppsDir(customAppsDir);
+
+    if (!appsDir) {
+        console.error('Директория apps не найдена. Передайте путь аргументом или задайте APP_ASSETS_DIR');
+        return false;
+    }
 
     const appSourceDir = path.join(appsDir, appId);
 
