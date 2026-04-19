@@ -27,6 +27,7 @@ const SCREENSHOT_CORNER_RADIUS = {
     "Slide 16/9": "10px",
     "Website Screenshot 1440/950": "10px",
     "Screenshot 1176/2088": "0%",
+    "iPhone 17 Pro Max": "7%",
     "iPhone 16 Pro Max": "7%",
     "iPhone 15 Pro Max": "7%",
     "iPhone 15 Pro Max - Landscape": "7%",
