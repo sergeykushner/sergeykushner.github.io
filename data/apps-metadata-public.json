@@ -7,12 +7,24 @@
         ],
         "status": "availableForSale",
         "displayName": "Sound Meter",
-        "title": "Sound Meter",
-        "subtitle": "",
-        "promoText": "",
-        "shortDescription": "",
-        "fullDescription": [],
-        "appStoreId": "",
+        "title": "Sound Meter - Noise Level dB",
+        "subtitle": "Decibel readings made simple",
+        "promoText": "Turn your device into a simple sound level tool. Check noise around you, compare environments, and understand when it may be too loud.",
+        "shortDescription": "Sound Meter - Noise Meter dB helps you measure ambient sound levels using the built-in microphone.",
+        "fullDescription": [
+            "Sound Meter - Noise Meter dB helps you measure ambient sound levels using the built-in microphone.",
+            "",
+            "Use it to check everyday noise at home, in the office, on the street, in a classroom, studio, or any other environment. The app shows sound levels in decibels and helps you better understand how loud your surroundings are.",
+            "",
+            "Features:",
+            "• Real-time sound level measurement",
+            "• Clear decibel display",
+            "• Simple, focused interface",
+            "• Useful for quick noise checks",
+            "• Works directly on your device",
+            "Please note: built-in microphones are not a replacement for professional calibrated sound level meters. Measurements may vary depending on device model, microphone condition, case, and environment. For legal, medical, workplace safety, or engineering purposes, use certified professional equipment."
+        ],
+        "appStoreId": "6763905136",
         "googlePlayId": "",
         "screenshots": [
             2,
@@ -20,9 +32,9 @@
             4
         ],
         "screenshotProduct": "iPhone 17 Pro Max",
-        "email": "",
+        "email": "manes-quip-6a@icloud.com",
         "privacyUpdatedDate": "2026-04-25",
-        "releaseDate": "0000-00-00"
+        "releaseDate": ""
     },
     {
         "id": "cocktails",
