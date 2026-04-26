@@ -1,5 +1,30 @@
 [
     {
+        "id": "sound-meter",
+        "type": "App",
+        "platform": [
+            "iOS"
+        ],
+        "status": "availableForSale",
+        "displayName": "Sound Meter",
+        "title": "Sound Meter",
+        "subtitle": "",
+        "promoText": "",
+        "shortDescription": "",
+        "fullDescription": [],
+        "appStoreId": "",
+        "googlePlayId": "",
+        "screenshots": [
+            2,
+            3,
+            4
+        ],
+        "screenshotProduct": "iPhone 17 Pro Max",
+        "email": "",
+        "privacyUpdatedDate": "2026-04-25",
+        "releaseDate": "0000-00-00"
+    },
+    {
         "id": "cocktails",
         "type": "App",
         "platform": [
@@ -7,7 +32,7 @@
         ],
         "status": "availableForSale",
         "displayName": "Cocktails",
-        "title": "Cocktails - Bar Recipes App",
+        "title": "Cocktails - Bar Recipes",
         "subtitle": "Mix Drinks with Confidence",
         "promoText": "Discover cocktail recipes, explore ingredients, and build a home bar you’ll love.",
         "shortDescription": "From timeless classics to modern mixes, Cocktails helps you find the right drink for any mood or occasion.",
@@ -34,7 +59,7 @@
         "screenshotProduct": "iPhone 17 Pro Max",
         "email": "01-barrage.remotes@icloud.com",
         "privacyUpdatedDate": "2026-04-19",
-        "releaseDate": "0000-00-00"
+        "releaseDate": "2026-04-22"
     },
     {
         "id": "time-capsule",
