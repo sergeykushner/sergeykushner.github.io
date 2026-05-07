@@ -290,7 +290,7 @@ function updateUI(app) {
     badgesContainer.style.display = shouldShowBadgesAndFooter ? "block" : "none";
     footerContainer.style.display = shouldShowBadgesAndFooter ? "flex" : "none";
     document.getElementById("email-link").href = `mailto:${app.email}`;
-    document.getElementById("privacy-link").href = `app-privacy.html?id=${app.id}`;
+    document.getElementById("privacy-link").href = `/app-privacy.html?id=${app.id}`;
     if (shouldShowBadgesAndFooter) {
         renderBadges(app, prefersDarkMode);
     }
@@ -302,7 +302,7 @@ function updateUI(app) {
 async function loadAppDetail() {
     const urlParams = new URLSearchParams(window.location.search);
     const appId = urlParams.get("id");
-    const response = await fetch("../data/apps-metadata-public.json");
+    const response = await fetch("/data/apps-metadata-public.json");
     const apps = await response.json();
     const app = apps.find(a => a.id === appId);
     if (!app) {

@@ -7,7 +7,7 @@ async function loadPrivacyData() {
     const appId = urlParams.get("id");
 
     // Загружаем публичные метаданные приложений
-    const response = await fetch("../data/apps-metadata-public.json");
+    const response = await fetch("/data/apps-metadata-public.json");
     const apps = await response.json();
     const app = apps.find(a => a.id === appId);
 
@@ -19,7 +19,9 @@ async function loadPrivacyData() {
     // Обновляем метаданные страницы
     document.title = `${app.title} - Privacy Policy`;
     document.getElementById("meta-description").setAttribute("content", `Privacy Policy for the ${app.title} app.`);
-    document.getElementById("canonical-link").setAttribute("href", `https://sergeykushner.github.io/pages/app-privacy.html?id=${app.id}`);
+    const isLegacySoundMeterPrivacy = window.location.pathname.endsWith("/pages/app-privacy.html") && app.id === "sound-meter";
+    const canonicalPath = isLegacySoundMeterPrivacy ? "/pages/app-privacy.html" : "/app-privacy.html";
+    document.getElementById("canonical-link").setAttribute("href", `https://sergeykushner.github.io${canonicalPath}?id=${app.id}`);
 
     // Обновляем контент политики
     document.getElementById("app-privacy-title").textContent = `${app.displayName} Privacy Policy`;

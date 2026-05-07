@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en" prefix="og: http://ogp.me/ns#">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content="" id="meta-description" />
+    <meta name="apple-mobile-web-app-title" content="" id="meta-app-title" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="apple-itunes-app" content="" id="meta-app-store" />
+
+    <!-- TODO: Dinamic Open Graph for every app. For check: https://opengraph.dev -->
+
+    <title id="page-title"></title>
+
+    <link rel="stylesheet" href="css/main.css?v=2.0" />
+
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EEM4PWGR89"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+        gtag('config', 'G-EEM4PWGR89');
+    </script>
+
+    <!-- Перемещенные скрипты с атрибутом defer -->
+    <script src="js/cloudinary.js" defer></script>
+    <script src="js/app.js" defer></script>
+</head>
+
+<body>
+    <!-- Основной контейнер страницы приложения -->
+    <main class="main-container-app-page" aria-label="Карточка приложения">
+        <div>
+            <img class="app-icon-app-page" src="" alt="App Icon" id="app-icon" />
+            <h1 id="app-title"></h1>
+            <h3 id="app-subtitle"></h3>
+        </div>
+        <div id="screenshots-container" class="screenshots-gallery">
+            <!-- Скриншоты будут добавлены динамически из JS -->
+        </div>
+        <div class="app-description" id="app-description">
+            <!-- Контент будет добавлен динамически из JS -->
+        </div>
+        <div class="badges-container">
+            <div class="badges">
+                <a href="" id="app-store-link" title="Download on the App Store" target="_blank">
+                    <img id="app-store-badge" alt="Download on the App Store Badge" />
+                </a>
+                <a href="" id="google-play-link" title="Get it on Google Play" target="_blank" style="display: none;">
+                    <img id="google-play-badge" alt="Get it on Google Play Badge" />
+                </a>
+                <div id="product-hunt-container"></div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Футер с дополнительными ссылками -->
+    <footer class="link-footer-app-page">
+        <a href="app-privacy.html" id="privacy-link" title="Privacy Policy">Privacy Policy</a>
+        <div class="divider"></div>
+        <a href="https://www.apple.com/legal/internet-services/itunes/dev/stdeula/" title="Terms of Use (EULA)"
+            target="_blank" rel="noopener noreferrer">Terms of Use</a>
+        <div class="divider"></div>
+        <a href="" id="email-link" title="Email">Email</a>
+    </footer>
+</body>
+
+</html>

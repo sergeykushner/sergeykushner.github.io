@@ -73,7 +73,7 @@ function renderApps(appsToRender, container, template, prefersDarkMode) {
         const img = appNode.querySelector('.app-icon-apps-page');
         const title = appNode.querySelector('.apps-page-app-title');
         // Заполняем элементы данными
-        link.href = `app.html?id=${app.id}`;
+        link.href = `/app.html?id=${app.id}`;
         title.textContent = app.displayName;
         // Получаем URL иконки из Cloudinary с учетом темного режима
         const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
@@ -104,7 +104,7 @@ function updateAppsView(apps, container, template, prefersDarkMode) {
  */
 async function loadApps() {
     // Загружаем метаданные приложений
-    const response = await fetch("../data/apps-metadata-public.json");
+    const response = await fetch("/data/apps-metadata-public.json");
     const allApps = await response.json();
     const apps = filterOutBundles(allApps);
     // Получаем ссылки на DOM-элементы
@@ -116,7 +116,7 @@ async function loadApps() {
     if (typeof getCloudinaryImageUrl !== 'function') {
         await new Promise((resolve) => {
             const script = document.createElement('script');
-            script.src = '../js/cloudinary.js';
+            script.src = '/js/cloudinary.js';
             script.onload = resolve;
             document.head.appendChild(script);
         });
