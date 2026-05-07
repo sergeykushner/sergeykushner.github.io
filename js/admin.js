@@ -8,7 +8,7 @@ import os from 'os';
 import path from 'path';
 import { fileURLToPath } from 'url';
 import { dirname } from 'path';
-import { exec } from 'child_process';
+import { spawn } from 'child_process';
 import cloudinary from 'cloudinary';
 
 // Настройка для ES модулей
@@ -30,6 +30,7 @@ const bezelsDir = path.join(__dirname, '../assets/product-bezels');
 // Пути к файлам, где хранится версия
 const cloudinaryManagerPath = path.join(__dirname, './cloudinary-manager.js');
 const cloudinaryPath = path.join(__dirname, './cloudinary.js');
+const devServerPath = path.join(__dirname, './dev-server.js');
 
 // Константы для режимов загрузки
 const UPLOAD_MODES = {
@@ -152,6 +153,7 @@ async function main() {
                     'Инвалидация кэша изображений в Cloudinary',
                     'Перезагрузка всех изображений из assets на Cloudinary',
                     'Обновление версии ассетов',
+                    'Запуск локального сервера',
                     'Выход'
                 ]
             }
@@ -178,6 +180,9 @@ async function main() {
                 break;
             case 'Обновление версии ассетов':
                 await updateAssetVersion();
+                break;
+            case 'Запуск локального сервера':
+                await startLocalServer();
                 break;
             case 'Выход':
                 console.log('Выход из скрипта');
@@ -229,6 +234,10 @@ async function processCommandLineArgs() {
             case 'update-json':
                 await updatePublicJson();
                 break;
+            case 'server':
+            case 'dev':
+                await startLocalServer();
+                break;
             case 'help':
             case '--help':
             case '-h':
@@ -276,8 +285,35 @@ function showHelp() {
 
   update-json                    Обновить публичный JSON
 
+  server, dev                    Запустить локальный сервер для просмотра сайта
+
   help                           Показать эту справку
     `);
+}
+
+/**
+ * Запуск локального сервера для просмотра сайта
+ */
+async function startLocalServer() {
+    console.log('Запуск локального сервера...');
+    console.log('Откройте в браузере адрес из сообщения сервера. Для остановки нажмите Ctrl+C.\n');
+
+    const serverProcess = spawn(process.execPath, [devServerPath], {
+        env: process.env,
+        stdio: 'inherit'
+    });
+
+    await new Promise((resolve, reject) => {
+        serverProcess.on('error', reject);
+        serverProcess.on('close', (code) => {
+            if (code && code !== 0) {
+                reject(new Error(`Локальный сервер завершился с кодом ${code}`));
+                return;
+            }
+
+            resolve();
+        });
+    });
 }
 
 /**
