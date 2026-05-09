@@ -61,12 +61,6 @@ function buildSitemapXml(appsData) {
             lastmod: '2025-01-09',
             changefreq: 'monthly',
             priority: '0.9'
-        },
-        {
-            loc: `${SITE_URL}/google-admob-app-privacy.html`,
-            lastmod: '2025-01-09',
-            changefreq: 'monthly',
-            priority: '0.1'
         }
     ];
 

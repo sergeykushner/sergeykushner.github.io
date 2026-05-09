@@ -31,6 +31,7 @@ const bezelsDir = path.join(__dirname, '../assets/product-bezels');
 const cloudinaryManagerPath = path.join(__dirname, './cloudinary-manager.js');
 const cloudinaryPath = path.join(__dirname, './cloudinary.js');
 const devServerPath = path.join(__dirname, './dev-server.js');
+const npmCommand = process.platform === 'win32' ? 'npm.cmd' : 'npm';
 
 // Константы для режимов загрузки
 const UPLOAD_MODES = {
@@ -154,6 +155,7 @@ async function main() {
                     'Инвалидация кэша изображений в Cloudinary',
                     'Перезагрузка всех изображений из assets на Cloudinary',
                     'Обновление версии ассетов',
+                    'Проверка и сортировка CSS-свойств',
                     'Запуск локального сервера',
                     'Выход'
                 ]
@@ -184,6 +186,9 @@ async function main() {
                 break;
             case 'Обновление версии ассетов':
                 await updateAssetVersion();
+                break;
+            case 'Проверка и сортировка CSS-свойств':
+                await promptCssLint();
                 break;
             case 'Запуск локального сервера':
                 await startLocalServer();
@@ -241,6 +246,12 @@ async function processCommandLineArgs() {
             case 'update-sitemap':
                 await updateSitemap();
                 break;
+            case 'lint-css':
+                await runStylelint({ fix: false });
+                break;
+            case 'fix-css':
+                await runStylelint({ fix: true });
+                break;
             case 'server':
             case 'dev':
                 await startLocalServer();
@@ -294,10 +305,78 @@ function showHelp() {
 
   update-sitemap                 Обновить sitemap.xml из публичного JSON
 
+  lint-css                       Проверить CSS-свойства через stylelint
+
+  fix-css                        Отсортировать CSS-свойства через stylelint --fix
+
   server, dev                    Запустить локальный сервер для просмотра сайта
 
   help                           Показать эту справку
     `);
+}
+
+/**
+ * Интерактивная проверка и сортировка CSS-свойств.
+ */
+async function promptCssLint() {
+    const { mode } = await inquirer.prompt([
+        {
+            type: 'list',
+            name: 'mode',
+            message: 'Что сделать с CSS?',
+            choices: [
+                { name: 'Проверить порядок свойств', value: 'lint' },
+                { name: 'Автоматически отсортировать свойства', value: 'fix' },
+                { name: '⬅️ Вернуться в главное меню', value: 'back' }
+            ]
+        }
+    ]);
+
+    if (mode === 'back') {
+        console.log('Возврат в главное меню...');
+        return;
+    }
+
+    await runStylelint({ fix: mode === 'fix' });
+}
+
+/**
+ * Запуск stylelint для CSS-файлов.
+ * @param {{ fix: boolean }} options
+ */
+async function runStylelint({ fix }) {
+    const args = ['exec', '--', 'stylelint', 'css/**/*.css'];
+
+    if (fix) {
+        args.push('--fix');
+    }
+
+    console.log(fix
+        ? 'Сортировка CSS-свойств через stylelint...'
+        : 'Проверка CSS-свойств через stylelint...'
+    );
+
+    const lintProcess = spawn(npmCommand, args, {
+        env: process.env,
+        stdio: 'inherit'
+    });
+
+    await new Promise((resolve, reject) => {
+        lintProcess.on('error', reject);
+        lintProcess.on('close', (code) => {
+            if (code && code !== 0) {
+                reject(new Error(`stylelint завершился с кодом ${code}`));
+                return;
+            }
+
+            resolve();
+        });
+    });
+
+    console.log(fix
+        ? 'CSS-свойства отсортированы'
+        : 'Проверка CSS завершена без ошибок'
+    );
 }
 
 /**

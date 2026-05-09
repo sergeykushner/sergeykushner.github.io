@@ -12,7 +12,9 @@
     "upload-bezels": "node js/admin.js bezels",
     "upload-badges": "node js/admin.js badges",
     "update-public-json": "node js/admin.js update-json",
-    "update-sitemap": "node js/admin.js update-sitemap"
+    "update-sitemap": "node js/admin.js update-sitemap",
+    "lint-css": "node js/admin.js lint-css",
+    "fix-css": "node js/admin.js fix-css"
   },
   "homepage": "https://sergeykushner.github.io",
   "repository": {
