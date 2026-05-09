@@ -8,26 +8,1100 @@
     xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
     xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd http://www.google.com/schemas/sitemap-image/1.1 http://www.google.com/schemas/sitemap-image/1.1/sitemap-image.xsd"
     >
-    
+
     <url>
         <loc>https://sergeykushner.github.io/</loc>
-        <lastmod>2025-01-09T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>1.0</priority>
     </url>
-    
+
     <url>
         <loc>https://sergeykushner.github.io/apps.html</loc>
-        <lastmod>2025-01-09T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.9</priority>
     </url>
-    
+
     <url>
         <loc>https://sergeykushner.github.io/google-admob-app-privacy.html</loc>
-        <lastmod>2025-01-09T00:00:00+00:00</lastmod>
+        <lastmod>2025-01-09</lastmod>
         <changefreq>monthly</changefreq>
         <priority>0.1</priority>
     </url>
-    
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=4-layers</loc>
+        <lastmod>2021-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=4-layers</loc>
+        <lastmod>2021-06-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=ai-writer</loc>
+        <lastmod>2023-11-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=ai-writer</loc>
+        <lastmod>2023-11-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=apples-sp</loc>
+        <lastmod>2017-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=apples-sp</loc>
+        <lastmod>2017-04-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=assets</loc>
+        <lastmod>2024-02-23</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=assets</loc>
+        <lastmod>2024-02-23</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=avoid-collision</loc>
+        <lastmod>2024-07-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=avoid-collision</loc>
+        <lastmod>2024-07-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=birthdays</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=birthdays</loc>
+        <lastmod>2024-02-26</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=bloody-answers</loc>
+        <lastmod>2018-10-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=bloody-answers</loc>
+        <lastmod>2018-10-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=boys-sp</loc>
+        <lastmod>2017-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=boys-sp</loc>
+        <lastmod>2017-04-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=brown-noise</loc>
+        <lastmod>2024-10-24</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=brown-noise</loc>
+        <lastmod>2024-10-24</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=calories-tracker</loc>
+        <lastmod>2023-01-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=calories-tracker</loc>
+        <lastmod>2023-01-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=care-symbols</loc>
+        <lastmod>2023-09-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=care-symbols</loc>
+        <lastmod>2023-09-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=charger-animations</loc>
+        <lastmod>2022-07-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=charger-animations</loc>
+        <lastmod>2022-07-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=chost-sp</loc>
+        <lastmod>2017-04-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=chost-sp</loc>
+        <lastmod>2017-04-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=cipheroji</loc>
+        <lastmod>2024-08-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=cipheroji</loc>
+        <lastmod>2024-08-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=cocktails</loc>
+        <lastmod>2026-04-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=cocktails</loc>
+        <lastmod>2026-04-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=corn-sp</loc>
+        <lastmod>2017-06-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=corn-sp</loc>
+        <lastmod>2017-06-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=cross-route-tracker</loc>
+        <lastmod>2021-01-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=cross-route-tracker</loc>
+        <lastmod>2021-01-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=crypto-bull</loc>
+        <lastmod>2021-01-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=crypto-bull</loc>
+        <lastmod>2021-01-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=cyber-blackjack</loc>
+        <lastmod>2021-08-21</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=cyber-blackjack</loc>
+        <lastmod>2021-08-21</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=cyber-roulette</loc>
+        <lastmod>2021-08-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=cyber-roulette</loc>
+        <lastmod>2021-08-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=deep-atmos</loc>
+        <lastmod>2020-02-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=deep-atmos</loc>
+        <lastmod>2020-02-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=destroy-blocks</loc>
+        <lastmod>2020-01-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=destroy-blocks</loc>
+        <lastmod>2020-01-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=dice-poker</loc>
+        <lastmod>2020-07-04</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=dice-poker</loc>
+        <lastmod>2020-07-04</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=drive-balls</loc>
+        <lastmod>2020-02-19</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=drive-balls</loc>
+        <lastmod>2020-02-19</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=evil-wasp</loc>
+        <lastmod>2020-05-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=evil-wasp</loc>
+        <lastmod>2020-05-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=expense-tracker</loc>
+        <lastmod>2022-02-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=expense-tracker</loc>
+        <lastmod>2022-02-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=falling-bubbles</loc>
+        <lastmod>2020-02-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=falling-bubbles</loc>
+        <lastmod>2020-02-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=fasting</loc>
+        <lastmod>2022-11-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=fasting</loc>
+        <lastmod>2022-11-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=fit-advisor</loc>
+        <lastmod>2016-03-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=fit-advisor</loc>
+        <lastmod>2016-03-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=fit-hub</loc>
+        <lastmod>2020-11-12</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=fit-hub</loc>
+        <lastmod>2020-11-12</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=fuel-tracker</loc>
+        <lastmod>2023-03-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=fuel-tracker</loc>
+        <lastmod>2023-03-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=fwe</loc>
+        <lastmod>2019-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=fwe</loc>
+        <lastmod>2019-12-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=garden-crash</loc>
+        <lastmod>2017-04-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=garden-crash</loc>
+        <lastmod>2017-04-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=girls-sp</loc>
+        <lastmod>2017-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=girls-sp</loc>
+        <lastmod>2017-04-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=gym-assistant</loc>
+        <lastmod>2018-04-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=gym-assistant</loc>
+        <lastmod>2018-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=habit-tracker</loc>
+        <lastmod>2022-10-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=habit-tracker</loc>
+        <lastmod>2022-10-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=home-workouts</loc>
+        <lastmod>2020-04-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=home-workouts</loc>
+        <lastmod>2020-04-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=icecream-sp</loc>
+        <lastmod>2017-06-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=icecream-sp</loc>
+        <lastmod>2017-06-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=in-love</loc>
+        <lastmod>2017-05-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=in-love</loc>
+        <lastmod>2017-05-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=lucky-diamonds</loc>
+        <lastmod>2021-08-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=lucky-diamonds</loc>
+        <lastmod>2021-08-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=margin-trading-calculator</loc>
+        <lastmod>2021-05-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=margin-trading-calculator</loc>
+        <lastmod>2021-05-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=memes-sp</loc>
+        <lastmod>2016-09-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=memes-sp</loc>
+        <lastmod>2016-09-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=movie-watchlist</loc>
+        <lastmod>2022-12-08</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=movie-watchlist</loc>
+        <lastmod>2022-12-08</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=next-show</loc>
+        <lastmod>2022-02-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=next-show</loc>
+        <lastmod>2022-02-17</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=nft-creator</loc>
+        <lastmod>2022-07-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=nft-creator</loc>
+        <lastmod>2022-07-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=onion-sp</loc>
+        <lastmod>2017-06-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=onion-sp</loc>
+        <lastmod>2017-06-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=open-sea-wallet-portfolio</loc>
+        <lastmod>2022-07-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=open-sea-wallet-portfolio</loc>
+        <lastmod>2022-07-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=party-star</loc>
+        <lastmod>2020-12-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=party-star</loc>
+        <lastmod>2020-12-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=pdf-resume-creator</loc>
+        <lastmod>2022-07-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=pdf-resume-creator</loc>
+        <lastmod>2022-07-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=pears-sp</loc>
+        <lastmod>2017-06-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=pears-sp</loc>
+        <lastmod>2017-06-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=period-tracker</loc>
+        <lastmod>2022-07-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=period-tracker</loc>
+        <lastmod>2022-07-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=pok-advisor</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=pok-advisor</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=pokemon-go-guide</loc>
+        <lastmod>2016-07-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=pokemon-go-guide</loc>
+        <lastmod>2016-07-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=poker-1</loc>
+        <lastmod>2020-03-20</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=poker-1</loc>
+        <lastmod>2020-03-20</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=poker-2</loc>
+        <lastmod>2020-04-29</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=poker-2</loc>
+        <lastmod>2020-04-29</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=poker-dealer</loc>
+        <lastmod>2021-01-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=poker-dealer</loc>
+        <lastmod>2021-01-06</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=pomodoro-timer</loc>
+        <lastmod>2020-12-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=pomodoro-timer</loc>
+        <lastmod>2020-12-28</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=post-creator</loc>
+        <lastmod>2020-10-03</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=post-creator</loc>
+        <lastmod>2020-10-03</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=quit-smoking</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=quit-smoking</loc>
+        <lastmod>2024-11-13</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=rash-down</loc>
+        <lastmod>2017-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=rash-down</loc>
+        <lastmod>2017-04-06</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=rex-fit</loc>
+        <lastmod>2017-08-16</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=rex-fit</loc>
+        <lastmod>2017-08-16</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=run-sunta</loc>
+        <lastmod>2020-12-22</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=run-sunta</loc>
+        <lastmod>2020-12-22</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=santa-sp</loc>
+        <lastmod>2017-12-11</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=santa-sp</loc>
+        <lastmod>2017-12-11</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=sound-meter</loc>
+        <lastmod>2026-04-28</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=sound-meter</loc>
+        <lastmod>2026-04-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=strawberry-sp</loc>
+        <lastmod>2017-04-06</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=strawberry-sp</loc>
+        <lastmod>2017-04-06</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=strike-balls</loc>
+        <lastmod>2019-12-09</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=strike-balls</loc>
+        <lastmod>2019-12-09</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=summer-sp</loc>
+        <lastmod>2017-07-17</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=summer-sp</loc>
+        <lastmod>2017-07-17</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=template-app</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=template-app</loc>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=tetra-blocks-tower</loc>
+        <lastmod>2020-05-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=tetra-blocks-tower</loc>
+        <lastmod>2020-05-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=time-capsule</loc>
+        <lastmod>2025-01-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=time-capsule</loc>
+        <lastmod>2025-01-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=truth-or-dare</loc>
+        <lastmod>2018-12-02</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=truth-or-dare</loc>
+        <lastmod>2018-12-02</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=voice-advisor</loc>
+        <lastmod>2016-09-10</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=voice-advisor</loc>
+        <lastmod>2016-09-10</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=water-balance</loc>
+        <lastmod>2020-06-25</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=water-balance</loc>
+        <lastmod>2020-06-25</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=word-game-catch-letter</loc>
+        <lastmod>2020-04-07</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=word-game-catch-letter</loc>
+        <lastmod>2020-04-07</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=word-game-woords</loc>
+        <lastmod>2022-07-05</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=word-game-woords</loc>
+        <lastmod>2022-07-05</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=workout-node</loc>
+        <lastmod>2022-05-01</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=workout-node</loc>
+        <lastmod>2022-05-01</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app.html?id=xmas-abc-sp</loc>
+        <lastmod>2017-12-14</lastmod>
+        <changefreq>monthly</changefreq>
+        <priority>0.8</priority>
+    </url>
+
+    <url>
+        <loc>https://sergeykushner.github.io/app-privacy.html?id=xmas-abc-sp</loc>
+        <lastmod>2017-12-14</lastmod>
+        <changefreq>yearly</changefreq>
+        <priority>0.3</priority>
+    </url>
+
 </urlset>

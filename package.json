@@ -11,7 +11,8 @@
     "upload-app": "node js/admin.js app",
     "upload-bezels": "node js/admin.js bezels",
     "upload-badges": "node js/admin.js badges",
-    "update-public-json": "node js/admin.js update-json"
+    "update-public-json": "node js/admin.js update-json",
+    "update-sitemap": "node js/admin.js update-sitemap"
   },
   "homepage": "https://sergeykushner.github.io",
   "repository": {

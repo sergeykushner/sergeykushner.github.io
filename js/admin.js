@@ -147,6 +147,7 @@ async function main() {
                 message: 'Выберите операцию:',
                 choices: [
                     'Обновление публичного JSON',
+                    'Обновление sitemap.xml',
                     'Загрузка изображений приложений на Cloudinary',
                     'Загрузка бейджей на Cloudinary',
                     'Загрузка рамок устройств на Cloudinary',
@@ -177,6 +178,9 @@ async function main() {
                 break;
             case 'Обновление публичного JSON':
                 await updatePublicJson();
+                break;
+            case 'Обновление sitemap.xml':
+                await updateSitemap();
                 break;
             case 'Обновление версии ассетов':
                 await updateAssetVersion();
@@ -234,6 +238,9 @@ async function processCommandLineArgs() {
             case 'update-json':
                 await updatePublicJson();
                 break;
+            case 'update-sitemap':
+                await updateSitemap();
+                break;
             case 'server':
             case 'dev':
                 await startLocalServer();
@@ -284,6 +291,8 @@ function showHelp() {
   badges                         Загрузить все бейджи
 
   update-json                    Обновить публичный JSON
+
+  update-sitemap                 Обновить sitemap.xml из публичного JSON
 
   server, dev                    Запустить локальный сервер для просмотра сайта
 
@@ -938,6 +947,24 @@ async function updatePublicJson() {
         }
     } catch (error) {
         console.error('Произошла ошибка при обновлении публичного JSON:', error);
+    }
+}
+
+/**
+ * Обновление sitemap.xml из публичных метаданных приложений
+ */
+async function updateSitemap() {
+    try {
+        console.log('Запуск генерации sitemap.xml...');
+        const success = await jsonUtils.updateSitemap();
+
+        if (success) {
+            console.log('sitemap.xml успешно обновлен!');
+        } else {
+            console.error('Произошла ошибка при обновлении sitemap.xml');
+        }
+    } catch (error) {
+        console.error('Произошла ошибка при обновлении sitemap.xml:', error);
     }
 }
 

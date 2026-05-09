@@ -84,6 +84,7 @@ if (typeof window !== 'undefined') {
 function updateMetaTags(app) {
     document.title = app.title;
     document.querySelector('meta[name="description"]').setAttribute("content", app.shortDescription || app.fullDescription[0] || app.title);
+    document.getElementById('canonical-link').setAttribute("href", `https://sergeykushner.github.io/app.html?id=${encodeURIComponent(app.id)}`);
     if (app.appStoreId) {
         document.getElementById('meta-app-store').setAttribute("content", `app-id=${app.appStoreId}, app-argument=${window.location.href}`);
     }
