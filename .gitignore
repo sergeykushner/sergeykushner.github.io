@@ -8,6 +8,8 @@ Thumbs.db
 # Logs
 *.log
 
+AGENTS.md
+
 # Private apps metadata
 data/apps-metadata.json 
 
