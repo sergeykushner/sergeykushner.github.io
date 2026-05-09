@@ -21,14 +21,3 @@
 cd ~/Developer/sergeykushner.github.io/data
 ln -s /Users/sergeykushner/Documents/apps-metadata.json apps-metadata.json
 ```
-
-## CSS Color Names Sorted by Lightness and Hue
-
-http://davidbau.com/colors/
-
-## Полный откат на один коммит назад (жёстко, с удалением):
-
-```bash
-git reset --hard HEAD~1
-git push origin main --force
-```
