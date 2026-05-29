@@ -21,3 +21,13 @@
 cd ~/Developer/sergeykushner.github.io/data
 ln -s /Users/sergeykushner/Documents/apps-metadata.json apps-metadata.json
 ```
+
+## assets и iCloud symlink
+
+- `assets` не хранится в git и локально является симлинком на iCloud Drive:
+  `/Users/sergeykushner/Library/Mobile Documents/com~apple~CloudDocs/Developer/website/assets`.
+- Если симлинк нужно восстановить:
+```bash
+cd ~/Developer/sergeykushner.github.io
+ln -s "/Users/sergeykushner/Library/Mobile Documents/com~apple~CloudDocs/Developer/website/assets" assets
+```

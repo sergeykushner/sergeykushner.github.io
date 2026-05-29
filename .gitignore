@@ -14,7 +14,7 @@ AGENTS.md
 data/apps-metadata.json 
 
 # Assets
-assets/
+assets
 assets.zip
 
 # Env files
