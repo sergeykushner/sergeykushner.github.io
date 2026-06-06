@@ -10,20 +10,6 @@
   margin-bottom: 0;
 }
 
-/* --- Чекбокс фильтрации приложений в футере --- */
-.apps-page-filter-checkbox {
-  display: flex;
-  gap: var(--space-s);
-  align-items: center;
-  justify-content: center;
-  padding: var(--space-l);
-  cursor: pointer;
-}
-
-.apps-page-filter-checkbox input {
-  cursor: pointer;
-}
-
 /* --- Ландшафтная ориентация: сетка и размер иконок --- */
 @media (orientation: landscape) {
   .main-grid-container-apps-page {
@@ -49,9 +35,4 @@
     width: var(--icon-size-m);
     height: var(--icon-size-m);
   }
-}
-
-/* --- Скрытие футера до загрузки страницы --- */
-.footer-apps-page--hidden {
-  display: none;
 }

@@ -49,15 +49,6 @@ function filterOutBundles(apps) {
 }
 
 /**
- * Фильтрует только разрешённые приложения
- * @param {Array} apps
- * @returns {Array}
- */
-function filterAllowedApps(apps) {
-    return apps.filter(app => allowedAppIds.includes(app.id));
-}
-
-/**
  * Рендерит список приложений в контейнер
  * @param {Array} appsToRender
  * @param {HTMLElement} container
@@ -91,15 +82,6 @@ function renderApps(appsToRender, container, template, prefersDarkMode) {
 }
 
 /**
- * Обновляет отображение приложений в зависимости от состояния чекбокса
- */
-function updateAppsView(apps, container, template, prefersDarkMode) {
-    const showAllowedOnly = document.getElementById('show-allowed-only').checked;
-    const appsToRender = showAllowedOnly ? filterAllowedApps(apps) : apps;
-    renderApps(appsToRender, container, template, prefersDarkMode);
-}
-
-/**
  * Основная функция загрузки и инициализации страницы приложений
  */
 async function loadApps() {
@@ -121,21 +103,6 @@ async function loadApps() {
             document.head.appendChild(script);
         });
     }
-    // Восстанавливаем состояние чекбокса из localStorage
-    // const checkbox = document.getElementById('show-allowed-only');
-    // const savedState = localStorage.getItem('showAllowedOnly');
-    // checkbox.checked = savedState === 'true';
-    // updateAppsView(apps, container, template, prefersDarkMode);
-    // Обработчик события изменения состояния чекбокса
-    // checkbox.addEventListener('change', function () {
-    //     localStorage.setItem('showAllowedOnly', this.checked);
-    //     updateAppsView(apps, container, template, prefersDarkMode);
-    // });
-    // Показываем футер после загрузки и рендера
-    // const footer = document.querySelector('.footer-apps-page');
-    // if (footer) {
-    //     footer.classList.remove('footer-apps-page--hidden');
-    // }
     // Просто показываем все приложения без фильтрации
     renderApps(apps, container, template, prefersDarkMode);
     // Настраиваем наблюдение за скроллом для обновления изображений
