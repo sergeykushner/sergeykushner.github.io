@@ -31,7 +31,3 @@
 
 - `apps-metadata.json` не хранится в git и локально является симлинком на `apps-metadata.json` в iCloud Documents
 - `assets` не хранится в git и локально является симлинком на `assets` в iCloud Drive
-
-## Legacy
-
-- `pages/app.html`, `pages/apps.html` и `pages/app-privacy.html` - старые входы, которые оставлены для совместимости со старыми URL
