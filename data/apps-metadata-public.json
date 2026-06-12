@@ -5,7 +5,7 @@
         "platform": [
             "iOS"
         ],
-        "status": "availableForSale",
+        "status": "inDevelopment",
         "displayName": "Cell Tower Map",
         "title": "Cell Tower Map",
         "subtitle": "",
@@ -17,8 +17,6 @@
         "appStoreId": "6774072550",
         "googlePlayId": "",
         "screenshots": [
-            0,
-            0,
             0
         ],
         "screenshotProduct": "iPhone 17 Pro Max",
