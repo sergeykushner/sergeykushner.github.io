@@ -287,12 +287,13 @@ function updateUI(app) {
     // Бейджи и футер
     const badgesContainer = document.querySelector(".badges-container");
     const footerContainer = document.querySelector(".link-footer-app-page");
-    const shouldShowBadgesAndFooter = app.status === "availableForSale";
-    badgesContainer.style.display = shouldShowBadgesAndFooter ? "block" : "none";
-    footerContainer.style.display = shouldShowBadgesAndFooter ? "flex" : "none";
+    const shouldShowBadges = app.status === "availableForSale";
+    const shouldShowFooter = ["availableForSale", "sold", "inDevelopment"].includes(app.status);
+    badgesContainer.style.display = shouldShowBadges ? "block" : "none";
+    footerContainer.style.display = shouldShowFooter ? "flex" : "none";
     document.getElementById("email-link").href = `mailto:${app.email}`;
     document.getElementById("privacy-link").href = `/app-privacy.html?id=${app.id}`;
-    if (shouldShowBadgesAndFooter) {
+    if (shouldShowBadges) {
         renderBadges(app, prefersDarkMode);
     }
 }
