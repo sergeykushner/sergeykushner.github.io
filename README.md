@@ -27,6 +27,10 @@
 - проверять CSS;
 - автоматически сортировать CSS с помощью `stylelint` (`.stylelintrc.json`, `package.json`).
 
+## Apps Metadata
+
+`Tools/apps_metadata.py` - скрипт для точечной работы с одной app-записью в приватном `data/apps-metadata.json` по `bundleId` текущего Xcode-проекта.
+
 ## Symlinks
 
 - `apps-metadata.json` не хранится в git и локально является симлинком на `apps-metadata.json` в iCloud Documents

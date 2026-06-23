@@ -7,22 +7,140 @@
         ],
         "status": "inDevelopment",
         "displayName": "Cell Tower Map",
-        "title": "Cell Tower Map",
-        "subtitle": "",
-        "promoText": "",
-        "shortDescription": "",
+        "title": "Cell Tower Map - Signal Finder",
+        "subtitle": "Locator 2G, 3G, LTE, 5G",
+        "promoText": "Explore 45M+ estimated cell records on an offline map. Download regions, filter 2G, 3G, LTE and 5G, and inspect detailed network data.",
+        "shortDescription": "Cell Tower Map is an offline cellular tower map for iPhone with more than 45 million estimated cell records. Download regional databases, find nearby cell tower data, and inspect 2G, 3G, LTE, and 5G network records without keeping the full worldwide dataset on your device.",
         "fullDescription": [
-            ""
+            "Cell Tower Map is an offline cellular tower map for iPhone with more than 45 million estimated cell records. Download regional databases, find nearby cell tower data, and inspect 2G, 3G, LTE, and 5G network records without keeping the full worldwide dataset on your device.",
+            "Use Cell Tower Map to explore mobile network records around your location or any downloaded map area. The app helps you compare nearby cells, review radio generation, operator identifiers, reported samples, approximate coordinates, and when a record was last seen.",
+            "Regional data packs are downloaded on demand and stored locally after download, so you can keep only the areas you need. The map is built for practical field reference, travel planning, network research, and offline lookup when internet access is limited or unavailable.",
+            "Cell positions are estimates inferred from crowd-sourced measurements. They show cell records, not guaranteed physical antenna sites, and may be offset from real equipment locations.",
+            "Features:",
+            "• More than 45 million estimated cell records",
+            "• Offline regional databases for Europe, North America, Asia, Oceania, Africa, and Latin America",
+            "• Map view with nearby cell records and selectable map-area results",
+            "• Detailed cell information including operator, radio generation, samples, coordinates, and update dates",
+            "• Radio filters for 2G, 3G, LTE, and 5G",
+            "• Sample filtering to focus on better-reported records",
+            "• Adjustable nearby search radius",
+            "• Clear cell accuracy guidance for interpreting estimated locations"
         ],
+        "keywords": "gsm,umts,cdma,antenna,radio,coverage,cellular,base station,carrier,mcc,mnc,network,nearby,offline",
+        "supportUrl": "https://sergeykushner.github.io/app.html?id=cell-tower-map",
+        "marketingUrl": "https://sergeykushner.github.io/app.html?id=cell-tower-map",
+        "privacyPolicyUrl": "https://sergeykushner.github.io/app-privacy.html?id=cell-tower-map",
+        "termsOfUseUrl": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "reviewNotes": [
+            "For review, open the app, continue past Welcome, then use More -> Regions to download a region before testing map results in that area. After a region finishes downloading, return to the map and move the map to the downloaded region or use location there to view nearby cells.",
+            "Cell positions are approximate crowd-sourced cell records, not guaranteed physical antenna sites."
+        ],
+        "bundleId": "SK.CellTowerMap",
+        "sku": "CellTowerMap",
         "appStoreId": "6774072550",
         "googlePlayId": "",
         "screenshots": [
-            0
+            3,
+            5,
+            6
         ],
         "screenshotProduct": "iPhone 17 Pro Max",
         "email": "annals.bound.0c@icloud.com",
         "privacyUpdatedDate": "2026-06-12",
-        "releaseDate": "0000-00-00"
+        "inAppPurchases": [
+            {
+                "originalName": "Lifetime",
+                "productId": "SK.CellTowerMap.Purchase.Lifetime",
+                "type": "nonConsumable",
+                "price": "49.99",
+                "localizations": [
+                    {
+                        "locale": "en-US",
+                        "displayName": "Lifetime",
+                        "description": "Lifetime access to all app features."
+                    }
+                ]
+            }
+        ],
+        "subscriptionGroup": {
+            "originalName": "Subscriptions",
+            "id": "22153165",
+            "localizations": [
+                {
+                    "locale": "en-US",
+                    "displayName": "Subscriptions",
+                    "appName": "Cell Tower Map"
+                }
+            ],
+            "subscriptions": [
+                {
+                    "level": 1,
+                    "originalName": "Year",
+                    "productId": "SK.CellTowerMap.Subscription.Year",
+                    "duration": "1 year",
+                    "price": "USD 29.99",
+                    "localizations": [
+                        {
+                            "locale": "en-US",
+                            "displayName": "Year",
+                            "description": "Yearly access to all app features."
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "originalName": "Month",
+                    "productId": "SK.CellTowerMap.Subscription.Month",
+                    "duration": "1 month",
+                    "price": "USD 4.99",
+                    "localizations": [
+                        {
+                            "locale": "en-US",
+                            "displayName": "Month",
+                            "description": "Monthly access to all app features."
+                        }
+                    ]
+                },
+                {
+                    "level": 3,
+                    "originalName": "Week",
+                    "productId": "SK.CellTowerMap.Subscription.Week",
+                    "duration": "1 week",
+                    "price": "USD 1.99",
+                    "localizations": [
+                        {
+                            "locale": "en-US",
+                            "displayName": "Week",
+                            "description": "Weekly access to all app features."
+                        }
+                    ]
+                }
+            ]
+        },
+        "releaseDate": "0000-00-00",
+        "whatsNew": [
+            {
+                "version": "1.1",
+                "changes": [
+                    "• Added downloadable offline region packs for Europe, North America, Asia, Oceania, Africa, and Latin America.",
+                    "• Improved region download states so it is clearer when data is available on the map.",
+                    "• Improved offline map behavior after regional data is downloaded."
+                ]
+            },
+            {
+                "version": "1.0.1",
+                "changes": [
+                    "• Improved map loading reliability.",
+                    "• Improved offline data updates."
+                ]
+            },
+            {
+                "version": "1.0",
+                "changes": [
+                    "Initial App Store release."
+                ]
+            }
+        ]
     },
     {
         "id": "sound-meter",
@@ -47,6 +165,50 @@
             "• Works directly on your device",
             "Please note: built-in microphones are not a replacement for professional calibrated sound level meters. Measurements may vary depending on device model, microphone condition, case, and environment. For legal, medical, workplace safety, or engineering purposes, use certified professional equipment."
         ],
+        "keywords": "sound,meter,noise,level,db,decibel,audio,spl,decibelmeter,soundmeter,soundlevel,noiselevel,hearing",
+        "supportUrl": "https://sergeykushner.github.io/app.html?id=sound-meter",
+        "marketingUrl": "https://sergeykushner.github.io/app.html?id=sound-meter",
+        "privacyPolicyUrl": "https://sergeykushner.github.io/app-privacy.html?id=sound-meter",
+        "termsOfUseUrl": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "reviewNotes": [
+            "SoundMeter is an on-device sound level measurement and logging app that uses the iPhone microphone to estimate surrounding noise levels.",
+            "It helps users understand everyday sound environments such as home, indoor comfort, traffic, appliances, workshops, music venues, and other common situations. Users can monitor noise changes over time and save important measurement sessions for later review.",
+            "Main features:",
+            "- live sound level meter",
+            "- current dB reading with min / average / max values",
+            "- recent peak context",
+            "- live trend chart",
+            "- exposure-style metrics such as dose, time-weighted average, and time above threshold",
+            "- saved sessions with notes and charts",
+            "- recommended presets for common scenarios",
+            "- optional calibration offset",
+            "- export tools",
+            "The app is intended for consumer informational use only. It is not marketed as a certified professional sound level meter, medical device, or legal compliance instrument. Readings may vary by device model, environment, microphone condition, and calibration.",
+            "No login or account is required.",
+            "Review steps:",
+            "1. Launch the app and tap Continue on the welcome screen.",
+            "2. Allow microphone access when prompted.",
+            "3. Open the Meter tab.",
+            "4. Tap Start to begin measuring.",
+            "5. Review the live meter, current dB value, chart, and session metrics.",
+            "6. Tap Stop to end a session.",
+            "7. Tap Save to save a session.",
+            "8. Open the Recordings tab to review saved sessions.",
+            "9. Open the More tab to review settings, presets, calibration tools, and the Measurement Guide.",
+            "SoundMeter+ premium features are available through Apple In-App Purchase / sandbox review flow:",
+            "- unlimited saved recordings after the free limit",
+            "- CSV / JSON export",
+            "- calibration tools",
+            "- advanced measurement settings",
+            "The app does not use a custom backend, user accounts, third-party authentication, advertising SDKs, analytics providers, AI services, or external sound data providers for core functionality.",
+            "Core functionality runs on-device using Apple frameworks:",
+            "- AVFoundation for microphone input",
+            "- SwiftData and UserDefaults for local storage",
+            "- StoreKit for In-App Purchases",
+            "There are no regional feature or content differences. The app functions consistently across all supported regions where it is available.",
+            "SoundMeter does not provide regulated medical, legal, or certified occupational safety services. It provides consumer informational sound estimates and local measurement logs only."
+        ],
+        "bundleId": "SK.SoundMeter",
         "appStoreId": "6763905136",
         "googlePlayId": "",
         "screenshots": [
@@ -57,7 +219,83 @@
         "screenshotProduct": "iPhone 17 Pro Max",
         "email": "manes-quip-6a@icloud.com",
         "privacyUpdatedDate": "2026-04-25",
-        "releaseDate": "2026-04-28"
+        "inAppPurchases": [
+            {
+                "originalName": "SoundMeter+",
+                "productId": "SK.SoundMeter.Purchase.Lifetime",
+                "type": "nonConsumable",
+                "price": "USD 4.99",
+                "localizations": [
+                    {
+                        "locale": "en-US",
+                        "displayName": "Lifetime",
+                        "description": "Lifetime access to all features"
+                    }
+                ]
+            }
+        ],
+        "subscriptionGroup": {
+            "originalName": "SoundMeter+",
+            "id": "22083900",
+            "localizations": [
+                {
+                    "locale": "en-US",
+                    "displayName": "SoundMeter+",
+                    "appName": "Sound Meter - Noise Level dB"
+                }
+            ],
+            "subscriptions": [
+                {
+                    "level": 1,
+                    "originalName": "Year",
+                    "productId": "SK.SoundMeter.Subscription.Year",
+                    "duration": "1 year",
+                    "price": "USD 2.99",
+                    "localizations": [
+                        {
+                            "locale": "en-US",
+                            "displayName": "Year",
+                            "description": "Yearly access to all features"
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "originalName": "Month",
+                    "productId": "SK.SoundMeter.Subscription.Month",
+                    "duration": "1 month",
+                    "price": "USD 0.99",
+                    "localizations": [
+                        {
+                            "locale": "en-US",
+                            "displayName": "Month",
+                            "description": "Monthly access to to all features"
+                        }
+                    ]
+                }
+            ]
+        },
+        "releaseDate": "2026-04-28",
+        "whatsNew": [
+            {
+                "version": "1.1",
+                "changes": [
+                    "• Added Live Activity support for active sound measurements on the Lock Screen and Dynamic Island.",
+                    "• Added background measurement support so recording can continue while the app is not foregrounded.",
+                    "• Added monthly and yearly SoundMeter+ subscription options alongside Lifetime access.",
+                    "• Refined the paywall purchase flow and App Store metadata for SoundMeter+.",
+                    "• Improved the sound measurement pipeline and frequency weighting DSP.",
+                    "• Stabilized the audio lifecycle around simulator and interruption edge cases.",
+                    "• Polished the gauge, measurement icons, and SwiftUI tab navigation."
+                ]
+            },
+            {
+                "version": "1.0",
+                "changes": [
+                    "Initial App Store release."
+                ]
+            }
+        ]
     },
     {
         "id": "cocktails",
@@ -98,6 +336,51 @@
             "Elegant, practical, and made for everyday use, Cocktails brings great drinks and home bar inspiration together in one place.",
             "Get Cocktails today and start mixing with confidence!"
         ],
+        "keywords": "drinks,mixology,recipes,homebar,ingredients,barbook,drinkmaker,mixer,classicdrinks,alcohol,iba",
+        "supportUrl": "https://sergeykushner.github.io/app.html?id=cocktails",
+        "marketingUrl": "https://sergeykushner.github.io/app.html?id=cocktails",
+        "privacyPolicyUrl": "https://sergeykushner.github.io/app-privacy.html?id=cocktails",
+        "termsOfUseUrl": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "reviewNotes": [
+            "Cocktails is an on-device cocktail recipe, IBA cocktail collection, and home bar planning app for iPhone.",
+            "It helps users browse cocktail recipes, review ingredients and preparation steps, save favorites, track ingredients they have at home, and see which cocktails they can make now or with one additional ingredient.",
+            "Main features:",
+            "- 100+ cocktail recipes",
+            "- full IBA cocktail collection across The Unforgettables, Contemporary Classics, and New Era Drinks",
+            "- recipe details with ingredients, measurements, garnish, glassware, and preparation instructions",
+            "- favorites",
+            "- structured ingredient catalog",
+            "- home bar ingredient tracking",
+            "- Bar Counter dashboard with availability summaries",
+            "- \"Can make now\" and \"Missing 1 ingredient\" recipe lists",
+            "- ingredient suggestions for what to buy next",
+            "- shopping list",
+            "- measurement unit preference for milliliters or US fluid ounces",
+            "The app is intended for consumer recipe browsing and home bar planning. It contains cocktail and alcohol-related recipe content and is rated 17+.",
+            "No login or account is required.",
+            "Review steps:",
+            "1. Launch the app and tap Continue on the welcome screen.",
+            "2. Open the Cocktails tab to browse recipes.",
+            "3. Open a cocktail detail screen to review ingredients, measurements, garnish, glassware, and preparation steps.",
+            "4. Tap the favorite button on a cocktail detail screen to save a recipe.",
+            "5. Open the Ingredients tab and mark several ingredients as available in the user's bar.",
+            "6. Open the Bar Counter tab to review recipes that can be made now, recipes missing one ingredient, and suggested ingredients to buy next.",
+            "7. Open the Suggestions tab to review recommended ingredients and the shopping list flow.",
+            "8. Open the More tab to review measurement settings, the Cocktails+ paywall, and app sharing.",
+            "Cocktails+ premium features are available through Apple In-App Purchase / sandbox review flow:",
+            "- access to the full cocktail library",
+            "- IBA Contemporary Classics and New Era Drinks premium recipes",
+            "- complete ingredient lists, garnish notes, and preparation guidance for premium recipes",
+            "- expanded home bar planning across the full catalog",
+            "The app does not use a custom backend, user accounts, third-party authentication, advertising SDKs, analytics providers, AI services, or external recipe providers for core functionality.",
+            "Core functionality runs on-device using Apple frameworks:",
+            "- SwiftUI for the user interface",
+            "- SwiftData and UserDefaults for local storage and preferences",
+            "- StoreKit for In-App Purchases",
+            "There are no regional feature or content differences. The app functions consistently across all supported regions where it is available.",
+            "Cocktails provides recipe and home bar planning information only. It does not sell alcohol, deliver alcohol, process alcohol orders, verify legal drinking age, or provide regulated health, safety, legal, or professional bartending services."
+        ],
+        "bundleId": "SK.Cocktails",
         "appStoreId": "6762517424",
         "googlePlayId": "",
         "screenshots": [
@@ -108,7 +391,92 @@
         "screenshotProduct": "iPhone 17 Pro Max",
         "email": "01-barrage.remotes@icloud.com",
         "privacyUpdatedDate": "2026-04-19",
-        "releaseDate": "2026-04-22"
+        "inAppPurchases": [
+            {
+                "originalName": "Cocktails+",
+                "productId": "SK.Cocktails.Purchase.Lifetime",
+                "type": "nonConsumable",
+                "price": "4.99",
+                "localizations": [
+                    {
+                        "locale": "en-US",
+                        "displayName": "Lifetime",
+                        "description": "Unlimited cocktails for a lifetime"
+                    }
+                ]
+            }
+        ],
+        "subscriptionGroup": {
+            "originalName": "Cocktails+",
+            "id": "22071185",
+            "localizations": [
+                {
+                    "locale": "en-US",
+                    "displayName": "Cocktails+",
+                    "appName": "Cocktails - Bar Recipes"
+                }
+            ],
+            "subscriptions": [
+                {
+                    "level": 1,
+                    "originalName": "Year",
+                    "productId": "SK.Cocktails.Subscription.Year",
+                    "duration": "1 year",
+                    "price": "USD 2.99",
+                    "localizations": [
+                        {
+                            "locale": "en-US",
+                            "displayName": "Year",
+                            "description": "Unlimited cocktail recipes for a year"
+                        }
+                    ]
+                },
+                {
+                    "level": 2,
+                    "originalName": "Month",
+                    "productId": "SK.Cocktails.Subscription.Month",
+                    "duration": "1 month",
+                    "price": "USD 0.99",
+                    "localizations": [
+                        {
+                            "locale": "en-US",
+                            "displayName": "Month",
+                            "description": "Unlimited cocktail recipes for a month"
+                        }
+                    ]
+                }
+            ]
+        },
+        "releaseDate": "2026-04-22",
+        "whatsNew": [
+            {
+                "version": "1.1.1",
+                "changes": [
+                    "• Added monthly and yearly subscriptions."
+                ]
+            },
+            {
+                "version": "1.1",
+                "changes": [
+                    "• Added the full IBA cocktail collection across The Unforgettables, Contemporary Classics, and New Era Drinks.",
+                    "• Expanded the catalog to 100+ cocktail recipes, including more classics, modern favorites, sours, martinis, spritzes, tiki drinks, highballs, and party cocktails.",
+                    "• Added many new cocktail images and improved image handling throughout the recipe list and detail screens.",
+                    "• Added a richer ingredient catalog with organized categories for spirits, liqueurs, bitters, syrups, juices, mixers, garnishes, and specialty ingredients.",
+                    "• Improved home bar suggestions so it is easier to see what to add next and what each ingredient can unlock.",
+                    "• Added clearer Dashboard availability lists for cocktails you can make now and recipes that are missing one ingredient.",
+                    "• Refined cocktail filters, recipe rows, badges, thumbnails, and list spacing for smoother browsing.",
+                    "• Renamed My Bar to Ingredients for a clearer app structure.",
+                    "• Refreshed the Welcome, More, and Cocktails+ screens with a more polished native iOS feel.",
+                    "• Improved premium recipe indicators and recipe availability presentation."
+                ]
+            },
+            {
+                "version": "1.0",
+                "changes": [
+                    "Initial App Store release."
+                ]
+            }
+        ]
     },
     {
         "id": "time-capsule",
@@ -249,7 +617,7 @@
             3
         ],
         "screenshotProduct": "iPhone 15 Pro Max",
-        "email": "",
+        "email": "drills.drivels0j@icloud.com",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-08-10",
         "productHuntBadge": {
@@ -281,7 +649,7 @@
             3
         ],
         "screenshotProduct": "iPhone 15 Pro Max",
-        "email": "",
+        "email": "0-newness-wages@icloud.com",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-07-16"
     },
@@ -312,7 +680,7 @@
             3
         ],
         "screenshotProduct": "iPhone 15 Pro Max",
-        "email": "",
+        "email": "schools07swam@icloud.com",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-02-26"
     },
@@ -339,7 +707,7 @@
             3
         ],
         "screenshotProduct": "iPhone 15 Pro Max",
-        "email": "",
+        "email": "chances_errands.0j@icloud.com",
         "privacyUpdatedDate": "",
         "releaseDate": "2024-02-23"
     },
@@ -374,7 +742,7 @@
             3
         ],
         "screenshotProduct": "iPhone 15 Pro Max",
-        "email": "",
+        "email": "fabrics08.bust@icloud.com",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-11-01"
     },
@@ -412,7 +780,7 @@
             3
         ],
         "screenshotProduct": "iPhone 15 Pro Max",
-        "email": "",
+        "email": "floors.bedpost_0s@icloud.com",
         "privacyUpdatedDate": "",
         "releaseDate": "2023-09-09"
     },
