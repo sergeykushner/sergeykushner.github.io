@@ -1,5 +1,5 @@
 body {
-  margin: var(--space-l) auto;
+  margin: var(--space-xl) auto;
   font-family: system-ui;
   text-align: center;
   background-color: var(--body-primary-background-color);
