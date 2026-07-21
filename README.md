@@ -33,5 +33,6 @@
 
 ## Symlinks
 
-- `apps-metadata.json` не хранится в git и локально является симлинком на `apps-metadata.json` в iCloud Documents
-- `assets` не хранится в git и локально является симлинком на `assets` в iCloud Drive
+- `apps-metadata.json` не хранится в git и локально является симлинком на `/Users/sergeykushner/Library/Mobile Documents/com~apple~CloudDocs/Developer/sergeykushner.github.io/data/apps-metadata.json`
+- `.env` не хранится в git и локально является симлинком на `/Users/sergeykushner/Library/Mobile Documents/com~apple~CloudDocs/Developer/sergeykushner.github.io/.env`
+- `assets` не хранится в git и локально является симлинком на `/Users/sergeykushner/Library/Mobile Documents/com~apple~CloudDocs/Developer/sergeykushner.github.io/assets`
