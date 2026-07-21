@@ -45,7 +45,8 @@ const allowedAppIds = [
  * @returns {Array}
  */
 function filterOutBundles(apps) {
-    return apps.filter(app => app.type !== "App Bundle");
+    // Неполные шаблонные записи не имеют названия и не должны отображаться как приложения.
+    return apps.filter(app => app.type !== "App Bundle" && app.id && app.displayName);
 }
 
 /**
