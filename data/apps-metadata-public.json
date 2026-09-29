@@ -1,5 +1,43 @@
 [
     {
+        "id": "earth-space-monitor",
+        "type": "App",
+        "platform": [
+            "iOS"
+        ],
+        "status": "inDevelopment",
+        "displayName": "Earth & Space Monitor",
+        "title": "Earth & Space Monitor",
+        "subtitle": "",
+        "promoText": "",
+        "shortDescription": "",
+        "fullDescription": [],
+        "keywords": "",
+        "supportUrl": "",
+        "marketingUrl": "",
+        "privacyPolicyUrl": "https://sergeykushner.github.io/app-privacy.html?id=earth-space-monitor",
+        "termsOfUseUrl": "https://www.apple.com/legal/internet-services/itunes/dev/stdeula/",
+        "reviewNotes": [],
+        "appStoreId": "",
+        "bundleId": "SK.EarthSpaceMonitor",
+        "googlePlayId": "",
+        "screenshots": [
+            0
+        ],
+        "screenshotProduct": "",
+        "email": "support@example.com",
+        "privacyUpdatedDate": "2026-09-29",
+        "privacyContent": [
+            "Earth & Space Monitor stores saved places, settings, monitoring rules, followed objects, and saved event snapshots on your device. A compact snapshot without location coordinates is shared with the app widget. The app does not use iCloud sync.",
+            "The app requests your current location when you use a location control. If you save it as a place, its coordinates are sent to Apple Weather, Open-Meteo, and NASA POWER when you request weather, air quality, or climate data for that place. You can change location access in iOS Settings and delete saved places in the app.",
+            "The app contacts public scientific data sources to load events and imagery. It does not require an account or include an analytics SDK. Apple describes its handling of data in its privacy policy [here](https://www.apple.com/legal/privacy/en-ww/)."
+        ],
+        "inAppPurchases": [],
+        "subscriptionGroup": {},
+        "releaseDate": "",
+        "whatsNew": []
+    },
+    {
         "id": "cell-tower-map",
         "type": "App",
         "platform": [
@@ -46,7 +84,7 @@
         ],
         "screenshotProduct": "iPhone 18 Pro Max",
         "email": "annals.bound.0c@icloud.com",
-        "privacyUpdatedDate": "2026-09-29",
+        "privacyUpdatedDate": "2026-06-12",
         "inAppPurchases": [
             {
                 "originalName": "Lifetime",
@@ -140,11 +178,6 @@
                     "Initial App Store release."
                 ]
             }
-        ],
-        "privacyContent": [
-            "If you grant location access, Cell Tower Map requests your location when the map opens after the welcome screen and when you use the location control. It uses your location to center the map and find nearby cell records. You can change location access in iOS Settings.",
-            "Cell tower searches use downloaded regional databases on your device. The app stores these databases and your map preferences locally. It does not use iCloud to sync them.",
-            "The app uses Apple MapKit to display maps, Apple Background Assets to download regional databases, and Apple StoreKit to manage purchases and subscriptions. Apple describes its handling of data in its privacy policy [here](https://www.apple.com/legal/privacy/en-ww/). The app does not include advertising, analytics, or tracking SDKs."
         ]
     },
     {
