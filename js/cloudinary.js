@@ -27,6 +27,14 @@ function getCloudinaryImageUrl(appId, imageName, extension = 'png', isDarkMode =
     return `${CLOUDINARY_BASE_URL}/image/upload/${transformations}${ASSET_VERSION}/${CLOUDINARY_ROOT_FOLDER}/apps/${appId}/${fileName}`;
 }
 
+/** Заменяет недоступную иконку пустым блоком с теми же размерами и оформлением. */
+function replaceMissingAppIcon(image) {
+    const placeholder = document.createElement('span');
+    placeholder.className = `${image.className} app-icon-placeholder`;
+    placeholder.setAttribute('aria-hidden', 'true');
+    image.replaceWith(placeholder);
+}
+
 /**
  * Получает URL для бейджа App Store
  * @param {boolean} isDarkMode - Флаг темного режима
@@ -78,6 +86,7 @@ function getDeviceBezelUrl(deviceModel) {
 // (window.* используется в клиентских скриптах)
 if (typeof window !== 'undefined') {
     window.getCloudinaryImageUrl = getCloudinaryImageUrl;
+    window.replaceMissingAppIcon = replaceMissingAppIcon;
     window.getAppStoreBadgeUrl = getAppStoreBadgeUrl;
     window.getDeviceBezelUrl = getDeviceBezelUrl;
     window.getGooglePlayBadgeUrl = getGooglePlayBadgeUrl;
@@ -94,4 +103,4 @@ if (typeof module !== 'undefined' && module.exports) {
         CLOUDINARY_CLOUD_NAME,
         CLOUDINARY_BASE_URL
     };
-} 
+}

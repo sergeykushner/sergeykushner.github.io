@@ -266,11 +266,15 @@ function updateUI(app) {
     // Иконка приложения
     const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
     const appIcon = document.getElementById("app-icon");
-    appIcon.src = iconUrl;
     appIcon.onerror = function () {
-        this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
-        this.onerror = null;
+        if (prefersDarkMode) {
+            this.onerror = function () { replaceMissingAppIcon(this); };
+            this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
+        } else {
+            replaceMissingAppIcon(this);
+        }
     };
+    appIcon.src = iconUrl;
     document.getElementById("app-title").textContent = app.title;
     document.getElementById("app-subtitle").textContent = app.subtitle;
     document.getElementById("app-description").innerHTML = renderDescription(app.fullDescription);

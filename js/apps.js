@@ -69,15 +69,17 @@ function renderApps(appsToRender, container, template, prefersDarkMode) {
         title.textContent = app.displayName;
         // Получаем URL иконки из Cloudinary с учетом темного режима
         const iconUrl = getCloudinaryImageUrl(app.id, 'app-icon', 'png', prefersDarkMode);
-        img.src = iconUrl;
         img.alt = app.title || app.displayName;
-        // Добавляем обработчик ошибки загрузки для запасного варианта
+        // Если тёмной иконки нет, пробуем обычную; при её отсутствии показываем заглушку.
         img.onerror = function () {
-            if (this.getAttribute('data-tried-light') !== 'true') {
-                this.setAttribute('data-tried-light', 'true');
+            if (prefersDarkMode) {
+                this.onerror = function () { replaceMissingAppIcon(this); };
                 this.src = getCloudinaryImageUrl(app.id, 'app-icon', 'png', false);
+            } else {
+                replaceMissingAppIcon(this);
             }
         };
+        img.src = iconUrl;
         container.appendChild(appNode);
     });
 }
@@ -106,24 +108,6 @@ async function loadApps() {
     }
     // Просто показываем все приложения без фильтрации
     renderApps(apps, container, template, prefersDarkMode);
-    // Настраиваем наблюдение за скроллом для обновления изображений
-    window.addEventListener('scroll', function () {
-        const appIcons = document.querySelectorAll('.app-icon-apps-page');
-        appIcons.forEach(img => {
-            // Проверяем, видно ли изображение
-            const rect = img.getBoundingClientRect();
-            const isVisible = (
-                rect.top >= 0 &&
-                rect.left >= 0 &&
-                rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-                rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-            );
-            if (isVisible && img.naturalWidth === 0 && img.getAttribute('data-tried-light') === 'true') {
-                // Если изображение видимо, но не загружено даже после попытки загрузить светлую версию
-                img.style.display = 'none'; // Скрываем сломанное изображение
-            }
-        });
-    }, { passive: true });
 }
 
 // Инициализация после загрузки DOM
