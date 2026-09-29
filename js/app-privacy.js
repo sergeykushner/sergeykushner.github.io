@@ -25,6 +25,20 @@ async function loadPrivacyData() {
     document.getElementById("app-privacy-title").textContent = `${app.displayName} Privacy Policy`;
     document.getElementById("app-privacy-updated-date").textContent = `Updated ${app.privacyUpdatedDate}`;
     document.getElementById("app-name").textContent = app.displayName;
+    if ("privacyContent" in app) {
+        const content = document.getElementById("app-privacy-main-content");
+        const paragraphs = app.privacyContent;
+        if (!Array.isArray(paragraphs) || paragraphs.length === 0 ||
+            !paragraphs.every(paragraph => typeof paragraph === "string" && paragraph.trim())) {
+            content.textContent = "This app's privacy policy is temporarily unavailable. Please contact me by email.";
+        } else {
+            content.replaceChildren(...paragraphs.map(paragraph => {
+                const element = document.createElement("p");
+                element.textContent = paragraph;
+                return element;
+            }));
+        }
+    }
     document.getElementById("email-link").href = `mailto:${app.email}`;
     document.getElementById("email-link").textContent = "email me";
 }

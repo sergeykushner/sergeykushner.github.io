@@ -43,6 +43,8 @@ python3 -m http.server 8000
 
 `Tools/apps_metadata.py` - скрипт для точечной работы с одной app-записью в приватном `data/apps-metadata.json` по `bundleId` текущего Xcode-проекта.
 
+Необязательное поле `privacyContent` — массив абзацев политики приложения. Если оно задано, эти абзацы заменяют два первых абзаца общего шаблона; заключительные абзацы и email остаются общими. После изменения метаданных запусти `npm run update-public-json`.
+
 ## Symlinks
 
 - `apps-metadata.json` не хранится в git и локально является симлинком на `/Users/sergeykushner/Library/Mobile Documents/com~apple~CloudDocs/Developer/sergeykushner.github.io/data/apps-metadata.json`
