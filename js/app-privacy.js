@@ -34,7 +34,21 @@ async function loadPrivacyData() {
         } else {
             content.replaceChildren(...paragraphs.map(paragraph => {
                 const element = document.createElement("p");
-                element.textContent = paragraph;
+                const linkPattern = /\[([^\]]+)\]\((https:\/\/[^\s)]+)\)/g;
+                let offset = 0;
+
+                // Превращаем ссылки из JSON в элементы страницы, сохраняя остальной текст безопасным.
+                for (const match of paragraph.matchAll(linkPattern)) {
+                    element.append(document.createTextNode(paragraph.slice(offset, match.index)));
+                    const link = document.createElement("a");
+                    link.href = match[2];
+                    link.textContent = match[1];
+                    link.target = "_blank";
+                    link.rel = "noopener noreferrer";
+                    element.append(link);
+                    offset = match.index + match[0].length;
+                }
+                element.append(document.createTextNode(paragraph.slice(offset)));
                 return element;
             }));
         }

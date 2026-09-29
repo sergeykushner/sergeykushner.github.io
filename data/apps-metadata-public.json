@@ -144,7 +144,7 @@
         "privacyContent": [
             "If you grant location access, Cell Tower Map requests your location when the map opens after the welcome screen and when you use the location control. It uses your location to center the map and find nearby cell records. You can change location access in iOS Settings.",
             "Cell tower searches use downloaded regional databases on your device. The app stores these databases and your map preferences locally. It does not use iCloud to sync them.",
-            "The app uses Apple MapKit to display maps, Apple Background Assets to download regional databases, and Apple StoreKit to manage purchases and subscriptions. Apple describes its handling of data in its privacy policy at https://www.apple.com/legal/privacy/. The app does not include advertising, analytics, or tracking SDKs."
+            "The app uses Apple MapKit to display maps, Apple Background Assets to download regional databases, and Apple StoreKit to manage purchases and subscriptions. Apple describes its handling of data in its privacy policy [here](https://www.apple.com/legal/privacy/en-ww/). The app does not include advertising, analytics, or tracking SDKs."
         ]
     },
     {
