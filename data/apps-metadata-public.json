@@ -40,11 +40,11 @@
         "appStoreId": "6774072550",
         "googlePlayId": "",
         "screenshots": [
+            2,
             3,
-            5,
-            6
+            4
         ],
-        "screenshotProduct": "iPhone 17 Pro Max",
+        "screenshotProduct": "iPhone 18 Pro Max",
         "email": "annals.bound.0c@icloud.com",
         "privacyUpdatedDate": "2026-06-12",
         "inAppPurchases": [
@@ -2110,6 +2110,7 @@
             "And if you are not sure or do not know how to do the exercise correctly, you can see its description.",
             "In this application there are more than 100 exercises with a description of the implementation, tips and recommendations for implementation. You can also create your own ones, which are not in the list."
         ],
+        "bundleId": "SK.RexFitApp",
         "appStoreId": "1261012298",
         "googlePlayId": "",
         "screenshots": [

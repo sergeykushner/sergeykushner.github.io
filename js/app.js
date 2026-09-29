@@ -3,6 +3,7 @@
  * Соотношения сторон для скриншотов разных устройств
  */
 const SCREENSHOT_ASPECT_RATIOS = {
+    "iPhone 18 Pro Max": "1320 / 2868",
     "iPhone 17 Pro Max": "1320 / 2868",
     "iPhone 16 Pro Max": "1320 / 2868",
     "iPhone 15 Pro Max": "1290 / 2796",
@@ -27,6 +28,7 @@ const SCREENSHOT_CORNER_RADIUS = {
     "Slide 16/9": "10px",
     "Website Screenshot 1440/950": "10px",
     "Screenshot 1176/2088": "0%",
+    "iPhone 18 Pro Max": "7%",
     "iPhone 17 Pro Max": "7%",
     "iPhone 16 Pro Max": "7%",
     "iPhone 15 Pro Max": "7%",
@@ -40,6 +42,11 @@ const SCREENSHOT_CORNER_RADIUS = {
  * Настройки размещения скриншота внутри рамки устройства
  */
 const DEVICE_SCREENSHOT_CONFIG = {
+    "iPhone 18 Pro Max": {
+        width: "90%",
+        offsetY: "0.1%",
+        offsetX: "0%"
+    },
     "iPhone 17 Pro Max": {
         width: "90%",
         offsetY: "0.1%",
@@ -66,6 +73,7 @@ const DEVICE_SCREENSHOT_CONFIG = {
  * Маппинг моделей устройств и файлов рамок
  */
 const DEVICE_BEZEL_FILES = {
+    "iPhone 18 Pro Max": "iphone-18-pro-max-silver-portrait",
     "iPhone 17 Pro Max": "iphone-17-pro-max-silver-portrait",
     "iPhone 16 Pro Max": "iphone-16-pro-max-natural-titanium-portrait",
     "iPhone 15 Pro Max": "iphone-15-pro-max-natural-titanium-portrait",
