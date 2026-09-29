@@ -816,11 +816,43 @@ async function invalidateCache() {
         return;
     }
 
+    let folderToInvalidate = selectedFolder;
+    const appsFolder = `${CLOUDINARY_ROOT_FOLDER}/apps`;
+
+    if (selectedFolder === appsFolder) {
+        const appFolders = await listAppFolders();
+        if (appFolders === null) {
+            return;
+        }
+
+        const { selectedApp } = await inquirer.prompt([
+            {
+                type: 'list',
+                name: 'selectedApp',
+                message: 'Выберите приложение:',
+                choices: [
+                    ...appFolders.map(folder => ({
+                        name: folder.name,
+                        value: folder.path
+                    })),
+                    { name: 'Все приложения', value: appsFolder },
+                    { name: '⬅️ Вернуться в главное меню', value: 'back' }
+                ]
+            }
+        ]);
+
+        if (selectedApp === 'back') {
+            return;
+        }
+
+        folderToInvalidate = selectedApp;
+    }
+
     const { confirm } = await inquirer.prompt([
         {
             type: 'confirm',
             name: 'confirm',
-            message: `Вы уверены, что хотите инвалидировать кэш для ${selectedFolder}?`,
+            message: `Вы уверены, что хотите инвалидировать кэш для ${folderToInvalidate}?`,
             default: false
         }
     ]);
@@ -830,8 +862,33 @@ async function invalidateCache() {
         return;
     }
 
-    const count = await invalidateByFolder(selectedFolder);
+    const count = await invalidateByFolder(folderToInvalidate);
     console.log(`Инвалидация кэша завершена. Обработано ${count} ресурсов.`);
+}
+
+/**
+ * Получение всех папок приложений из Cloudinary, включая следующие страницы списка
+ * @returns {Promise<Array<object> | null>} Папки приложений или null при ошибке
+ */
+async function listAppFolders() {
+    const folders = [];
+    let nextCursor;
+
+    try {
+        do {
+            const result = await cloudinary.v2.api.sub_folders(`${CLOUDINARY_ROOT_FOLDER}/apps`, {
+                max_results: 500,
+                ...(nextCursor ? { next_cursor: nextCursor } : {})
+            });
+            folders.push(...result.folders);
+            nextCursor = result.next_cursor;
+        } while (nextCursor);
+
+        return folders.sort((first, second) => first.name.localeCompare(second.name, 'ru'));
+    } catch (error) {
+        console.error('Ошибка при получении списка приложений:', error);
+        return null;
+    }
 }
 
 /**
@@ -873,33 +930,40 @@ async function listCloudinaryFolders() {
 async function invalidateByFolder(folderPath) {
     try {
         // Если выбраны все папки, используем корневую папку сайта
-        const prefix = folderPath === 'all' ? cloudinaryManager.CLOUDINARY_ROOT_FOLDER : folderPath;
+        const prefix = `${folderPath === 'all' ? cloudinaryManager.CLOUDINARY_ROOT_FOLDER : folderPath}/`;
 
         console.log(`Начинаю инвалидацию ресурсов в папке: ${prefix}`);
 
         // Получаем список ресурсов в папке
-        const resources = await cloudinary.v2.api.resources({
-            type: 'upload',
-            prefix: prefix,
-            max_results: 500
-        });
-
-        // Инвалидируем каждый ресурс
+        // Читаем все страницы, чтобы папки с большим числом изображений обрабатывались полностью.
         let invalidated = 0;
-        for (const resource of resources.resources) {
-            try {
-                await cloudinary.v2.uploader.explicit(resource.public_id, {
-                    type: 'upload',
-                    invalidate: true
-                });
-                console.log(`Инвалидирован: ${resource.public_id}`);
-                invalidated++;
-            } catch (err) {
-                console.error(`Ошибка при инвалидации ${resource.public_id}:`, err);
-            }
-        }
+        let total = 0;
+        let nextCursor;
+        do {
+            const resources = await cloudinary.v2.api.resources({
+                type: 'upload',
+                prefix,
+                max_results: 500,
+                ...(nextCursor ? { next_cursor: nextCursor } : {})
+            });
 
-        console.log(`Инвалидировано ${invalidated} из ${resources.resources.length} ресурсов в папке ${prefix}`);
+            total += resources.resources.length;
+            for (const resource of resources.resources) {
+                try {
+                    await cloudinary.v2.uploader.explicit(resource.public_id, {
+                        type: 'upload',
+                        invalidate: true
+                    });
+                    console.log(`Инвалидирован: ${resource.public_id}`);
+                    invalidated++;
+                } catch (err) {
+                    console.error(`Ошибка при инвалидации ${resource.public_id}:`, err);
+                }
+            }
+            nextCursor = resources.next_cursor;
+        } while (nextCursor);
+
+        console.log(`Инвалидировано ${invalidated} из ${total} ресурсов в папке ${prefix}`);
         return invalidated;
     } catch (error) {
         console.error(`Ошибка при инвалидации папки ${folderPath}:`, error);
