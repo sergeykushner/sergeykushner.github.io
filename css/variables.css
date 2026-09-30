@@ -27,7 +27,6 @@
   --app-icon-border-color: rgb(0 0 0 / 5%);
   --app-icon-gradient-top-color: rgb(245 245 250);
   --app-icon-gradient-bottom-color: rgb(245 245 250);
-  --app-icon-placeholder-color: rgb(0 0 0 / 10%);
 
   /* --- Графики --- */
   --chart-app-store-segment-color: rgb(50 173 230); /* iOS System Cyan */
@@ -55,7 +54,7 @@
   --border-radius-m: 1rem;
   --border-radius-s: 0.5rem;
   --border-radius-xs: 0.25rem;
-  --border-radius-icon: 27%;
+  --border-radius-icon: 25%;
 
   /* --- Размеры иконок --- */
   --icon-size-l: 5rem;
@@ -104,7 +103,6 @@
     --app-icon-border-color: black;
     --app-icon-gradient-top-color: rgb(49 49 49);
     --app-icon-gradient-bottom-color: rgb(21 21 21);
-    --app-icon-placeholder-color: rgb(255 255 255 / 10%);
     --chart-app-store-segment-color: rgb(100 210 255); /* iOS System Cyan */
     --chart-flippa-segment-color: rgb(48 209 88); /* iOS System Green */
   }
