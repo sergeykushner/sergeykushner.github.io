@@ -39,10 +39,6 @@ python3 -m http.server 8000
 - проверять CSS;
 - автоматически сортировать CSS с помощью `stylelint` (`.stylelintrc.json`, `package.json`).
 
-## Apps Metadata
-
-`Tools/apps_metadata.py` - скрипт для точечной работы с одной app-записью в приватном `data/apps-metadata.json` по `bundleId` текущего Xcode-проекта.
-
 ## Symlinks
 
 - `apps-metadata.json` не хранится в git и локально является симлинком на `/Users/sergeykushner/Library/Mobile Documents/com~apple~CloudDocs/Developer/sergeykushner.github.io/data/apps-metadata.json`
