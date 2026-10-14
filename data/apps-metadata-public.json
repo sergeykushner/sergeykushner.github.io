@@ -32,8 +32,6 @@
             "The app requests your current location when you use a location control. If you save it as a place, its coordinates are sent to Apple Weather, Open-Meteo, and NASA POWER when you request weather, air quality, or climate data for that place. You can change location access in iOS Settings and delete saved places in the app.",
             "The app contacts public scientific data sources to load events and imagery. It does not require an account or include an analytics SDK. Apple describes its handling of data in its privacy policy [here](https://www.apple.com/legal/privacy/en-ww/)."
         ],
-        "inAppPurchases": [],
-        "subscriptionGroup": {},
         "releaseDate": "",
         "whatsNew": []
     },
@@ -43,7 +41,7 @@
         "platform": [
             "iOS"
         ],
-        "status": "inDevelopment",
+        "status": "availableForSale",
         "displayName": "Cell Tower Map",
         "title": "Cell Tower Map - Signal Finder",
         "subtitle": "Locator 2G, 3G, LTE, 5G",
@@ -85,97 +83,19 @@
         "screenshotProduct": "iPhone 18 Pro Max",
         "email": "annals.bound.0c@icloud.com",
         "privacyUpdatedDate": "2026-06-12",
-        "inAppPurchases": [
-            {
-                "originalName": "Lifetime",
-                "productId": "SK.CellTowerMap.Purchase.Lifetime",
-                "type": "nonConsumable",
-                "price": "49.99",
-                "localizations": [
-                    {
-                        "locale": "en-US",
-                        "displayName": "Lifetime",
-                        "description": "Lifetime access to all app features."
-                    }
-                ]
-            }
-        ],
-        "subscriptionGroup": {
-            "originalName": "Subscriptions",
-            "id": "22153165",
-            "localizations": [
-                {
-                    "locale": "en-US",
-                    "displayName": "Subscriptions",
-                    "appName": "Cell Tower Map"
-                }
-            ],
-            "subscriptions": [
-                {
-                    "level": 1,
-                    "originalName": "Year",
-                    "productId": "SK.CellTowerMap.Subscription.Year",
-                    "duration": "1 year",
-                    "price": "USD 29.99",
-                    "localizations": [
-                        {
-                            "locale": "en-US",
-                            "displayName": "Year",
-                            "description": "Yearly access to all app features."
-                        }
-                    ]
-                },
-                {
-                    "level": 2,
-                    "originalName": "Month",
-                    "productId": "SK.CellTowerMap.Subscription.Month",
-                    "duration": "1 month",
-                    "price": "USD 4.99",
-                    "localizations": [
-                        {
-                            "locale": "en-US",
-                            "displayName": "Month",
-                            "description": "Monthly access to all app features."
-                        }
-                    ]
-                },
-                {
-                    "level": 3,
-                    "originalName": "Week",
-                    "productId": "SK.CellTowerMap.Subscription.Week",
-                    "duration": "1 week",
-                    "price": "USD 1.99",
-                    "localizations": [
-                        {
-                            "locale": "en-US",
-                            "displayName": "Week",
-                            "description": "Weekly access to all app features."
-                        }
-                    ]
-                }
-            ]
-        },
         "releaseDate": "0000-00-00",
         "whatsNew": [
             {
-                "version": "1.1",
+                "version": "0.0.0",
                 "changes": [
-                    "• Added downloadable offline region packs for Europe, North America, Asia, Oceania, Africa, and Latin America.",
-                    "• Improved region download states so it is clearer when data is available on the map.",
-                    "• Improved offline map behavior after regional data is downloaded."
-                ]
-            },
-            {
-                "version": "1.0.1",
-                "changes": [
-                    "• Improved map loading reliability.",
-                    "• Improved offline data updates."
+                    "• Text.",
+                    "• Text."
                 ]
             },
             {
                 "version": "1.0",
                 "changes": [
-                    "Initial App Store release."
+                    ""
                 ]
             }
         ]
@@ -257,62 +177,6 @@
         "screenshotProduct": "iPhone 17 Pro Max",
         "email": "manes-quip-6a@icloud.com",
         "privacyUpdatedDate": "2026-04-25",
-        "inAppPurchases": [
-            {
-                "originalName": "SoundMeter+",
-                "productId": "SK.SoundMeter.Purchase.Lifetime",
-                "type": "nonConsumable",
-                "price": "USD 4.99",
-                "localizations": [
-                    {
-                        "locale": "en-US",
-                        "displayName": "Lifetime",
-                        "description": "Lifetime access to all features"
-                    }
-                ]
-            }
-        ],
-        "subscriptionGroup": {
-            "originalName": "SoundMeter+",
-            "id": "22083900",
-            "localizations": [
-                {
-                    "locale": "en-US",
-                    "displayName": "SoundMeter+",
-                    "appName": "Sound Meter - Noise Level dB"
-                }
-            ],
-            "subscriptions": [
-                {
-                    "level": 1,
-                    "originalName": "Year",
-                    "productId": "SK.SoundMeter.Subscription.Year",
-                    "duration": "1 year",
-                    "price": "USD 2.99",
-                    "localizations": [
-                        {
-                            "locale": "en-US",
-                            "displayName": "Year",
-                            "description": "Yearly access to all features"
-                        }
-                    ]
-                },
-                {
-                    "level": 2,
-                    "originalName": "Month",
-                    "productId": "SK.SoundMeter.Subscription.Month",
-                    "duration": "1 month",
-                    "price": "USD 0.99",
-                    "localizations": [
-                        {
-                            "locale": "en-US",
-                            "displayName": "Month",
-                            "description": "Monthly access to to all features"
-                        }
-                    ]
-                }
-            ]
-        },
         "releaseDate": "2026-04-28",
         "whatsNew": [
             {
@@ -330,7 +194,7 @@
             {
                 "version": "1.0",
                 "changes": [
-                    "Initial App Store release."
+                    ""
                 ]
             }
         ]
@@ -429,62 +293,6 @@
         "screenshotProduct": "iPhone 17 Pro Max",
         "email": "01-barrage.remotes@icloud.com",
         "privacyUpdatedDate": "2026-04-19",
-        "inAppPurchases": [
-            {
-                "originalName": "Cocktails+",
-                "productId": "SK.Cocktails.Purchase.Lifetime",
-                "type": "nonConsumable",
-                "price": "4.99",
-                "localizations": [
-                    {
-                        "locale": "en-US",
-                        "displayName": "Lifetime",
-                        "description": "Unlimited cocktails for a lifetime"
-                    }
-                ]
-            }
-        ],
-        "subscriptionGroup": {
-            "originalName": "Cocktails+",
-            "id": "22071185",
-            "localizations": [
-                {
-                    "locale": "en-US",
-                    "displayName": "Cocktails+",
-                    "appName": "Cocktails - Bar Recipes"
-                }
-            ],
-            "subscriptions": [
-                {
-                    "level": 1,
-                    "originalName": "Year",
-                    "productId": "SK.Cocktails.Subscription.Year",
-                    "duration": "1 year",
-                    "price": "USD 2.99",
-                    "localizations": [
-                        {
-                            "locale": "en-US",
-                            "displayName": "Year",
-                            "description": "Unlimited cocktail recipes for a year"
-                        }
-                    ]
-                },
-                {
-                    "level": 2,
-                    "originalName": "Month",
-                    "productId": "SK.Cocktails.Subscription.Month",
-                    "duration": "1 month",
-                    "price": "USD 0.99",
-                    "localizations": [
-                        {
-                            "locale": "en-US",
-                            "displayName": "Month",
-                            "description": "Unlimited cocktail recipes for a month"
-                        }
-                    ]
-                }
-            ]
-        },
         "releaseDate": "2026-04-22",
         "whatsNew": [
             {
@@ -511,7 +319,7 @@
             {
                 "version": "1.0",
                 "changes": [
-                    "Initial App Store release."
+                    ""
                 ]
             }
         ]
